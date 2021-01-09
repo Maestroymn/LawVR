@@ -25,4 +25,5 @@ public class TestConnect : MonoBehaviourPunCallbacks
     {
         print("Disconnected from server: "+cause);
     }
+    
 }

@@ -20,7 +20,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="1615f86a-ec87-43d2-947c-b7e73a72c2dc" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.LawVR/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.LawVR/.idea/contentModel.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.LawVR/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.LawVR/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/TestConnect.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/TestConnect.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -32,6 +34,8 @@
   </component>
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/TestConnect.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/UI/CreateRoomMenu.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/UI/RoomsCanvases.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Managers/GameSettings.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="IdeDocumentHistory">
@@ -41,7 +45,11 @@
         <option value="$PROJECT_DIR$/Assets/Scripts/Utilities/SingletonScriptableObject.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Managers/GameSettings.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Managers/GameManager.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/UI/HostRoomCanvas.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/TestConnect.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/UI/RoomsCanvases.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/UI/CurrentRoomCanvas.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/UI/CreateRoomMenu.cs" />
       </list>
     </option>
   </component>
@@ -86,6 +94,7 @@
       <option name="presentableId" value="Default" />
       <updated>1608753333014</updated>
       <workItem from="1608753344259" duration="2405000" />
+      <workItem from="1610216110039" duration="5631000" />
     </task>
     <servers />
   </component>
@@ -104,8 +113,15 @@
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="92" y="92" width="1736" height="856" key="VCS.FileHistoryDialog" timestamp="1610222047390">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="92" y="92" width="1736" height="856" key="VCS.FileHistoryDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1610222047390" />
   </component>
 </project>
