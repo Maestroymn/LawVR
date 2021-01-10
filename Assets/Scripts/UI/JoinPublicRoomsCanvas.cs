@@ -2,23 +2,23 @@
 
 namespace UI
 {
-    public class HostRoomCanvas : MonoBehaviour
+    public class JoinPublicRoomsCanvas : MonoBehaviour
     {
-        [SerializeField] private CreateRoomMenu _createRoomMenu;
+        [SerializeField] private RoomListingsMenu _roomListingsMenu;
 
-        public CreateRoomMenu CreateRoomMenu { get; private set; }
+        public RoomListingsMenu RoomListingsMenu { get; private set; }
 
         private RoomsCanvases _roomsCanvases;   
         public void FirstInitialize(RoomsCanvases roomsCanvases)
         {
             _roomsCanvases = roomsCanvases;
-            CreateRoomMenu = _createRoomMenu;
-            _createRoomMenu.FirstInitialize(roomsCanvases);
+            RoomListingsMenu = _roomListingsMenu;
         }
 
         public void Hide()
         {
             gameObject.SetActive(false);
+            _roomsCanvases.JoinRoomCanvas.Show();
         }
         
         public void Show()

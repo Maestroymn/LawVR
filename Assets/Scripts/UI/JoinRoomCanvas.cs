@@ -2,18 +2,18 @@
 
 namespace UI
 {
-    public class HostRoomCanvas : MonoBehaviour
+    public class JoinRoomCanvas : MonoBehaviour
     {
-        [SerializeField] private CreateRoomMenu _createRoomMenu;
+        [SerializeField] private JoinRoomMenu _joinRoomMenu;
 
-        public CreateRoomMenu CreateRoomMenu { get; private set; }
+        public JoinRoomMenu JoinRoomMenu { get; private set; }
 
         private RoomsCanvases _roomsCanvases;   
         public void FirstInitialize(RoomsCanvases roomsCanvases)
         {
             _roomsCanvases = roomsCanvases;
-            CreateRoomMenu = _createRoomMenu;
-            _createRoomMenu.FirstInitialize(roomsCanvases);
+            JoinRoomMenu = _joinRoomMenu;
+            _joinRoomMenu.FirstInitialize(roomsCanvases);
         }
 
         public void Hide()

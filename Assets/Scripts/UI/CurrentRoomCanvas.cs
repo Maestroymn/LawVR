@@ -22,7 +22,7 @@ namespace UI
         
         public void Hide()
         {
-            PhotonNetwork.LeaveRoom();
+            //PhotonNetwork.LeaveRoom();
             gameObject.SetActive(false);
             _roomsCanvases.HostRoomCanvas.Show();
         }
