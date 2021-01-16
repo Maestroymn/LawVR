@@ -863,6 +863,7 @@
             <e p="MainMenuUI.cs" t="Include" />
             <e p="PlayerListing.cs" t="Include" />
             <e p="PlayerListingsMenu.cs" t="Include" />
+            <e p="RoleClaimButton.cs" t="Include" />
             <e p="RoomListing.cs" t="Include" />
             <e p="RoomListingsMenu.cs" t="Include" />
             <e p="RoomsCanvases.cs" t="Include" />

@@ -27,6 +27,7 @@ namespace UI
             //TypedLobby typedLobby = new TypedLobby("competitive",);
             _roomOptions.MaxPlayers = 16;
             _roomOptions.IsVisible = true;
+            _roomOptions.BroadcastPropsChangeToAll = true;
             _roomOptions.CustomRoomProperties = new ExitGames.Client.Photon.Hashtable();
             if (_password.text.Length != 0)
             {

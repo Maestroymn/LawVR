@@ -106,7 +106,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 27aeba3e0b922aa48af4980dc5b60de5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _text: {fileID: 2973369861991854955}
+  PlayerListingText: {fileID: 2973369861991854955}
 --- !u!1 &9142836870317877589
 GameObject:
   m_ObjectHideFlags: 0
@@ -199,12 +199,12 @@ MonoBehaviour:
   m_outlineColor:
     serializedVersion: 2
     rgba: 4278190080
-  m_fontSize: 25
+  m_fontSize: 20
   m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 1
-  m_fontSizeMin: 18
-  m_fontSizeMax: 25
+  m_fontSizeMin: 15
+  m_fontSizeMax: 20
   m_fontStyle: 0
   m_textAlignment: 514
   m_characterSpacing: 0

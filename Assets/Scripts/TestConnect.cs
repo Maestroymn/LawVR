@@ -1,18 +1,21 @@
 ﻿using System;
-using System.Collections;
-using System.Collections.Generic;
 using Managers;
 using Photon.Pun;
 using Photon.Realtime;
+using UI;
 using UnityEngine;
 
 public class TestConnect : MonoBehaviourPunCallbacks
 {
+    public ExitGames.Client.Photon.Hashtable PlayerProperties = new ExitGames.Client.Photon.Hashtable();
     private void Start()
     {
         print("Connecting to server.");
+        PhotonNetwork.AutomaticallySyncScene = true;
         PhotonNetwork.GameVersion = GameManager.GameSettings.GameVersion;
         PhotonNetwork.NickName = GameManager.GameSettings.NickName;
+        PlayerProperties["Role"] = "none";
+        PhotonNetwork.SetPlayerCustomProperties(PlayerProperties);
         PhotonNetwork.ConnectUsingSettings();
     }
 

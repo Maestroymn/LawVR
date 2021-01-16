@@ -23,8 +23,26 @@ namespace UI
         public void Hide()
         {
             PhotonNetwork.LeaveRoom();
+            PhotonNetwork.LocalPlayer.CustomProperties["Role"] = "none";
             gameObject.SetActive(false);
-            _roomsCanvases.JoinRoomCanvas.Show();
+            if (PhotonNetwork.IsMasterClient)
+            {
+                _roomsCanvases.HostRoomCanvas.Show();
+            }
+            else
+            {
+                _roomsCanvases.JoinRoomCanvas.Show();
+            }
+        }
+        public void OnSessionStarted()
+        {
+            if (PhotonNetwork.IsMasterClient)
+            {
+                //Locking room when the session started, if following bools are set to false, then no one can join after session started.
+                PhotonNetwork.CurrentRoom.IsOpen = false;
+                PhotonNetwork.CurrentRoom.IsVisible = false;
+                PhotonNetwork.LoadLevel(1);
+            }
         }
     }
 }
