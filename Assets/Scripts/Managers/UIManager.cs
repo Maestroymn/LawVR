@@ -1,14 +1,18 @@
-﻿using System;
+﻿using System.Collections.Generic;
+using Photon.Pun;
+using Photon.Realtime;
 using UI;
 using UnityEngine;
 
 namespace Managers
 {
-    public class UIManager : MonoBehaviour
+    public class UIManager : MonoBehaviourPunCallbacks
     {
         [SerializeField] private MainMenuUI _mainMenuUI;
         [SerializeField] private RoomsCanvases _roomsCanvases;
         private GameObject _currentCanvas;
+        public List<RoomListing> RoomListings = new List<RoomListing>();
+
         private void Awake()
         {
             _roomsCanvases.FirstInitialize();
@@ -48,6 +52,29 @@ namespace Managers
         {
             _currentCanvas.SetActive(false);
             _mainMenuUI.Show();
+        }
+        
+        public override void OnRoomListUpdate(List<RoomInfo> roomList)
+        {
+            roomList.ForEach(room =>
+            {
+                // Removed from rooms list.
+                if (room.RemovedFromList)
+                {
+                    int index =RoomListings.FindIndex(x => x.RoomInfo.Name == room.Name);
+                    if (index != -1)
+                    {
+                        Destroy(RoomListings[index].gameObject);
+                        RoomListings.RemoveAt(index);
+                    }
+                }
+                // Added to rooms list.
+                else
+                {
+                    Debug.Log("ADDED ROOM");
+                    _roomsCanvases.HostRoomCanvas.CreateRoomMenu.RoomListingsMenu.AddRoomListing(room);
+                }
+            });
         }
     }
 }

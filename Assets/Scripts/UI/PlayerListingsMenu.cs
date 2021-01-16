@@ -11,7 +11,7 @@ namespace UI
         [SerializeField] private Transform _contentParent;
         [SerializeField] private PlayerListing _playerListingPrefab;
 
-        private List<PlayerListing> _playerListings = new List<PlayerListing>();
+        public List<PlayerListing> _playerListings = new List<PlayerListing>();
 
         private void Awake()
         {
@@ -52,7 +52,7 @@ namespace UI
         {
             _playerListings.ForEach(player =>
             {
-                if (!(player is null) && otherPlayer == player.Player)
+                if (!(player is null) && otherPlayer.NickName == player.Player.NickName)
                 {
                     _playerListings.Remove(player);
                     Destroy(player.gameObject);

@@ -8,7 +8,7 @@ namespace Managers
     {
         [SerializeField] private string _gameVersion = "0.0.0";
         public string GameVersion => _gameVersion;
-        [SerializeField] private string _nickName = "LoremIpsum";
+        [SerializeField] private string _nickName = "User";
         public string NickName
         {
             get

@@ -236,6 +236,7 @@ namespace Photon.Pun
 
                 return NetworkingClient.State;
             }
+            set => throw new NotImplementedException();
         }
 
         /// <summary>Tracks, which Connect method was called last. </summary>

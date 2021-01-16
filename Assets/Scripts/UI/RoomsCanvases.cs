@@ -1,5 +1,4 @@
-﻿using System;
-using Photon.Pun;
+﻿using Managers;
 using UnityEngine;
 
 namespace UI
@@ -14,7 +13,7 @@ namespace UI
         public JoinPublicRoomsCanvas JoinPublicRoomsCanvas => _joinPublicRoomsCanvas;
         [SerializeField] private CurrentRoomCanvas _currentRoomCanvas;
         public CurrentRoomCanvas CurrentRoomCanvas => _currentRoomCanvas;
-
+        [SerializeField] public UIManager UIManager;
         public void FirstInitialize()
         {
             HostRoomCanvas.FirstInitialize(this);

@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using Photon.Pun;
 using UnityEngine;
 using TMPro;
@@ -20,49 +21,42 @@ namespace UI
         }
         public void OnClickCreateRoom()
         {
+            if (!PhotonNetwork.IsConnected)
+                return;
             RoomOptions _roomOptions = new RoomOptions();
             //TypedLobby typedLobby = new TypedLobby("competitive",);
             _roomOptions.MaxPlayers = 16;
+            _roomOptions.IsVisible = true;
             _roomOptions.CustomRoomProperties = new ExitGames.Client.Photon.Hashtable();
             if (_password.text.Length != 0)
             {
                 _roomOptions.CustomRoomProperties.Add("password",_password.text);
             }
             PhotonNetwork.CreateRoom(_roomName.text, _roomOptions, TypedLobby.Default);
+            //PhotonNetwork.JoinLobby();
         }
-        
+
+        public override void OnJoinedRoom()
+        {
+            Debug.Log("katıldım");
+        }
+
+        public override void OnJoinedLobby()
+        {
+            Debug.Log("lobi katıldım");
+        }
+
         public override void OnCreatedRoom()
         {
             Debug.Log("Room is created its name is "+_roomName.text+" and its password: "+_password.text);
-            _roomsCanvases.CurrentRoomCanvas.Show(_roomName.text);
-            PhotonNetwork.JoinLobby();
+           // PhotonNetwork.GetCustomRoomList(PhotonNetwork.CurrentLobby,null);
+           _roomsCanvases.CurrentRoomCanvas.Show(_roomName.text);
         }
         
         public override void OnCreateRoomFailed(short returnCode, string message)
         {
             Debug.Log("Room couldn't be created ",_roomName);
         }
-        
-        public override void OnRoomListUpdate(List<RoomInfo> roomList)
-        {
-            roomList.ForEach(room =>
-            {
-                // Removed from rooms list.
-                if (room.RemovedFromList)
-                {
-                    int index = RoomListingsMenu.RoomListings.FindIndex(x => x.RoomInfo.Name == room.Name);
-                    if (index != -1)
-                    {
-                        Destroy(RoomListingsMenu.RoomListings[index].gameObject);
-                        RoomListingsMenu.RoomListings.RemoveAt(index);
-                    }
-                }
-                // Added to rooms list.
-                else
-                {
-                    RoomListingsMenu.AddRoomListing(room);
-                }
-            });
-        }
+
     }
 }

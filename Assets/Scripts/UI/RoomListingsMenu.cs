@@ -1,16 +1,16 @@
 ﻿using System.Collections.Generic;
+using Managers;
 using Photon.Pun;
 using Photon.Realtime;
 using UnityEngine;
 
 namespace UI
 {
-    public class RoomListingsMenu : MonoBehaviourPunCallbacks
+    public class RoomListingsMenu : MonoBehaviour
     {
-        [SerializeField] private Transform _contentParent;
-        [SerializeField] private RoomListing _roomListingPrefab;
-    
-        public List<RoomListing> RoomListings = new List<RoomListing>();
+        [SerializeField] public Transform _contentParent;
+        [SerializeField] public RoomListing _roomListingPrefab;
+        [SerializeField] private UIManager UIManager;
 
         public void AddRoomListing(RoomInfo room)
         {
@@ -18,9 +18,9 @@ namespace UI
             if (roomListing != null)
             {
                 roomListing.SetRoomInfo(room);
-                if (!RoomListings.Contains(roomListing))
+                if (!UIManager.RoomListings.Contains(roomListing))
                 {
-                    RoomListings.Add(roomListing);
+                    UIManager.RoomListings.Add(roomListing);
                 }
                 else
                 {
@@ -28,6 +28,5 @@ namespace UI
                 }
             }
         }
-        
     }
 }

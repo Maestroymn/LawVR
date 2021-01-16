@@ -19,9 +19,9 @@ namespace UI
         
         public void OnClickJoinPrivateRoom()
         {
-            RoomListing room  = _roomsCanvases.JoinPublicRoomsCanvas.RoomListingsMenu.RoomListings.FirstOrDefault(r => r.RoomInfo.Name == _roomName.text);
+            RoomListing room  = _roomsCanvases.UIManager.RoomListings.FirstOrDefault(r => r.RoomInfo.Name == _roomName.text);
             bool exists = (room != null);
-            if (exists && _password.text==room.RoomInfo.CustomProperties["password"].ToString())
+            if (exists)
             {
                 PhotonNetwork.JoinRoom(_roomName.text);
             }
@@ -29,12 +29,14 @@ namespace UI
 
         public override void OnJoinedRoom()
         {
-            Debug.Log("Joined to "+_roomName);
+            Debug.Log("Joined to "+_roomName.text);
+            _roomsCanvases.JoinRoomCanvas.Hide();
+            _roomsCanvases.CurrentRoomCanvas.Show(_roomName.text);
         }
 
         public override void OnJoinRoomFailed(short returnCode, string message)
         {
-            Debug.Log("Couldn't joined to "+_roomName+"\n"+message);
+            Debug.Log("Couldn't joined to "+_roomName.text+"\n"+message);
         }
     }
 }
