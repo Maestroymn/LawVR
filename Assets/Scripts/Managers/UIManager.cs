@@ -10,12 +10,21 @@ namespace Managers
     {
         [SerializeField] private MainMenuUI _mainMenuUI;
         [SerializeField] private RoomsCanvases _roomsCanvases;
-        private GameObject _currentCanvas;
+        public GameObject CurrentCanvas;
         public List<RoomListing> RoomListings = new List<RoomListing>();
 
         private void Awake()
         {
+            InitializeCanvases();
             _roomsCanvases.FirstInitialize();
+        }
+
+        private void InitializeCanvases()
+        {
+            _mainMenuUI.Show();
+            _roomsCanvases.HostRoomCanvas.gameObject.SetActive(false);
+            _roomsCanvases.JoinRoomCanvas.gameObject.SetActive(false);
+            _roomsCanvases.CurrentRoomCanvas.gameObject.SetActive(false);
         }
 
         public void OnExitClicked()
@@ -32,14 +41,14 @@ namespace Managers
         {
             _mainMenuUI.HideMainMenu();
             _roomsCanvases.HostRoomCanvas.Show();
-            _currentCanvas = _roomsCanvases.HostRoomCanvas.gameObject;
+            CurrentCanvas = _roomsCanvases.HostRoomCanvas.gameObject;
         }
 
         public void OnJoinClicked()
         {
             _mainMenuUI.HideMainMenu();
             _roomsCanvases.JoinRoomCanvas.Show();
-            _currentCanvas = _roomsCanvases.JoinRoomCanvas.gameObject;
+            CurrentCanvas = _roomsCanvases.JoinRoomCanvas.gameObject;
         }
 
         public void OnShowPublicRoomsClicked()
@@ -50,7 +59,7 @@ namespace Managers
         
         public void ReturnToMainMenu()
         {
-            _currentCanvas.SetActive(false);
+            CurrentCanvas.SetActive(false);
             _mainMenuUI.Show();
         }
         

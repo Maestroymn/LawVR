@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using ExitGames.Client.Photon;
 using Photon.Pun;
 using Photon.Realtime;
+using TMPro;
 using UnityEngine;
 
 namespace UI
@@ -11,9 +12,12 @@ namespace UI
     {
         [SerializeField] private Transform _contentParent;
         [SerializeField] private PlayerListing _playerListingPrefab;
-
+        [SerializeField] private RoomsCanvases _roomsCanvases;
+        [SerializeField] public TextMeshProUGUI ReadyText;
+        [SerializeField] public Color ReadyColor, NotReadyColor;
         public List<PlayerListing> _playerListings = new List<PlayerListing>();
-        
+        private bool _ready;
+
         public override void OnEnable()
         {
             base.OnEnable();
@@ -37,11 +41,6 @@ namespace UI
             }
         }
 
-        // public void UpdateTextForAllPlayers(Player player,string roleHolder)
-        // {
-        //     PhotonView photonView = PhotonView.Get(this);
-        //     photonView.RPC("UpdatePlayerListingText",RpcTarget.All,player,roleHolder);
-        // }
         private void AddPlayerListing(Player player)
         {
             int index = _playerListings.FindIndex(x => x.Player == player);
@@ -59,7 +58,12 @@ namespace UI
                 }
             }
         }
-        
+
+        public override void OnMasterClientSwitched(Player newMasterClient)
+        {
+            _roomsCanvases.CurrentRoomCanvas.Hide();
+        }
+
         public void CheckRoleStatusAndSet(string targetRole)
         {
             if(!PhotonNetwork.IsConnected || PhotonNetwork.CurrentRoom==null || PhotonNetwork.CurrentRoom.Players==null)
@@ -80,12 +84,44 @@ namespace UI
                 //PhotonNetwork.LocalPlayer.CustomProperties["Role"]=targetRole;
                 Hashtable hashtable = new Hashtable {["Role"] = targetRole};
                 PhotonNetwork.SetPlayerCustomProperties(hashtable);
+                if (PhotonNetwork.IsMasterClient)
+                {
+                    photonView.RPC("SetReadyUp",RpcTarget.AllBuffered,PhotonNetwork.LocalPlayer,true);
+                    photonView.RPC("RPC_ChangeReadyState",RpcTarget.MasterClient,PhotonNetwork.LocalPlayer,true);
+                    CheckIfAllReady();
+                }
+                else if(!PhotonNetwork.IsMasterClient && _ready)
+                {
+                    photonView.RPC("SetReadyUp",RpcTarget.AllBuffered,PhotonNetwork.LocalPlayer,!_ready);
+                    photonView.RPC("RPC_ChangeReadyState",RpcTarget.MasterClient,PhotonNetwork.LocalPlayer,_ready);
+                    CheckIfAllReady();
+                }
+            }
+        }
+        
+                
+        public void OnSessionStarted()
+        {
+            if (PhotonNetwork.IsMasterClient)
+            {
+                _playerListings.ForEach(player =>
+                {
+                    if (player.Player != PhotonNetwork.LocalPlayer && !player.Ready)
+                    {    
+                        return;
+                    }
+                });
+                //Locking room when the session started, if following bools are set to false, then no one can join after session started.
+                PhotonNetwork.CurrentRoom.IsOpen = false;
+                PhotonNetwork.CurrentRoom.IsVisible = false;
+                PhotonNetwork.LoadLevel(1);
             }
         }
         
         public override void OnPlayerEnteredRoom(Player newPlayer)
         {
             AddPlayerListing(newPlayer);
+            Debug.Log(_playerListings.Count);
         }
 
         public override void OnPlayerLeftRoom(Player otherPlayer)
@@ -98,6 +134,69 @@ namespace UI
                     Destroy(player.gameObject);
                 }
             });
+        }
+
+        private void CheckIfAllReady()
+        {
+            _playerListings.ForEach(x =>
+            {
+                if (!x.Ready)
+                { 
+                    _roomsCanvases.CurrentRoomCanvas.SetStatusForStartSessionButton(false);
+                    return;
+                }
+            });
+            if (_playerListings.Count >= 3)
+            {
+                _roomsCanvases.CurrentRoomCanvas.SetStatusForStartSessionButton(true);
+            }
+        }
+        
+        public void OnClickReady()
+        {
+            if (!PhotonNetwork.IsMasterClient && PhotonNetwork.LocalPlayer.CustomProperties["Role"].ToString().ToLower()!="none")
+            {
+                photonView.RPC("SetReadyUp",RpcTarget.AllBuffered,PhotonNetwork.LocalPlayer,!_ready);
+                if (_ready)
+                {
+                    ReadyText.text = "Not Ready!";
+                }
+                else
+                {
+                    ReadyText.text = "Ready!";
+                }
+                photonView.RPC("RPC_ChangeReadyState",RpcTarget.MasterClient,PhotonNetwork.LocalPlayer,_ready);
+                CheckIfAllReady();
+            }
+        }
+
+        [PunRPC]
+        private void RPC_ChangeReadyState(Player player, bool ready)
+        {
+            int index = _playerListings.FindIndex(x => x.Player == player);
+            if (index != -1)
+            {
+                _playerListings[index].Ready = ready;
+            }
+        }
+        
+        
+        [PunRPC]
+        private void SetReadyUp(Player player,bool state)
+        {
+            _ready = state;
+            int index = _playerListings.FindIndex(x => x.Player == player);
+            if (index != -1)
+            {
+                if (state)
+                {
+                    _playerListings[index].Background.color = ReadyColor;
+                }
+                else
+                {
+                    _playerListings[index].Background.color = NotReadyColor;
+                }
+            }
         }
     }
 }

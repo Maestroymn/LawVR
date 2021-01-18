@@ -8,4 +8,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/CreateLobbyScene.unity
     guid: de3eebc5a0725e54098e3a5914a0cd55
+  - enabled: 1
+    path: Assets/Scenes/CourtScene.unity
+    guid: 9976355d84077f04fae31f99270f85a4
   m_configObjects: {}

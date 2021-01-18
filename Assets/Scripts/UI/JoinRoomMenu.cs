@@ -31,7 +31,7 @@ namespace UI
         {
             Debug.Log("Joined to "+_roomName.text);
             _roomsCanvases.JoinRoomCanvas.Hide();
-            _roomsCanvases.CurrentRoomCanvas.Show(_roomName.text);
+            _roomsCanvases.CurrentRoomCanvas.Show(_roomName.text,false);
         }
 
         public override void OnJoinRoomFailed(short returnCode, string message)

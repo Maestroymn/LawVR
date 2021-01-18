@@ -1,5 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
 using UnityEditor;
 using UnityEngine;
@@ -8,7 +7,7 @@ namespace AdvancedCustomizableSystem
 {
 
     [CustomEditor(typeof(CharacterCustomization))]
-    public class EditorCharacterPrefabEdit : Editor
+    public class EditorCharacterPrefabEdit : UnityEditor.Editor
     {
 
         bool foldout = false;

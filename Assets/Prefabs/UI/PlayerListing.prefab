@@ -107,6 +107,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   PlayerListingText: {fileID: 2973369861991854955}
+  Background: {fileID: 7507002722889579154}
+  Ready: 0
 --- !u!1 &9142836870317877589
 GameObject:
   m_ObjectHideFlags: 0
@@ -199,12 +201,12 @@ MonoBehaviour:
   m_outlineColor:
     serializedVersion: 2
     rgba: 4278190080
-  m_fontSize: 20
+  m_fontSize: 15
   m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 1
-  m_fontSizeMin: 15
-  m_fontSizeMax: 20
+  m_fontSizeMin: 10
+  m_fontSizeMax: 15
   m_fontStyle: 0
   m_textAlignment: 514
   m_characterSpacing: 0

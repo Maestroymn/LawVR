@@ -1,8 +1,10 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
+using Photon.Pun;
 using UnityEngine;
 
-public class PlayerMove : MonoBehaviour
+public class PlayerMove : MonoBehaviourPunCallbacks
 {
     [SerializeField] private string horizontalInputName;
     [SerializeField] private string verticalInputName;
@@ -15,7 +17,7 @@ public class PlayerMove : MonoBehaviour
 
     [SerializeField] private float slopeForce;
     [SerializeField] private float slopeForceRayLength;
-
+    [SerializeField] private PlayerLook _cameraMove;
     private CharacterController charController;
 
     [SerializeField] private AnimationCurve jumpFallOff;
@@ -30,9 +32,24 @@ public class PlayerMove : MonoBehaviour
         charController = GetComponent<CharacterController>();
     }
 
+    private void Start()
+    {
+        if (!photonView.IsMine)
+        {
+            _cameraMove.gameObject.SetActive(false);
+        }
+    }
+
     private void Update()
     {
-        PlayerMovement();
+        if(!PhotonNetwork.IsConnected || !photonView.IsMine)
+            return;
+        if (photonView.IsMine)
+        {
+            Cursor.lockState = CursorLockMode.Locked;
+            PlayerMovement();
+            _cameraMove.CameraRotation();
+        }
     }
 
     private void PlayerMovement()

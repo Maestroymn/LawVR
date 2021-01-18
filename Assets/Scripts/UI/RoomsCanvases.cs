@@ -22,5 +22,9 @@ namespace UI
             JoinPublicRoomsCanvas.FirstInitialize(this);
         }
 
+        public void SetCurrentActiveCanvas(GameObject canvas)
+        {
+            UIManager.CurrentCanvas = canvas;
+        }
     }
 }

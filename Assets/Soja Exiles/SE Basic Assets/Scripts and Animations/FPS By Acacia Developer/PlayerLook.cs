@@ -1,34 +1,32 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using Photon.Pun;
 using UnityEngine;
 
-public class PlayerLook : MonoBehaviour
+public class PlayerLook : MonoBehaviourPunCallbacks
 {
     [SerializeField] private string mouseXInputName, mouseYInputName;
     [SerializeField] private float mouseSensitivity;
-
     [SerializeField] private Transform playerBody;
 
     private float xAxisClamp;
 
     private void Awake()
     {
-        LockCursor();
+        //LockCursor();
         xAxisClamp = 0.0f;
     }
 
 
-    private void LockCursor()
-    {
-        Cursor.lockState = CursorLockMode.Locked;
-    }
+    // private void LockCursor()
+    // {
+    //     if (photonView.IsMine)
+    //     {
+    //         Cursor.lockState = CursorLockMode.Locked;
+    //     }
+    // }
 
-    private void Update()
-    {
-        CameraRotation();
-    }
-
-    private void CameraRotation()
+    public void CameraRotation()
     {
         float mouseX = Input.GetAxis(mouseXInputName) * mouseSensitivity * Time.deltaTime;
         float mouseY = Input.GetAxis(mouseYInputName) * mouseSensitivity * Time.deltaTime;

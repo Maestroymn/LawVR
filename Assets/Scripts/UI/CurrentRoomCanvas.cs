@@ -1,6 +1,7 @@
 ﻿using Photon.Pun;
 using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 
 namespace UI
 {
@@ -8,16 +9,44 @@ namespace UI
     {
         private RoomsCanvases _roomsCanvases;
         [SerializeField] private TextMeshProUGUI _roomName;
+        [SerializeField] private Button StartSessionButton, ReadyButton;
         public void FirstInitialize(RoomsCanvases roomsCanvases)
         {
             _roomsCanvases = roomsCanvases;
         }
 
-        public void Show(string roomName)
+        public void Show(string roomName,bool isHost)
         {
             _roomName.text = roomName;
+            if (isHost)
+            {
+                ReadyButton.gameObject.SetActive(false);
+                SetStatusForStartSessionButton(false);
+            }
+            else
+            {
+                StartSessionButton.gameObject.SetActive(false);
+            }
             gameObject.SetActive(true);
             _roomsCanvases.HostRoomCanvas.Hide();
+        }
+
+        public void SetStatusForStartSessionButton(bool isActive)
+        {
+            var image = StartSessionButton.image;
+            var color = image.color;
+            if(isActive)
+            {
+                StartSessionButton.interactable = true;
+                color.a = 1f;
+                image.color = color;
+            }
+            else
+            {
+                StartSessionButton.interactable = false;
+                color.a = .5f;
+                image.color = color;
+            }
         }
         
         public void Hide()
@@ -28,20 +57,12 @@ namespace UI
             if (PhotonNetwork.IsMasterClient)
             {
                 _roomsCanvases.HostRoomCanvas.Show();
+                _roomsCanvases.SetCurrentActiveCanvas(_roomsCanvases.HostRoomCanvas.gameObject);
             }
             else
             {
                 _roomsCanvases.JoinRoomCanvas.Show();
-            }
-        }
-        public void OnSessionStarted()
-        {
-            if (PhotonNetwork.IsMasterClient)
-            {
-                //Locking room when the session started, if following bools are set to false, then no one can join after session started.
-                PhotonNetwork.CurrentRoom.IsOpen = false;
-                PhotonNetwork.CurrentRoom.IsVisible = false;
-                PhotonNetwork.LoadLevel(1);
+                _roomsCanvases.SetCurrentActiveCanvas(_roomsCanvases.JoinRoomCanvas.gameObject);
             }
         }
     }

@@ -51,7 +51,7 @@ namespace UI
         {
             Debug.Log("Room is created its name is "+_roomName.text+" and its password: "+_password.text);
            // PhotonNetwork.GetCustomRoomList(PhotonNetwork.CurrentLobby,null);
-           _roomsCanvases.CurrentRoomCanvas.Show(_roomName.text);
+           _roomsCanvases.CurrentRoomCanvas.Show(_roomName.text,true);
         }
         
         public override void OnCreateRoomFailed(short returnCode, string message)

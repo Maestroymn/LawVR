@@ -6,7 +6,7 @@ using UnityEngine;
 namespace AdvancedCustomizableSystem
 {
     [CustomEditor(typeof(CombinedCharacter))]
-    public class CombinedCharacterEditor : Editor
+    public class CombinedCharacterEditor : UnityEditor.Editor
     {
         CombinedCharacter cc;
         public override void OnInspectorGUI()
