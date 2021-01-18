@@ -227,6 +227,7 @@ SkinnedMeshRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -238,6 +239,7 @@ SkinnedMeshRenderer:
   m_ProbeAnchor: {fileID: 0}
   m_LightProbeVolumeOverride: {fileID: 0}
   m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
   m_PreserveUVs: 0
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
@@ -309,10 +311,10 @@ SkinnedMeshRenderer:
   - {fileID: 6531353470403735737}
   - {fileID: 5861305336286356401}
   m_BlendShapeWeights:
+  - 100
+  - 100
   - 0
-  - 0
-  - 0
-  - 0
+  - 60
   m_RootBone: {fileID: 9184825161814231056}
   m_AABB:
     m_Center: {x: 0.000000005122274, y: 0.01935458, z: -0.022495536}
@@ -520,6 +522,7 @@ SkinnedMeshRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -532,6 +535,7 @@ SkinnedMeshRenderer:
   m_ProbeAnchor: {fileID: 0}
   m_LightProbeVolumeOverride: {fileID: 0}
   m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
   m_PreserveUVs: 0
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
@@ -548,7 +552,7 @@ SkinnedMeshRenderer:
   m_Quality: 0
   m_UpdateWhenOffscreen: 1
   m_SkinnedMotionVectors: 1
-  m_Mesh: {fileID: 4300000, guid: 8136125023838f243bd846b9e6219416, type: 3}
+  m_Mesh: {fileID: 0}
   m_Bones:
   - {fileID: 4953673128373835970}
   - {fileID: 386073037403416828}
@@ -603,7 +607,7 @@ SkinnedMeshRenderer:
   - {fileID: 4442427738599274237}
   - {fileID: 132014532134897057}
   m_BlendShapeWeights:
-  - 0
+  - -100
   - 26
   - 0
   m_RootBone: {fileID: 4953673128373835970}
@@ -718,6 +722,7 @@ SkinnedMeshRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -729,6 +734,7 @@ SkinnedMeshRenderer:
   m_ProbeAnchor: {fileID: 0}
   m_LightProbeVolumeOverride: {fileID: 0}
   m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
   m_PreserveUVs: 0
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
@@ -800,8 +806,8 @@ SkinnedMeshRenderer:
   - {fileID: 6531353470403735737}
   - {fileID: 5861305336286356401}
   m_BlendShapeWeights:
-  - 0
-  - 0
+  - 100
+  - 100
   - 0
   m_RootBone: {fileID: 9184825161814231056}
   m_AABB:
@@ -945,6 +951,7 @@ SkinnedMeshRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -956,6 +963,7 @@ SkinnedMeshRenderer:
   m_ProbeAnchor: {fileID: 0}
   m_LightProbeVolumeOverride: {fileID: 0}
   m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
   m_PreserveUVs: 0
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
@@ -1027,8 +1035,8 @@ SkinnedMeshRenderer:
   - {fileID: 4236467263977631248}
   - {fileID: 6069169612332193694}
   m_BlendShapeWeights:
-  - 0
-  - 0
+  - 100
+  - 100
   - 0
   m_RootBone: {fileID: 7135124249318509270}
   m_AABB:
@@ -1180,6 +1188,7 @@ SkinnedMeshRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -1191,6 +1200,7 @@ SkinnedMeshRenderer:
   m_ProbeAnchor: {fileID: 0}
   m_LightProbeVolumeOverride: {fileID: 0}
   m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
   m_PreserveUVs: 0
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
@@ -1262,8 +1272,8 @@ SkinnedMeshRenderer:
   - {fileID: 4236467263977631248}
   - {fileID: 6069169612332193694}
   m_BlendShapeWeights:
-  - 0
-  - 0
+  - 100
+  - 100
   - 0
   m_RootBone: {fileID: 7135124249318509270}
   m_AABB:
@@ -1350,6 +1360,7 @@ SkinnedMeshRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -1361,6 +1372,7 @@ SkinnedMeshRenderer:
   m_ProbeAnchor: {fileID: 0}
   m_LightProbeVolumeOverride: {fileID: 0}
   m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
   m_PreserveUVs: 0
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
@@ -1432,8 +1444,8 @@ SkinnedMeshRenderer:
   - {fileID: 4236467263977631248}
   - {fileID: 6069169612332193694}
   m_BlendShapeWeights:
-  - 0
-  - 0
+  - 100
+  - 100
   - 0
   m_RootBone: {fileID: 7135124249318509270}
   m_AABB:
@@ -1485,6 +1497,7 @@ SkinnedMeshRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -1496,6 +1509,7 @@ SkinnedMeshRenderer:
   m_ProbeAnchor: {fileID: 0}
   m_LightProbeVolumeOverride: {fileID: 0}
   m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
   m_PreserveUVs: 0
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
@@ -1512,7 +1526,7 @@ SkinnedMeshRenderer:
   m_Quality: 0
   m_UpdateWhenOffscreen: 1
   m_SkinnedMotionVectors: 1
-  m_Mesh: {fileID: 4300000, guid: 3966e494e5231a34dab2ce9d0984bab0, type: 3}
+  m_Mesh: {fileID: 0}
   m_Bones:
   - {fileID: 9184825161814231056}
   - {fileID: 3978698104872157274}
@@ -1584,7 +1598,7 @@ SkinnedMeshRenderer:
   - 0
   - 0
   - 0
-  - 0
+  - -100
   m_RootBone: {fileID: 9184825161814231056}
   m_AABB:
     m_Center: {x: 0.000000005122274, y: 0.01935458, z: -0.022495529}
@@ -1665,6 +1679,7 @@ SkinnedMeshRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -1676,6 +1691,7 @@ SkinnedMeshRenderer:
   m_ProbeAnchor: {fileID: 0}
   m_LightProbeVolumeOverride: {fileID: 0}
   m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
   m_PreserveUVs: 0
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
@@ -1747,8 +1763,8 @@ SkinnedMeshRenderer:
   - {fileID: 674961572044741986}
   - {fileID: 2859780820203220519}
   m_BlendShapeWeights:
-  - 0
-  - 0
+  - 100
+  - 100
   - 0
   m_RootBone: {fileID: 5154455778428511640}
   m_AABB:
@@ -2119,6 +2135,7 @@ SkinnedMeshRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -2130,6 +2147,7 @@ SkinnedMeshRenderer:
   m_ProbeAnchor: {fileID: 0}
   m_LightProbeVolumeOverride: {fileID: 0}
   m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
   m_PreserveUVs: 0
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
@@ -2201,8 +2219,8 @@ SkinnedMeshRenderer:
   - {fileID: 4442427738599274237}
   - {fileID: 132014532134897057}
   m_BlendShapeWeights:
-  - 0
-  - 0
+  - 100
+  - 100
   - 0
   m_RootBone: {fileID: 4953673128373835970}
   m_AABB:
@@ -2407,6 +2425,7 @@ SkinnedMeshRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -2418,6 +2437,7 @@ SkinnedMeshRenderer:
   m_ProbeAnchor: {fileID: 0}
   m_LightProbeVolumeOverride: {fileID: 0}
   m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
   m_PreserveUVs: 0
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
@@ -2489,8 +2509,8 @@ SkinnedMeshRenderer:
   - {fileID: 674961572044741986}
   - {fileID: 2859780820203220519}
   m_BlendShapeWeights:
-  - 0
-  - 0
+  - 100
+  - 100
   - 0
   m_RootBone: {fileID: 5154455778428511640}
   m_AABB:
@@ -2542,6 +2562,7 @@ SkinnedMeshRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -2553,6 +2574,7 @@ SkinnedMeshRenderer:
   m_ProbeAnchor: {fileID: 0}
   m_LightProbeVolumeOverride: {fileID: 0}
   m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
   m_PreserveUVs: 0
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
@@ -2624,8 +2646,8 @@ SkinnedMeshRenderer:
   - {fileID: 6531353470403735737}
   - {fileID: 5861305336286356401}
   m_BlendShapeWeights:
-  - 0
-  - 0
+  - 100
+  - 100
   - 0
   m_RootBone: {fileID: 9184825161814231056}
   m_AABB:
@@ -2769,6 +2791,7 @@ SkinnedMeshRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -2780,6 +2803,7 @@ SkinnedMeshRenderer:
   m_ProbeAnchor: {fileID: 0}
   m_LightProbeVolumeOverride: {fileID: 0}
   m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
   m_PreserveUVs: 0
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
@@ -2851,8 +2875,8 @@ SkinnedMeshRenderer:
   - {fileID: 6531353470403735737}
   - {fileID: 5861305336286356401}
   m_BlendShapeWeights:
-  - 0
-  - 0
+  - 100
+  - 100
   - 0
   m_RootBone: {fileID: 9184825161814231056}
   m_AABB:
@@ -3027,6 +3051,7 @@ SkinnedMeshRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -3038,6 +3063,7 @@ SkinnedMeshRenderer:
   m_ProbeAnchor: {fileID: 0}
   m_LightProbeVolumeOverride: {fileID: 0}
   m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
   m_PreserveUVs: 0
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
@@ -3109,8 +3135,8 @@ SkinnedMeshRenderer:
   - {fileID: 674961572044741986}
   - {fileID: 2859780820203220519}
   m_BlendShapeWeights:
-  - 0
-  - 0
+  - 100
+  - 100
   - 0
   m_RootBone: {fileID: 5154455778428511640}
   m_AABB:
@@ -3162,6 +3188,7 @@ SkinnedMeshRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -3173,6 +3200,7 @@ SkinnedMeshRenderer:
   m_ProbeAnchor: {fileID: 0}
   m_LightProbeVolumeOverride: {fileID: 0}
   m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
   m_PreserveUVs: 0
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
@@ -3244,11 +3272,11 @@ SkinnedMeshRenderer:
   - {fileID: 674961572044741986}
   - {fileID: 2859780820203220519}
   m_BlendShapeWeights:
+  - 100
+  - 100
   - 0
-  - 0
-  - 0
-  - 0
-  - 0
+  - 60
+  - 47
   - 0
   - -39
   - -48
@@ -3278,6 +3306,7 @@ SkinnedMeshRenderer:
   - 0
   - 0
   - 0
+  - 38
   - 0
   - 0
   - 0
@@ -3286,12 +3315,11 @@ SkinnedMeshRenderer:
   - 0
   - 0
   - 0
+  - 100
   - 0
   - 0
-  - 0
-  - 0
-  - 0
-  - 0
+  - 100
+  - -100
   m_RootBone: {fileID: 5154455778428511640}
   m_AABB:
     m_Center: {x: 0.00005986169, y: 0.7044535, z: -0.09442213}
@@ -3342,6 +3370,7 @@ SkinnedMeshRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -3353,6 +3382,7 @@ SkinnedMeshRenderer:
   m_ProbeAnchor: {fileID: 0}
   m_LightProbeVolumeOverride: {fileID: 0}
   m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
   m_PreserveUVs: 0
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
@@ -3424,8 +3454,8 @@ SkinnedMeshRenderer:
   - {fileID: 674961572044741986}
   - {fileID: 2859780820203220519}
   m_BlendShapeWeights:
-  - 0
-  - 0
+  - 100
+  - 100
   - 0
   m_RootBone: {fileID: 5154455778428511640}
   m_AABB:
@@ -3598,6 +3628,7 @@ SkinnedMeshRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -3609,6 +3640,7 @@ SkinnedMeshRenderer:
   m_ProbeAnchor: {fileID: 0}
   m_LightProbeVolumeOverride: {fileID: 0}
   m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
   m_PreserveUVs: 0
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
@@ -3680,11 +3712,11 @@ SkinnedMeshRenderer:
   - {fileID: 4442427738599274237}
   - {fileID: 132014532134897057}
   m_BlendShapeWeights:
+  - 100
+  - 100
   - 0
-  - 0
-  - 0
-  - 0
-  - 0
+  - 60
+  - 47
   - 0
   - -39
   - -48
@@ -3712,12 +3744,12 @@ SkinnedMeshRenderer:
   - 0
   - 0
   - 0
+  - 38
   - 0
   - 0
   - 0
   - 0
-  - 0
-  - 0
+  - -100
   m_RootBone: {fileID: 4953673128373835970}
   m_AABB:
     m_Center: {x: -0.000012092292, y: 0.708002, z: -0.09315449}
@@ -3923,6 +3955,7 @@ SkinnedMeshRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -3935,6 +3968,7 @@ SkinnedMeshRenderer:
   m_ProbeAnchor: {fileID: 0}
   m_LightProbeVolumeOverride: {fileID: 0}
   m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
   m_PreserveUVs: 0
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
@@ -3951,7 +3985,7 @@ SkinnedMeshRenderer:
   m_Quality: 0
   m_UpdateWhenOffscreen: 1
   m_SkinnedMotionVectors: 1
-  m_Mesh: {fileID: 4300000, guid: 3781a1345819d394eb50f3a159ce990a, type: 3}
+  m_Mesh: {fileID: 0}
   m_Bones:
   - {fileID: 5154455778428511640}
   - {fileID: 2494998646915488473}
@@ -4006,7 +4040,7 @@ SkinnedMeshRenderer:
   - {fileID: 674961572044741986}
   - {fileID: 2859780820203220519}
   m_BlendShapeWeights:
-  - 0
+  - -100
   - 26
   - 0
   m_RootBone: {fileID: 5154455778428511640}
@@ -4090,6 +4124,7 @@ SkinnedMeshRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -4101,6 +4136,7 @@ SkinnedMeshRenderer:
   m_ProbeAnchor: {fileID: 0}
   m_LightProbeVolumeOverride: {fileID: 0}
   m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
   m_PreserveUVs: 0
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
@@ -4172,8 +4208,8 @@ SkinnedMeshRenderer:
   - {fileID: 6531353470403735737}
   - {fileID: 5861305336286356401}
   m_BlendShapeWeights:
-  - 0
-  - 0
+  - 100
+  - 100
   - 0
   m_RootBone: {fileID: 9184825161814231056}
   m_AABB:
@@ -4255,6 +4291,7 @@ SkinnedMeshRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -4266,6 +4303,7 @@ SkinnedMeshRenderer:
   m_ProbeAnchor: {fileID: 0}
   m_LightProbeVolumeOverride: {fileID: 0}
   m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
   m_PreserveUVs: 0
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
@@ -4337,8 +4375,8 @@ SkinnedMeshRenderer:
   - {fileID: 4442427738599274237}
   - {fileID: 132014532134897057}
   m_BlendShapeWeights:
-  - 0
-  - 0
+  - 100
+  - 100
   - 0
   m_RootBone: {fileID: 4953673128373835970}
   m_AABB:
@@ -4545,6 +4583,7 @@ SkinnedMeshRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -4556,6 +4595,7 @@ SkinnedMeshRenderer:
   m_ProbeAnchor: {fileID: 0}
   m_LightProbeVolumeOverride: {fileID: 0}
   m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
   m_PreserveUVs: 0
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
@@ -4627,8 +4667,8 @@ SkinnedMeshRenderer:
   - {fileID: 674961572044741986}
   - {fileID: 2859780820203220519}
   m_BlendShapeWeights:
-  - 0
-  - 0
+  - 100
+  - 100
   - 0
   m_RootBone: {fileID: 5154455778428511640}
   m_AABB:
@@ -4744,6 +4784,7 @@ SkinnedMeshRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -4755,6 +4796,7 @@ SkinnedMeshRenderer:
   m_ProbeAnchor: {fileID: 0}
   m_LightProbeVolumeOverride: {fileID: 0}
   m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
   m_PreserveUVs: 0
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
@@ -4826,8 +4868,8 @@ SkinnedMeshRenderer:
   - {fileID: 4442427738599274237}
   - {fileID: 132014532134897057}
   m_BlendShapeWeights:
-  - 0
-  - 0
+  - 100
+  - 100
   - 0
   m_RootBone: {fileID: 4953673128373835970}
   m_AABB:
@@ -4859,7 +4901,7 @@ Transform:
   m_GameObject: {fileID: 2859469463586571997}
   m_LocalRotation: {x: -0.14125372, y: 0.0000002330379, z: 0.0000000651565, w: 0.9899734}
   m_LocalPosition: {x: -3.4083847e-14, y: 0.08705419, z: 0.00000004004687}
-  m_LocalScale: {x: 1.03, y: 1.03, z: 1.03}
+  m_LocalScale: {x: 1.25, y: 1.25, z: 1.25}
   m_Children: []
   m_Father: {fileID: 9108437632690882937}
   m_RootOrder: 0
@@ -5001,6 +5043,7 @@ SkinnedMeshRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -5012,6 +5055,7 @@ SkinnedMeshRenderer:
   m_ProbeAnchor: {fileID: 0}
   m_LightProbeVolumeOverride: {fileID: 0}
   m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
   m_PreserveUVs: 0
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
@@ -5083,8 +5127,8 @@ SkinnedMeshRenderer:
   - {fileID: 4442427738599274237}
   - {fileID: 132014532134897057}
   m_BlendShapeWeights:
-  - 0
-  - 0
+  - 100
+  - 100
   - 0
   - 0
   m_RootBone: {fileID: 4953673128373835970}
@@ -5198,6 +5242,7 @@ SkinnedMeshRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -5209,6 +5254,7 @@ SkinnedMeshRenderer:
   m_ProbeAnchor: {fileID: 0}
   m_LightProbeVolumeOverride: {fileID: 0}
   m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
   m_PreserveUVs: 0
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
@@ -5280,10 +5326,10 @@ SkinnedMeshRenderer:
   - {fileID: 4236467263977631248}
   - {fileID: 6069169612332193694}
   m_BlendShapeWeights:
+  - 100
+  - 100
   - 0
-  - 0
-  - 0
-  - 0
+  - 60
   - -39
   - -48
   - 0
@@ -5294,7 +5340,7 @@ SkinnedMeshRenderer:
   - 0
   - 0
   - 26
-  - 0
+  - -100
   m_RootBone: {fileID: 7135124249318509270}
   m_AABB:
     m_Center: {x: -0.00001341477, y: 0.6994778, z: -0.09342727}
@@ -5356,7 +5402,7 @@ Transform:
   m_GameObject: {fileID: 3036402232825671472}
   m_LocalRotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071067}
   m_LocalPosition: {x: -0, y: 0, z: 0}
-  m_LocalScale: {x: 1.0078666, y: 1.0118, z: 1.0118}
+  m_LocalScale: {x: 1.04, y: 1.06, z: 1.06}
   m_Children:
   - {fileID: 5154455778428511640}
   m_Father: {fileID: 7252979278783126044}
@@ -5387,7 +5433,7 @@ Transform:
   m_GameObject: {fileID: 3039657235704267605}
   m_LocalRotation: {x: -0.14125372, y: 0.0000002330379, z: 0.0000000651565, w: 0.9899734}
   m_LocalPosition: {x: -3.4083847e-14, y: 0.08705419, z: 0.00000004004687}
-  m_LocalScale: {x: 1.03, y: 1.03, z: 1.03}
+  m_LocalScale: {x: 1.25, y: 1.25, z: 1.25}
   m_Children: []
   m_Father: {fileID: 5536105297008323097}
   m_RootOrder: 0
@@ -5622,6 +5668,7 @@ SkinnedMeshRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -5633,6 +5680,7 @@ SkinnedMeshRenderer:
   m_ProbeAnchor: {fileID: 0}
   m_LightProbeVolumeOverride: {fileID: 0}
   m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
   m_PreserveUVs: 0
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
@@ -5704,8 +5752,8 @@ SkinnedMeshRenderer:
   - {fileID: 6531353470403735737}
   - {fileID: 5861305336286356401}
   m_BlendShapeWeights:
-  - 0
-  - 0
+  - 100
+  - 100
   - 0
   m_RootBone: {fileID: 9184825161814231056}
   m_AABB:
@@ -6006,6 +6054,7 @@ SkinnedMeshRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -6017,6 +6066,7 @@ SkinnedMeshRenderer:
   m_ProbeAnchor: {fileID: 0}
   m_LightProbeVolumeOverride: {fileID: 0}
   m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
   m_PreserveUVs: 0
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
@@ -6088,8 +6138,8 @@ SkinnedMeshRenderer:
   - {fileID: 4442427738599274237}
   - {fileID: 132014532134897057}
   m_BlendShapeWeights:
-  - 0
-  - 0
+  - 100
+  - 100
   - 0
   m_RootBone: {fileID: 4953673128373835970}
   m_AABB:
@@ -6141,6 +6191,7 @@ SkinnedMeshRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -6152,6 +6203,7 @@ SkinnedMeshRenderer:
   m_ProbeAnchor: {fileID: 0}
   m_LightProbeVolumeOverride: {fileID: 0}
   m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
   m_PreserveUVs: 0
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
@@ -6223,8 +6275,8 @@ SkinnedMeshRenderer:
   - {fileID: 4442427738599274237}
   - {fileID: 132014532134897057}
   m_BlendShapeWeights:
-  - 0
-  - 0
+  - 100
+  - 100
   - 0
   m_RootBone: {fileID: 4953673128373835970}
   m_AABB:
@@ -6276,6 +6328,7 @@ SkinnedMeshRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -6287,6 +6340,7 @@ SkinnedMeshRenderer:
   m_ProbeAnchor: {fileID: 0}
   m_LightProbeVolumeOverride: {fileID: 0}
   m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
   m_PreserveUVs: 0
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
@@ -6358,8 +6412,8 @@ SkinnedMeshRenderer:
   - {fileID: 674961572044741986}
   - {fileID: 2859780820203220519}
   m_BlendShapeWeights:
-  - 0
-  - 0
+  - 100
+  - 100
   - 0
   m_RootBone: {fileID: 5154455778428511640}
   m_AABB:
@@ -6411,6 +6465,7 @@ SkinnedMeshRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -6422,6 +6477,7 @@ SkinnedMeshRenderer:
   m_ProbeAnchor: {fileID: 0}
   m_LightProbeVolumeOverride: {fileID: 0}
   m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
   m_PreserveUVs: 0
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
@@ -6493,8 +6549,8 @@ SkinnedMeshRenderer:
   - {fileID: 674961572044741986}
   - {fileID: 2859780820203220519}
   m_BlendShapeWeights:
-  - 0
-  - 0
+  - 100
+  - 100
   - 0
   m_RootBone: {fileID: 5154455778428511640}
   m_AABB:
@@ -6557,7 +6613,7 @@ Transform:
   m_GameObject: {fileID: 3849982594192024372}
   m_LocalRotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071067}
   m_LocalPosition: {x: -0, y: 0, z: 0}
-  m_LocalScale: {x: 1.0078666, y: 1.0118, z: 1.0118}
+  m_LocalScale: {x: 1.04, y: 1.06, z: 1.06}
   m_Children:
   - {fileID: 9184825161814231056}
   m_Father: {fileID: 7603181808529391150}
@@ -6608,6 +6664,7 @@ SkinnedMeshRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -6619,6 +6676,7 @@ SkinnedMeshRenderer:
   m_ProbeAnchor: {fileID: 0}
   m_LightProbeVolumeOverride: {fileID: 0}
   m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
   m_PreserveUVs: 0
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
@@ -6690,8 +6748,8 @@ SkinnedMeshRenderer:
   - {fileID: 4442427738599274237}
   - {fileID: 132014532134897057}
   m_BlendShapeWeights:
-  - 0
-  - 0
+  - 100
+  - 100
   - 0
   m_RootBone: {fileID: 4953673128373835970}
   m_AABB:
@@ -6723,7 +6781,7 @@ Transform:
   m_GameObject: {fileID: 3876484860293858031}
   m_LocalRotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071067}
   m_LocalPosition: {x: -0, y: 0, z: 0}
-  m_LocalScale: {x: 1.0078666, y: 1.0118, z: 1.0118}
+  m_LocalScale: {x: 1.04, y: 1.06, z: 1.06}
   m_Children:
   - {fileID: 7135124249318509270}
   m_Father: {fileID: 3195139309120599191}
@@ -6774,6 +6832,7 @@ SkinnedMeshRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -6785,6 +6844,7 @@ SkinnedMeshRenderer:
   m_ProbeAnchor: {fileID: 0}
   m_LightProbeVolumeOverride: {fileID: 0}
   m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
   m_PreserveUVs: 0
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
@@ -6856,7 +6916,7 @@ SkinnedMeshRenderer:
   - {fileID: 4236467263977631248}
   - {fileID: 6069169612332193694}
   m_BlendShapeWeights:
-  - 0
+  - -100
   m_RootBone: {fileID: 7135124249318509270}
   m_AABB:
     m_Center: {x: 0.000000029802322, y: 0.761809, z: -0.1180933}
@@ -7276,6 +7336,7 @@ SkinnedMeshRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -7287,6 +7348,7 @@ SkinnedMeshRenderer:
   m_ProbeAnchor: {fileID: 0}
   m_LightProbeVolumeOverride: {fileID: 0}
   m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
   m_PreserveUVs: 0
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
@@ -7358,10 +7420,10 @@ SkinnedMeshRenderer:
   - {fileID: 674961572044741986}
   - {fileID: 2859780820203220519}
   m_BlendShapeWeights:
+  - 100
+  - 100
   - 0
-  - 0
-  - 0
-  - 0
+  - 60
   m_RootBone: {fileID: 5154455778428511640}
   m_AABB:
     m_Center: {x: 0.000000005122274, y: 0.01935458, z: -0.022495536}
@@ -7447,6 +7509,7 @@ SkinnedMeshRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -7458,6 +7521,7 @@ SkinnedMeshRenderer:
   m_ProbeAnchor: {fileID: 0}
   m_LightProbeVolumeOverride: {fileID: 0}
   m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
   m_PreserveUVs: 0
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
@@ -7529,8 +7593,8 @@ SkinnedMeshRenderer:
   - {fileID: 4236467263977631248}
   - {fileID: 6069169612332193694}
   m_BlendShapeWeights:
-  - 0
-  - 0
+  - 100
+  - 100
   - 0
   m_RootBone: {fileID: 7135124249318509270}
   m_AABB:
@@ -7643,6 +7707,7 @@ SkinnedMeshRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -7654,6 +7719,7 @@ SkinnedMeshRenderer:
   m_ProbeAnchor: {fileID: 0}
   m_LightProbeVolumeOverride: {fileID: 0}
   m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
   m_PreserveUVs: 0
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
@@ -7725,8 +7791,8 @@ SkinnedMeshRenderer:
   - {fileID: 6531353470403735737}
   - {fileID: 5861305336286356401}
   m_BlendShapeWeights:
-  - 0
-  - 0
+  - 100
+  - 100
   - 0
   m_RootBone: {fileID: 9184825161814231056}
   m_AABB:
@@ -7778,6 +7844,7 @@ SkinnedMeshRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -7789,6 +7856,7 @@ SkinnedMeshRenderer:
   m_ProbeAnchor: {fileID: 0}
   m_LightProbeVolumeOverride: {fileID: 0}
   m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
   m_PreserveUVs: 0
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
@@ -7860,8 +7928,8 @@ SkinnedMeshRenderer:
   - {fileID: 4236467263977631248}
   - {fileID: 6069169612332193694}
   m_BlendShapeWeights:
-  - 0
-  - 0
+  - 100
+  - 100
   - 0
   m_RootBone: {fileID: 7135124249318509270}
   m_AABB:
@@ -7975,6 +8043,7 @@ SkinnedMeshRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -7986,6 +8055,7 @@ SkinnedMeshRenderer:
   m_ProbeAnchor: {fileID: 0}
   m_LightProbeVolumeOverride: {fileID: 0}
   m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
   m_PreserveUVs: 0
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
@@ -8057,11 +8127,11 @@ SkinnedMeshRenderer:
   - {fileID: 6531353470403735737}
   - {fileID: 5861305336286356401}
   m_BlendShapeWeights:
+  - 100
+  - 100
   - 0
-  - 0
-  - 0
-  - 0
-  - 0
+  - 60
+  - 47
   - 0
   - -39
   - -48
@@ -8089,12 +8159,12 @@ SkinnedMeshRenderer:
   - 0
   - 0
   - 0
+  - 38
   - 0
   - 0
   - 0
   - 0
-  - 0
-  - 0
+  - -100
   m_RootBone: {fileID: 9184825161814231056}
   m_AABB:
     m_Center: {x: -0.00023309514, y: 0.703596, z: -0.09613674}
@@ -9355,7 +9425,7 @@ MonoBehaviour:
   basicAvatar: {fileID: 9000000, guid: 1b8f3f34252d9ee44823ab05504b31a8, type: 3}
   CharacterGeneratorSettings: {fileID: 11400000, guid: 9d338fc758b43984b86fa986b9df3726,
     type: 2}
-  StartupSerializationApplied: '{"Hair":4,"Hat":-1,"TShirt":4,"Pants":4,"Shoes":4,"Beard":3,"Accessory":11,"Fat":0.0,"Muscles":0.0,"Slimness":0.0,"Thin":0.0,"BreastSize":0.0,"Neck_Width":0.0,"Ear_Size":0.0,"Ear_Angle":0.0,"Jaw_Width":-39.0,"Jaw_Shift":0.0,"Jaw_Offset":-48.0,"Cheek_Size":0.0,"Chin_Offset":0.0,"Eye_Width":0.0,"Eye_Form":0.0,"Eye_InnerCorner":0.0,"Eye_Corner":0.0,"Eye_Rotation":-26.0,"Eye_Offset":0.0,"Eye_ScaleX":23.0,"Eye_ScaleY":0.0,"Eye_Size":0.0,"Eye_Close":0.0,"Eye_Height":26.0,"Brow_Height":0.0,"Brow_Shape":0.0,"Brow_Thickness":0.0,"Brow_Length":0.0,"Nose_Length":0.0,"Nose_Size":0.0,"Nose_Angle":0.0,"Nose_Offset":0.0,"Nose_Bridge":0.0,"Nose_Hump":0.0,"Mouth_Offset":0.0,"Mouth_Width":0.0,"Mouth_Size":0.0,"Mouth_Open":0.0,"Mouth_Bulging":0.0,"LipsCorners_Offset":0.0,"Face_Form":0.0,"Chin_Width":0.0,"Chin_Form":0.0,"Head_Offset":0.0,"Height":0.011800000444054604,"Smile":0.0,"Sadness":0.0,"Surprise":0.0,"Thoughtful":0.0,"Angry":0.0,"HeadSize":0.029999999329447748,"SkinColor":{"r":0.8679245114326477,"g":0.5573326945304871,"b":0.4544321298599243,"a":1.0},"EyeColor":{"r":0.1365254521369934,"g":0.24640023708343507,"b":0.4905660152435303,"a":0.0},"HairColor":{"r":0.5471698045730591,"g":0.43893009424209597,"b":0.28132787346839907,"a":0.0},"UnderpantsColor":{"r":0.5660377740859985,"g":0.5660377740859985,"b":0.5660377740859985,"a":1.0}}'
+  StartupSerializationApplied: '{"Hair":4,"Hat":-1,"TShirt":4,"Pants":4,"Shoes":4,"Beard":-1,"Accessory":-1,"Fat":100.0,"Muscles":100.0,"Slimness":0.0,"Thin":0.0,"BreastSize":0.0,"Neck_Width":60.0,"Ear_Size":47.0,"Ear_Angle":0.0,"Jaw_Width":-39.0,"Jaw_Shift":0.0,"Jaw_Offset":-48.0,"Cheek_Size":0.0,"Chin_Offset":0.0,"Eye_Width":0.0,"Eye_Form":0.0,"Eye_InnerCorner":0.0,"Eye_Corner":0.0,"Eye_Rotation":-26.0,"Eye_Offset":0.0,"Eye_ScaleX":23.0,"Eye_ScaleY":0.0,"Eye_Size":0.0,"Eye_Close":0.0,"Eye_Height":26.0,"Brow_Height":0.0,"Brow_Shape":0.0,"Brow_Thickness":0.0,"Brow_Length":0.0,"Nose_Length":0.0,"Nose_Size":0.0,"Nose_Angle":0.0,"Nose_Offset":0.0,"Nose_Bridge":0.0,"Nose_Hump":0.0,"Mouth_Offset":0.0,"Mouth_Width":38.0,"Mouth_Size":0.0,"Mouth_Open":0.0,"Mouth_Bulging":0.0,"LipsCorners_Offset":0.0,"Face_Form":0.0,"Chin_Width":0.0,"Chin_Form":0.0,"Head_Offset":-100.0,"Height":0.05999999865889549,"Smile":0.0,"Sadness":100.0,"Surprise":0.0,"Thoughtful":0.0,"Angry":100.0,"HeadSize":0.25,"SkinColor":{"r":0.8679245114326477,"g":0.5573326945304871,"b":0.4544321298599243,"a":1.0},"EyeColor":{"r":0.1365254521369934,"g":0.24640023708343507,"b":0.4905660152435303,"a":0.0},"HairColor":{"r":0.5471698045730591,"g":0.43893009424209597,"b":0.28132787346839907,"a":0.0},"UnderpantsColor":{"r":0.5660377740859985,"g":0.5660377740859985,"b":0.5660377740859985,"a":1.0}}'
   UseRootMotion: 1
   MinLODLevels: 0
   MaxLODLevels: 3
@@ -9542,6 +9612,7 @@ SkinnedMeshRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -9553,6 +9624,7 @@ SkinnedMeshRenderer:
   m_ProbeAnchor: {fileID: 0}
   m_LightProbeVolumeOverride: {fileID: 0}
   m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
   m_PreserveUVs: 0
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
@@ -9624,7 +9696,7 @@ SkinnedMeshRenderer:
   - {fileID: 4442427738599274237}
   - {fileID: 132014532134897057}
   m_BlendShapeWeights:
-  - 0
+  - -100
   m_RootBone: {fileID: 4953673128373835970}
   m_AABB:
     m_Center: {x: 0.000000022351742, y: 0.7677411, z: -0.116154924}
@@ -9675,6 +9747,7 @@ SkinnedMeshRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -9686,6 +9759,7 @@ SkinnedMeshRenderer:
   m_ProbeAnchor: {fileID: 0}
   m_LightProbeVolumeOverride: {fileID: 0}
   m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
   m_PreserveUVs: 0
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
@@ -9936,7 +10010,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fbc556e9f77ad964bb884057d41a568a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MainScript: {fileID: 4804512396188284876}
 --- !u!1 &4937827429225621601
 GameObject:
   m_ObjectHideFlags: 0
@@ -10136,6 +10209,7 @@ SkinnedMeshRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -10147,6 +10221,7 @@ SkinnedMeshRenderer:
   m_ProbeAnchor: {fileID: 0}
   m_LightProbeVolumeOverride: {fileID: 0}
   m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
   m_PreserveUVs: 0
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
@@ -10218,8 +10293,8 @@ SkinnedMeshRenderer:
   - {fileID: 4442427738599274237}
   - {fileID: 132014532134897057}
   m_BlendShapeWeights:
-  - 0
-  - 0
+  - 100
+  - 100
   - 0
   m_RootBone: {fileID: 4953673128373835970}
   m_AABB:
@@ -10271,6 +10346,7 @@ SkinnedMeshRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -10283,6 +10359,7 @@ SkinnedMeshRenderer:
   m_ProbeAnchor: {fileID: 0}
   m_LightProbeVolumeOverride: {fileID: 0}
   m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
   m_PreserveUVs: 0
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
@@ -10299,7 +10376,7 @@ SkinnedMeshRenderer:
   m_Quality: 0
   m_UpdateWhenOffscreen: 1
   m_SkinnedMotionVectors: 1
-  m_Mesh: {fileID: 4300000, guid: 3b7f5c2c313f53446876b29e7438e54d, type: 3}
+  m_Mesh: {fileID: 0}
   m_Bones:
   - {fileID: 9184825161814231056}
   - {fileID: 3978698104872157274}
@@ -10354,7 +10431,7 @@ SkinnedMeshRenderer:
   - {fileID: 6531353470403735737}
   - {fileID: 5861305336286356401}
   m_BlendShapeWeights:
-  - 0
+  - -100
   - 26
   - 0
   m_RootBone: {fileID: 9184825161814231056}
@@ -10561,6 +10638,7 @@ SkinnedMeshRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -10572,6 +10650,7 @@ SkinnedMeshRenderer:
   m_ProbeAnchor: {fileID: 0}
   m_LightProbeVolumeOverride: {fileID: 0}
   m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
   m_PreserveUVs: 0
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
@@ -10643,8 +10722,8 @@ SkinnedMeshRenderer:
   - {fileID: 4236467263977631248}
   - {fileID: 6069169612332193694}
   m_BlendShapeWeights:
-  - 0
-  - 0
+  - 100
+  - 100
   - 0
   m_RootBone: {fileID: 7135124249318509270}
   m_AABB:
@@ -10696,6 +10775,7 @@ SkinnedMeshRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -10707,6 +10787,7 @@ SkinnedMeshRenderer:
   m_ProbeAnchor: {fileID: 0}
   m_LightProbeVolumeOverride: {fileID: 0}
   m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
   m_PreserveUVs: 0
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
@@ -10778,8 +10859,8 @@ SkinnedMeshRenderer:
   - {fileID: 6531353470403735737}
   - {fileID: 5861305336286356401}
   m_BlendShapeWeights:
-  - 0
-  - 0
+  - 100
+  - 100
   - 0
   m_RootBone: {fileID: 9184825161814231056}
   m_AABB:
@@ -10934,7 +11015,7 @@ Transform:
   m_GameObject: {fileID: 5560329012277433153}
   m_LocalRotation: {x: -0.14125372, y: 0.0000002330379, z: 0.0000000651565, w: 0.9899734}
   m_LocalPosition: {x: -3.4083847e-14, y: 0.08705419, z: 0.00000004004687}
-  m_LocalScale: {x: 1.03, y: 1.03, z: 1.03}
+  m_LocalScale: {x: 1.25, y: 1.25, z: 1.25}
   m_Children: []
   m_Father: {fileID: 3289525479431982733}
   m_RootOrder: 0
@@ -11015,6 +11096,7 @@ SkinnedMeshRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -11026,6 +11108,7 @@ SkinnedMeshRenderer:
   m_ProbeAnchor: {fileID: 0}
   m_LightProbeVolumeOverride: {fileID: 0}
   m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
   m_PreserveUVs: 0
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
@@ -11097,8 +11180,8 @@ SkinnedMeshRenderer:
   - {fileID: 4236467263977631248}
   - {fileID: 6069169612332193694}
   m_BlendShapeWeights:
-  - 0
-  - 0
+  - 100
+  - 100
   - 0
   m_RootBone: {fileID: 7135124249318509270}
   m_AABB:
@@ -11180,6 +11263,7 @@ SkinnedMeshRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -11191,6 +11275,7 @@ SkinnedMeshRenderer:
   m_ProbeAnchor: {fileID: 0}
   m_LightProbeVolumeOverride: {fileID: 0}
   m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
   m_PreserveUVs: 0
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
@@ -11262,8 +11347,8 @@ SkinnedMeshRenderer:
   - {fileID: 6531353470403735737}
   - {fileID: 5861305336286356401}
   m_BlendShapeWeights:
-  - 0
-  - 0
+  - 100
+  - 100
   - 0
   m_RootBone: {fileID: 9184825161814231056}
   m_AABB:
@@ -11500,6 +11585,7 @@ SkinnedMeshRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -11511,6 +11597,7 @@ SkinnedMeshRenderer:
   m_ProbeAnchor: {fileID: 0}
   m_LightProbeVolumeOverride: {fileID: 0}
   m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
   m_PreserveUVs: 0
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
@@ -11582,8 +11669,8 @@ SkinnedMeshRenderer:
   - {fileID: 4442427738599274237}
   - {fileID: 132014532134897057}
   m_BlendShapeWeights:
-  - 0
-  - 0
+  - 100
+  - 100
   - 0
   m_RootBone: {fileID: 4953673128373835970}
   m_AABB:
@@ -11635,6 +11722,7 @@ SkinnedMeshRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -11646,6 +11734,7 @@ SkinnedMeshRenderer:
   m_ProbeAnchor: {fileID: 0}
   m_LightProbeVolumeOverride: {fileID: 0}
   m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
   m_PreserveUVs: 0
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
@@ -11717,8 +11806,8 @@ SkinnedMeshRenderer:
   - {fileID: 4236467263977631248}
   - {fileID: 6069169612332193694}
   m_BlendShapeWeights:
-  - 0
-  - 0
+  - 100
+  - 100
   - 0
   m_RootBone: {fileID: 7135124249318509270}
   m_AABB:
@@ -11770,6 +11859,7 @@ SkinnedMeshRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -11781,6 +11871,7 @@ SkinnedMeshRenderer:
   m_ProbeAnchor: {fileID: 0}
   m_LightProbeVolumeOverride: {fileID: 0}
   m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
   m_PreserveUVs: 0
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
@@ -11852,8 +11943,8 @@ SkinnedMeshRenderer:
   - {fileID: 674961572044741986}
   - {fileID: 2859780820203220519}
   m_BlendShapeWeights:
-  - 0
-  - 0
+  - 100
+  - 100
   - 0
   m_RootBone: {fileID: 5154455778428511640}
   m_AABB:
@@ -11967,6 +12058,7 @@ SkinnedMeshRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -11979,6 +12071,7 @@ SkinnedMeshRenderer:
   m_ProbeAnchor: {fileID: 0}
   m_LightProbeVolumeOverride: {fileID: 0}
   m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
   m_PreserveUVs: 0
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
@@ -11995,7 +12088,7 @@ SkinnedMeshRenderer:
   m_Quality: 0
   m_UpdateWhenOffscreen: 1
   m_SkinnedMotionVectors: 1
-  m_Mesh: {fileID: 4300000, guid: 725f0b5c870710543bf7ea97e9de4bc5, type: 3}
+  m_Mesh: {fileID: 0}
   m_Bones:
   - {fileID: 7135124249318509270}
   - {fileID: 7364564256369218682}
@@ -12050,7 +12143,7 @@ SkinnedMeshRenderer:
   - {fileID: 4236467263977631248}
   - {fileID: 6069169612332193694}
   m_BlendShapeWeights:
-  - 0
+  - -100
   - 0
   - 0
   m_RootBone: {fileID: 7135124249318509270}
@@ -12290,6 +12383,7 @@ SkinnedMeshRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -12301,6 +12395,7 @@ SkinnedMeshRenderer:
   m_ProbeAnchor: {fileID: 0}
   m_LightProbeVolumeOverride: {fileID: 0}
   m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
   m_PreserveUVs: 0
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
@@ -12372,8 +12467,8 @@ SkinnedMeshRenderer:
   - {fileID: 4236467263977631248}
   - {fileID: 6069169612332193694}
   m_BlendShapeWeights:
-  - 0
-  - 0
+  - 100
+  - 100
   - 0
   - 0
   m_RootBone: {fileID: 7135124249318509270}
@@ -12487,6 +12582,7 @@ SkinnedMeshRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -12498,6 +12594,7 @@ SkinnedMeshRenderer:
   m_ProbeAnchor: {fileID: 0}
   m_LightProbeVolumeOverride: {fileID: 0}
   m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
   m_PreserveUVs: 0
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
@@ -12569,8 +12666,8 @@ SkinnedMeshRenderer:
   - {fileID: 4442427738599274237}
   - {fileID: 132014532134897057}
   m_BlendShapeWeights:
-  - 0
-  - 0
+  - 100
+  - 100
   - 0
   m_RootBone: {fileID: 4953673128373835970}
   m_AABB:
@@ -12622,6 +12719,7 @@ SkinnedMeshRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -12633,6 +12731,7 @@ SkinnedMeshRenderer:
   m_ProbeAnchor: {fileID: 0}
   m_LightProbeVolumeOverride: {fileID: 0}
   m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
   m_PreserveUVs: 0
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
@@ -12704,8 +12803,8 @@ SkinnedMeshRenderer:
   - {fileID: 674961572044741986}
   - {fileID: 2859780820203220519}
   m_BlendShapeWeights:
-  - 0
-  - 0
+  - 100
+  - 100
   - 0
   m_RootBone: {fileID: 5154455778428511640}
   m_AABB:
@@ -12792,6 +12891,7 @@ SkinnedMeshRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -12803,6 +12903,7 @@ SkinnedMeshRenderer:
   m_ProbeAnchor: {fileID: 0}
   m_LightProbeVolumeOverride: {fileID: 0}
   m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
   m_PreserveUVs: 0
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
@@ -12819,7 +12920,7 @@ SkinnedMeshRenderer:
   m_Quality: 0
   m_UpdateWhenOffscreen: 1
   m_SkinnedMotionVectors: 1
-  m_Mesh: {fileID: 4300000, guid: d5f130fdf4d89424fa311ecac5908c69, type: 3}
+  m_Mesh: {fileID: 0}
   m_Bones:
   - {fileID: 4953673128373835970}
   - {fileID: 386073037403416828}
@@ -12891,7 +12992,7 @@ SkinnedMeshRenderer:
   - 0
   - 0
   - 0
-  - 0
+  - -100
   m_RootBone: {fileID: 4953673128373835970}
   m_AABB:
     m_Center: {x: 0.000000005122274, y: 0.01935458, z: -0.022495529}
@@ -12942,6 +13043,7 @@ SkinnedMeshRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -12953,6 +13055,7 @@ SkinnedMeshRenderer:
   m_ProbeAnchor: {fileID: 0}
   m_LightProbeVolumeOverride: {fileID: 0}
   m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
   m_PreserveUVs: 0
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
@@ -13024,8 +13127,8 @@ SkinnedMeshRenderer:
   - {fileID: 4442427738599274237}
   - {fileID: 132014532134897057}
   m_BlendShapeWeights:
-  - 0
-  - 0
+  - 100
+  - 100
   - 0
   m_RootBone: {fileID: 4953673128373835970}
   m_AABB:
@@ -13142,6 +13245,7 @@ SkinnedMeshRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -13153,6 +13257,7 @@ SkinnedMeshRenderer:
   m_ProbeAnchor: {fileID: 0}
   m_LightProbeVolumeOverride: {fileID: 0}
   m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
   m_PreserveUVs: 0
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
@@ -13224,8 +13329,8 @@ SkinnedMeshRenderer:
   - {fileID: 4442427738599274237}
   - {fileID: 132014532134897057}
   m_BlendShapeWeights:
-  - 0
-  - 0
+  - 100
+  - 100
   - 0
   m_RootBone: {fileID: 4953673128373835970}
   m_AABB:
@@ -13277,6 +13382,7 @@ SkinnedMeshRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -13288,6 +13394,7 @@ SkinnedMeshRenderer:
   m_ProbeAnchor: {fileID: 0}
   m_LightProbeVolumeOverride: {fileID: 0}
   m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
   m_PreserveUVs: 0
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
@@ -13359,8 +13466,8 @@ SkinnedMeshRenderer:
   - {fileID: 674961572044741986}
   - {fileID: 2859780820203220519}
   m_BlendShapeWeights:
-  - 0
-  - 0
+  - 100
+  - 100
   - 0
   m_RootBone: {fileID: 5154455778428511640}
   m_AABB:
@@ -13412,6 +13519,7 @@ SkinnedMeshRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -13423,6 +13531,7 @@ SkinnedMeshRenderer:
   m_ProbeAnchor: {fileID: 0}
   m_LightProbeVolumeOverride: {fileID: 0}
   m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
   m_PreserveUVs: 0
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
@@ -13607,6 +13716,7 @@ SkinnedMeshRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -13618,6 +13728,7 @@ SkinnedMeshRenderer:
   m_ProbeAnchor: {fileID: 0}
   m_LightProbeVolumeOverride: {fileID: 0}
   m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
   m_PreserveUVs: 0
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
@@ -13689,8 +13800,8 @@ SkinnedMeshRenderer:
   - {fileID: 674961572044741986}
   - {fileID: 2859780820203220519}
   m_BlendShapeWeights:
-  - 0
-  - 0
+  - 100
+  - 100
   - 0
   m_RootBone: {fileID: 5154455778428511640}
   m_AABB:
@@ -13784,7 +13895,7 @@ Transform:
   m_GameObject: {fileID: 6685122501803894749}
   m_LocalRotation: {x: -0.14125372, y: 0.0000002330379, z: 0.0000000651565, w: 0.9899734}
   m_LocalPosition: {x: -3.4083847e-14, y: 0.08705419, z: 0.00000004004687}
-  m_LocalScale: {x: 1.03, y: 1.03, z: 1.03}
+  m_LocalScale: {x: 1.25, y: 1.25, z: 1.25}
   m_Children: []
   m_Father: {fileID: 310708581716129763}
   m_RootOrder: 0
@@ -13865,6 +13976,7 @@ SkinnedMeshRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -13876,6 +13988,7 @@ SkinnedMeshRenderer:
   m_ProbeAnchor: {fileID: 0}
   m_LightProbeVolumeOverride: {fileID: 0}
   m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
   m_PreserveUVs: 0
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
@@ -13947,8 +14060,8 @@ SkinnedMeshRenderer:
   - {fileID: 6531353470403735737}
   - {fileID: 5861305336286356401}
   m_BlendShapeWeights:
-  - 0
-  - 0
+  - 100
+  - 100
   - 0
   m_RootBone: {fileID: 9184825161814231056}
   m_AABB:
@@ -14432,6 +14545,7 @@ SkinnedMeshRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -14443,6 +14557,7 @@ SkinnedMeshRenderer:
   m_ProbeAnchor: {fileID: 0}
   m_LightProbeVolumeOverride: {fileID: 0}
   m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
   m_PreserveUVs: 0
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
@@ -14514,8 +14629,8 @@ SkinnedMeshRenderer:
   - {fileID: 4236467263977631248}
   - {fileID: 6069169612332193694}
   m_BlendShapeWeights:
-  - 0
-  - 0
+  - 100
+  - 100
   - 0
   m_RootBone: {fileID: 7135124249318509270}
   m_AABB:
@@ -14567,6 +14682,7 @@ SkinnedMeshRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -14578,6 +14694,7 @@ SkinnedMeshRenderer:
   m_ProbeAnchor: {fileID: 0}
   m_LightProbeVolumeOverride: {fileID: 0}
   m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
   m_PreserveUVs: 0
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
@@ -14649,7 +14766,7 @@ SkinnedMeshRenderer:
   - {fileID: 6531353470403735737}
   - {fileID: 5861305336286356401}
   m_BlendShapeWeights:
-  - 0
+  - -100
   m_RootBone: {fileID: 9184825161814231056}
   m_AABB:
     m_Center: {x: 0.000000022351742, y: 0.7686262, z: -0.11625482}
@@ -15168,6 +15285,7 @@ SkinnedMeshRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -15179,6 +15297,7 @@ SkinnedMeshRenderer:
   m_ProbeAnchor: {fileID: 0}
   m_LightProbeVolumeOverride: {fileID: 0}
   m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
   m_PreserveUVs: 0
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
@@ -15250,8 +15369,8 @@ SkinnedMeshRenderer:
   - {fileID: 6531353470403735737}
   - {fileID: 5861305336286356401}
   m_BlendShapeWeights:
-  - 0
-  - 0
+  - 100
+  - 100
   - 0
   m_RootBone: {fileID: 9184825161814231056}
   m_AABB:
@@ -15333,6 +15452,7 @@ SkinnedMeshRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -15344,6 +15464,7 @@ SkinnedMeshRenderer:
   m_ProbeAnchor: {fileID: 0}
   m_LightProbeVolumeOverride: {fileID: 0}
   m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
   m_PreserveUVs: 0
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
@@ -15466,6 +15587,7 @@ SkinnedMeshRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -15477,6 +15599,7 @@ SkinnedMeshRenderer:
   m_ProbeAnchor: {fileID: 0}
   m_LightProbeVolumeOverride: {fileID: 0}
   m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
   m_PreserveUVs: 0
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
@@ -15548,7 +15671,7 @@ SkinnedMeshRenderer:
   - {fileID: 674961572044741986}
   - {fileID: 2859780820203220519}
   m_BlendShapeWeights:
-  - 0
+  - -100
   m_RootBone: {fileID: 5154455778428511640}
   m_AABB:
     m_Center: {x: 0.000000022351742, y: 0.7675065, z: -0.12188482}
@@ -15630,6 +15753,7 @@ SkinnedMeshRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -15641,6 +15765,7 @@ SkinnedMeshRenderer:
   m_ProbeAnchor: {fileID: 0}
   m_LightProbeVolumeOverride: {fileID: 0}
   m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
   m_PreserveUVs: 0
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
@@ -15657,7 +15782,7 @@ SkinnedMeshRenderer:
   m_Quality: 0
   m_UpdateWhenOffscreen: 1
   m_SkinnedMotionVectors: 1
-  m_Mesh: {fileID: 4300004, guid: 62b9e3162a1c2554c8b57acbe913b573, type: 3}
+  m_Mesh: {fileID: 0}
   m_Bones:
   - {fileID: 5154455778428511640}
   - {fileID: 2494998646915488473}
@@ -15733,7 +15858,7 @@ SkinnedMeshRenderer:
   - 0
   - 0
   - 0
-  - 0
+  - -100
   m_RootBone: {fileID: 5154455778428511640}
   m_AABB:
     m_Center: {x: 0.000000005122274, y: 0.01935458, z: -0.022495529}
@@ -15938,6 +16063,7 @@ SkinnedMeshRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -15949,6 +16075,7 @@ SkinnedMeshRenderer:
   m_ProbeAnchor: {fileID: 0}
   m_LightProbeVolumeOverride: {fileID: 0}
   m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
   m_PreserveUVs: 0
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
@@ -16020,8 +16147,8 @@ SkinnedMeshRenderer:
   - {fileID: 674961572044741986}
   - {fileID: 2859780820203220519}
   m_BlendShapeWeights:
-  - 0
-  - 0
+  - 100
+  - 100
   - 0
   m_RootBone: {fileID: 5154455778428511640}
   m_AABB:
@@ -16146,7 +16273,7 @@ Transform:
   m_GameObject: {fileID: 8332817027268827856}
   m_LocalRotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071067}
   m_LocalPosition: {x: -0, y: 0, z: 0}
-  m_LocalScale: {x: 1.0078666, y: 1.0118, z: 1.0118}
+  m_LocalScale: {x: 1.04, y: 1.06, z: 1.06}
   m_Children:
   - {fileID: 4953673128373835970}
   m_Father: {fileID: 4270713040605478856}
@@ -16513,6 +16640,7 @@ SkinnedMeshRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -16524,6 +16652,7 @@ SkinnedMeshRenderer:
   m_ProbeAnchor: {fileID: 0}
   m_LightProbeVolumeOverride: {fileID: 0}
   m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
   m_PreserveUVs: 0
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
@@ -16540,7 +16669,7 @@ SkinnedMeshRenderer:
   m_Quality: 0
   m_UpdateWhenOffscreen: 1
   m_SkinnedMotionVectors: 1
-  m_Mesh: {fileID: 4300000, guid: 2bd8dbbbaf81f5d4794b50f7894668f3, type: 3}
+  m_Mesh: {fileID: 0}
   m_Bones:
   - {fileID: 7135124249318509270}
   - {fileID: 7364564256369218682}
@@ -16598,7 +16727,7 @@ SkinnedMeshRenderer:
   - -39
   - -48
   - 0
-  - 0
+  - -100
   m_RootBone: {fileID: 7135124249318509270}
   m_AABB:
     m_Center: {x: 0.000000005122274, y: 0.01935458, z: -0.022495529}
@@ -16779,6 +16908,7 @@ SkinnedMeshRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -16790,6 +16920,7 @@ SkinnedMeshRenderer:
   m_ProbeAnchor: {fileID: 0}
   m_LightProbeVolumeOverride: {fileID: 0}
   m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
   m_PreserveUVs: 0
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
@@ -16861,8 +16992,8 @@ SkinnedMeshRenderer:
   - {fileID: 4236467263977631248}
   - {fileID: 6069169612332193694}
   m_BlendShapeWeights:
-  - 0
-  - 0
+  - 100
+  - 100
   - 0
   m_RootBone: {fileID: 7135124249318509270}
   m_AABB:
@@ -17042,6 +17173,7 @@ SkinnedMeshRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -17053,6 +17185,7 @@ SkinnedMeshRenderer:
   m_ProbeAnchor: {fileID: 0}
   m_LightProbeVolumeOverride: {fileID: 0}
   m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
   m_PreserveUVs: 0
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
@@ -17124,8 +17257,8 @@ SkinnedMeshRenderer:
   - {fileID: 4236467263977631248}
   - {fileID: 6069169612332193694}
   m_BlendShapeWeights:
-  - 0
-  - 0
+  - 100
+  - 100
   - 0
   m_RootBone: {fileID: 7135124249318509270}
   m_AABB:
@@ -17208,6 +17341,7 @@ SkinnedMeshRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -17219,6 +17353,7 @@ SkinnedMeshRenderer:
   m_ProbeAnchor: {fileID: 0}
   m_LightProbeVolumeOverride: {fileID: 0}
   m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
   m_PreserveUVs: 0
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
@@ -17290,8 +17425,8 @@ SkinnedMeshRenderer:
   - {fileID: 4442427738599274237}
   - {fileID: 132014532134897057}
   m_BlendShapeWeights:
-  - 0
-  - 0
+  - 100
+  - 100
   - 0
   m_RootBone: {fileID: 4953673128373835970}
   m_AABB:
@@ -17405,6 +17540,7 @@ SkinnedMeshRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -17416,6 +17552,7 @@ SkinnedMeshRenderer:
   m_ProbeAnchor: {fileID: 0}
   m_LightProbeVolumeOverride: {fileID: 0}
   m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
   m_PreserveUVs: 0
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
@@ -17487,8 +17624,8 @@ SkinnedMeshRenderer:
   - {fileID: 6531353470403735737}
   - {fileID: 5861305336286356401}
   m_BlendShapeWeights:
-  - 0
-  - 0
+  - 100
+  - 100
   - 0
   m_RootBone: {fileID: 9184825161814231056}
   m_AABB:
@@ -17633,6 +17770,7 @@ SkinnedMeshRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -17644,6 +17782,7 @@ SkinnedMeshRenderer:
   m_ProbeAnchor: {fileID: 0}
   m_LightProbeVolumeOverride: {fileID: 0}
   m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
   m_PreserveUVs: 0
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
@@ -17797,6 +17936,7 @@ SkinnedMeshRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -17808,6 +17948,7 @@ SkinnedMeshRenderer:
   m_ProbeAnchor: {fileID: 0}
   m_LightProbeVolumeOverride: {fileID: 0}
   m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
   m_PreserveUVs: 0
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
@@ -17879,8 +18020,8 @@ SkinnedMeshRenderer:
   - {fileID: 6531353470403735737}
   - {fileID: 5861305336286356401}
   m_BlendShapeWeights:
-  - 0
-  - 0
+  - 100
+  - 100
   - 0
   m_RootBone: {fileID: 9184825161814231056}
   m_AABB:
@@ -17962,6 +18103,7 @@ SkinnedMeshRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -17973,6 +18115,7 @@ SkinnedMeshRenderer:
   m_ProbeAnchor: {fileID: 0}
   m_LightProbeVolumeOverride: {fileID: 0}
   m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
   m_PreserveUVs: 0
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
@@ -18044,8 +18187,8 @@ SkinnedMeshRenderer:
   - {fileID: 4236467263977631248}
   - {fileID: 6069169612332193694}
   m_BlendShapeWeights:
-  - 0
-  - 0
+  - 100
+  - 100
   - 0
   m_RootBone: {fileID: 7135124249318509270}
   m_AABB:
