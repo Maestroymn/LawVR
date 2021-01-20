@@ -20,6 +20,20 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="1615f86a-ec87-43d2-947c-b7e73a72c2dc" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.LawVR/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.LawVR/.idea/contentModel.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.LawVR/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.LawVR/.idea/modules.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.LawVR/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.LawVR/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/AdvancedPeoplePack2/BlenderSources.unitypackage.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/AdvancedPeoplePack2/ScriptingTutorial.unitypackage.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/AdvancedPeoplePack2/Scripts/CharacterCustomization.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/AdvancedPeoplePack2/Scripts/CharacterCustomization.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/AdvancedPeoplePack2/Scripts/RootMotion.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/AdvancedPeoplePack2/Scripts/RootMotion.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/AdvancedPeoplePack2/Shader_HDRP.unitypackage.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/AdvancedPeoplePack2/Shader_URP.unitypackage.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Photon/PhotonUtilities/PackObject/CodeGen/Editor/Resources/TypeCatalogue.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Photon/PhotonUtilities/PackObject/CodeGen/Editor/Resources/TypeCatalogue.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Character Prefabs/Female_Lawyer.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Character Prefabs/Female_Lawyer.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/CourtScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/CourtScene.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/CreateLobbyScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/CreateLobbyScene.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/QuickInstantiater.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/QuickInstantiater.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Soja Exiles/SE Basic Assets/Scripts and Animations/FPS By Acacia Developer/PlayerMove.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Soja Exiles/SE Basic Assets/Scripts and Animations/FPS By Acacia Developer/PlayerMove.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -31,60 +45,34 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="HighlightingSettingsPerFile">
-    <setting file="file://$PROJECT_DIR$/Assets/Editor/ResourcesPrefabPathBuilder.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/UI/CreateRoomMenu.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/UI/RoomsCanvases.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/UI/RoomListingsMenu.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/UI/PlayerListing.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/UI/RoleClaimButton.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Utilities/SingletonReferences.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/UI/JoinRoomMenu.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/TestConnect.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Managers/NetworkedPrefab.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Managers/UIManager.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/UI/PlayerListingsMenu.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/../../../Unity/2019.4.14f1/Editor/Data/Resources/PackageManager/BuiltInPackages/com.unity.ugui/Runtime/EventSystem/EventSystem.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/UI/JoinPublicRoomsCanvas.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Managers/GameSettings.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/UI/RoomListing.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/UI/PlayerListing.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Editor/ResourcesPrefabPathBuilder.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/UI/RoomListingsMenu.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/QuickInstantiater.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/UI/MainMenuUI.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/UI/CreateRoomMenu.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/UI/JoinRoomCanvas.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Managers/GameSettings.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Managers/UIManager.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/UI/JoinPublicRoomsCanvas.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/72D32198-279B-4F3F-9846-A45D39F77FF6/3c/28841409/CharacterController.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/TestConnect.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/UI/RoomsCanvases.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Utilities/SingletonReferences.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Managers/NetworkedPrefab.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/UI/MainMenuUI.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/UI/RoomListing.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="IdeDocumentHistory">
-    <option name="CHANGED_PATHS">
-      <list>
-        <option value="$PROJECT_DIR$/Assets/Scripts/Managers/SingletonScriptableObject.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Utilities/SingletonScriptableObject.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Utilities/SingletonReferences.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/UI/MainMenuUI.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/UI/RoomListing.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/UI/HostRoomCanvas.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/UI/JoinRoomCanvas.cs" />
-        <option value="$PROJECT_DIR$/Assets/Photon/PhotonUnityNetworking/Code/PhotonNetwork.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/UI/JoinPublicRoomsCanvas.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/UI/RoomListingsMenu.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Managers/GameSettings.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/UI/RoleClaimButton.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/TestConnect.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/UI/CreateRoomMenu.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/UI/JoinRoomMenu.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/UI/RoomsCanvases.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Managers/UIManager.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/UI/CurrentRoomCanvas.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/UI/PlayerListing.cs" />
-        <option value="$PROJECT_DIR$/Assets/Soja Exiles/Courthouse/Scenes/SceneSwitch.cs" />
-        <option value="$PROJECT_DIR$/Assets/Editor/ResourcesPrefabPathBuilder.cs" />
-        <option value="$PROJECT_DIR$/Assets/AdvancedPeoplePack2/Scripts/Editor/EditorCharacterPrefabEdit.cs" />
-        <option value="$PROJECT_DIR$/Assets/AdvancedPeoplePack2/Scripts/Editor/CombinedCharacterEditor.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Managers/NetworkedPrefab.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/QuickInstantiater.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Managers/GameManager.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/UI/PlayerListingsMenu.cs" />
-        <option value="$PROJECT_DIR$/Assets/Soja Exiles/SE Basic Assets/Scripts and Animations/FPS By Acacia Developer/PlayerLook.cs" />
-        <option value="$PROJECT_DIR$/Assets/Soja Exiles/SE Basic Assets/Scripts and Animations/FPS By Acacia Developer/PlayerMove.cs" />
-      </list>
-    </option>
+    <changedPaths>
+      <option value="$PROJECT_DIR$/Assets/AdvancedPeoplePack2/Scripts/RootMotion.cs" />
+      <option value="$PROJECT_DIR$/Assets/AdvancedPeoplePack2/Scripts/CharacterCustomization.cs" />
+      <option value="$PROJECT_DIR$/Assets/Soja Exiles/SE Basic Assets/Scripts and Animations/FPS By Acacia Developer/PlayerMove.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/QuickInstantiater.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/UI/PlayerListingsMenu.cs" />
+    </changedPaths>
   </component>
   <component name="ProjectId" id="1m4WLUJiTV2lnEFPOPqD5h9uqk8" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
@@ -95,6 +83,7 @@
   <component name="PropertiesComponent">
     <property name="Discover.Launch.Via.Unity" value="true" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
@@ -112,7 +101,7 @@
       <option name="listenPortForConnections" value="false" />
       <option name="pid" />
       <option name="selectedOptions">
-        <set />
+        <list />
       </option>
       <method v="2" />
     </configuration>
@@ -121,7 +110,7 @@
       <option name="listenPortForConnections" value="false" />
       <option name="pid" />
       <option name="selectedOptions">
-        <set />
+        <list />
       </option>
       <method v="2" />
     </configuration>
@@ -139,6 +128,7 @@
       <workItem from="1610286634703" duration="15017000" />
       <workItem from="1610791392031" duration="27111000" />
       <workItem from="1610970835405" duration="19195000" />
+      <workItem from="1611168100658" duration="4577000" />
     </task>
     <servers />
   </component>

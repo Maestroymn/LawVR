@@ -536,6 +536,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: UIManager
       objectReference: {fileID: 0}
+    - target: {fileID: 7702976326726215971, guid: 2ae8e1e6f84bab9408746e56bf30552c,
+        type: 3}
+      propertyPath: viewIdField
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7702976327645503963, guid: 2ae8e1e6f84bab9408746e56bf30552c,
         type: 3}
       propertyPath: m_Camera

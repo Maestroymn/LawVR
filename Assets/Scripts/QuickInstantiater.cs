@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class QuickInstantiater : MonoBehaviourPunCallbacks
 {
-    [SerializeField] private GameObject obj;
-    [SerializeField] private Transform _defendantTransform,_plaintiffTransform,_judgeTransform;
+    [SerializeField] private GameObject judge,plaintiff,spectator,defendant;
+    [SerializeField] private Transform _defendantTransform,_plaintiffTransform,_judgeTransform,_spectatorTransform;
     private void Awake()
     {
         HandleSpawns();
@@ -16,13 +16,16 @@ public class QuickInstantiater : MonoBehaviourPunCallbacks
         switch (PhotonNetwork.LocalPlayer.CustomProperties["Role"].ToString())
         {
             case "Plaintiff":
-                GameManager.NetworkInstantiate(obj, _defendantTransform.position, Quaternion.identity);
+                GameManager.NetworkInstantiate(plaintiff, _defendantTransform.position, Quaternion.identity);
                 break;
             case "Defendant":
-                GameManager.NetworkInstantiate(obj, _plaintiffTransform.position, Quaternion.identity);
+                GameManager.NetworkInstantiate(defendant, _plaintiffTransform.position, Quaternion.identity);
                 break;
             case "Judge":
-                GameManager.NetworkInstantiate(obj, _judgeTransform.position, Quaternion.identity);
+                GameManager.NetworkInstantiate(judge, _judgeTransform.position, Quaternion.identity);
+                break;
+            case "Spectator":
+                GameManager.NetworkInstantiate(spectator, _spectatorTransform.position, Quaternion.identity);
                 break;
         }
     }

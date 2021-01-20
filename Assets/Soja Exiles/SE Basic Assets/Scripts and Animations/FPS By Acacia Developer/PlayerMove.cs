@@ -24,9 +24,10 @@ public class PlayerMove : MonoBehaviourPunCallbacks
     [SerializeField] private AnimationCurve jumpFallOff;
     [SerializeField] private float jumpMultiplier;
     [SerializeField] private KeyCode jumpKey;
-
+    [SerializeField] private Animator _animator;
 
     private bool isJumping;
+    private static readonly int Walk = Animator.StringToHash("walk");
 
     private void Awake()
     {
@@ -38,6 +39,8 @@ public class PlayerMove : MonoBehaviourPunCallbacks
         if (!photonView.IsMine)
         {
             _cameraMove.gameObject.SetActive(false);
+            Cursor.lockState = CursorLockMode.Locked;
+            _animator.SetBool(Walk,false);
         }
     }
 
@@ -47,7 +50,6 @@ public class PlayerMove : MonoBehaviourPunCallbacks
             return;
         if (photonView.IsMine)
         {
-            Cursor.lockState = CursorLockMode.Locked;
             PlayerMovement();
             _cameraMove.CameraRotation();
         }
@@ -61,13 +63,19 @@ public class PlayerMove : MonoBehaviourPunCallbacks
         Vector3 forwardMovement = transform.forward * vertInput;
         Vector3 rightMovement = transform.right * horizInput;
 
-
+        if (Mathf.Abs(horizInput) < 0.06f && Mathf.Abs(vertInput) < 0.06f)
+        {
+            _animator.SetBool(Walk,false);
+        }
+        else
+        {
+            _animator.SetBool(Walk,true);
+        }
         charController.SimpleMove(Vector3.ClampMagnitude(forwardMovement + rightMovement, 1.0f) * movementSpeed);
-
         if ((vertInput != 0 || horizInput != 0) && OnSlope())
+        {
             charController.Move(Vector3.down * charController.height / 2 * slopeForce * Time.deltaTime);
-
-
+        }
         SetMovementSpeed();
         JumpInput();
     }
@@ -75,9 +83,13 @@ public class PlayerMove : MonoBehaviourPunCallbacks
     private void SetMovementSpeed()
     {
         if (Input.GetKey(runKey))
+        {
             movementSpeed = Mathf.Lerp(movementSpeed, runSpeed, Time.deltaTime * runBuildUpSpeed);
+        }
         else
+        {
             movementSpeed = Mathf.Lerp(movementSpeed, walkSpeed, Time.deltaTime * runBuildUpSpeed);
+        }
     }
 
 

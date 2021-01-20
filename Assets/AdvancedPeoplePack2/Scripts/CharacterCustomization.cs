@@ -184,18 +184,18 @@ namespace AdvancedCustomizableSystem
 
         private void Awake()
         {
-            this._transform = transform;
-            _lodGroup = GetComponent<LODGroup>();
-            RecalculateLOD();
+            // this._transform = transform;
+            // _lodGroup = GetComponent<LODGroup>();
+            // RecalculateLOD();
             InitColors();
             StartupSerializationApply();
         }
 
         private void Update()
         {
-            EmotionTick();
-            if (Input.GetKeyDown(KeyCode.A))
-                LoadFromFile();
+            // EmotionTick();
+            // if (Input.GetKeyDown(KeyCode.A))
+            //     LoadFromFile();
         }
 
         public void EmotionTick()

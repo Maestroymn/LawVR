@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.45009786, g: 0.5001435, b: 0.57546514, a: 1}
+  m_IndirectSpecularColor: {r: 0.45009744, g: 0.5001431, b: 0.5754645, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -2448,6 +2448,36 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1478702385}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1833780761
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1833780762}
+  m_Layer: 0
+  m_Name: SpectatorTransform
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1833780762
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1833780761}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 3.15, y: 2.648, z: -12.442}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 6
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2005672405
 GameObject:
   m_ObjectHideFlags: 0
@@ -2616,10 +2646,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eb9272192477f7741830a3f3115fd7a4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  obj: {fileID: 6866459610351604485, guid: 66033162df313d14bb894e272051f2e5, type: 3}
+  judge: {fileID: 6866459610351604485, guid: 540e6e34a86c24b4194c2fe02d550472, type: 3}
+  plaintiff: {fileID: 6866459610351604485, guid: cb009d4d8495a498c8eacfaf402ebcfd,
+    type: 3}
+  spectator: {fileID: 6866459610351604485, guid: 42a7fc455c15a40c2b7639f4533897d8,
+    type: 3}
+  defendant: {fileID: 6866459610351604485, guid: abf3154f95ded41b482272c37f8119fa,
+    type: 3}
   _defendantTransform: {fileID: 893310746}
   _plaintiffTransform: {fileID: 1265074715}
   _judgeTransform: {fileID: 1572599287}
+  _spectatorTransform: {fileID: 1833780762}
 --- !u!4 &2105905383
 Transform:
   m_ObjectHideFlags: 0
