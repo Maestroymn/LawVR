@@ -21,7 +21,7 @@ namespace UI
         {
             RoomListing room  = _roomsCanvases.UIManager.RoomListings.FirstOrDefault(r => r.RoomInfo.Name == _roomName.text);
             bool exists = (room != null);
-            if (exists)
+            if (exists && room.RoomInfo.CustomProperties["password"].ToString()==_password.text)
             {
                 PhotonNetwork.JoinRoom(_roomName.text);
             }
