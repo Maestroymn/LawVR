@@ -1,5 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using ExitGames.Client.Photon;
 using Photon.Pun;
 using Photon.Realtime;
@@ -121,11 +120,11 @@ namespace UI
         public override void OnPlayerEnteredRoom(Player newPlayer)
         {
             AddPlayerListing(newPlayer);
-            Debug.Log(_playerListings.Count);
         }
 
         public override void OnPlayerLeftRoom(Player otherPlayer)
         {
+            print(otherPlayer.IsMasterClient);
             _playerListings.ForEach(player =>
             {
                 if (!(player is null) && otherPlayer.NickName == player.Player.NickName)
@@ -138,6 +137,7 @@ namespace UI
 
         private void CheckIfAllReady()
         {
+#if !UNITY_EDITOR
             _playerListings.ForEach(x =>
             {
                 if (!x.Ready)
@@ -146,10 +146,13 @@ namespace UI
                     return;
                 }
             });
-            if (_playerListings.Count >= 3)
+            if (_playerListings.Count >= 1)
             {
                 _roomsCanvases.CurrentRoomCanvas.SetStatusForStartSessionButton(true);
             }
+#elif UNITY_EDITOR
+            _roomsCanvases.CurrentRoomCanvas.SetStatusForStartSessionButton(true);
+#endif
         }
         
         public void OnClickReady()

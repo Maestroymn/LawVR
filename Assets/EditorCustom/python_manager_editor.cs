@@ -1,10 +1,9 @@
-﻿using System.Collections;
-using System.Collections.Generic;
+﻿
+#if COMPILE
 using UnityEngine;
 using UnityEditor;
 using UnityEditor.Scripting.Python;
-
-    [CustomEditor(typeof(python_manager))]
+[CustomEditor(typeof(python_manager))]
     public class python_manager_editor : Editor
     {
 
@@ -35,5 +34,5 @@ using UnityEditor.Scripting.Python;
 
     }
 
-
+#endif
 

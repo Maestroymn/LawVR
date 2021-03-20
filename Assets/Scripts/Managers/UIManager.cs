@@ -10,11 +10,21 @@ namespace Managers
     {
         [SerializeField] private MainMenuUI _mainMenuUI;
         [SerializeField] private RoomsCanvases _roomsCanvases;
+        public RoomsCanvases RoomsCanvases => _roomsCanvases;
         public GameObject CurrentCanvas;
         public List<RoomListing> RoomListings = new List<RoomListing>();
-
+        public static UIManager Instance;
         private void Awake()
         {
+            if (!Instance)
+            {
+                Instance = this;
+            }
+            else
+            {
+                Destroy(Instance);
+                Instance = this;
+            }
             InitializeCanvases();
             _roomsCanvases.FirstInitialize();
         }
@@ -65,6 +75,7 @@ namespace Managers
         
         public override void OnRoomListUpdate(List<RoomInfo> roomList)
         {
+            print("sssss");
             roomList.ForEach(room =>
             {
                 // Removed from rooms list.

@@ -28,5 +28,15 @@ namespace UI
                 }
             }
         }
+
+        public void RemoveRoomListing(RoomInfo room)
+        {
+            var roomListing = UIManager.RoomListings.Find(x => Equals(x.RoomInfo, room));
+            if (roomListing)
+            {
+                UIManager.RoomListings.Remove(roomListing);
+                Destroy(roomListing.gameObject);
+            }
+        }
     }
 }

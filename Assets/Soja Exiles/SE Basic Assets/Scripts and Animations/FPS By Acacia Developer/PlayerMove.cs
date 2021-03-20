@@ -46,7 +46,7 @@ public class PlayerMove : MonoBehaviourPunCallbacks
 
     private void Update()
     {
-        if(!PhotonNetwork.IsConnected || !photonView.IsMine)
+        if(!PhotonNetwork.IsConnected || !photonView.IsMine || !PhotonNetwork.InRoom)
             return;
         if (photonView.IsMine)
         {

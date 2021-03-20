@@ -1,5 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using Managers;
 using Photon.Pun;
 using UnityEngine;
 using TMPro;
@@ -59,5 +58,13 @@ namespace UI
             Debug.Log("Room couldn't be created ",_roomName);
         }
 
+        public override void OnLeftRoom()
+        {
+            base.OnLeftRoom();
+            if (PhotonNetwork.IsMasterClient)
+            {
+                _roomListingsMenu.RemoveRoomListing(PhotonNetwork.CurrentRoom);
+            }
+        }
     }
 }
