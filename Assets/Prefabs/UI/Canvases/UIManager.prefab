@@ -76,6 +76,11 @@ PrefabInstance:
       propertyPath: viewIdField
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3576758452467408053, guid: 9e34580a68b12fd45b67c580b63a04b3,
+        type: 3}
+      propertyPath: sceneViewId
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3576758452511889147, guid: 9e34580a68b12fd45b67c580b63a04b3,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
