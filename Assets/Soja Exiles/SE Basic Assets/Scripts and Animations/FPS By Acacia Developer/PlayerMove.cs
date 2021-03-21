@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using Photon.Pun;
+using Photon.Voice.Unity;
 using UnityEditor;
 using UnityEngine;
 
@@ -25,7 +26,6 @@ public class PlayerMove : MonoBehaviourPunCallbacks
     [SerializeField] private float jumpMultiplier;
     [SerializeField] private KeyCode jumpKey;
     [SerializeField] private Animator _animator;
-
     private bool isJumping;
     private static readonly int Walk = Animator.StringToHash("walk");
 
