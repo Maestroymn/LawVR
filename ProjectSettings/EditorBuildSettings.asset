@@ -11,4 +11,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/CourtScene.unity
     guid: 9976355d84077f04fae31f99270f85a4
+  - enabled: 0
+    path: Assets/Scenes/testScene.unity
+    guid: fa834ff86012dcb4aba04272e4d3f219
   m_configObjects: {}
