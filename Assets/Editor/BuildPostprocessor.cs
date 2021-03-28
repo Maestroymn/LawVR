@@ -15,7 +15,7 @@ namespace Editor
         {
             SourcePath = Application.dataPath + "/Python";
             var lastSlash = pathToBuiltProject.LastIndexOf("/", StringComparison.Ordinal);
-            DestinationPath = pathToBuiltProject.Remove(lastSlash)+"/Python";
+            DestinationPath = pathToBuiltProject.Remove(lastSlash)+"/LawVR_Data/Python";
             MoveDirectories(SourcePath,DestinationPath);
         }
 
