@@ -1,6 +1,8 @@
-﻿using Managers;
+﻿using System;
+using Managers;
 using Photon.Pun;
 using Photon.Realtime;
+using UnityEditor.Scripting.Python;
 using UnityEngine;
 
 namespace General
@@ -8,6 +10,7 @@ namespace General
     public class UserConnect : MonoBehaviourPunCallbacks
     {
         public ExitGames.Client.Photon.Hashtable PlayerProperties = new ExitGames.Client.Photon.Hashtable();
+
         private void Start()
         {
             if(!PhotonNetwork.IsConnected)
@@ -24,6 +27,8 @@ namespace General
             }
         }
 
+        #region PhotonCallbacks
+
         public override void OnConnectedToMaster()
         {
             print(PhotonNetwork.LocalPlayer.NickName+" connected to server.");
@@ -39,6 +44,8 @@ namespace General
         {
             Debug.Log("lobi katıldım (MAIN)");
         }
+
+        #endregion
 
     }
 }

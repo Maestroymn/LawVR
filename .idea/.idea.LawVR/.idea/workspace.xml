@@ -19,7 +19,36 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1615f86a-ec87-43d2-947c-b7e73a72c2dc" name="Default Changelist" comment="" />
+    <list default="true" id="1615f86a-ec87-43d2-947c-b7e73a72c2dc" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.LawVR/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.LawVR/.idea/contentModel.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.LawVR/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.LawVR/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Editor/deleteme.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Editor/deleteme.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/UI/Canvases/CreateLobby.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/UI/Canvases/CreateLobby.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/UI/Canvases/CurrentRoomCanvas.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/UI/Canvases/CurrentRoomCanvas.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/UI/Canvases/JoinLobby.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/UI/Canvases/JoinLobby.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/UI/Canvases/LobbyCanvasGroup.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/UI/Canvases/LobbyCanvasGroup.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/UI/Canvases/MainMenuUI.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/UI/Canvases/MainMenuUI.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/UI/Canvases/PublicLobbiesCanvas.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/UI/Canvases/PublicLobbiesCanvas.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/UI/Canvases/UIManager.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/UI/Canvases/UIManager.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Python/listen_user_test.py" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Python/listen_user_test.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Python/venv/Include.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/CourtScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/CourtScene.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/CreateLobbyScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/CreateLobbyScene.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/DatabaseScripts/DatabaseConnection.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/DatabaseScripts/DatabaseConnection.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/General/UserConnect.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/General/UserConnect.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Managers/RoomSessionManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Managers/RoomSessionManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Managers/UIManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Managers/UIManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/CanvasScripts/HostRoomCanvas.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UI/CanvasScripts/HostRoomCanvas.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/CreateRoomMenu.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UI/CreateRoomMenu.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/JoinRoomMenu.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UI/JoinRoomMenu.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/PlayerListing.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UI/PlayerListing.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/PlayerListingsMenu.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UI/PlayerListingsMenu.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/GraphicsSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/GraphicsSettings.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/ProjectSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/ProjectSettings.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/PythonSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/PythonSettings.asset" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -29,48 +58,68 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="HighlightingSettingsPerFile">
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/UI/RoleClaimButton.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/UI/JoinRoomMenu.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/UI/PlayerListingsMenu.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/UI/PlayerListing.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/9F32AE74-5972-4685-BF3F-384CF1315F39/48/9664c57b/PythonEngine.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Editor/ResourcesPrefabPathBuilder.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/36514B14-425C-4337-B446-653C547AA9C3/02/786181a1/IDisposable.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/UI/RoomListingsMenu.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/UI/CanvasScripts/CaseListCanvas.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Data/DataKeyValues.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Managers/RoomSessionManager.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/UI/CreateRoomMenu.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Managers/GameSettings.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.scripting.python@2.1.1-preview.1/Editor/PythonSettingsEditor.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Managers/UIManager.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/72D32198-279B-4F3F-9846-A45D39F77FF6/3c/28841409/CharacterController.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Utilities/SingletonReferences.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/UI/CaseListing.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Managers/NetworkedPrefab.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/UI/MainMenuUI.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/UI/RoomListing.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.scripting.python@2.1.1-preview.1/Editor/PythonRunner.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/General/UserConnect.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Photon/PhotonVoice/Code/Editor/PhotonVoiceEditorUtils.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/UI/RoleClaimButton.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/UI/JoinRoomMenu.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/UI/PlayerListing.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/deleteme.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Managers/GameSettings.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Utilities/ConditionalFieldAttribute.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Managers/UIManager.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/72D32198-279B-4F3F-9846-A45D39F77FF6/3c/28841409/CharacterController.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Utilities/SingletonReferences.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="IdeDocumentHistory">
     <changedPaths>
       <option value="$PROJECT_DIR$/Assets/AdvancedPeoplePack2/Scripts/RootMotion.cs" />
       <option value="$PROJECT_DIR$/Assets/AdvancedPeoplePack2/Scripts/CharacterCustomization.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/QuickInstantiater.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/UI/JoinRoomMenu.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/UI/RoleClaimButton.cs" />
       <option value="$PROJECT_DIR$/Assets/EditorCustom/python_manager_editor.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/UI/PlayerListingsMenu.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Utilities/SingletonScriptableObject.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/UI/RoomListingsMenu.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/UI/CreateRoomMenu.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/UI/CanvasScripts/JoinRoomCanvas.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/Managers/UIManager.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/Managers/RoomSessionManager.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/General/User.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/General/UserConnect.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/TestConnect.cs" />
       <option value="$PROJECT_DIR$/Assets/Photon/PhotonUnityNetworking/Code/PhotonView.cs" />
       <option value="$PROJECT_DIR$/Assets/Photon/PhotonRealtime/Code/LoadbalancingPeer.cs" />
       <option value="$PROJECT_DIR$/Assets/Photon/PhotonVoice/Code/VoiceConnection.cs" />
       <option value="$PROJECT_DIR$/Assets/Photon/PhotonUnityNetworking/UtilityScripts/Prototyping/OnJoinedInstantiate.cs" />
       <option value="$PROJECT_DIR$/Assets/Soja Exiles/SE Basic Assets/Scripts and Animations/FPS By Acacia Developer/PlayerMove.cs" />
+      <option value="$PROJECT_DIR$/Assets/Editor/deleteme.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/deleteme.cs" />
+      <option value="$PROJECT_DIR$/Assets/Resources/Deleteme.cs" />
+      <option value="$PROJECT_DIR$/Assets/Deleteme.cs" />
+      <option value="$PROJECT_DIR$/Assets/deleteme.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Data/DataKeyValues.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/UI/CreateRoomMenu.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/UI/JoinRoomMenu.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/General/UserConnect.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Managers/RoomSessionManager.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/UI/PlayerListing.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/UI/PlayerListingsMenu.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Utilities/ConditionalFieldAttribute.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/DatabaseScripts/DatabaseConnection.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/UI/CaseListing.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/UI/CanvasScripts/CaseListCanvas.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/UI/CanvasScripts/HostRoomCanvas.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Managers/UIManager.cs" />
     </changedPaths>
   </component>
   <component name="ProjectId" id="1m4WLUJiTV2lnEFPOPqD5h9uqk8" />
@@ -132,7 +181,10 @@
       <workItem from="1616094331444" duration="7294000" />
       <workItem from="1616146410217" duration="3508000" />
       <workItem from="1616241106709" duration="5043000" />
-      <workItem from="1616338297750" duration="480000" />
+      <workItem from="1616338297750" duration="723000" />
+      <workItem from="1616785813017" duration="938000" />
+      <workItem from="1616858620153" duration="4719000" />
+      <workItem from="1616879909818" duration="5781000" />
     </task>
     <servers />
   </component>

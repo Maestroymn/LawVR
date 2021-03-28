@@ -58,11 +58,6 @@ namespace UI
             }
         }
 
-        public override void OnMasterClientSwitched(Player newMasterClient)
-        {
-            _roomsCanvases.CurrentRoomCanvas.Hide();
-        }
-
         public void CheckRoleStatusAndSet(string targetRole)
         {
             if(!PhotonNetwork.IsConnected || PhotonNetwork.CurrentRoom==null || PhotonNetwork.CurrentRoom.Players==null)
@@ -98,7 +93,6 @@ namespace UI
             }
         }
         
-                
         public void OnSessionStarted()
         {
             if (PhotonNetwork.IsMasterClient)
@@ -115,24 +109,6 @@ namespace UI
                 PhotonNetwork.CurrentRoom.IsVisible = false;
                 PhotonNetwork.LoadLevel(1);
             }
-        }
-        
-        public override void OnPlayerEnteredRoom(Player newPlayer)
-        {
-            AddPlayerListing(newPlayer);
-        }
-
-        public override void OnPlayerLeftRoom(Player otherPlayer)
-        {
-            print(otherPlayer.IsMasterClient);
-            _playerListings.ForEach(player =>
-            {
-                if (!(player is null) && otherPlayer.NickName == player.Player.NickName)
-                {
-                    _playerListings.Remove(player);
-                    Destroy(player.gameObject);
-                }
-            });
         }
 
         private void CheckIfAllReady()
@@ -173,6 +149,34 @@ namespace UI
             }
         }
 
+        #region PhotonCallbacks
+        
+        public override void OnPlayerEnteredRoom(Player newPlayer)
+        {
+            AddPlayerListing(newPlayer);
+        }
+
+        public override void OnPlayerLeftRoom(Player otherPlayer)
+        {
+            print(otherPlayer.IsMasterClient);
+            _playerListings.ForEach(player =>
+            {
+                if (!(player is null) && otherPlayer.NickName == player.Player.NickName)
+                {
+                    _playerListings.Remove(player);
+                    Destroy(player.gameObject);
+                }
+            });
+        }
+
+        public override void OnMasterClientSwitched(Player newMasterClient)
+        {
+            _roomsCanvases.CurrentRoomCanvas.Hide();
+        }
+        #endregion
+        
+        #region PunRPC Functions
+        
         [PunRPC]
         private void RPC_ChangeReadyState(Player player, bool ready)
         {
@@ -201,5 +205,6 @@ namespace UI
                 }
             }
         }
+        #endregion
     }
 }

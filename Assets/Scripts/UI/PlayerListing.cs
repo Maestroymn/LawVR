@@ -32,7 +32,9 @@ namespace UI
                 PlayerListingText.text = Player.NickName;
             }
         }
-        
+
+        #region PhotonCallbacks
+
         public override void OnPlayerPropertiesUpdate(Player targetPlayer, Hashtable changedProps)
         {
             if (targetPlayer != null && targetPlayer == Player)
@@ -42,6 +44,8 @@ namespace UI
                     UpdatePlayerListingText();
                 }
             }
-        }
+        }        
+
+        #endregion
     }
 }

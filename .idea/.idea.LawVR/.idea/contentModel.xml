@@ -32,12 +32,9 @@
             <e p="RootMotion.cs" t="Include" />
           </e>
         </e>
+        <e p="deleteme.cs" t="Include" />
         <e p="Editor" t="Include">
           <e p="ResourcesPrefabPathBuilder.cs" t="Include" />
-        </e>
-        <e p="EditorCustom" t="Include">
-          <e p="python_manager.cs" t="Include" />
-          <e p="python_manager_editor.cs" t="Include" />
         </e>
         <e p="Photon" t="Include">
           <e p="PhotonChat" t="Include">
@@ -685,6 +682,12 @@
           </e>
         </e>
         <e p="Scripts" t="Include">
+          <e p="Data" t="Include">
+            <e p="DataKeyValues.cs" t="Include" />
+          </e>
+          <e p="DatabaseScripts" t="Include">
+            <e p="DatabaseConnection.cs" t="Include" />
+          </e>
           <e p="General" t="Include">
             <e p="UserConnect.cs" t="Include" />
           </e>
@@ -697,12 +700,14 @@
           </e>
           <e p="UI" t="Include">
             <e p="CanvasScripts" t="Include">
+              <e p="CaseListCanvas.cs" t="Include" />
               <e p="CurrentRoomCanvas.cs" t="Include" />
               <e p="HostRoomCanvas.cs" t="Include" />
               <e p="JoinPublicRoomsCanvas.cs" t="Include" />
               <e p="JoinRoomCanvas.cs" t="Include" />
               <e p="RoomsCanvases.cs" t="Include" />
             </e>
+            <e p="CaseListing.cs" t="Include" />
             <e p="CreateRoomMenu.cs" t="Include" />
             <e p="JoinRoomMenu.cs" t="Include" />
             <e p="MainMenuUI.cs" t="Include" />
@@ -713,6 +718,7 @@
             <e p="RoomListingsMenu.cs" t="Include" />
           </e>
           <e p="Utilities" t="Include">
+            <e p="ConditionalFieldAttribute.cs" t="Include" />
             <e p="SingletonReferences.cs" t="Include" />
             <e p="SingletonScriptableObject.cs" t="Include" />
           </e>

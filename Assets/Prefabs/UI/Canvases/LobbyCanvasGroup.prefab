@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3576758453120203031}
   - component: {fileID: 3576758453120203030}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: LobbyCanvasGroup
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -24,7 +24,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3576758453120203028}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -64,11 +64,6 @@ PrefabInstance:
       propertyPath: _roomsCanvases
       value: 
       objectReference: {fileID: 3576758453120203030}
-    - target: {fileID: 292622418409348583, guid: c047864525ed2784fb8cf1aa7cc81ccd,
-        type: 3}
-      propertyPath: viewIdField
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 292622419906336026, guid: c047864525ed2784fb8cf1aa7cc81ccd,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -179,11 +174,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: CurrentRoomCanvas
       objectReference: {fileID: 0}
-    - target: {fileID: 292622419906336031, guid: c047864525ed2784fb8cf1aa7cc81ccd,
-        type: 3}
-      propertyPath: m_Camera
-      value: 
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c047864525ed2784fb8cf1aa7cc81ccd, type: 3}
 --- !u!224 &3576758453697107016 stripped
@@ -211,20 +201,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 3576758453120203031}
     m_Modifications:
-    - target: {fileID: 7906831565758079564, guid: 5cb649a197929584db441d118aca5417,
-        type: 3}
-      propertyPath: UIManager
-      value: 
-      objectReference: {fileID: 0}
     - target: {fileID: 7906831566199013200, guid: 5cb649a197929584db441d118aca5417,
         type: 3}
       propertyPath: m_Name
       value: PublicLobbiesCanvas
-      objectReference: {fileID: 0}
-    - target: {fileID: 7906831566199013211, guid: 5cb649a197929584db441d118aca5417,
-        type: 3}
-      propertyPath: m_Camera
-      value: 
       objectReference: {fileID: 0}
     - target: {fileID: 7906831566199013215, guid: 5cb649a197929584db441d118aca5417,
         type: 3}
@@ -370,9 +350,9 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 3576758453120203031}
     m_Modifications:
-    - target: {fileID: 4825730831535405300, guid: 026a55c81aaaaab4eb255603de3b9f3e,
+    - target: {fileID: 4825730831413124775, guid: 026a55c81aaaaab4eb255603de3b9f3e,
         type: 3}
-      propertyPath: m_Camera
+      propertyPath: m_Mesh
       value: 
       objectReference: {fileID: 0}
     - target: {fileID: 4825730831535405306, guid: 026a55c81aaaaab4eb255603de3b9f3e,
@@ -380,11 +360,6 @@ PrefabInstance:
       propertyPath: _roomListingsMenu
       value: 
       objectReference: {fileID: 3576758453540590610}
-    - target: {fileID: 4825730832103753729, guid: 026a55c81aaaaab4eb255603de3b9f3e,
-        type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
-      value: 
-      objectReference: {fileID: 0}
     - target: {fileID: 4825730832382016152, guid: 026a55c81aaaaab4eb255603de3b9f3e,
         type: 3}
       propertyPath: m_Name
@@ -472,11 +447,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 3576758453120203031}
     m_Modifications:
-    - target: {fileID: 3498848300209234806, guid: 0423d2ddfe955fb48941b21de264ccb9,
-        type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
-      value: 
-      objectReference: {fileID: 0}
     - target: {fileID: 5423193166453680025, guid: 0423d2ddfe955fb48941b21de264ccb9,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -536,16 +506,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: JoinLobby
-      objectReference: {fileID: 0}
-    - target: {fileID: 5423193166581012560, guid: 0423d2ddfe955fb48941b21de264ccb9,
-        type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 5423193167327659496, guid: 0423d2ddfe955fb48941b21de264ccb9,
-        type: 3}
-      propertyPath: m_Camera
-      value: 
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0423d2ddfe955fb48941b21de264ccb9, type: 3}

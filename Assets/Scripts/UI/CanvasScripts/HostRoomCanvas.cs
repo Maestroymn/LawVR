@@ -1,11 +1,12 @@
-﻿using UnityEngine;
+﻿using UI.CanvasScripts;
+using UnityEngine;
 
 namespace UI
 {
     public class HostRoomCanvas : MonoBehaviour
     {
         [SerializeField] private CreateRoomMenu _createRoomMenu;
-
+        [SerializeField] private CaseListCanvas _caseListCanvas;
         public CreateRoomMenu CreateRoomMenu { get; private set; }
 
         private RoomsCanvases _roomsCanvases;   
@@ -24,6 +25,12 @@ namespace UI
         public void Show()
         {
             gameObject.SetActive(true);
+        }
+
+        public void ShowCaseListingCanvas(bool showCases)
+        {
+            _createRoomMenu.gameObject.SetActive(!showCases);
+            _caseListCanvas.gameObject.SetActive(showCases);
         }
     }
 }

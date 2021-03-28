@@ -168,7 +168,7 @@ GameObject:
   - component: {fileID: 7906831565205067689}
   - component: {fileID: 7906831565205067690}
   - component: {fileID: 7906831565205067691}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: Viewport
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -254,7 +254,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7906831565258116141}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: Sliding Area
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -495,7 +495,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7906831565758079565}
   - component: {fileID: 7906831565758079564}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: RoomListingsMenu
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -549,7 +549,7 @@ GameObject:
   - component: {fileID: 7906831565823971474}
   - component: {fileID: 7906831565823971472}
   - component: {fileID: 7906831565823971473}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: Handle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -624,7 +624,7 @@ GameObject:
   - component: {fileID: 7906831566029977658}
   - component: {fileID: 7906831566029977659}
   - component: {fileID: 7906831566029977660}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: Scroll View
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1212,7 +1212,7 @@ GameObject:
   - component: {fileID: 7906831566693038214}
   - component: {fileID: 7906831566693038215}
   - component: {fileID: 7906831566693038328}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: Scrollbar Vertical
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1318,7 +1318,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 7906831565823971473}
   m_HandleRect: {fileID: 7906831565823971474}
   m_Direction: 2
-  m_Value: 0
+  m_Value: 1
   m_Size: 1
   m_NumberOfSteps: 0
   m_OnValueChanged:
@@ -1507,7 +1507,7 @@ GameObject:
   - component: {fileID: 7906831566955327022}
   - component: {fileID: 7906831566955327020}
   - component: {fileID: 7906831566955327021}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: Content
   m_TagString: Untagged
   m_Icon: {fileID: 0}

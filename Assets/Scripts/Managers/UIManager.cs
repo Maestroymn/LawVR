@@ -36,6 +36,8 @@ namespace Managers
             _roomsCanvases.JoinRoomCanvas.gameObject.SetActive(false);
             _roomsCanvases.CurrentRoomCanvas.gameObject.SetActive(false);
         }
+        
+        #region UI Interactables
 
         public void OnExitClicked()
         {
@@ -72,10 +74,12 @@ namespace Managers
             CurrentCanvas.SetActive(false);
             _mainMenuUI.Show();
         }
+#endregion
+
+        #region PhotonCallbacks
         
         public override void OnRoomListUpdate(List<RoomInfo> roomList)
         {
-            print("sssss");
             roomList.ForEach(room =>
             {
                 // Removed from rooms list.
@@ -96,5 +100,7 @@ namespace Managers
                 }
             });
         }
+        
+        #endregion
     }
 }

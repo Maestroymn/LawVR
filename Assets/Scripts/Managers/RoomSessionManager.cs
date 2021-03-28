@@ -13,7 +13,7 @@ namespace Managers
             HandleSpawns();
         }
 
-        public void HandleSpawns()
+        private void HandleSpawns()
         {
             switch (PhotonNetwork.LocalPlayer.CustomProperties["Role"].ToString())
             {
@@ -31,6 +31,8 @@ namespace Managers
                     break;
             }
         }
+
+        #region PhotonCallbacks
 
         // ReSharper disable Unity.PerformanceAnalysis
         public override void OnDisconnected(DisconnectCause cause)
@@ -58,5 +60,7 @@ namespace Managers
                 PhotonNetwork.LoadLevel(0);
             }
         }
+
+        #endregion
     }
 }

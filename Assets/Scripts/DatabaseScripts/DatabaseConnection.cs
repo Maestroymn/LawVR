@@ -1,30 +1,30 @@
-﻿using System.Collections;
-using System.Collections.Generic;
+﻿using Npgsql;
 using UnityEngine;
-using Npgsql;
-using System.Data;
+using Utilities;
 
-public class DatabaseConnection : MonoBehaviour
+namespace DatabaseScripts
 {
-    // Start is called before the first frame update
-    void Start()
+    public class DatabaseConnection : MonoBehaviour
     {
-        
-        NpgsqlConnection baglanti = new NpgsqlConnection("Server=127.0.0.1; Port=5432; Database=test; User Id=postgres; Password=postgres; Timeout=15;");
-        baglanti.Open();
-        Debug.Log("selam");
-        string sorgu = "insert into newtable(username) values ('at123')";
+        public bool EditDatabaseSettings = false;
+        [ConditionalShowInInspector("EditDatabaseSettings",true)] public string Server="127.0.0.1";
+        [ConditionalShowInInspector("EditDatabaseSettings",true)] public int Port=5432;
+        [ConditionalShowInInspector("EditDatabaseSettings",true)] public string DatabaseName="test";
+        [ConditionalShowInInspector("EditDatabaseSettings",true)] public string UserID="postgres";
+        [ConditionalShowInInspector("EditDatabaseSettings",true)] public string Password="postgres";
+        // Start is called before the first frame update
+        void Start()
+        {
+            NpgsqlConnection baglanti = new NpgsqlConnection($"Server={Server}; Port={Port}; Database={DatabaseName}; User Id={UserID}; Password={Password}; Timeout=15;");
+            baglanti.Open();
+            Debug.Log("selam");
+            string sorgu = "insert into newtable(username) values ('at123')";
 
-        var cmd = new NpgsqlCommand() ;
+            var cmd = new NpgsqlCommand() ;
 
-        cmd.Connection = baglanti;
-        cmd.CommandText = sorgu;
-        cmd.ExecuteNonQuery();
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+            cmd.Connection = baglanti;
+            cmd.CommandText = sorgu;
+            cmd.ExecuteNonQuery();
+        }
     }
 }

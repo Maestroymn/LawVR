@@ -25,6 +25,8 @@ namespace UI
             }
         }
 
+        #region PhotonCallBacks
+
         public override void OnJoinedRoom()
         {
             Debug.Log("Joined to "+_roomName.text);
@@ -36,5 +38,7 @@ namespace UI
         {
             Debug.Log("Couldn't joined to "+_roomName.text+"\n"+message);
         }
+
+        #endregion
     }
 }
