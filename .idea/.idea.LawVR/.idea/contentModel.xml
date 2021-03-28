@@ -34,6 +34,7 @@
         </e>
         <e p="deleteme.cs" t="Include" />
         <e p="Editor" t="Include">
+          <e p="BuildPostprocessor.cs" t="Include" />
           <e p="ResourcesPrefabPathBuilder.cs" t="Include" />
         </e>
         <e p="Photon" t="Include">
