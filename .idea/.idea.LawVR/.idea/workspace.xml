@@ -20,14 +20,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="1615f86a-ec87-43d2-947c-b7e73a72c2dc" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.LawVR/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.LawVR/.idea/contentModel.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.LawVR/.idea/indexLayout.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.LawVR/.idea/indexLayout.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.LawVR/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.LawVR/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Editor/BuildPostprocessor.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Editor/BuildPostprocessor.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Editor/deleteme.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Editor/deleteme.cs.meta" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Python/listen_user_test.py" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Python/listen_user_test.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Python/venv/Include.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/PythonSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/PythonSettings.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/CreateRoomMenu.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UI/CreateRoomMenu.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/deleteme.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/deleteme.cs.meta" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -59,11 +58,11 @@
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/UI/RoleClaimButton.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/UI/JoinRoomMenu.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/UI/PlayerListing.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/deleteme.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Managers/GameSettings.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Utilities/ConditionalFieldAttribute.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Managers/UIManager.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/72D32198-279B-4F3F-9846-A45D39F77FF6/3c/28841409/CharacterController.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Utilities/SpeechRecognition.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Utilities/SingletonReferences.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="IdeDocumentHistory">
@@ -87,9 +86,7 @@
       <option value="$PROJECT_DIR$/Assets/Scripts/deleteme.cs" />
       <option value="$PROJECT_DIR$/Assets/Resources/Deleteme.cs" />
       <option value="$PROJECT_DIR$/Assets/Deleteme.cs" />
-      <option value="$PROJECT_DIR$/Assets/deleteme.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Data/DataKeyValues.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/UI/CreateRoomMenu.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/UI/JoinRoomMenu.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Managers/RoomSessionManager.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/UI/PlayerListing.cs" />
@@ -103,6 +100,9 @@
       <option value="$PROJECT_DIR$/Assets/Scripts/Utilities/BuildPostprocessor.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/General/UserConnect.cs" />
       <option value="$PROJECT_DIR$/Assets/Editor/BuildPostprocessor.cs" />
+      <option value="$PROJECT_DIR$/Assets/deleteme.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Utilities/SpeechRecognition.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/UI/CreateRoomMenu.cs" />
     </changedPaths>
   </component>
   <component name="ProjectId" id="1m4WLUJiTV2lnEFPOPqD5h9uqk8" />
@@ -168,7 +168,7 @@
       <workItem from="1616785813017" duration="938000" />
       <workItem from="1616858620153" duration="4719000" />
       <workItem from="1616879909818" duration="5938000" />
-      <workItem from="1616941879950" duration="3472000" />
+      <workItem from="1616941879950" duration="4346000" />
     </task>
     <servers />
   </component>

@@ -2,7 +2,7 @@
 import speech_recognition as sr
 import time
 print("selam")
-f = open("C:\\Users\\Deniz Bayan\\Desktop\\try.txt", "w")
+f = open("try.txt", "w")
 
 r = sr.Recognizer()
 

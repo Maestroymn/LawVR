@@ -75,7 +75,7 @@ namespace UI
                 return;
             if (_password.text.Length != 0)
             {
-                _roomOptions.CustomRoomProperties.Add("password",_password.text);
+                _roomOptions.CustomRoomProperties["password"]=_password.text;
             }
             _roomOptions.CustomRoomProperties[DataKeyValues.__ROOM_NAME__] = _roomName.text;
             PhotonNetwork.CreateRoom(_roomName.text, _roomOptions, TypedLobby.Default);
