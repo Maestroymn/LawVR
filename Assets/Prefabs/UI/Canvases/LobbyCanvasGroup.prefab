@@ -350,6 +350,31 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 3576758453120203031}
     m_Modifications:
+    - target: {fileID: 2890757595071287440, guid: 026a55c81aaaaab4eb255603de3b9f3e,
+        type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2890757595071287440, guid: 026a55c81aaaaab4eb255603de3b9f3e,
+        type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2890757595837074823, guid: 026a55c81aaaaab4eb255603de3b9f3e,
+        type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2890757595837074823, guid: 026a55c81aaaaab4eb255603de3b9f3e,
+        type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2890757595837074823, guid: 026a55c81aaaaab4eb255603de3b9f3e,
+        type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4825730831413124775, guid: 026a55c81aaaaab4eb255603de3b9f3e,
         type: 3}
       propertyPath: m_Mesh
