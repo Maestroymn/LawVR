@@ -31,6 +31,7 @@ namespace Managers
 
         private void InitializeCanvases()
         {
+            Cursor.visible = true;
             _mainMenuUI.Show();
             _roomsCanvases.HostRoomCanvas.gameObject.SetActive(false);
             _roomsCanvases.JoinRoomCanvas.gameObject.SetActive(false);
