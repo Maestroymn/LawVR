@@ -707,22 +707,15 @@
               <e p="JoinRoomCanvas.cs" t="Include" />
               <e p="RoomsCanvases.cs" t="Include" />
             </e>
-            <e p="GeneralUIBehaviourScripts" t="Include">
-              <e p="CaseListing.cs" t="Include" />
-              <e p="CreateRoomMenu.cs" t="Include" />
-              <e p="JoinRoomMenu.cs" t="Include" />
-              <e p="MainMenuUI.cs" t="Include" />
-              <e p="PlayerListing.cs" t="Include" />
-              <e p="PlayerListingsMenu.cs" t="Include" />
-              <e p="RoleClaimButton.cs" t="Include" />
-              <e p="RoomListing.cs" t="Include" />
-              <e p="RoomListingsMenu.cs" t="Include" />
-            </e>
-            <e p="LoginScripts" t="Include">
-              <e p="LoginUIManager.cs" t="Include" />
-              <e p="SignInManager.cs" t="Include" />
-              <e p="SignUpManager.cs" t="Include" />
-            </e>
+            <e p="CaseListing.cs" t="Include" />
+            <e p="CreateRoomMenu.cs" t="Include" />
+            <e p="JoinRoomMenu.cs" t="Include" />
+            <e p="MainMenuUI.cs" t="Include" />
+            <e p="PlayerListing.cs" t="Include" />
+            <e p="PlayerListingsMenu.cs" t="Include" />
+            <e p="RoleClaimButton.cs" t="Include" />
+            <e p="RoomListing.cs" t="Include" />
+            <e p="RoomListingsMenu.cs" t="Include" />
           </e>
           <e p="Utilities" t="Include">
             <e p="ConditionalFieldAttribute.cs" t="Include" />

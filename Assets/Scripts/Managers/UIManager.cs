@@ -31,7 +31,6 @@ namespace Managers
 
         private void InitializeCanvases()
         {
-            Cursor.visible = true;
             _mainMenuUI.Show();
             _roomsCanvases.HostRoomCanvas.gameObject.SetActive(false);
             _roomsCanvases.JoinRoomCanvas.gameObject.SetActive(false);
@@ -75,10 +74,21 @@ namespace Managers
             CurrentCanvas.SetActive(false);
             _mainMenuUI.Show();
         }
-#endregion
+
+        public void SelectCase()
+        {
+            //Case Listing Button 2
+        }
+
+        public void OpenDetails()
+        {
+            //Case Listing Button 1
+        }
+
+        #endregion
 
         #region PhotonCallbacks
-        
+
         public override void OnRoomListUpdate(List<RoomInfo> roomList)
         {
             roomList.ForEach(room =>

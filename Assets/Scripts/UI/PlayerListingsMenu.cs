@@ -107,7 +107,7 @@ namespace UI
                 //Locking room when the session started, if following bools are set to false, then no one can join after session started.
                 PhotonNetwork.CurrentRoom.IsOpen = false;
                 PhotonNetwork.CurrentRoom.IsVisible = false;
-                PhotonNetwork.LoadLevel(2);
+                PhotonNetwork.LoadLevel(1);
             }
         }
 

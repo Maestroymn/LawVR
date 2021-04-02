@@ -5,7 +5,7 @@ namespace UI.CanvasScripts
     public class CaseListCanvas : MonoBehaviour
     {
         [SerializeField] private CaseListing _caseListingPrefab;
-        [SerializeField] private Transform _leftContentParent, _rightContentParent;
+        [SerializeField] private Transform _caseContent;
         private int _currentCaseNumber;
 
         private void Start()
@@ -20,14 +20,8 @@ namespace UI.CanvasScripts
         {
             CaseListing caseListing;
             _currentCaseNumber++;
-            if (_currentCaseNumber % 2 == 0)
-            {
-                caseListing = Instantiate(_caseListingPrefab, _rightContentParent);
-            }
-            else
-            {
-                caseListing = Instantiate(_caseListingPrefab, _leftContentParent);
-            }
+            caseListing = Instantiate(_caseListingPrefab);
+            caseListing.transform.SetParent(_caseContent);
             caseListing.SetCaseName("Case_"+_currentCaseNumber);
         }
     }

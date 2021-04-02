@@ -1,0 +1,2 @@
+C:/Users/Berkeaksoy/Documents/GitHub/LawVR/Assets/Python/Scripts/listen_user_test.py
+C:/Users/Berkeaksoy/Documents/GitHub/LawVR/Assets/Python/Scripts/python.exe
