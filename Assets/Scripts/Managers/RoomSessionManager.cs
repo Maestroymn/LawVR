@@ -10,6 +10,7 @@ namespace Managers
         [SerializeField] private Transform _defendantTransform,_plaintiffTransform,_judgeTransform,_spectatorTransform;
         private void Awake()
         {
+            Cursor.visible = false;
             HandleSpawns();
         }
 

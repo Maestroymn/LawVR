@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using General;
 using Photon.Pun;
 #if UNITY_EDITOR
 using UnityEditor;
@@ -13,7 +14,7 @@ namespace Managers
     {
         [SerializeField] private GameSettings _gameSettings;
         public static GameSettings GameSettings => Instance._gameSettings;
-
+        public static UserConnect UserConnect;
         [SerializeField] private List<NetworkedPrefab> _networkedPrefabs = new List<NetworkedPrefab>();
         
         public static GameObject NetworkInstantiate(GameObject obj, Vector3 position, Quaternion rotation)
