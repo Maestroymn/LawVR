@@ -83,6 +83,7 @@ namespace Managers
         public void OpenDetails()
         {
             //Case Listing Button 1
+            //Instantiate 
         }
 
         #endregion
