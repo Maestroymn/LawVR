@@ -1,34 +1,57 @@
-﻿using System.Collections;
-using System.Collections.Generic;
+﻿using Photon.Pun;
+using Photon.Realtime;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
-public class PauseUIManager : MonoBehaviour
+namespace Managers
 {
-
-    public GameObject PauseCanvas;
-    private bool paused = false;
-
-    // Start is called before the first frame update
-    void Start()
+    public class PauseUIManager : MonoBehaviourPunCallbacks
     {
-        PauseCanvas.SetActive(false);
-    }
 
-    // Update is called once per frame
-    void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.Escape))
+        public GameObject PauseCanvas;
+        private bool paused = false;
+
+        // Start is called before the first frame update
+        void Start()
         {
-            if (!paused)
+            PauseCanvas.SetActive(false);
+        }
+
+        // Update is called once per frame
+        void Update()
+        {
+            if (Input.GetKeyDown(KeyCode.Escape))
             {
-                PauseCanvas.SetActive(true);
-                paused = true;
+                if (!paused)
+                {
+                    PausePanel(true);
+                }
+                else
+                {
+                    PausePanel(false);
+                }
             }
-            else
-            {
-                PauseCanvas.SetActive(false);
-                paused = false;
-            }
+        }
+
+        public void PausePanel(bool isPaused)
+        {
+            PauseCanvas.SetActive(isPaused);
+            paused = isPaused;
+        }
+        
+        public void Disconnect()
+        {
+            PhotonNetwork.LeaveRoom();
+        }
+
+        public override void OnDisconnected(DisconnectCause cause)
+        {
+            //SceneManager.LoadScene(1);
+        }
+
+        public override void OnLeftRoom()
+        {
+            SceneManager.LoadScene(1);
         }
     }
 }

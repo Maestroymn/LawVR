@@ -1,16 +1,26 @@
-﻿using Photon.Pun;
+﻿using System.Collections.Generic;
+using General;
+using Photon.Pun;
 using Photon.Realtime;
 using UnityEngine;
+using Utilities;
 
 namespace Managers
 {
     public class RoomSessionManager : MonoBehaviourPunCallbacks
     {
         [SerializeField] private GameObject judge,plaintiff,spectator,defendant;
-        [SerializeField] private Transform _defendantTransform,_plaintiffTransform,_judgeTransform,_spectatorTransform;
+        [SerializeField] private List<CourtBuilding> _courtBuildings;
+        private CourtBuilding _currentBuilding;
         private void Awake()
         {
             Cursor.visible = false;
+            HandleBuildingSpawn();
+        }
+
+        private void HandleBuildingSpawn()
+        {
+            _currentBuilding=Instantiate(_courtBuildings.PickRandom(), Vector3.zero, Quaternion.identity);
             HandleSpawns();
         }
 
@@ -19,16 +29,16 @@ namespace Managers
             switch (PhotonNetwork.LocalPlayer.CustomProperties["Role"].ToString())
             {
                 case "Plaintiff":
-                    GameManager.NetworkInstantiate(plaintiff, _defendantTransform.position, Quaternion.identity);
+                    GameManager.NetworkInstantiate(plaintiff, _currentBuilding.DefendantTransform.position, Quaternion.identity);
                     break;
                 case "Defendant":
-                    GameManager.NetworkInstantiate(defendant, _plaintiffTransform.position, Quaternion.identity);
+                    GameManager.NetworkInstantiate(defendant, _currentBuilding.PlaintiffTransform.position, Quaternion.identity);
                     break;
                 case "Judge":
-                    GameManager.NetworkInstantiate(judge, _judgeTransform.position, Quaternion.identity);
+                    GameManager.NetworkInstantiate(judge, _currentBuilding.JudgeTransform.position, Quaternion.identity);
                     break;
                 case "Spectator":
-                    GameManager.NetworkInstantiate(spectator, _spectatorTransform.position, Quaternion.identity);
+                    GameManager.NetworkInstantiate(spectator, _currentBuilding.SpectatorTransform.position, Quaternion.identity);
                     break;
             }
         }
