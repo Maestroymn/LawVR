@@ -26,18 +26,18 @@ namespace Managers
 
         private void HandleSpawns()
         {
-            switch (PhotonNetwork.LocalPlayer.CustomProperties["Role"].ToString())
+            switch (PhotonNetwork.LocalPlayer.CustomProperties["Role"].ToString().ToLower())
             {
-                case "Plaintiff":
+                case "plaintiff":
                     GameManager.NetworkInstantiate(plaintiff, _currentBuilding.DefendantTransform.position, Quaternion.identity);
                     break;
-                case "Defendant":
+                case "defendant":
                     GameManager.NetworkInstantiate(defendant, _currentBuilding.PlaintiffTransform.position, Quaternion.identity);
                     break;
-                case "Judge":
+                case "judge":
                     GameManager.NetworkInstantiate(judge, _currentBuilding.JudgeTransform.position, Quaternion.identity);
                     break;
-                case "Spectator":
+                case "spectator":
                     GameManager.NetworkInstantiate(spectator, _currentBuilding.SpectatorTransform.position, Quaternion.identity);
                     break;
             }

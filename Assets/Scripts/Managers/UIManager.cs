@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using Photon.Pun;
 using Photon.Realtime;
 using UI;
@@ -28,7 +29,7 @@ namespace Managers
             InitializeCanvases();
             _roomsCanvases.FirstInitialize();
         }
-
+        
         private void InitializeCanvases()
         {
             Cursor.visible = true;

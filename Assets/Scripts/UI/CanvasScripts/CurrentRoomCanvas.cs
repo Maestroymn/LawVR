@@ -1,4 +1,6 @@
-﻿using Photon.Pun;
+﻿using System.Collections.Generic;
+using Photon.Pun;
+using Photon.Realtime;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
@@ -10,6 +12,7 @@ namespace UI
         private RoomsCanvases _roomsCanvases;
         [SerializeField] private TextMeshProUGUI _roomName;
         [SerializeField] private Button StartSessionButton, ReadyButton;
+        [SerializeField] private List<RoleClaimButton> _roleClaimButtons;
         public void FirstInitialize(RoomsCanvases roomsCanvases)
         {
             _roomsCanvases = roomsCanvases;
@@ -17,6 +20,7 @@ namespace UI
 
         public void Show(string roomName,bool isHost)
         {
+            _roleClaimButtons.ForEach(x=>x.Initialize());
             _roomName.text = roomName;
             if (isHost)
             {

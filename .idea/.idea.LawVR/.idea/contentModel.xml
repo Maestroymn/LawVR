@@ -761,6 +761,7 @@
             <e p="GeneralUIBehaviourScripts" t="Include">
               <e p="CaseDetailPanelBehaviour.cs" t="Include" />
               <e p="CaseListing.cs" t="Include" />
+              <e p="ConnectionQuality.cs" t="Include" />
               <e p="CreateRoomMenu.cs" t="Include" />
               <e p="JoinRoomMenu.cs" t="Include" />
               <e p="MainMenuUI.cs" t="Include" />
@@ -884,6 +885,36 @@
           </e>
           <e p="Sprites" t="Include">
             <e p="EmojiOne Attribution.txt" t="Include" />
+          </e>
+        </e>
+        <e p="Viveport" t="Include">
+          <e p="Example" t="Include">
+            <e p="Scripts" t="Include">
+              <e p="ViveportDemo.cs" t="Include" />
+              <e p="ViveportDemo_ArcadeSession.cs" t="Include" />
+              <e p="ViveportDemo_Deeplink.cs" t="Include" />
+              <e p="ViveportDemo_DLC.cs" t="Include" />
+              <e p="ViveportDemo_IAP.cs" t="Include" />
+              <e p="ViveportDemo_MainThreadDispatcher.cs" t="Include" />
+              <e p="ViveportDemo_Subscription.cs" t="Include" />
+            </e>
+          </e>
+          <e p="Scripts" t="Include">
+            <e p="LitJson" t="Include">
+              <e p="IJsonWrapper.cs" t="Include" />
+              <e p="JsonData.cs" t="Include" />
+              <e p="JsonException.cs" t="Include" />
+              <e p="JsonMapper.cs" t="Include" />
+              <e p="JsonReader.cs" t="Include" />
+              <e p="JsonWriter.cs" t="Include" />
+              <e p="Lexer.cs" t="Include" />
+              <e p="ParserToken.cs" t="Include" />
+            </e>
+            <e p="MainThreadDispatcher.cs" t="Include" />
+            <e p="PEMKeyLoader.cs" t="Include" />
+            <e p="Viveport.cs" t="Include" />
+            <e p="Viveport_Internal.cs" t="Include" />
+            <e p="Viveport_Internal_Android.cs" t="Include" />
           </e>
         </e>
       </e>
