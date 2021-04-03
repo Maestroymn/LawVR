@@ -24,5 +24,6 @@ namespace UI.CanvasScripts
             caseListing.transform.SetParent(_caseContent);
             caseListing.SetCaseName("Case_"+_currentCaseNumber);
         }
+        
     }
 }
