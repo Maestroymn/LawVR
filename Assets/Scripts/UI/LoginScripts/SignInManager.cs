@@ -9,7 +9,12 @@ namespace UI.LoginScripts
     public class SignInManager : MonoBehaviour
     {
         [SerializeField] private TextMeshProUGUI _name, _password;
+        public void ChangeColorToBlack()
+        {
+            _name.color = Color.black;
+            _password.color = Color.black;
 
+        }
         public void OnSubmitClicked()
         {
             //Check if such user exist from DB here...
@@ -27,12 +32,12 @@ namespace UI.LoginScripts
 
                 case SignInStatus.UserDoesntExist:
                     _name.color = Color.red;
-                    Debug.Log("ben yokum ki");
+                    _name.text = "INVALID NAME";
                 break;
 
                 case SignInStatus.WrongPassword:
                     _password.color = Color.red;
-                    Debug.Log("ben malım ki");
+                    _password.text = "WRONG PASSWORD"; 
                     break;
             }
                         

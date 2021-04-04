@@ -10,6 +10,12 @@ namespace UI.LoginScripts
     {
         [SerializeField] private TextMeshProUGUI _nickname, _email, _password;
         [SerializeField] private Toggle _male, _female;
+
+        public void ChangeColorToBlack()
+        {
+            _nickname.color = Color.black;
+            _email.color = Color.black;
+        }
         public void OnSubmitClicked()
         {
             //Check if such user with the nickname exist
@@ -20,7 +26,7 @@ namespace UI.LoginScripts
             string NewUserMail = _email.text.Substring(0, _email.text.Length - 1);
             string NewUserPassword = _password.text.Substring(0, _password.text.Length - 1);
 
-            bool IsNewUserMale = _male.isOn;
+            bool IsNewUserMale = _female.isOn;
 
             SignUpStatus RegisterStatus = DatabaseConnection.SignUp(NewUserName, NewUserMail, NewUserPassword, IsNewUserMale);
 
@@ -28,19 +34,20 @@ namespace UI.LoginScripts
             {
 
                 case SignUpStatus.SuccesfulCreation:
-
+                    
                     SceneManager.LoadScene(1);
 
                     break;
 
 
                 case SignUpStatus.UserExists:
-                    Debug.Log("ben varım ki");
+                    _nickname.color = Color.red;
+                    _nickname.text = "ALREADY USED";
                     break;
 
                 case SignUpStatus.InvalidMail:
                     _email.color = Color.red;
-                    Debug.Log("ben malım ki");
+                    _email.text = "INVALID MAIL";
                     break;
             }
 

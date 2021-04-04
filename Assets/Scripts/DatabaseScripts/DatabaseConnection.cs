@@ -1,4 +1,6 @@
-﻿using Npgsql;
+﻿using Managers;
+using Npgsql;
+using Photon.Pun;
 using System.ComponentModel.DataAnnotations;
 using UnityEngine;
 using Utilities;
@@ -50,6 +52,7 @@ namespace DatabaseScripts
                 passwordTable.Read();
                 if (passwordTable[0].Equals(password))
                 {
+                    GameManager.GameSettings.NickName = username;
                     return SignInStatus.SuccesfulLogin;
                 }
                 return SignInStatus.WrongPassword;
@@ -80,9 +83,9 @@ namespace DatabaseScripts
             
             if(validMail)
             {
-                SqlCommand.CommandText = "Insert into users(user_id,name,password,user_email,ismale) values( 1, '" +
-                                         username + "' , '" + userpassword + "' , '" + usermail + "' , " + ismale + " )";
-                Debug.Log(SqlCommand.CommandText);
+                SqlCommand.CommandText = "Insert into users(user_id,name,password,user_email,isfemale) values( "+
+                "'"+PhotonNetwork.LocalPlayer.UserId +"' , '" +username + "' , '" + userpassword + "' , '" + usermail + "' , " + ismale + " )";
+                GameManager.GameSettings.NickName = username;
                 SqlCommand.ExecuteNonQuery();
 
                 return SignUpStatus.SuccesfulCreation;
