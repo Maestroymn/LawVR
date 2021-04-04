@@ -47,22 +47,14 @@ namespace DatabaseScripts
             NpgsqlDataReader passwordTable = SqlCommand.ExecuteReader();            
             if(passwordTable.HasRows)
             {
-
                 passwordTable.Read();
                 if (passwordTable[0].Equals(password))
                 {
                     return SignInStatus.SuccesfulLogin;
                 }
-                else
-                {
-                    
-                    return SignInStatus.WrongPassword;
-                }
+                return SignInStatus.WrongPassword;
             }
-            else
-            {
-                return SignInStatus.UserDoesntExist;
-            }
+            return SignInStatus.UserDoesntExist;
 
         }
 
@@ -74,36 +66,28 @@ namespace DatabaseScripts
             {
                 return SignUpStatus.UserExists;
             }
-            else
+
+            bool validMail;
+            try
             {
-                bool validMail;
-                try
-                {
-                    var addr = new System.Net.Mail.MailAddress(usermail);
-                    validMail=(addr.Address == usermail)?true:false ;
-                }
-                catch
-                {
-                    validMail = false;
-                }
-                
-                 
-
-                if(validMail)
-                {
-
-                    SqlCommand.CommandText = "Insert into users(user_id,name,password,user_email,ismale) values( 1, '" +
-                    username + "' , '" + userpassword + "' , '" + usermail + "' , " + ismale + " )";
-                    Debug.Log(SqlCommand.CommandText);
-                    SqlCommand.ExecuteNonQuery();
-
-                    return SignUpStatus.SuccesfulCreation;
-                }
-                else
-                {
-                    return SignUpStatus.InvalidMail;
-                }
+                var addr = new System.Net.Mail.MailAddress(usermail);
+                validMail=(addr.Address == usermail)?true:false ;
             }
+            catch
+            {
+                validMail = false;
+            }
+            
+            if(validMail)
+            {
+                SqlCommand.CommandText = "Insert into users(user_id,name,password,user_email,ismale) values( 1, '" +
+                                         username + "' , '" + userpassword + "' , '" + usermail + "' , " + ismale + " )";
+                Debug.Log(SqlCommand.CommandText);
+                SqlCommand.ExecuteNonQuery();
+
+                return SignUpStatus.SuccesfulCreation;
+            }
+            return SignUpStatus.InvalidMail;
 
         }
         

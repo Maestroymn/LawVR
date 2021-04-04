@@ -56,10 +56,30 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 7702976326356842513}
     m_Modifications:
+    - target: {fileID: 3058266754619388083, guid: 9e34580a68b12fd45b67c580b63a04b3,
+        type: 3}
+      propertyPath: m_Camera
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 3576758451765803336, guid: 9e34580a68b12fd45b67c580b63a04b3,
         type: 3}
       propertyPath: m_Enabled
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3576758451815068342, guid: 9e34580a68b12fd45b67c580b63a04b3,
+        type: 3}
+      propertyPath: m_Camera
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 3576758451873876229, guid: 9e34580a68b12fd45b67c580b63a04b3,
+        type: 3}
+      propertyPath: m_Camera
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 3576758452073555470, guid: 9e34580a68b12fd45b67c580b63a04b3,
+        type: 3}
+      propertyPath: m_Camera
+      value: 
       objectReference: {fileID: 0}
     - target: {fileID: 3576758452511889147, guid: 9e34580a68b12fd45b67c580b63a04b3,
         type: 3}
@@ -181,6 +201,11 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3576758453697107021, guid: 9e34580a68b12fd45b67c580b63a04b3,
+        type: 3}
+      propertyPath: m_Camera
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 5363321317632726056, guid: 9e34580a68b12fd45b67c580b63a04b3,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
@@ -228,6 +253,11 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 7702976326356842512}
+    - target: {fileID: 995740165822234853, guid: 063423666a8f8894faed7d841f439668,
+        type: 3}
+      propertyPath: m_Camera
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 995740165999562098, guid: 063423666a8f8894faed7d841f439668,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -293,6 +323,16 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 7702976326356842512}
+    - target: {fileID: 8105396211431716463, guid: 063423666a8f8894faed7d841f439668,
+        type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8105396211431716463, guid: 063423666a8f8894faed7d841f439668,
+        type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 063423666a8f8894faed7d841f439668, type: 3}
 --- !u!4 &7702976327668818835 stripped

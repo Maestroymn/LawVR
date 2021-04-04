@@ -39,7 +39,8 @@ namespace General
         public override void OnConnectedToMaster()
         {
             print(PhotonNetwork.LocalPlayer.NickName+" connected to server.");
-            _loginUIManager.OnConnected();
+            if(_loginUIManager)
+                _loginUIManager.OnConnected();
             PhotonNetwork.JoinLobby();
         }
 
