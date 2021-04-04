@@ -3908,10 +3908,20 @@ PrefabInstance:
       propertyPath: m_SizeDelta.x
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3834434194426633066, guid: d28e02b1842034211ae6af2ce4f0d48d,
+        type: 3}
+      propertyPath: _caseDetailPrefab
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 4237762662156196339, guid: d28e02b1842034211ae6af2ce4f0d48d,
         type: 3}
       propertyPath: m_Name
       value: CaseListCanvas
+      objectReference: {fileID: 0}
+    - target: {fileID: 4948314299656829842, guid: d28e02b1842034211ae6af2ce4f0d48d,
+        type: 3}
+      propertyPath: m_Size
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5932174229403556615, guid: d28e02b1842034211ae6af2ce4f0d48d,
         type: 3}
