@@ -3,6 +3,7 @@ using Photon.Pun;
 using UnityEngine;
 using TMPro;
 using Photon.Realtime;
+using UnityEngine.Assertions.Must;
 using UnityEngine.UI;
 
 namespace UI
@@ -72,7 +73,10 @@ namespace UI
         public void OnClickCreateRoom()
         {
             if (!PhotonNetwork.IsConnected || _roomCreated)
+            {
+                Debug.Log("NOTCONNECTED"+_roomCreated);
                 return;
+            }
             if (_password.text.Length != 0)
             {
                 _roomOptions.CustomRoomProperties["password"]=_password.text;
@@ -99,6 +103,7 @@ namespace UI
             Debug.Log("Room is created its name is "+_roomName.text+" and its password: "+_password.text);
            // PhotonNetwork.GetCustomRoomList(PhotonNetwork.CurrentLobby,null);
            _roomsCanvases.CurrentRoomCanvas.Show(_roomName.text,true);
+           _roomCreated=false;
         }
         
         public override void OnCreateRoomFailed(short returnCode, string message)

@@ -11,6 +11,7 @@ namespace Managers
     {
         [SerializeField] private GameObject judge,plaintiff,spectator,defendant;
         [SerializeField] private List<CourtBuilding> _courtBuildings;
+        [SerializeField] private Transform SessionEnvironmentParent;
         private CourtBuilding _currentBuilding;
         private void Awake()
         {
@@ -20,7 +21,7 @@ namespace Managers
 
         private void HandleBuildingSpawn()
         {
-            _currentBuilding=Instantiate(_courtBuildings.PickRandom(), Vector3.zero, Quaternion.identity);
+            _currentBuilding=Instantiate(_courtBuildings.PickRandom(),SessionEnvironmentParent);
             HandleSpawns();
         }
 

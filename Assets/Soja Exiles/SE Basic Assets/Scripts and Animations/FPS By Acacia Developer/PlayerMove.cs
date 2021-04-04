@@ -1,9 +1,6 @@
-﻿using System;
-using System.Collections;
-using System.Collections.Generic;
+﻿using System.Collections;
+using Managers;
 using Photon.Pun;
-using Photon.Voice.Unity;
-using UnityEditor;
 using UnityEngine;
 
 public class PlayerMove : MonoBehaviourPunCallbacks
@@ -28,9 +25,11 @@ public class PlayerMove : MonoBehaviourPunCallbacks
     [SerializeField] private Animator _animator;
     private bool isJumping;
     private static readonly int Walk = Animator.StringToHash("walk");
-
+    private PauseUIManager _pauseUIManager;
+    
     private void Awake()
     {
+        _pauseUIManager = FindObjectOfType<PauseUIManager>();
         charController = GetComponent<CharacterController>();
     }
 
@@ -46,7 +45,7 @@ public class PlayerMove : MonoBehaviourPunCallbacks
 
     private void Update()
     {
-        if(!PhotonNetwork.IsConnected || !photonView.IsMine || !PhotonNetwork.InRoom)
+        if(!PhotonNetwork.IsConnected || !photonView.IsMine || !PhotonNetwork.InRoom || _pauseUIManager.paused)
             return;
         if (photonView.IsMine)
         {

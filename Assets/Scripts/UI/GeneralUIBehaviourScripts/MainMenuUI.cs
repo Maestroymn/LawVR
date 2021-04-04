@@ -59,7 +59,6 @@ namespace UI
 
         public void Logout()
         {
-            PhotonNetwork.NickName = "";
             PhotonNetwork.Disconnect();
             SceneManager.LoadScene(0);
         }

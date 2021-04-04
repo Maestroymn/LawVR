@@ -1,4 +1,5 @@
-﻿using Photon.Pun;
+﻿using System.Collections;
+using Photon.Pun;
 using Photon.Realtime;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -7,9 +8,9 @@ namespace Managers
 {
     public class PauseUIManager : MonoBehaviourPunCallbacks
     {
-
         public GameObject PauseCanvas;
-        private bool paused = false;
+        public Camera Camera;
+        public bool paused = false;
 
         // Start is called before the first frame update
         void Start()
@@ -24,10 +25,14 @@ namespace Managers
             {
                 if (!paused)
                 {
+                    Cursor.visible = true;
+                    Cursor.lockState = CursorLockMode.None;
                     PausePanel(true);
                 }
                 else
                 {
+                    Cursor.visible = false;
+                    Cursor.lockState = CursorLockMode.Locked;
                     PausePanel(false);
                 }
             }
@@ -35,23 +40,30 @@ namespace Managers
 
         public void PausePanel(bool isPaused)
         {
+            Camera.gameObject.SetActive(isPaused);
             PauseCanvas.SetActive(isPaused);
             paused = isPaused;
         }
         
         public void Disconnect()
+        { 
+            StartCoroutine(DisconnectFromRoom());
+        }
+
+        private IEnumerator DisconnectFromRoom()
         {
             PhotonNetwork.LeaveRoom();
+            while (PhotonNetwork.InRoom)
+                yield return null;
+            Cursor.visible = true;
+            PhotonNetwork.LoadLevel(1);
         }
 
         public override void OnDisconnected(DisconnectCause cause)
         {
-            //SceneManager.LoadScene(1);
-        }
-
-        public override void OnLeftRoom()
-        {
-            SceneManager.LoadScene(1);
+            Cursor.visible = true;
+            PhotonNetwork.Reconnect();
+            SceneManager.LoadScene(0);
         }
     }
 }

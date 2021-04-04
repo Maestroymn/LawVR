@@ -1,5 +1,4 @@
 ﻿using UnityEngine;
-using Utilities;
 
 namespace Managers
 {
@@ -8,7 +7,7 @@ namespace Managers
     {
         [SerializeField] private string _gameVersion = "0.0.0";
         public string GameVersion => _gameVersion;
-        public string NickName ;
+        public string NickName;
 
     }
 }

@@ -21,16 +21,25 @@
   <component name="ChangeListManager">
     <list default="true" id="1615f86a-ec87-43d2-947c-b7e73a72c2dc" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.LawVR/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.LawVR/.idea/contentModel.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.LawVR/.idea/indexLayout.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.LawVR/.idea/indexLayout.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.LawVR/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.LawVR/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/UI/Canvases/MainMenuUI.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/UI/Canvases/MainMenuUI.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/UI/Canvases/UIManager.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/UI/Canvases/UIManager.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/UI/FriendListing.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/UI/FriendListing.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/CreateLobbyScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/CreateLobbyScene.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Animations/UI/FriendListAnimator.controller" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Animations/UI/FriendListAnimator.controller" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/UI/Canvases/PauseUI.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/UI/Canvases/PauseUI.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/CourtScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/CourtScene.unity" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/LoginScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/LoginScene.unity" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/General/UserConnect.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/General/UserConnect.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Managers/GameManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Managers/GameManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Managers/GameSettings.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Managers/GameSettings.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Managers/PauseUIManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Managers/PauseUIManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Managers/RoomSessionManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Managers/RoomSessionManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/CanvasScripts/CurrentRoomCanvas.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UI/CanvasScripts/CurrentRoomCanvas.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/GeneralUIBehaviourScripts/CreateRoomMenu.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UI/GeneralUIBehaviourScripts/CreateRoomMenu.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/GeneralUIBehaviourScripts/MainMenuUI.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UI/GeneralUIBehaviourScripts/MainMenuUI.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/LoginScripts/LoginUIManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UI/LoginScripts/LoginUIManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/LoginScripts/SignInManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UI/LoginScripts/SignInManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/LoginScripts/SignUpManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UI/LoginScripts/SignUpManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Soja Exiles/SE Basic Assets/Scripts and Animations/FPS By Acacia Developer/PlayerMove.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Soja Exiles/SE Basic Assets/Scripts and Animations/FPS By Acacia Developer/PlayerMove.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/TextMesh Pro/Resources/Fonts &amp; Materials/LiberationSans SDF - Fallback.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/TextMesh Pro/Resources/Fonts &amp; Materials/LiberationSans SDF - Fallback.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WriteLines2.txt" beforeDir="false" afterPath="$PROJECT_DIR$/WriteLines2.txt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -41,6 +50,7 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Utilities/AutoSceneLoader.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/9F32AE74-5972-4685-BF3F-384CF1315F39/48/9664c57b/PythonEngine.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Editor/ResourcesPrefabPathBuilder.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/36514B14-425C-4337-B446-653C547AA9C3/02/786181a1/IDisposable.cs" root0="SKIP_HIGHLIGHTING" />
@@ -51,9 +61,11 @@
     <setting file="file://$PROJECT_DIR$/Assets/Editor/BuildPostprocessor.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/UI/GeneralUIBehaviourScripts/CaseDetailPanelBehaviour.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/General/CourtBuilding.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/84FE8231-54FA-4674-B5D8-4E26ADDFF0A0/8a/28b06bf3/EditorSceneManager.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Managers/NetworkedPrefab.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/General/UserConnect.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Photon/PhotonVoice/Code/Editor/PhotonVoiceEditorUtils.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/84FE8231-54FA-4674-B5D8-4E26ADDFF0A0/72/c4a5d5b9/PlayModeStateChange.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/LeanTween/Editor/LeanTweenDocumentationEditor.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Utilities/Extensions.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/UI/GeneralUIBehaviourScripts/ConnectionQuality.cs" root0="FORCE_HIGHLIGHTING" />
@@ -68,9 +80,6 @@
   </component>
   <component name="IdeDocumentHistory">
     <changedPaths>
-      <option value="$PROJECT_DIR$/Assets/Scripts/QuickInstantiater.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/UI/RoleClaimButton.cs" />
-      <option value="$PROJECT_DIR$/Assets/EditorCustom/python_manager_editor.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Utilities/SingletonScriptableObject.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/UI/RoomListingsMenu.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/UI/CanvasScripts/JoinRoomCanvas.cs" />
@@ -80,7 +89,6 @@
       <option value="$PROJECT_DIR$/Assets/Photon/PhotonRealtime/Code/LoadbalancingPeer.cs" />
       <option value="$PROJECT_DIR$/Assets/Photon/PhotonVoice/Code/VoiceConnection.cs" />
       <option value="$PROJECT_DIR$/Assets/Photon/PhotonUnityNetworking/UtilityScripts/Prototyping/OnJoinedInstantiate.cs" />
-      <option value="$PROJECT_DIR$/Assets/Soja Exiles/SE Basic Assets/Scripts and Animations/FPS By Acacia Developer/PlayerMove.cs" />
       <option value="$PROJECT_DIR$/Assets/Editor/deleteme.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/deleteme.cs" />
       <option value="$PROJECT_DIR$/Assets/Resources/Deleteme.cs" />
@@ -97,28 +105,32 @@
       <option value="$PROJECT_DIR$/Assets/deleteme.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Utilities/SpeechRecognition.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/UI/CreateRoomMenu.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/UI/LoginScripts/SignInManager.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/UI/LoginScripts/SignUpManager.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/UI/GeneralUIBehaviourScripts/PlayerListingsMenu.cs" />
       <option value="$PROJECT_DIR$/Assets/LeanTween/Editor/LeanTweenDocumentationEditor.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/General/CourtBuilding.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Utilities/Extensions.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/Managers/GameManager.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/Managers/PauseUIManager.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/Managers/RoomSessionManager.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/UI/GeneralUIBehaviourScripts/RoleClaimButton.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/UI/CanvasScripts/CurrentRoomCanvas.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/UI/GeneralUIBehaviourScripts/ConnectionQuality.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Managers/UIManager.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/DatabaseScripts/DatabaseConnection.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/UI/GeneralUIBehaviourScripts/CaseListing.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/UI/CanvasScripts/CaseListCanvas.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/UI/GeneralUIBehaviourScripts/CaseDetailPanelBehaviour.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/UI/GeneralUIBehaviourScripts/MainMenuUI.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/General/UserConnect.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/UI/LoginScripts/LoginUIManager.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/UI/GeneralUIBehaviourScripts/FriendListing.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Managers/FriendListManager.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Managers/GameManager.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/UI/GeneralUIBehaviourScripts/CreateRoomMenu.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/UI/CanvasScripts/CurrentRoomCanvas.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/UI/GeneralUIBehaviourScripts/MainMenuUI.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/UI/LoginScripts/SignInManager.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/UI/LoginScripts/SignUpManager.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/General/UserConnect.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Managers/GameSettings.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/UI/LoginScripts/LoginUIManager.cs" />
+      <option value="$PROJECT_DIR$/Assets/Soja Exiles/SE Basic Assets/Scripts and Animations/FPS By Acacia Developer/PlayerMove.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Managers/RoomSessionManager.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Managers/PauseUIManager.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Utilities/AutoSceneLoader.cs" />
     </changedPaths>
   </component>
   <component name="ProjectId" id="1m4WLUJiTV2lnEFPOPqD5h9uqk8" />
@@ -189,7 +201,7 @@
       <workItem from="1617408451976" duration="2061000" />
       <workItem from="1617449735075" duration="9767000" />
       <workItem from="1617536765751" duration="1613000" />
-      <workItem from="1617538969558" duration="2346000" />
+      <workItem from="1617538969558" duration="12618000" />
     </task>
     <servers />
   </component>

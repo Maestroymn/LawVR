@@ -1,6 +1,6 @@
-﻿using TMPro;
+﻿using System;
+using TMPro;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 using DatabaseScripts;
 using Managers;
 
@@ -10,6 +10,7 @@ namespace UI.LoginScripts
     public class SignInManager : MonoBehaviour
     {
         [SerializeField] private TextMeshProUGUI _name, _password;
+        public event Action OnSignedIn; 
         public void ChangeColorToBlack()
         {
             _name.color = Color.black;
@@ -18,25 +19,21 @@ namespace UI.LoginScripts
         }
         public void OnSubmitClicked()
         {
-            //Check if such user exist from DB here...
+            string NewUserName = _name.text.Substring(0, _name.text.Length-1);
+            string NewUserPassword = _password.text.Substring(0, _password.text.Length - 1);
             SignInStatus LoginStatus= DatabaseConnection.SignIn(_name.text.Substring(0, _name.text.Length - 1), _password.text.Substring(0, _password.text.Length - 1));
 
             switch (LoginStatus)
             {
 
                 case SignInStatus.SuccesfulLogin:
-
-                    SceneManager.LoadScene(1);
-                    DatabaseConnection.RetrieveFriendList(GameManager.GameSettings.NickName);
-
+                    GameManager.GameSettings.NickName = NewUserName;
+                    OnSignedIn?.Invoke();
                     break;
-
-
                 case SignInStatus.UserDoesntExist:
                     _name.color = Color.red;
                     _name.text = "INVALID NAME";
                 break;
-
                 case SignInStatus.WrongPassword:
                     _password.color = Color.red;
                     _password.text = "WRONG PASSWORD"; 

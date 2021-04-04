@@ -1,6 +1,6 @@
-﻿using System.Collections.Generic;
+﻿using System.Collections;
+using System.Collections.Generic;
 using Photon.Pun;
-using Photon.Realtime;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
@@ -55,7 +55,14 @@ namespace UI
         
         public void Hide()
         {
+            StartCoroutine(Disconnect());
+        }
+
+        private IEnumerator Disconnect()
+        {
             PhotonNetwork.LeaveRoom();
+            while (PhotonNetwork.InRoom)
+                yield return null;
             PhotonNetwork.LocalPlayer.CustomProperties["Role"] = "none";
             gameObject.SetActive(false);
             if (PhotonNetwork.IsMasterClient)
