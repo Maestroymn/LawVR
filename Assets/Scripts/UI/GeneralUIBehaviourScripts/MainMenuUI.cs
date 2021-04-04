@@ -11,6 +11,8 @@ namespace UI
         [SerializeField] private TextMeshProUGUI _usernameTextArea;
         [SerializeField] private Animator _userMenuAnimator;
         [SerializeField] private Animator _friendListMenuAnimator;
+        [SerializeField] private FriendListManager friendListManager;
+
         private static readonly int Show1 = Animator.StringToHash("Show");
         private bool _showingUserMenu,_showingFriends;
         private LTDescr _ltDescr;
@@ -48,6 +50,11 @@ namespace UI
         {
             _friendListMenuAnimator.SetBool(Show1,!_showingFriends);
             _showingFriends = !_showingFriends;
+            if(_showingFriends)
+            {
+                friendListManager.RefreshFriendList();
+            }
+        
         }
 
         public void Logout()

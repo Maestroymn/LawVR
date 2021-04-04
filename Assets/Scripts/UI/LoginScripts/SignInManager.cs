@@ -2,6 +2,7 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using DatabaseScripts;
+using Managers;
 
 namespace UI.LoginScripts
 {
@@ -26,8 +27,9 @@ namespace UI.LoginScripts
                 case SignInStatus.SuccesfulLogin:
 
                     SceneManager.LoadScene(1);
+                    DatabaseConnection.RetrieveFriendList(GameManager.GameSettings.NickName);
 
-                break;
+                    break;
 
 
                 case SignInStatus.UserDoesntExist:

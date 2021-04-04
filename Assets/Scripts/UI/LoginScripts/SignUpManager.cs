@@ -3,6 +3,7 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 using DatabaseScripts;
+using Managers;
 
 namespace UI.LoginScripts
 {
@@ -36,6 +37,7 @@ namespace UI.LoginScripts
                 case SignUpStatus.SuccesfulCreation:
                     
                     SceneManager.LoadScene(1);
+                    string FriendList = DatabaseConnection.RetrieveFriendList(GameManager.GameSettings.NickName);
 
                     break;
 

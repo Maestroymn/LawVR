@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using UI.GeneralUIBehaviourScripts;
 using UnityEngine;
 using Random = UnityEngine.Random;
+using DatabaseScripts;
+using TMPro;
 
 namespace Managers
 {
@@ -10,24 +12,43 @@ namespace Managers
     {
         [SerializeField] private FriendListing _friendListingPrefab;
         [SerializeField] private Transform _contentParent;
-        private List<FriendListing> _friends;
+        private List<FriendListing> _friends  = new List<FriendListing>();
 
-        private void Awake()
+        public void RefreshFriendList()
         {
-            //Database Friend list search
+            string DatabaseFriendList = DatabaseConnection.RetrieveFriendList(GameManager.GameSettings.NickName);
+            if(DatabaseFriendList!="")
+            {
+                DatabaseFriendList = DatabaseFriendList.Substring(1, DatabaseFriendList.Length - 2); // remove {} at the beginning and the end
+                string[] friends = DatabaseFriendList.Split(',');
+
+                bool[] FriendsOnlineStatus = DatabaseConnection.RetrieveFriendStatus(friends);
+
+
+                for (var i = 0; i < friends.Length; i++)
+                {
+                    Debug.Log(friends[i] + " " + FriendsOnlineStatus[i]);
+                    AddFriendListing(friends[i], FriendsOnlineStatus[i]);
+                }
+
+            }
+
         }
 
-        private bool Luck()
+        public void AddNewFriend(TextMeshProUGUI NewFriendName)
         {
-            float chance = Random.Range(0, 1);
-            if (chance <= 0.5f) return true;
-            return false;
-        }
+            DatabaseConnection.AddFriend(NewFriendName.text);
 
-        public void AddFriend(string name,bool isOnline)
+        }
+        
+        private void AddFriendListing(string name,bool isOnline)
         {
-            var searchedFriend = _friends.Find(friend => friend.name == name);
-            if (searchedFriend) return;
+            FriendListing searchedFriend = _friends.Find(friend => friend.GetUserName()== name);
+            if (searchedFriend != null)
+            {
+                searchedFriend.SetAvailability(isOnline);
+                return;
+            }
             FriendListing friendListing = Instantiate(_friendListingPrefab, _contentParent);
             friendListing.SetUserName(name);
             friendListing.SetAvailability(isOnline);
@@ -36,5 +57,7 @@ namespace Managers
                 _friends.Add(friendListing);
             }
         }
+
+
     }
 }

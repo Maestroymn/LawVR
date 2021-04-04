@@ -1,6 +1,7 @@
 ﻿using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
+using DatabaseScripts;
 
 namespace UI.GeneralUIBehaviourScripts
 {
@@ -13,6 +14,11 @@ namespace UI.GeneralUIBehaviourScripts
         {
             _username.text = name;
         }
+        public string GetUserName()
+        {
+            return _username.text ;
+        }
+
 
         public void SetAvailability(bool isOnline)
         {
@@ -21,6 +27,8 @@ namespace UI.GeneralUIBehaviourScripts
         
         public void Remove()
         {
+
+            DatabaseConnection.RemoveFriend(GetUserName());
             Destroy(gameObject);
         }
     }
