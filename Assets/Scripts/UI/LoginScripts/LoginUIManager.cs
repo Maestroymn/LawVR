@@ -1,6 +1,7 @@
 ﻿using System;
 using UnityEngine;
 using UnityEngine.UI;
+using DatabaseScripts;
 
 namespace UI.LoginScripts
 {
@@ -12,6 +13,7 @@ namespace UI.LoginScripts
 
         private void Awake()
         {
+
             if (Application.internetReachability == NetworkReachability.NotReachable)
             {
                 _noConnection.SetActive(true);
@@ -19,6 +21,7 @@ namespace UI.LoginScripts
             }
             else
             {
+                DatabaseConnection.ConnectDatabase();
                 _noConnection.SetActive(false);
                 _connecting.SetActive(true);   
             }
@@ -26,6 +29,7 @@ namespace UI.LoginScripts
 
         public void OnConnected()
         {
+
             _connecting.SetActive(false);
             _noConnection.SetActive(false);
             _signInButton.interactable = false;
