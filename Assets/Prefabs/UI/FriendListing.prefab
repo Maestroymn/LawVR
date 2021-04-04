@@ -791,6 +791,7 @@ GameObject:
   - component: {fileID: 5625888585022727362}
   - component: {fileID: 5625888585022727360}
   - component: {fileID: 5625888585022727361}
+  - component: {fileID: 2581316248409377658}
   m_Layer: 5
   m_Name: FriendListing
   m_TagString: Untagged
@@ -858,3 +859,17 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!114 &2581316248409377658
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5625888585022727363}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 69ef087a37b744022a8baf0880235cc8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _username: {fileID: 5625888583828179615}
+  _availability: {fileID: 5625888584295398644}

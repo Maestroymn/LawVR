@@ -13,18 +13,6 @@ namespace General
         
         private void Awake()
         {
-            if(!PhotonNetwork.IsConnected)
-            {
-                print("Connecting to server.");
-                PhotonNetwork.AutomaticallySyncScene = true;
-                PhotonNetwork.GameVersion = GameManager.GameSettings.GameVersion;
-                PhotonNetwork.NickName = "";
-                PlayerProperties["Role"] = "none";
-                PhotonNetwork.SetPlayerCustomProperties(PlayerProperties);
-                PhotonNetwork.ConnectUsingSettings();
-                if (PhotonNetwork.InRoom)
-                    PhotonNetwork.LeaveRoom();
-            }
             UserConnect[] objs = FindObjectsOfType<UserConnect>(); 
             if (objs.Length > 1)
             {
@@ -32,6 +20,17 @@ namespace General
             }
             DontDestroyOnLoad(gameObject);
             GameManager.UserConnect = this;
+            if(PhotonNetwork.IsConnected)
+                PhotonNetwork.Disconnect();
+            print("Connecting to server.");
+            PhotonNetwork.AutomaticallySyncScene = true;
+            PhotonNetwork.GameVersion = GameManager.GameSettings.GameVersion;
+            PhotonNetwork.NickName = "";
+            PlayerProperties["Role"] = "none";
+            PhotonNetwork.SetPlayerCustomProperties(PlayerProperties);
+            PhotonNetwork.ConnectUsingSettings();
+            if (PhotonNetwork.InRoom)
+                PhotonNetwork.LeaveRoom();
         }
 
         #region PhotonCallbacks
@@ -39,8 +38,9 @@ namespace General
         public override void OnConnectedToMaster()
         {
             print(PhotonNetwork.LocalPlayer.NickName+" connected to server.");
-            if(_loginUIManager)
-                _loginUIManager.OnConnected();
+            if (!_loginUIManager)
+                _loginUIManager=FindObjectOfType<LoginUIManager>();
+            _loginUIManager.OnConnected();
             PhotonNetwork.JoinLobby();
         }
 

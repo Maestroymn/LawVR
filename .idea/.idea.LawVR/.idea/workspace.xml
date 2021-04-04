@@ -20,20 +20,17 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="1615f86a-ec87-43d2-947c-b7e73a72c2dc" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.LawVR/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.LawVR/.idea/contentModel.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.LawVR/.idea/indexLayout.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.LawVR/.idea/indexLayout.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.LawVR/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.LawVR/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Plugins/Android/viveport_api.jar.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/Android/viveport_api.jar.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Plugins/x86/viveport_api.dll.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/x86/viveport_api.dll.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Plugins/x86_64/viveport_api64.dll.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/x86_64/viveport_api64.dll.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/UI/Canvases/CaseListCanvas.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/UI/Canvases/CaseListCanvas.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/UI/Canvases/CreateLobby.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/UI/Canvases/CreateLobby.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/UI/Canvases/LobbyCanvasGroup.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/UI/Canvases/LobbyCanvasGroup.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/UI/CaseListing.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/UI/CaseListing.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/UI/Details Panel.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/UI/Details Panel.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/UI/Canvases/MainMenuUI.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/UI/Canvases/MainMenuUI.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/UI/Canvases/UIManager.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/UI/Canvases/UIManager.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/UI/FriendListing.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/UI/FriendListing.prefab" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/CreateLobbyScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/CreateLobbyScene.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/CanvasScripts/CaseListCanvas.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UI/CanvasScripts/CaseListCanvas.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/GeneralUIBehaviourScripts/CaseDetailPanelBehaviour.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UI/GeneralUIBehaviourScripts/CaseDetailPanelBehaviour.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/GeneralUIBehaviourScripts/CaseListing.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UI/GeneralUIBehaviourScripts/CaseListing.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WriteLines2.txt" beforeDir="false" afterPath="$PROJECT_DIR$/WriteLines2.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/LoginScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/LoginScene.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/General/UserConnect.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/General/UserConnect.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/GeneralUIBehaviourScripts/MainMenuUI.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UI/GeneralUIBehaviourScripts/MainMenuUI.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/LoginScripts/LoginUIManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UI/LoginScripts/LoginUIManager.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -44,35 +41,33 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="HighlightingSettingsPerFile">
-    <setting file="file://$PROJECT_DIR$/Assets/LeanTween/Editor/LeanTweenDocumentationEditor.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/9F32AE74-5972-4685-BF3F-384CF1315F39/48/9664c57b/PythonEngine.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Editor/ResourcesPrefabPathBuilder.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/36514B14-425C-4337-B446-653C547AA9C3/02/786181a1/IDisposable.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Utilities/Extensions.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/UI/CanvasScripts/CaseListCanvas.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Data/DataKeyValues.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Managers/RoomSessionManager.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/UI/GeneralUIBehaviourScripts/FriendListing.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Editor/BuildPostprocessor.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/UI/GeneralUIBehaviourScripts/ConnectionQuality.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/UI/GeneralUIBehaviourScripts/CaseDetailPanelBehaviour.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Managers/GameSettings.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.scripting.python@2.1.1-preview.1/Editor/PythonSettingsEditor.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Utilities/ConditionalFieldAttribute.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/General/CourtBuilding.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Managers/NetworkedPrefab.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/General/UserConnect.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Photon/PhotonVoice/Code/Editor/PhotonVoiceEditorUtils.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/LeanTween/Editor/LeanTweenDocumentationEditor.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Utilities/Extensions.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/UI/GeneralUIBehaviourScripts/ConnectionQuality.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Managers/FriendListManager.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Managers/GameSettings.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Utilities/ConditionalFieldAttribute.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Managers/UIManager.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/72D32198-279B-4F3F-9846-A45D39F77FF6/3c/28841409/CharacterController.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Utilities/SpeechRecognition.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Managers/NetworkedPrefab.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Utilities/SingletonReferences.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.scripting.python@2.1.1-preview.1/Editor/PythonRunner.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/UI/LoginScripts/SignInManager.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/General/UserConnect.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Photon/PhotonVoice/Code/Editor/PhotonVoiceEditorUtils.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="IdeDocumentHistory">
     <changedPaths>
-      <option value="$PROJECT_DIR$/Assets/AdvancedPeoplePack2/Scripts/RootMotion.cs" />
-      <option value="$PROJECT_DIR$/Assets/AdvancedPeoplePack2/Scripts/CharacterCustomization.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/QuickInstantiater.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/UI/RoleClaimButton.cs" />
       <option value="$PROJECT_DIR$/Assets/EditorCustom/python_manager_editor.cs" />
@@ -103,7 +98,6 @@
       <option value="$PROJECT_DIR$/Assets/Scripts/Utilities/SpeechRecognition.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/UI/CreateRoomMenu.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/UI/LoginScripts/SignInManager.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/UI/LoginScripts/LoginUIManager.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/UI/LoginScripts/SignUpManager.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/UI/GeneralUIBehaviourScripts/PlayerListingsMenu.cs" />
       <option value="$PROJECT_DIR$/Assets/LeanTween/Editor/LeanTweenDocumentationEditor.cs" />
@@ -116,12 +110,15 @@
       <option value="$PROJECT_DIR$/Assets/Scripts/UI/CanvasScripts/CurrentRoomCanvas.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/UI/GeneralUIBehaviourScripts/ConnectionQuality.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Managers/UIManager.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/General/UserConnect.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/DatabaseScripts/DatabaseConnection.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/UI/GeneralUIBehaviourScripts/MainMenuUI.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/UI/GeneralUIBehaviourScripts/CaseListing.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/UI/CanvasScripts/CaseListCanvas.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/UI/GeneralUIBehaviourScripts/CaseDetailPanelBehaviour.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/UI/GeneralUIBehaviourScripts/MainMenuUI.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/General/UserConnect.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/UI/LoginScripts/LoginUIManager.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/UI/GeneralUIBehaviourScripts/FriendListing.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Managers/FriendListManager.cs" />
     </changedPaths>
   </component>
   <component name="ProjectId" id="1m4WLUJiTV2lnEFPOPqD5h9uqk8" />
@@ -192,7 +189,7 @@
       <workItem from="1617408451976" duration="2061000" />
       <workItem from="1617449735075" duration="9767000" />
       <workItem from="1617536765751" duration="1613000" />
-      <workItem from="1617538969558" duration="42000" />
+      <workItem from="1617538969558" duration="2346000" />
     </task>
     <servers />
   </component>

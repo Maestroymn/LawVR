@@ -2,6 +2,7 @@
 using Photon.Pun;
 using TMPro;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 namespace UI
 {
@@ -47,6 +48,13 @@ namespace UI
         {
             _friendListMenuAnimator.SetBool(Show1,!_showingFriends);
             _showingFriends = !_showingFriends;
+        }
+
+        public void Logout()
+        {
+            PhotonNetwork.NickName = "";
+            PhotonNetwork.Disconnect();
+            SceneManager.LoadScene(0);
         }
     }
 }

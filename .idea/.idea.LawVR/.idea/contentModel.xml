@@ -742,6 +742,7 @@
             <e p="UserConnect.cs" t="Include" />
           </e>
           <e p="Managers" t="Include">
+            <e p="FriendListManager.cs" t="Include" />
             <e p="GameManager.cs" t="Include" />
             <e p="GameSettings.cs" t="Include" />
             <e p="NetworkedPrefab.cs" t="Include" />
@@ -763,6 +764,7 @@
               <e p="CaseListing.cs" t="Include" />
               <e p="ConnectionQuality.cs" t="Include" />
               <e p="CreateRoomMenu.cs" t="Include" />
+              <e p="FriendListing.cs" t="Include" />
               <e p="JoinRoomMenu.cs" t="Include" />
               <e p="MainMenuUI.cs" t="Include" />
               <e p="PlayerListing.cs" t="Include" />

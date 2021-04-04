@@ -33,6 +33,7 @@ namespace UI.LoginScripts
         {
             _connecting.SetActive(false);
             _noConnection.SetActive(false);
+            _signUpButton.interactable = true;
             _signInButton.interactable = false;
             _signUpCanvas.gameObject.SetActive(false);
             _signInCanvas.gameObject.SetActive(true);
@@ -52,6 +53,11 @@ namespace UI.LoginScripts
             _signInButton.interactable = true;
             _signInCanvas.gameObject.SetActive(false);
             _signUpCanvas.gameObject.SetActive(true);
+        }
+
+        public void Exit()
+        {
+            Application.Quit();
         }
     }
 }
