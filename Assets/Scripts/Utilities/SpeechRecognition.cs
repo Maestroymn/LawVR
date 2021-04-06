@@ -9,12 +9,14 @@ namespace Utilities
     {
         string PythonScriptPath;
         string PythonExePath;
+        string WorkingDirectory;
         Thread PythonThread;
         // Start is called before the first frame update
         void Start()
         {
             UnityEngine.Debug.Log("lets do something");
-            PythonScriptPath = @Application.dataPath + @"/Python/Scripts/listen_user_test.py";
+            PythonScriptPath = @Application.dataPath + @"/Python/listen_user_test.py";
+            WorkingDirectory = @Application.dataPath + "/Python";
 
             PythonExePath = @Application.dataPath+ @"/Python/Scripts/python.exe";
             PythonThread = new Thread(RunPythonListenerScript);
@@ -33,6 +35,7 @@ namespace Utilities
             ProcessStartInfo start = new ProcessStartInfo();
             start.FileName = PythonExePath;
             start.Arguments = $"\"{PythonScriptPath}\"";
+            start.WorkingDirectory = WorkingDirectory;
         
             start.UseShellExecute = false;// Do not use OS shell
             start.CreateNoWindow = true; // We don't need new window
@@ -42,6 +45,8 @@ namespace Utilities
 
             using (Process process = Process.Start(start))
             {
+
+                UnityEngine.Debug.Log("python thread started");
                 using (StreamReader reader = process.StandardOutput)
                 {
                     string stderr = process.StandardError.ReadToEnd(); // Here are the exceptions from our Python script
