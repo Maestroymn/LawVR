@@ -10,15 +10,18 @@ namespace Utilities
         string PythonScriptPath;
         string PythonExePath;
         string WorkingDirectory;
+        char DirSeperatorChar;
         Thread PythonThread;
         // Start is called before the first frame update
         void Start()
         {
+            DirSeperatorChar = Path.DirectorySeparatorChar;
             UnityEngine.Debug.Log("lets do something");
-            PythonScriptPath = @Application.dataPath + @"/Python/listen_user_test.py";
-            WorkingDirectory = @Application.dataPath + "/Python";
 
-            PythonExePath = @Application.dataPath+ @"/Python/Scripts/python.exe";
+            PythonScriptPath = @Application.dataPath + DirSeperatorChar + "Python"+ DirSeperatorChar + "listen_user_test.py";
+            WorkingDirectory = @Application.dataPath + DirSeperatorChar + "Python";
+
+            PythonExePath = @Application.dataPath + DirSeperatorChar + "Python" + DirSeperatorChar + "Scripts" + DirSeperatorChar+  "python.exe";
             PythonThread = new Thread(RunPythonListenerScript);
             PythonThread.Start();
             using (StreamWriter sw = File.CreateText("WriteLines2.txt"))
@@ -54,6 +57,7 @@ namespace Utilities
                     UnityEngine.Debug.Log("exception " + stderr);
                     UnityEngine.Debug.Log("result " + result);
                 }
+                
             }
 
 
