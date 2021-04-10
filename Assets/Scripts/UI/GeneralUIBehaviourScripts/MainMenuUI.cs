@@ -13,6 +13,8 @@ namespace UI
         [SerializeField] private Animator _friendListMenuAnimator;
         [SerializeField] private FriendListManager friendListManager;
 
+        private static readonly int Open = Animator.StringToHash("Open");
+        private static readonly int Close = Animator.StringToHash("Close");
         private static readonly int Show1 = Animator.StringToHash("Show");
         private bool _showingUserMenu,_showingFriends;
         private LTDescr _ltDescr;
@@ -48,7 +50,7 @@ namespace UI
         
         public void FriendList()
         {
-            _friendListMenuAnimator.SetBool(Show1,!_showingFriends);
+            _friendListMenuAnimator.SetTrigger(_showingFriends ? Close : Open);
             _showingFriends = !_showingFriends;
             if(_showingFriends)
             {

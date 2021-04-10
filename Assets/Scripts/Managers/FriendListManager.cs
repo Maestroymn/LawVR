@@ -1,21 +1,23 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using UI.GeneralUIBehaviourScripts;
 using UnityEngine;
-using Random = UnityEngine.Random;
 using DatabaseScripts;
 using TMPro;
+using UnityEngine.UI;
 
 namespace Managers
 {
     public class FriendListManager : MonoBehaviour
     {
         [SerializeField] private FriendListing _friendListingPrefab;
-        [SerializeField] private Transform _contentParent;
+        [SerializeField] private Transform _friendListContentParent,_waitingInvitationsContentParent;
+        [SerializeField] private Button _friendListTabButton, _waitingListTabButton;
         private List<FriendListing> _friends  = new List<FriendListing>();
 
         public void RefreshFriendList()
         {
+            //Update needed with new table structure 
+            /*
             string DatabaseFriendList = DatabaseConnection.RetrieveFriendList(GameManager.GameSettings.NickName);
             if(DatabaseFriendList!="")
             {
@@ -32,6 +34,7 @@ namespace Managers
                 }
 
             }
+            */
 
         }
 
@@ -49,7 +52,7 @@ namespace Managers
                 searchedFriend.SetAvailability(isOnline);
                 return;
             }
-            FriendListing friendListing = Instantiate(_friendListingPrefab, _contentParent);
+            FriendListing friendListing = Instantiate(_friendListingPrefab, _friendListContentParent);
             friendListing.SetUserName(name);
             friendListing.SetAvailability(isOnline);
             if (!_friends.Contains(friendListing))
@@ -58,6 +61,23 @@ namespace Managers
             }
         }
 
+        public void ChangeTab(bool friendListTabOpen)
+        {
+            if (friendListTabOpen)
+            {
+                _waitingInvitationsContentParent.gameObject.SetActive(false);
+                _friendListContentParent.gameObject.SetActive(true);
+                _friendListTabButton.interactable = false;
+                _waitingListTabButton.interactable = true;
+            }
+            else
+            {
+                _friendListContentParent.gameObject.SetActive(false);
+                _waitingInvitationsContentParent.gameObject.SetActive(true);
+                _friendListTabButton.interactable = true;
+                _waitingListTabButton.interactable = false;
+            }
+        }
 
     }
 }
