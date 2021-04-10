@@ -3,6 +3,7 @@ using UnityEngine.UI;
 using DatabaseScripts;
 using General;
 using UnityEngine.SceneManagement;
+using Managers;
 
 namespace UI.LoginScripts
 {
@@ -49,6 +50,7 @@ namespace UI.LoginScripts
             _signUpManager.OnSignedUp -= LoggingIn;
             _connecting.SetActive(false);
             _noConnection.SetActive(false);
+            DatabaseConnection.SetUserOnline(GameManager.GameSettings.NickName);
             SceneManager.LoadScene(1);
         }
 

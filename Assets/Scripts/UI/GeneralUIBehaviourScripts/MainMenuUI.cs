@@ -1,4 +1,5 @@
-﻿using Managers;
+﻿using DatabaseScripts;
+using Managers;
 using Photon.Pun;
 using TMPro;
 using UnityEngine;
@@ -61,6 +62,7 @@ namespace UI
 
         public void Logout()
         {
+            DatabaseConnection.SetUserOffline(GameManager.GameSettings.NickName);
             PhotonNetwork.Disconnect();
             SceneManager.LoadScene(0);
         }

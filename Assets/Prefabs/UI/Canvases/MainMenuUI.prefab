@@ -308,8 +308,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _friendListingPrefab: {fileID: 2581316248409377658, guid: ef168eb5e91204f6fb594dab7e111ea6,
     type: 3}
-  _friendListContentParent: {fileID: 8105396209755859110}
-  _waitingInvitationsContentParent: {fileID: 4736610244465053998}
+  _waitingListingPrefab: {fileID: 2581316248409377658, guid: 702d09ad7fbd19e4ba4a6ece2b91fc43,
+    type: 3}
+  _friendListScrollView: {fileID: 8105396209755859110}
+  _waitingInvitationsScrollView: {fileID: 4736610244465053998}
+  _friendListContentParent: {fileID: 8105396209470592919}
+  _waitingInvitationsContentParent: {fileID: 7805723404451378205}
   _friendListTabButton: {fileID: 645909264338122771}
   _waitingListTabButton: {fileID: 8763890468393117085}
 --- !u!1 &735491838

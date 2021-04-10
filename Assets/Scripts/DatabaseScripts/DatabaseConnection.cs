@@ -2,6 +2,7 @@
 using Npgsql;
 using Photon.Pun;
 using System;
+using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using UnityEngine;
 using Utilities;
@@ -95,113 +96,177 @@ namespace DatabaseScripts
 
         }
 
-        public static string RetrieveFriendList(string username)
+        public static Dictionary<string, bool> RetrieveFriendList(string username)
         {
-            SqlCommand.CommandText = "Select friend_list from users where name ='" + username + "'";
+
+            Dictionary<string, bool> Friends = new Dictionary<string, bool>();
+            SqlCommand.CommandText = "select f.friend_user_name , " +
+            "(select is_online from users where name = f.friend_user_name) " +
+            "from users as u " +
+            "left join friendship_list as f on u.name = f.user_name " +
+            "where f.friend_user_name is not null and u.name = '" + username + "'";
+
+
+
             NpgsqlDataReader FriendList = SqlCommand.ExecuteReader();
-            FriendList.Read();
-            return FriendList[0].ToString();
-
-        }
-
-        public static bool[] RetrieveFriendStatus(string[] friendlist)
-        {
-
-            bool[] FriendsOnlineList = new bool[friendlist.Length];
-            for (var i = 0; i < friendlist.Length; i++)
+            while (FriendList.Read())
             {
-                
-                SqlCommand.CommandText = "Select is_online from users where name ='" + friendlist[i] + "'";
-                Debug.Log(SqlCommand.CommandText);
-                NpgsqlDataReader isonline = SqlCommand.ExecuteReader();
-                isonline.Read();
-                
-                FriendsOnlineList[i] = isonline[0].ToString() =="True"?true:false;
-            }
-            return FriendsOnlineList;
-        }
-
-        public static void RemoveFriend(string friendName)
-        {
-
-            SqlCommand.CommandText = "Select friend_list from users where name ='" + GameManager.GameSettings.NickName + "'";
-            NpgsqlDataReader FriendList = SqlCommand.ExecuteReader();
-            FriendList.Read();
-            string FriendListText  = FriendList[0].ToString();
-            FriendListText = FriendListText.Substring(1, FriendListText.Length - 2);
-
-            string[] friends = FriendListText.Split(',');
-
-            string NewFriendList = "{";
-            for(var i  = 0; i< friends.Length; i++)
-            {
-                Debug.Log(i + ": "+friends[i]);
-                if(!friends[i].Equals(friendName))
-                    NewFriendList += friends[i]+ ",";
+                Friends.Add(FriendList[0].ToString(), FriendList[1].ToString().ToLower() == "true" ? true : false);
             }
 
-            NewFriendList = NewFriendList.Substring(0, NewFriendList.Length - 1) + "}";
-
-
-            SqlCommand.CommandText = "Update users set friend_list ='"+NewFriendList+"' where name ='" + GameManager.GameSettings.NickName + "'";
-            Debug.Log(SqlCommand.CommandText);
-
-            SqlCommand.ExecuteNonQuery();
-
-
-
-
+            return Friends;
 
         }
 
-        public static void AddFriend(string NewFriendName)
+
+        public static bool RemoveFriend(string FriendName)
         {
 
-            SqlCommand.CommandText = "select count(name) from users where name ='" + NewFriendName.Substring(0, NewFriendName.Length - 1) + "'";
-            NpgsqlDataReader IsUserExist = SqlCommand.ExecuteReader();
-            Debug.Log(SqlCommand.CommandText);
-            IsUserExist.Read();
-            Debug.Log("user count " + IsUserExist[0].ToString());
-
-            if(Int64.Parse(IsUserExist[0].ToString()) == 1 )
+            try
             {
-                SqlCommand.CommandText = "select waiting_invitations from users where name = '" + NewFriendName.Substring(0, NewFriendName.Length - 1) + "'";
-                Debug.Log(SqlCommand.CommandText);
-                NpgsqlDataReader WaitingInvitations = SqlCommand.ExecuteReader();
-                WaitingInvitations.Read();
+                SqlCommand.CommandText = "delete from friendship_list where user_name = '" + GameManager.GameSettings.NickName + "'" +
+                "and friend_user_name = '" + FriendName + "'";
+                SqlCommand.ExecuteNonQuery();
 
-                    if(WaitingInvitations[0].ToString().Trim()!="")
-                    {
-                        string ExistingInvitations = WaitingInvitations[0].ToString();
-                        ExistingInvitations = ExistingInvitations.Substring(0, ExistingInvitations.Length - 1) + "," + GameManager.GameSettings.NickName + "}";
-                        SqlCommand.CommandText = "update users set waiting_invitations = '" + ExistingInvitations + "' where name ='" + NewFriendName.Substring(0, NewFriendName.Length - 1) + "' ";
-                        Debug.Log(SqlCommand.CommandText);
-                        SqlCommand.ExecuteNonQuery();
-                    }
-                    else
-                    {
-                        SqlCommand.CommandText = "update users set waiting_invitations = '{" + GameManager.GameSettings.NickName + "}' where name ='" + NewFriendName.Substring(0, NewFriendName.Length - 1) + "' ";
-                        SqlCommand.ExecuteNonQuery();
-                        Debug.Log(SqlCommand.CommandText);
-                    }
+
+                SqlCommand.CommandText = "delete from friendship_list where user_name = '" + FriendName  + "'" +
+               "and friend_user_name = '" + GameManager.GameSettings.NickName + "'";
+                SqlCommand.ExecuteNonQuery();
+                return true;
+            }
+            catch (NpgsqlException e)
+            {
+                Debug.Log("Recejtion failed: " + e.ToString());
+                return false;
+            }
+        }
+
+        public static Dictionary<string, bool> ListFriendshipRequests(string username)
+        {
+
+            SqlCommand.CommandText = "select i.sender_user_name, (select is_online from users where name=i.sender_user_name) "+
+            "from users as u left join invitation_list as i " +
+            "on u.name = i.user_name " +
+            "where i.sender_user_name is not null and i.user_name = '" + username + "'";
+            Dictionary<string, bool> WaitingInvitations = new Dictionary<string, bool>();
+
+            NpgsqlDataReader Invitations = SqlCommand.ExecuteReader();
+
+            while (Invitations.Read())
+            {
+                WaitingInvitations.Add(Invitations[0].ToString(), Invitations[1].ToString().ToLower() == "true" ? true : false);
+            }
+
+            return WaitingInvitations;
+        }
+
+        public static bool SendFriendshipRequest(string NewFriendName)
+        {
+            NewFriendName = NewFriendName.Substring(0, NewFriendName.Length - 1);
+
+
+            bool UserExists = CheckUserExistence(NewFriendName);
+            if (UserExists)
+            {
+
+                SqlCommand.CommandText = "insert into invitation_list(user_name, sender_user_name, invitation_send_date) " +
+                "values ('" + NewFriendName + "', '" + GameManager.GameSettings.NickName + "', now())";
+                Debug.Log(SqlCommand.CommandText);
+                try
+                {
+                    SqlCommand.ExecuteNonQuery();
+                    return true;
+                }
+                catch (NpgsqlException e)
+                {
+                    Debug.Log("Invitation Exists");
+                    /*UI message should be added*/
+                    return false;
+                }
 
             }
             else
             {
                 Debug.Log("user doesn't exist");
+                return false;
             }
-                
-                
-                
+
+
+
 
 
         }
 
-        public static void RetrieveSpecificUser()
+        public static bool AcceptFriendshipRequest(string RequestFriendName)
         {
 
+            try
+            {
+                SqlCommand.CommandText = "delete from invitation_list where user_name ='" + GameManager.GameSettings.NickName + "'" +
+                " and sender_user_name ='" + RequestFriendName + "'";
 
+                SqlCommand.ExecuteNonQuery();
+
+                SqlCommand.CommandText = "insert into friendship_list(user_name, friend_user_name, friendship_start_date) " +
+                "values('" + GameManager.GameSettings.NickName + "', '" + RequestFriendName + "', now())";
+
+                SqlCommand.ExecuteNonQuery();
+
+                SqlCommand.CommandText = "insert into friendship_list(user_name, friend_user_name, friendship_start_date) " +
+                "values('" + RequestFriendName  + "', '" + GameManager.GameSettings.NickName + "', now())";
+
+                SqlCommand.ExecuteNonQuery();
+                return true;
+            }
+            catch (NpgsqlException e)
+            {
+                Debug.Log("Recejtion failed: " + e.ToString());
+                return false;
+            }
+        }
+
+        public static bool RejectFriendshipRequest(string RequestFriendName)
+        {
+            SqlCommand.CommandText = "delete from invitation_list where user_name ='" + GameManager.GameSettings.NickName + "'" +
+            " and sender_user_name ='" + RequestFriendName + "'";
+
+            try
+            {
+                SqlCommand.ExecuteNonQuery();
+                return true;
+            }
+            catch(NpgsqlException e)
+            {
+                Debug.Log("Recejtion failed: "+ e.ToString());
+                return false;
+            }
+            
+        }
+
+        private static bool CheckUserExistence(string NewFriendName)
+        {
+            SqlCommand.CommandText = "select count(name) from users where name ='" + NewFriendName + "'";
+            NpgsqlDataReader UserExistControl = SqlCommand.ExecuteReader();
+            Debug.Log(SqlCommand.CommandText);
+            UserExistControl.Read();
+            Debug.Log("user count " + UserExistControl[0].ToString());
+            if (Int64.Parse(UserExistControl[0].ToString()) == 1)
+                return true;
+            else
+                return false;
+        }
+
+        public static void SetUserOnline(string username)
+        {
+            SqlCommand.CommandText = "update users set is_online = true where name='" + username + "'";
 
         }
+
+        public static void SetUserOffline(string username)
+        {
+            SqlCommand.CommandText = "update users set is_online = false where name='" + username + "'";
+        }
+    
+        
     }
 }

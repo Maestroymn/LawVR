@@ -9,38 +9,40 @@ namespace Managers
 {
     public class FriendListManager : MonoBehaviour
     {
-        [SerializeField] private FriendListing _friendListingPrefab;
+        [SerializeField] private FriendListing _friendListingPrefab, _waitingListingPrefab;
+        [SerializeField] private Transform _friendListScrollView,_waitingInvitationsScrollView;
         [SerializeField] private Transform _friendListContentParent,_waitingInvitationsContentParent;
         [SerializeField] private Button _friendListTabButton, _waitingListTabButton;
         private List<FriendListing> _friends  = new List<FriendListing>();
+        private List<FriendListing> _invitations  = new List<FriendListing>();
 
         public void RefreshFriendList()
         {
-            //Update needed with new table structure 
-            /*
-            string DatabaseFriendList = DatabaseConnection.RetrieveFriendList(GameManager.GameSettings.NickName);
-            if(DatabaseFriendList!="")
+            Dictionary<string, bool> DatabaseFriendList = DatabaseConnection.RetrieveFriendList(GameManager.GameSettings.NickName);
+            if (DatabaseFriendList.Count != 0)
             {
-                DatabaseFriendList = DatabaseFriendList.Substring(1, DatabaseFriendList.Length - 2); // remove {} at the beginning and the end
-                string[] friends = DatabaseFriendList.Split(',');
-
-                bool[] FriendsOnlineStatus = DatabaseConnection.RetrieveFriendStatus(friends);
-
-
-                for (var i = 0; i < friends.Length; i++)
+                foreach (var friend in DatabaseFriendList)
                 {
-                    Debug.Log(friends[i] + " " + FriendsOnlineStatus[i]);
-                    AddFriendListing(friends[i], FriendsOnlineStatus[i]);
+                    AddFriendListing(friend.Key, friend.Value);
                 }
-
             }
-            */
+        }
 
+        public void RefreshInvitationList()
+        {
+            Dictionary<string, bool> DatabaseInvitationList = DatabaseConnection.ListFriendshipRequests(GameManager.GameSettings.NickName);
+            if (DatabaseInvitationList.Count != 0)
+            {
+                foreach (var Invitation in DatabaseInvitationList)
+                {
+                    AddInvitationListing(Invitation.Key, Invitation.Value);
+                }
+            }
         }
 
         public void AddNewFriend(TextMeshProUGUI NewFriendName)
         {
-            DatabaseConnection.AddFriend(NewFriendName.text);
+            DatabaseConnection.SendFriendshipRequest(NewFriendName.text);
 
         }
         
@@ -61,22 +63,43 @@ namespace Managers
             }
         }
 
+        private void AddInvitationListing(string name,bool isOnline)
+        {
+            FriendListing InvitationFriend = _invitations.Find(friend => friend.GetUserName()== name);
+            if (InvitationFriend != null)
+            {
+                InvitationFriend.SetAvailability(isOnline);
+                return;
+            }
+            FriendListing InvitationListing = Instantiate(_waitingListingPrefab, _waitingInvitationsContentParent);
+            InvitationListing.SetUserName(name);
+            InvitationListing.SetAvailability(isOnline);
+            if (!_invitations.Contains(InvitationListing))
+            {
+                _invitations.Add(InvitationListing);
+            }
+        }
+
         public void ChangeTab(bool friendListTabOpen)
         {
             if (friendListTabOpen)
             {
-                _waitingInvitationsContentParent.gameObject.SetActive(false);
-                _friendListContentParent.gameObject.SetActive(true);
+                RefreshFriendList();
+                _waitingInvitationsScrollView.gameObject.SetActive(false);
+                _friendListScrollView.gameObject.SetActive(true);
                 _friendListTabButton.interactable = false;
                 _waitingListTabButton.interactable = true;
             }
             else
             {
-                _friendListContentParent.gameObject.SetActive(false);
-                _waitingInvitationsContentParent.gameObject.SetActive(true);
+                RefreshInvitationList();
+                _friendListScrollView.gameObject.SetActive(false);
+                _waitingInvitationsScrollView.gameObject.SetActive(true);
                 _friendListTabButton.interactable = true;
                 _waitingListTabButton.interactable = false;
+                
             }
+
         }
 
     }

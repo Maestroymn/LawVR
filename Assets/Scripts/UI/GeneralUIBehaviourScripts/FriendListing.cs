@@ -31,5 +31,17 @@ namespace UI.GeneralUIBehaviourScripts
             DatabaseConnection.RemoveFriend(GetUserName());
             Destroy(gameObject);
         }
+
+        public void RejectInvitation()
+        {
+            DatabaseConnection.RejectFriendshipRequest(_username.text);
+            Destroy(gameObject);
+        }
+
+        public void AcceptInvitation()
+        {
+            DatabaseConnection.AcceptFriendshipRequest(_username.text);
+            Destroy(gameObject);
+        }
     }
 }
