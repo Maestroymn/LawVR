@@ -772,6 +772,7 @@
               <e p="RoleClaimButton.cs" t="Include" />
               <e p="RoomListing.cs" t="Include" />
               <e p="RoomListingsMenu.cs" t="Include" />
+              <e p="UserProfilePanelBehaviour.cs" t="Include" />
             </e>
             <e p="LoginScripts" t="Include">
               <e p="LoginUIManager.cs" t="Include" />

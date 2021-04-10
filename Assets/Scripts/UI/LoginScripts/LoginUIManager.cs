@@ -51,6 +51,9 @@ namespace UI.LoginScripts
             _connecting.SetActive(false);
             _noConnection.SetActive(false);
             DatabaseConnection.SetUserOnline(GameManager.GameSettings.NickName);
+            GameManager.GameSettings.Mail = DatabaseConnection.GetEmail();
+            var isFemale = DatabaseConnection.GetIsFemale();
+            GameManager.GameSettings.Gender = isFemale ? Gender.Female : Gender.Male;
             SceneManager.LoadScene(1);
         }
 

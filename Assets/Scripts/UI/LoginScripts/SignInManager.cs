@@ -28,6 +28,7 @@ namespace UI.LoginScripts
 
                 case SignInStatus.SuccesfulLogin:
                     GameManager.GameSettings.NickName = NewUserName;
+                    GameManager.GameSettings.Password = NewUserPassword;
                     OnSignedIn?.Invoke();
                     break;
                 case SignInStatus.UserDoesntExist:

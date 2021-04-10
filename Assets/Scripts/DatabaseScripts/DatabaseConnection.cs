@@ -190,11 +190,6 @@ namespace DatabaseScripts
                 Debug.Log("user doesn't exist");
                 return false;
             }
-
-
-
-
-
         }
 
         public static bool AcceptFriendshipRequest(string RequestFriendName)
@@ -240,7 +235,6 @@ namespace DatabaseScripts
                 Debug.Log("Recejtion failed: "+ e.ToString());
                 return false;
             }
-            
         }
 
         private static bool CheckUserExistence(string NewFriendName)
@@ -298,13 +292,13 @@ namespace DatabaseScripts
 
         public static void SetPassword(string NewPassword)
         {
-            SqlCommand.CommandText = "update users set password =" + NewPassword + " where name ='" + GameManager.GameSettings.NickName + "'";
+            SqlCommand.CommandText = "update users set password ='" + NewPassword + "' where name ='" + GameManager.GameSettings.NickName + "'";
             SqlCommand.ExecuteNonQuery();
         }
 
         public static void SetName(string NewName)
         {
-            SqlCommand.CommandText = "update users set name =" + NewName + " where name ='" + GameManager.GameSettings.NickName + "'";
+            SqlCommand.CommandText = "update users set name ='" + NewName + "' where name ='" + GameManager.GameSettings.NickName + "'";
             SqlCommand.ExecuteNonQuery();
         }
 

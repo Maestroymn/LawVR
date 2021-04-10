@@ -57,7 +57,11 @@ namespace UI
             {
                 friendListManager.RefreshFriendList();
             }
-        
+        }
+
+        public void ShowProfileSettings()
+        {
+            
         }
 
         public void Logout()

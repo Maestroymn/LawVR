@@ -1,5 +1,4 @@
 ﻿using System.Collections.Generic;
-using General;
 using Photon.Pun;
 #if UNITY_EDITOR
 using UnityEditor;

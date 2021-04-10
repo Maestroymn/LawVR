@@ -32,6 +32,7 @@ namespace UI.LoginScripts
 
                 case SignUpStatus.SuccesfulCreation:
                     GameManager.GameSettings.NickName = NewUserName;
+                    GameManager.GameSettings.Password = NewUserPassword;
                     OnSignedUp?.Invoke();
                     break;
                 case SignUpStatus.UserExists:
