@@ -247,7 +247,6 @@ namespace DatabaseScripts
         {
             SqlCommand.CommandText = "select count(name) from users where name ='" + NewFriendName + "'";
             NpgsqlDataReader UserExistControl = SqlCommand.ExecuteReader();
-            Debug.Log(SqlCommand.CommandText);
             UserExistControl.Read();
             Debug.Log("user count " + UserExistControl[0].ToString());
             if (Int64.Parse(UserExistControl[0].ToString()) == 1)
@@ -259,14 +258,58 @@ namespace DatabaseScripts
         public static void SetUserOnline(string username)
         {
             SqlCommand.CommandText = "update users set is_online = true where name='" + username + "'";
+            SqlCommand.ExecuteNonQuery();
 
         }
 
         public static void SetUserOffline(string username)
         {
+
+
             SqlCommand.CommandText = "update users set is_online = false where name='" + username + "'";
+            SqlCommand.ExecuteNonQuery();
         }
     
-        
+        public static string GetEmail()
+        {
+            SqlCommand.CommandText = "select user_email from users where name ='"+GameManager.GameSettings.NickName+"'";
+            NpgsqlDataReader UserEmail =   SqlCommand.ExecuteReader();
+            UserEmail.Read();
+            return UserEmail[0].ToString();
+        }
+        public static bool GetIsFemale()
+        {
+            SqlCommand.CommandText = "select is_female from users where name ='" + GameManager.GameSettings.NickName + "'";
+            NpgsqlDataReader UserIsFemale = SqlCommand.ExecuteReader();
+            UserIsFemale.Read();
+            return UserIsFemale[0].ToString().ToLower() =="true"?true:false;
+        }
+
+        public static void SetEmail(string NewEmail)
+        {
+            SqlCommand.CommandText = "update users set user_email ='" + NewEmail + "' where name ='" + GameManager.GameSettings.NickName + "'";
+            SqlCommand.ExecuteNonQuery();
+        }
+        public static void SetIsFemale(bool IsFemale)
+        {
+            SqlCommand.CommandText = "update users set is_female =" + IsFemale + " where name ='" + GameManager.GameSettings.NickName + "'";
+            SqlCommand.ExecuteNonQuery();
+        }
+
+        public static void SetPassword(string NewPassword)
+        {
+            SqlCommand.CommandText = "update users set password =" + NewPassword + " where name ='" + GameManager.GameSettings.NickName + "'";
+            SqlCommand.ExecuteNonQuery();
+        }
+
+        public static void SetName(string NewName)
+        {
+            SqlCommand.CommandText = "update users set name =" + NewName + " where name ='" + GameManager.GameSettings.NickName + "'";
+            SqlCommand.ExecuteNonQuery();
+        }
+
+
+
+
     }
 }
