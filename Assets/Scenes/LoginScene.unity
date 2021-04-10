@@ -500,6 +500,10 @@ PrefabInstance:
       propertyPath: m_Camera
       value: 
       objectReference: {fileID: 290909739}
+    - target: {fileID: 5631210011377829, guid: dacb1250ceac94419b80bf3205cba5d0, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5631210011377849, guid: dacb1250ceac94419b80bf3205cba5d0, type: 3}
       propertyPath: m_Camera
       value: 
@@ -508,6 +512,10 @@ PrefabInstance:
       propertyPath: m_Camera
       value: 
       objectReference: {fileID: 290909739}
+    - target: {fileID: 5631210349321193, guid: dacb1250ceac94419b80bf3205cba5d0, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1517105332810962832, guid: dacb1250ceac94419b80bf3205cba5d0,
         type: 3}
       propertyPath: _userConnect
