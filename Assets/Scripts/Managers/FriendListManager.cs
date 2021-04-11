@@ -77,7 +77,7 @@ namespace Managers
         private bool _feedbackGiven=false;
         public void AddNewFriend(TextMeshProUGUI NewFriendName)
         {
-            if(!_feedbackGiven)
+            if(!_feedbackGiven && !_invitations.Find(x=> x.GetUserName()==NewFriendName.text.Substring(0, NewFriendName.text.Length - 1)))
             {
                 var invitationStatus = DatabaseConnection.SendFriendshipRequest(NewFriendName.text);
                 _feedbackGiven = true;
