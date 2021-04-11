@@ -35,6 +35,7 @@ namespace UI
             {
                 LeanTween.cancel(_ltDescr.id);
             }
+            friendListManager.Initialize();
             SetUserName();
             gameObject.SetActive(true);    
         }

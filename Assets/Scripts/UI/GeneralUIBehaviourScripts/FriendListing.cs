@@ -1,4 +1,5 @@
-﻿using TMPro;
+﻿using System;
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 using DatabaseScripts;
@@ -9,6 +10,7 @@ namespace UI.GeneralUIBehaviourScripts
     {
         [SerializeField] private TextMeshProUGUI _username;
         [SerializeField] private Image _availability;
+        public event Action<FriendListing> OnRemoved,OnReject;
         
         public void SetUserName(string name)
         {
@@ -16,9 +18,8 @@ namespace UI.GeneralUIBehaviourScripts
         }
         public string GetUserName()
         {
-            return _username.text ;
+            return _username.text;
         }
-
 
         public void SetAvailability(bool isOnline)
         {
@@ -27,15 +28,14 @@ namespace UI.GeneralUIBehaviourScripts
         
         public void Remove()
         {
-
             DatabaseConnection.RemoveFriend(GetUserName());
-            Destroy(gameObject);
+            OnRemoved?.Invoke(this);
         }
 
         public void RejectInvitation()
         {
             DatabaseConnection.RejectFriendshipRequest(_username.text);
-            Destroy(gameObject);
+            OnReject?.Invoke(this);
         }
 
         public void AcceptInvitation()

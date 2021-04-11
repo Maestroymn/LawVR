@@ -21,23 +21,12 @@
   <component name="ChangeListManager">
     <list default="true" id="1615f86a-ec87-43d2-947c-b7e73a72c2dc" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.LawVR/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.LawVR/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/AdvancedPeoplePack2/Scripts/CharacterCustomization.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/AdvancedPeoplePack2/Scripts/CharacterCustomization.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/AdvancedPeoplePack2/Scripts/DemoScripts/UIControllerDEMO.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/AdvancedPeoplePack2/Scripts/DemoScripts/UIControllerDEMO.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Animations/UI/UserMenuShow.anim" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Animations/UI/UserMenuShow.anim" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/UI/Canvases/CaseListCanvas.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/UI/Canvases/CaseListCanvas.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/UI/Canvases/CreateLobby.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/UI/Canvases/CreateLobby.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/UI/Canvases/LobbyCanvasGroup.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/UI/Canvases/LobbyCanvasGroup.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/UI/Canvases/MainMenuUI.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/UI/Canvases/MainMenuUI.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/UI/Canvases/UIManager.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/UI/Canvases/UIManager.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/UI/Details Panel.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/UI/Details Panel.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/NetworkCharacterFemaleLawyer.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/NetworkCharacterFemaleLawyer.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/CreateLobbyScene.unity" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/CreateLobbyScene.unity.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Data/DataKeyValues.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Data/DataKeyValues.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Managers/PauseUIManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Managers/PauseUIManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Animations/UI/FriendListClose.anim" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Animations/UI/FriendListClose.anim" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/MainUIScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/MainUIScene.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/DatabaseScripts/DatabaseConnection.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/DatabaseScripts/DatabaseConnection.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Managers/FriendListManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Managers/FriendListManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/GeneralUIBehaviourScripts/FriendListing.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UI/GeneralUIBehaviourScripts/FriendListing.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/GeneralUIBehaviourScripts/MainMenuUI.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UI/GeneralUIBehaviourScripts/MainMenuUI.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/LoginScripts/LoginUIManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UI/LoginScripts/LoginUIManager.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/EditorBuildSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/EditorBuildSettings.asset" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/WriteLines2.txt" beforeDir="false" afterPath="$PROJECT_DIR$/WriteLines2.txt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -112,7 +101,6 @@
       <option value="$PROJECT_DIR$/Assets/Scripts/UI/GeneralUIBehaviourScripts/CaseListing.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/UI/CanvasScripts/CaseListCanvas.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/UI/GeneralUIBehaviourScripts/CaseDetailPanelBehaviour.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/UI/GeneralUIBehaviourScripts/FriendListing.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/UI/GeneralUIBehaviourScripts/CreateRoomMenu.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/UI/CanvasScripts/CurrentRoomCanvas.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/General/UserConnect.cs" />
@@ -120,19 +108,20 @@
       <option value="$PROJECT_DIR$/Assets/Scripts/Managers/RoomSessionManager.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Utilities/AutoSceneLoader.cs" />
       <option value="$PROJECT_DIR$/Assets/Photon/PhotonUnityNetworking/Demos/PunBasics-Tutorial/Scripts/GameManager.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/Managers/FriendListManager.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Managers/GameManager.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Managers/GameSettings.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/UI/LoginScripts/SignInManager.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/UI/LoginScripts/SignUpManager.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/UI/GeneralUIBehaviourScripts/UserProfilePanelBehaviour.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/DatabaseScripts/DatabaseConnection.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Data/DataKeyValues.cs" />
       <option value="$PROJECT_DIR$/Assets/AdvancedPeoplePack2/Scripts/DemoScripts/UIControllerDEMO.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/UI/GeneralUIBehaviourScripts/MainMenuUI.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Managers/PauseUIManager.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/UI/LoginScripts/LoginUIManager.cs" />
       <option value="$PROJECT_DIR$/Assets/AdvancedPeoplePack2/Scripts/CharacterCustomization.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/DatabaseScripts/DatabaseConnection.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/UI/GeneralUIBehaviourScripts/MainMenuUI.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Managers/FriendListManager.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/UI/GeneralUIBehaviourScripts/FriendListing.cs" />
     </changedPaths>
   </component>
   <component name="ProjectId" id="1m4WLUJiTV2lnEFPOPqD5h9uqk8" />
@@ -206,6 +195,7 @@
       <workItem from="1617538969558" duration="12787000" />
       <workItem from="1617743194789" duration="222000" />
       <workItem from="1618064917948" duration="9497000" />
+      <workItem from="1618145075497" duration="3941000" />
     </task>
     <servers />
   </component>

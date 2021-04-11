@@ -243,6 +243,41 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 7702976326356842512}
+    - target: {fileID: 8105396211487009699, guid: 063423666a8f8894faed7d841f439668,
+        type: 3}
+      propertyPath: m_OnSelect.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8105396211487009699, guid: 063423666a8f8894faed7d841f439668,
+        type: 3}
+      propertyPath: m_OnSelect.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 3060562259980452313}
+    - target: {fileID: 8105396211487009699, guid: 063423666a8f8894faed7d841f439668,
+        type: 3}
+      propertyPath: m_OnSelect.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: ResetAddFriendTextField
+      objectReference: {fileID: 0}
+    - target: {fileID: 8105396211487009699, guid: 063423666a8f8894faed7d841f439668,
+        type: 3}
+      propertyPath: m_OnSelect.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8105396211487009699, guid: 063423666a8f8894faed7d841f439668,
+        type: 3}
+      propertyPath: m_OnSelect.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgument
+      value: 
+      objectReference: {fileID: 1678658106744941162}
+    - target: {fileID: 8105396211487009699, guid: 063423666a8f8894faed7d841f439668,
+        type: 3}
+      propertyPath: m_OnSelect.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: TMPro.TextMeshProUGUI, Unity.TextMeshPro
+      objectReference: {fileID: 0}
+    - target: {fileID: 8105396211487009699, guid: 063423666a8f8894faed7d841f439668,
+        type: 3}
+      propertyPath: m_OnSelect.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 063423666a8f8894faed7d841f439668, type: 3}
 --- !u!4 &7702976327668818835 stripped
@@ -261,5 +296,29 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: db619b2e5cd79484a869384121bf7f6d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &3060562259980452313 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5570567254033395512, guid: 063423666a8f8894faed7d841f439668,
+    type: 3}
+  m_PrefabInstance: {fileID: 7437673136508595937}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aee3bcbbf6ee74814857c2d53ad14e12, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1678658106744941162 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8105396210972738699, guid: 063423666a8f8894faed7d841f439668,
+    type: 3}
+  m_PrefabInstance: {fileID: 7437673136508595937}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
