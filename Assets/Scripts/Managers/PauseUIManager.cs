@@ -1,4 +1,5 @@
 ﻿using System.Collections;
+using Data;
 using Photon.Pun;
 using Photon.Realtime;
 using UnityEngine;
@@ -63,7 +64,7 @@ namespace Managers
         {
             Cursor.visible = true;
             PhotonNetwork.Reconnect();
-            SceneManager.LoadScene(0);
+            SceneManager.LoadScene(DataKeyValues.__LOGIN_SCENE__);
         }
     }
 }

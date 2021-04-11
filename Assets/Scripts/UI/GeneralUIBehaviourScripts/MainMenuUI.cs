@@ -1,4 +1,5 @@
-﻿using DatabaseScripts;
+﻿using Data;
+using DatabaseScripts;
 using Managers;
 using Photon.Pun;
 using TMPro;
@@ -59,16 +60,23 @@ namespace UI
             }
         }
 
-        public void ShowProfileSettings()
+        public void LoadAvatarCustomizationScene()
         {
-            
+            if (GameManager.GameSettings.Gender == Gender.Female)
+            {
+                SceneManager.LoadScene(DataKeyValues.__FEMALE_CUSTOMIZATION_SCENE__);
+            }
+            else if(GameManager.GameSettings.Gender==Gender.Male)
+            {
+                SceneManager.LoadScene(DataKeyValues.__MALE_CUSTOMIZATION_SCENE__);
+            }
         }
 
         public void Logout()
         {
             DatabaseConnection.SetUserOffline(GameManager.GameSettings.NickName);
             PhotonNetwork.Disconnect();
-            SceneManager.LoadScene(0);
+            SceneManager.LoadScene(DataKeyValues.__LOGIN_SCENE__);
         }
     }
 }

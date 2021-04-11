@@ -20,18 +20,24 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="1615f86a-ec87-43d2-947c-b7e73a72c2dc" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.LawVR/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.LawVR/.idea/contentModel.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.LawVR/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.LawVR/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/AdvancedPeoplePack2/Scripts/CharacterCustomization.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/AdvancedPeoplePack2/Scripts/CharacterCustomization.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/AdvancedPeoplePack2/Scripts/DemoScripts/UIControllerDEMO.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/AdvancedPeoplePack2/Scripts/DemoScripts/UIControllerDEMO.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Animations/UI/UserMenuShow.anim" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Animations/UI/UserMenuShow.anim" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/UI/Canvases/CaseListCanvas.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/UI/Canvases/CaseListCanvas.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/UI/Canvases/CreateLobby.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/UI/Canvases/CreateLobby.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/UI/Canvases/LobbyCanvasGroup.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/UI/Canvases/LobbyCanvasGroup.prefab" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Prefabs/UI/Canvases/MainMenuUI.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/UI/Canvases/MainMenuUI.prefab" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Prefabs/UI/Canvases/UIManager.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/UI/Canvases/UIManager.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/CreateLobbyScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/CreateLobbyScene.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/DatabaseScripts/DatabaseConnection.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/DatabaseScripts/DatabaseConnection.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Managers/GameManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Managers/GameManager.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Managers/GameSettings.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Managers/GameSettings.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/UI/Details Panel.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/UI/Details Panel.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/NetworkCharacterFemaleLawyer.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/NetworkCharacterFemaleLawyer.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/CreateLobbyScene.unity" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/CreateLobbyScene.unity.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Data/DataKeyValues.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Data/DataKeyValues.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Managers/PauseUIManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Managers/PauseUIManager.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/GeneralUIBehaviourScripts/MainMenuUI.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UI/GeneralUIBehaviourScripts/MainMenuUI.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/LoginScripts/LoginUIManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UI/LoginScripts/LoginUIManager.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/LoginScripts/SignInManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UI/LoginScripts/SignInManager.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/LoginScripts/SignUpManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UI/LoginScripts/SignUpManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/EditorBuildSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/EditorBuildSettings.asset" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/WriteLines2.txt" beforeDir="false" afterPath="$PROJECT_DIR$/WriteLines2.txt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -61,6 +67,7 @@
     <setting file="file://$PROJECT_DIR$/Assets/Photon/PhotonVoice/Code/Editor/PhotonVoiceEditorUtils.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/84FE8231-54FA-4674-B5D8-4E26ADDFF0A0/72/c4a5d5b9/PlayModeStateChange.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/LeanTween/Editor/LeanTweenDocumentationEditor.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/41255891-47EE-4C70-963F-E403C2B5C5B1/89/030fdd93/SceneManager.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Utilities/Extensions.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/UI/GeneralUIBehaviourScripts/ConnectionQuality.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Managers/FriendListManager.cs" root0="FORCE_HIGHLIGHTING" />
@@ -71,11 +78,10 @@
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Utilities/SpeechRecognition.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Utilities/SingletonReferences.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/UI/LoginScripts/SignInManager.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/41255891-47EE-4C70-963F-E403C2B5C5B1/0c/b9ccb2ca/Application.cs" root0="SKIP_HIGHLIGHTING" />
   </component>
   <component name="IdeDocumentHistory">
     <changedPaths>
-      <option value="$PROJECT_DIR$/Assets/Scripts/UI/CanvasScripts/JoinRoomCanvas.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/General/User.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/TestConnect.cs" />
       <option value="$PROJECT_DIR$/Assets/Photon/PhotonUnityNetworking/Code/PhotonView.cs" />
       <option value="$PROJECT_DIR$/Assets/Photon/PhotonRealtime/Code/LoadbalancingPeer.cs" />
@@ -85,7 +91,6 @@
       <option value="$PROJECT_DIR$/Assets/Scripts/deleteme.cs" />
       <option value="$PROJECT_DIR$/Assets/Resources/Deleteme.cs" />
       <option value="$PROJECT_DIR$/Assets/Deleteme.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/Data/DataKeyValues.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/UI/JoinRoomMenu.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/UI/PlayerListing.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/UI/PlayerListingsMenu.cs" />
@@ -113,18 +118,21 @@
       <option value="$PROJECT_DIR$/Assets/Scripts/General/UserConnect.cs" />
       <option value="$PROJECT_DIR$/Assets/Soja Exiles/SE Basic Assets/Scripts and Animations/FPS By Acacia Developer/PlayerMove.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Managers/RoomSessionManager.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/Managers/PauseUIManager.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Utilities/AutoSceneLoader.cs" />
       <option value="$PROJECT_DIR$/Assets/Photon/PhotonUnityNetworking/Demos/PunBasics-Tutorial/Scripts/GameManager.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Managers/FriendListManager.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/UI/GeneralUIBehaviourScripts/MainMenuUI.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Managers/GameManager.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/UI/LoginScripts/LoginUIManager.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Managers/GameSettings.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/UI/LoginScripts/SignInManager.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/UI/LoginScripts/SignUpManager.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/UI/GeneralUIBehaviourScripts/UserProfilePanelBehaviour.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/DatabaseScripts/DatabaseConnection.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Data/DataKeyValues.cs" />
+      <option value="$PROJECT_DIR$/Assets/AdvancedPeoplePack2/Scripts/DemoScripts/UIControllerDEMO.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/UI/GeneralUIBehaviourScripts/MainMenuUI.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Managers/PauseUIManager.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/UI/LoginScripts/LoginUIManager.cs" />
+      <option value="$PROJECT_DIR$/Assets/AdvancedPeoplePack2/Scripts/CharacterCustomization.cs" />
     </changedPaths>
   </component>
   <component name="ProjectId" id="1m4WLUJiTV2lnEFPOPqD5h9uqk8" />
@@ -197,7 +205,7 @@
       <workItem from="1617536765751" duration="1613000" />
       <workItem from="1617538969558" duration="12787000" />
       <workItem from="1617743194789" duration="222000" />
-      <workItem from="1618064917948" duration="7322000" />
+      <workItem from="1618064917948" duration="9497000" />
     </task>
     <servers />
   </component>

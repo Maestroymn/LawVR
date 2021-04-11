@@ -187,6 +187,7 @@ namespace AdvancedCustomizableSystem
             // this._transform = transform;
             // _lodGroup = GetComponent<LODGroup>();
             // RecalculateLOD();
+            LoadFromFile();
             InitColors();
             StartupSerializationApply();
         }

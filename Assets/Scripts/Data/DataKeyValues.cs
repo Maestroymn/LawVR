@@ -24,5 +24,13 @@ namespace Data
         public static readonly string __SANDBOX_MODE__ = "sandbox";
         public static readonly string __CHALLENGE_MODE__ = "challenge";
         #endregion
+
+        #region SCENE TAGS
+        public static readonly int __LOGIN_SCENE__ = 0;
+        public static readonly int __MAIN_UI_SCENE__ = 1;
+        public static readonly int __COURT_SCENE__ = 2; 
+        public static readonly int __FEMALE_CUSTOMIZATION_SCENE__ = 3;
+        public static readonly int __MALE_CUSTOMIZATION_SCENE__ = 4;
+        #endregion
     }
 }

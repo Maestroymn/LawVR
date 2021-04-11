@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using Data;
+using UnityEngine;
 using UnityEngine.UI;
 using DatabaseScripts;
 using General;
@@ -54,7 +55,7 @@ namespace UI.LoginScripts
             GameManager.GameSettings.Mail = DatabaseConnection.GetEmail();
             var isFemale = DatabaseConnection.GetIsFemale();
             GameManager.GameSettings.Gender = isFemale ? Gender.Female : Gender.Male;
-            SceneManager.LoadScene(1);
+            SceneManager.LoadScene(DataKeyValues.__MAIN_UI_SCENE__);
         }
 
         public void ShowSignInCanvas()

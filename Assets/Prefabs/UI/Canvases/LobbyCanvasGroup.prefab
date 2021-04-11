@@ -67,12 +67,12 @@ PrefabInstance:
     - target: {fileID: 292622419845710088, guid: c047864525ed2784fb8cf1aa7cc81ccd,
         type: 3}
       propertyPath: m_AnchorMax.x
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 292622419845710088, guid: c047864525ed2784fb8cf1aa7cc81ccd,
         type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 292622419906336026, guid: c047864525ed2784fb8cf1aa7cc81ccd,
         type: 3}
@@ -184,20 +184,25 @@ PrefabInstance:
       propertyPath: m_Name
       value: CurrentRoomCanvas
       objectReference: {fileID: 0}
+    - target: {fileID: 292622419906336027, guid: c047864525ed2784fb8cf1aa7cc81ccd,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 292622420024407451, guid: c047864525ed2784fb8cf1aa7cc81ccd,
         type: 3}
       propertyPath: m_AnchorMax.x
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 292622420024407451, guid: c047864525ed2784fb8cf1aa7cc81ccd,
         type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 292622420024407451, guid: c047864525ed2784fb8cf1aa7cc81ccd,
         type: 3}
       propertyPath: m_SizeDelta.x
-      value: 0
+      value: -17
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c047864525ed2784fb8cf1aa7cc81ccd, type: 3}
@@ -395,6 +400,11 @@ PrefabInstance:
       propertyPath: _roomListingsMenu
       value: 
       objectReference: {fileID: 3576758453540590610}
+    - target: {fileID: 4825730831988814174, guid: 026a55c81aaaaab4eb255603de3b9f3e,
+        type: 3}
+      propertyPath: m_IsOn
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4825730832382016152, guid: 026a55c81aaaaab4eb255603de3b9f3e,
         type: 3}
       propertyPath: m_Name

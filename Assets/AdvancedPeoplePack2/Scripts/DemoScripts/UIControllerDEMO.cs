@@ -2,23 +2,14 @@
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 using AdvancedCustomizableSystem;
+using Data;
 
-/// <summary>
-/// This script was created to demonstrate api, I do not recommend using it in your projects.
-/// </summary>
 public class UIControllerDEMO : MonoBehaviour
 {
-    [Space(5)]
-    [Header("I do not recommend using it in your projects")]
-    [Header("This script was created to demonstrate api")]
-
     public CharacterCustomization CharacterCustomization;
     [Space(15)]
 
     public Text playbutton_text;
-
-    public Text bake_text;
-    public Text lod_text;
 
     public Text panelNameText;
 
@@ -30,8 +21,6 @@ public class UIControllerDEMO : MonoBehaviour
     public Slider breastSlider;
 
     public Slider heightSlider;
-
-    public Slider legSlider;
 
     public Slider headSizeSlider;
 
@@ -127,19 +116,6 @@ public class UIControllerDEMO : MonoBehaviour
     public void SetHeadSize()
     {
         CharacterCustomization.SetHeadSize(headSizeSlider.value);
-    }
-    int lodIndex;
-    public void Lod_Event(int next)
-    {
-        lodIndex += next;
-        if (lodIndex < 0)
-            lodIndex = 3;
-        if (lodIndex > 3)
-            lodIndex = 0;
-
-        lod_text.text = lodIndex.ToString();
-
-        CharacterCustomization.ForceLOD(lodIndex);
     }
     public void SetNewSkinColor(Color color)
     {
@@ -333,18 +309,11 @@ public class UIControllerDEMO : MonoBehaviour
 
         playbutton_text.text = (walk_active) ? "STOP" : "PLAY";
     }
+
+    public void LoadMainMenu()
+    {
+        SceneManager.LoadScene(DataKeyValues.__MAIN_UI_SCENE__);
+    }
     #endregion
 
-    bool canvasVisible = true;
-    private void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.H))
-        {
-            canvasVisible = !canvasVisible;
-
-            GameObject.FindGameObjectWithTag("Canvas").GetComponent<Canvas>().enabled = canvasVisible;
-        }
-        Camera.transform.position = Vector3.Lerp(Camera.transform.position, CameraPositionForPanels[currentPanelIndex], Time.deltaTime * 5);
-        Camera.transform.eulerAngles = Vector3.Lerp(Camera.transform.eulerAngles, CameraEulerForPanels[currentPanelIndex], Time.deltaTime * 5);
-    }
 }
