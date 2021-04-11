@@ -16,9 +16,12 @@ namespace Managers
         [SerializeField] private Button _friendListTabButton, _waitingListTabButton;
         private List<FriendListing> _friends;
         private List<FriendListing> _invitations;
-
+        private List<FriendListing> _friendsToBeRemoved;
+        private List<FriendListing> _invitesToBeRemoved;
         public void Initialize()
         {
+            _friendsToBeRemoved = new List<FriendListing>();
+            _invitesToBeRemoved = new List<FriendListing>();
             _friends = new List<FriendListing>();
             _invitations = new List<FriendListing>();
         }
@@ -32,6 +35,18 @@ namespace Managers
                 {
                     AddFriendListing(friend.Key, friend.Value);
                 }
+                _friends.ForEach(friend =>
+                {
+                    if (!DatabaseFriendList.ContainsKey(friend.GetUserName()))
+                    {
+                        _friendsToBeRemoved.Add(friend);
+                    }
+                });
+                if (_friendsToBeRemoved.Count != 0)
+                {
+                    _friendsToBeRemoved.ForEach(OnRemovedFriend);
+                    _friendsToBeRemoved.Clear();
+                }
             }
         }
 
@@ -43,6 +58,18 @@ namespace Managers
                 foreach (var Invitation in DatabaseInvitationList)
                 {
                     AddInvitationListing(Invitation.Key, Invitation.Value);
+                }
+                _invitations.ForEach(invitation =>
+                {
+                    if (!DatabaseInvitationList.ContainsKey(invitation.GetUserName()))
+                    {
+                        _invitesToBeRemoved.Add(invitation);
+                    }
+                });
+                if (_invitesToBeRemoved.Count != 0)
+                {
+                    _invitesToBeRemoved.ForEach(OnRejectFriend);
+                    _invitesToBeRemoved.Clear();
                 }
             }
         }
