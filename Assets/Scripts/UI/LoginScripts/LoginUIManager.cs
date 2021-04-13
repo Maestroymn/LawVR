@@ -55,6 +55,7 @@ namespace UI.LoginScripts
             GameManager.GameSettings.Mail = DatabaseConnection.GetEmail();
             var isFemale = DatabaseConnection.GetIsFemale();
             GameManager.GameSettings.Gender = isFemale ? Gender.Female : Gender.Male;
+            GameManager.GameSettings.UserID = DatabaseConnection.GetUserID();
             SceneManager.LoadScene(DataKeyValues.__MAIN_UI_SCENE__);
         }
 

@@ -731,6 +731,9 @@
           <e p="LICENSE.txt" t="Include" />
         </e>
         <e p="Scripts" t="Include">
+          <e p="AI" t="Include">
+            <e p="AIJudgeGeneralBehaviour.cs" t="Include" />
+          </e>
           <e p="Data" t="Include">
             <e p="DataKeyValues.cs" t="Include" />
           </e>
@@ -793,7 +796,6 @@
           <e p="Courthouse" t="Include">
             <e p="Scenes" t="Include">
               <e p="Please Read Me Courthouse Modular Build Kit Ver 1.0.txt" t="Include" />
-              <e p="SceneSwitch.cs" t="Include" />
             </e>
           </e>
           <e p="SE Basic Assets" t="Include">

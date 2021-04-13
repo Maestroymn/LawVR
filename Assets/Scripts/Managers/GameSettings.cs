@@ -1,5 +1,4 @@
-﻿using DatabaseScripts;
-using UnityEngine;
+﻿using UnityEngine;
 
 namespace Managers
 {
@@ -17,5 +16,6 @@ namespace Managers
         public string Password;
         public string Mail;
         public Gender Gender;
+        public string UserID;
     }
 }

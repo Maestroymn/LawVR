@@ -3,12 +3,14 @@ using System.Collections.Generic;
 using UI.GeneralUIBehaviourScripts;
 using UnityEngine;
 using DatabaseScripts;
+using Photon.Pun;
+using Photon.Realtime;
 using TMPro;
 using UnityEngine.UI;
 
 namespace Managers
 {
-    public class FriendListManager : MonoBehaviour
+    public class FriendListManager : MonoBehaviourPunCallbacks
     {
         [SerializeField] private FriendListing _friendListingPrefab, _waitingListingPrefab;
         [SerializeField] private Transform _friendListScrollView,_waitingInvitationsScrollView;
@@ -28,19 +30,20 @@ namespace Managers
         
         public void RefreshFriendList()
         {
-            Dictionary<string, bool> DatabaseFriendList = DatabaseConnection.RetrieveFriendList(GameManager.GameSettings.NickName);
+            List<Friend> DatabaseFriendList = DatabaseConnection.RetrieveFriendList(GameManager.GameSettings.NickName);
             if (DatabaseFriendList.Count != 0)
             {
                 foreach (var friend in DatabaseFriendList)
                 {
-                    AddFriendListing(friend.Key, friend.Value);
+                    AddFriendListing(friend.Name, friend.IsOnline);
                 }
                 _friends.ForEach(friend =>
                 {
-                    if (!DatabaseFriendList.ContainsKey(friend.GetUserName()))
+                    if (DatabaseFriendList.Find(x=>x.Name.Equals(friend.GetUserName())).Equals(null))
                     {
                         _friendsToBeRemoved.Add(friend);
                     }
+
                 });
                 if (_friendsToBeRemoved.Count != 0)
                 {

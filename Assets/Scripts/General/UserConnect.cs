@@ -17,6 +17,7 @@ namespace General
             {
                 print("Connecting to server.");
                 PhotonNetwork.AutomaticallySyncScene = true;
+                PhotonNetwork.AuthValues = new AuthenticationValues(GameManager.GameSettings.UserID);
                 PhotonNetwork.GameVersion = GameManager.GameSettings.GameVersion;
                 PhotonNetwork.NickName = GameManager.GameSettings.NickName;
                 PlayerProperties["Role"] = "none";

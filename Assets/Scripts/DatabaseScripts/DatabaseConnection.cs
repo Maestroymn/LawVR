@@ -3,7 +3,6 @@ using Npgsql;
 using Photon.Pun;
 using System;
 using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
 using UnityEngine;
 using Utilities;
 
@@ -30,6 +29,19 @@ namespace DatabaseScripts
         AlreadyFriend
     }
 
+    public struct Friend
+    {
+        public string UserID;
+        public string Name;
+        public bool IsOnline;
+
+        public Friend(string userID, string name, bool isOnline)
+        {
+            UserID = userID;
+            Name = name;
+            IsOnline = isOnline;
+        }
+    }
 
     public class DatabaseConnection : MonoBehaviour
     {
@@ -70,6 +82,10 @@ namespace DatabaseScripts
             NpgsqlDataReader passwordTable = SqlCommand.ExecuteReader();
             if (passwordTable.HasRows)
             {
+                //TODO: Check if such user is already online in servers, if yes warn the user and disallow to sign in.
+                /*SqlCommand.CommandText = "SELECT is_online FROM users where name='" + username + "' ";
+                NpgsqlDataReader AlreadyOnlineCheck = SqlCommand.ExecuteReader();
+                AlreadyOnlineCheck.Read();*/
                 passwordTable.Read();
                 if (passwordTable[0].Equals(password))
                 {
@@ -121,26 +137,23 @@ namespace DatabaseScripts
 
         }
 
-        public static Dictionary<string, bool> RetrieveFriendList(string username)
+        public static List<Friend> RetrieveFriendList(string username)
         {
-
-            Dictionary<string, bool> Friends = new Dictionary<string, bool>();
+            List<Friend> Friends = new List<Friend>();
             SqlCommand.CommandText = "select f.friend_user_name , " +
+                                     "(select user_id from users where name = f.friend_user_name) , " +
                                      "(select is_online from users where name = f.friend_user_name) " +
                                      "from users as u " +
                                      "left join friendship_list as f on u.name = f.user_name " +
                                      "where f.friend_user_name is not null and u.name = '" + username + "'";
-
-
-
+            
             NpgsqlDataReader FriendList = SqlCommand.ExecuteReader();
             while (FriendList.Read())
             {
-                Friends.Add(FriendList[0].ToString(), FriendList[1].ToString().ToLower() == "true" ? true : false);
+                Friends.Add(new Friend(FriendList[1].ToString(),FriendList[0].ToString() ,FriendList[2].ToString().ToLower() == "true"));
             }
 
             return Friends;
-
         }
 
 
@@ -296,8 +309,7 @@ namespace DatabaseScripts
 
         public static void SetUserOffline(string username)
         {
-
-
+            
             SqlCommand.CommandText = "update users set is_online = false where name='" + username + "'";
             SqlCommand.ExecuteNonQuery();
         }
@@ -308,6 +320,14 @@ namespace DatabaseScripts
             NpgsqlDataReader UserEmail =   SqlCommand.ExecuteReader();
             UserEmail.Read();
             return UserEmail[0].ToString();
+        }
+        
+        public static string GetUserID()
+        {
+            SqlCommand.CommandText = "select user_id from users where name ='"+GameManager.GameSettings.NickName+"'";
+            NpgsqlDataReader UserID =   SqlCommand.ExecuteReader();
+            UserID.Read();
+            return UserID[0].ToString();
         }
         public static bool GetIsFemale()
         {

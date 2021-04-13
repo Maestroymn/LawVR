@@ -19,14 +19,5 @@ namespace Photon.Pun.UtilityScripts
     /// </summary>
     public class OnEscapeQuit : MonoBehaviour
     {
-        [Conditional("UNITY_ANDROID"), Conditional("UNITY_IOS")]
-        public void Update()
-        {
-            // "back" button of phone equals "Escape". quit app if that's pressed
-            if (Input.GetKeyDown(KeyCode.Escape))
-            {
-                Application.Quit();
-            }
-        }
     }
 }

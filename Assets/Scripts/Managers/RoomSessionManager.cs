@@ -1,4 +1,6 @@
 ﻿using System.Collections.Generic;
+using AI;
+using Data;
 using General;
 using Photon.Pun;
 using Photon.Realtime;
@@ -10,6 +12,7 @@ namespace Managers
     public class RoomSessionManager : MonoBehaviourPunCallbacks
     {
         [SerializeField] private GameObject judge,plaintiff,spectator,defendant;
+        [SerializeField] private AIJudgeGeneralBehaviour _aiJudgeGeneralBehaviour;
         [SerializeField] private List<CourtBuilding> _courtBuildings;
         [SerializeField] private Transform SessionEnvironmentParent;
         private CourtBuilding _currentBuilding;
@@ -22,6 +25,10 @@ namespace Managers
         private void HandleBuildingSpawn()
         {
             _currentBuilding=Instantiate(_courtBuildings.PickRandom(),SessionEnvironmentParent);
+            if ((bool) PhotonNetwork.CurrentRoom.CustomProperties[DataKeyValues.__AI_JUDGE__])
+            {
+                GameManager.NetworkInstantiate(_aiJudgeGeneralBehaviour.gameObject, _currentBuilding.JudgeTransform.position, Quaternion.identity);
+            }
             HandleSpawns();
         }
 

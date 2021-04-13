@@ -3,6 +3,7 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 using DatabaseScripts;
+using Photon.Pun;
 
 namespace UI.GeneralUIBehaviourScripts
 {
@@ -25,7 +26,7 @@ namespace UI.GeneralUIBehaviourScripts
         {
             _availability.color = isOnline ? Color.green : Color.gray;
         }
-        
+
         public void Remove()
         {
             DatabaseConnection.RemoveFriend(GetUserName());
