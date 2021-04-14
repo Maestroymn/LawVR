@@ -18,7 +18,7 @@ namespace Utilities
             DirSeperatorChar = Path.DirectorySeparatorChar;
             UnityEngine.Debug.Log("lets do something");
 
-            PythonScriptPath = @Application.dataPath + DirSeperatorChar + "Python"+ DirSeperatorChar + "listen_user_test.py";
+            PythonScriptPath = @Application.dataPath + DirSeperatorChar + "Python"+ DirSeperatorChar + "listen_user_test.pyc";
             WorkingDirectory = @Application.dataPath + DirSeperatorChar + "Python";
 
             PythonExePath = @Application.dataPath + DirSeperatorChar + "Python" + DirSeperatorChar + "Scripts" + DirSeperatorChar+  "python.exe";
