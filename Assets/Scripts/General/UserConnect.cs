@@ -1,4 +1,5 @@
-﻿using Managers;
+﻿using DatabaseScripts;
+using Managers;
 using Photon.Pun;
 using Photon.Realtime;
 using UI.LoginScripts;
@@ -42,6 +43,7 @@ namespace General
         public override void OnDisconnected(DisconnectCause cause)
         {
             print("Disconnected from server: "+cause);
+            DatabaseConnection.SetUserOffline(GameManager.GameSettings.NickName);
         }
     
         public override void OnJoinedLobby()

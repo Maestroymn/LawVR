@@ -1315,8 +1315,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 2867963814226378465}
-        m_MethodName: SaveToFile
+      - m_Target: {fileID: 280646710}
+        m_MethodName: SaveToDB
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

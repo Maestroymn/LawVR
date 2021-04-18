@@ -1,6 +1,7 @@
 ﻿using System.Collections.Generic;
 using AI;
 using Data;
+using DatabaseScripts;
 using General;
 using Photon.Pun;
 using Photon.Realtime;
@@ -57,6 +58,7 @@ namespace Managers
         public override void OnDisconnected(DisconnectCause cause)
         {
             base.OnDisconnected(cause);
+            DatabaseConnection.SetUserOffline(GameManager.GameSettings.NickName);
             if (PhotonNetwork.LocalPlayer.IsMasterClient)
             {
                 UIManager.Instance.RoomsCanvases.HostRoomCanvas.CreateRoomMenu.RoomListingsMenu.RemoveRoomListing(PhotonNetwork.CurrentRoom);

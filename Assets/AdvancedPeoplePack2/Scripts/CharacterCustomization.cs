@@ -3,6 +3,8 @@ using System.IO;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
+using DatabaseScripts;
+using Managers;
 using UnityEditor;
 using UnityEngine;
 
@@ -187,9 +189,16 @@ namespace AdvancedCustomizableSystem
             // this._transform = transform;
             // _lodGroup = GetComponent<LODGroup>();
             // RecalculateLOD();
-            LoadFromFile();
             InitColors();
-            StartupSerializationApply();
+            Debug.Log("CHANGING AVATAR VISUAL");
+            LoadFromDB();
+            //StartupSerializationApply();
+        }
+
+        private void Start()
+        {
+            Debug.Log("CHANGING AVATAR VISUAL");
+            LoadFromDB();
         }
 
         private void Update()
@@ -1751,9 +1760,28 @@ namespace AdvancedCustomizableSystem
 
             if (!Directory.Exists(folderPath))
                 Directory.CreateDirectory(folderPath);
-
+            
             File.WriteAllText(string.Format("{0}/characterData_{1}.json", folderPath, (custom_name == string.Empty) ? this.name : custom_name), json, System.Text.Encoding.UTF8);
         }
+
+        public void SaveToDB()
+        {
+            CharacterCustomizationSetup characterCustomizationSetup = GetSetup();
+            string json = characterCustomizationSetup.SerializeToJson();
+            DatabaseConnection.SaveAvatarPreference(json);
+        }
+
+        
+        public void LoadFromDB()
+        {
+            var jsonObject = DatabaseConnection.GetAvatarPreferences();
+            if (jsonObject != string.Empty)
+            {
+                GameManager.GameSettings.CharacterCustomizationSetup= CharacterCustomizationSetup.DeserializeFromJson(jsonObject);
+                SetCharacterSetup(GameManager.GameSettings.CharacterCustomizationSetup);
+            }
+        }
+
         public void LoadFromFile(string file_name = "")
         {
             var dataPath = Application.persistentDataPath;

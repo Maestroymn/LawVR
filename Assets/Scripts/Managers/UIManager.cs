@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using DatabaseScripts;
 using Photon.Pun;
 using Photon.Realtime;
 using UI;
@@ -114,7 +115,14 @@ namespace Managers
                 }
             });
         }
-        
+
+
+        public override void OnDisconnected(DisconnectCause cause)
+        {
+            base.OnDisconnected(cause);
+            DatabaseConnection.SetUserOffline(GameManager.GameSettings.NickName);
+        }
+
         #endregion
     }
 }

@@ -6,7 +6,6 @@ using Managers;
 
 namespace UI.LoginScripts
 {
-
     public class SignInManager : MonoBehaviour
     {
         [SerializeField] private TextMeshProUGUI _name, _password;
@@ -37,6 +36,10 @@ namespace UI.LoginScripts
                 case SignInStatus.WrongPassword:
                     _password.color = Color.red;
                     _password.text = "WRONG PASSWORD"; 
+                    break;
+                case SignInStatus.AlreadyLoggedIn:
+                    _name.color = Color.red;
+                    _name.text = "ALREADY ONLINE";
                     break;
             }
                         

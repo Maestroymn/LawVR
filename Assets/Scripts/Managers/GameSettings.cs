@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using AdvancedCustomizableSystem;
+using UnityEngine;
 
 namespace Managers
 {
@@ -17,5 +18,6 @@ namespace Managers
         public string Mail;
         public Gender Gender;
         public string UserID;
+        public CharacterCustomizationSetup CharacterCustomizationSetup;
     }
 }

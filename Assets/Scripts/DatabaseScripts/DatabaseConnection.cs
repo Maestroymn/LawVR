@@ -11,6 +11,7 @@ namespace DatabaseScripts
 
     public enum SignInStatus
     {
+        AlreadyLoggedIn,
         SuccesfulLogin,
         UserDoesntExist,
         WrongPassword
@@ -82,13 +83,17 @@ namespace DatabaseScripts
             NpgsqlDataReader passwordTable = SqlCommand.ExecuteReader();
             if (passwordTable.HasRows)
             {
-                //TODO: Check if such user is already online in servers, if yes warn the user and disallow to sign in.
-                /*SqlCommand.CommandText = "SELECT is_online FROM users where name='" + username + "' ";
-                NpgsqlDataReader AlreadyOnlineCheck = SqlCommand.ExecuteReader();
-                AlreadyOnlineCheck.Read();*/
+                
                 passwordTable.Read();
                 if (passwordTable[0].Equals(password))
                 {
+                    SqlCommand.CommandText = "SELECT is_online FROM users where name='" + username + "' ";
+                    NpgsqlDataReader alreadyOnlineCheck = SqlCommand.ExecuteReader();
+                    alreadyOnlineCheck.Read();
+                    if (alreadyOnlineCheck[0].ToString().ToLower().Equals("true"))
+                    {
+                        return SignInStatus.AlreadyLoggedIn;
+                    }
                     GameManager.GameSettings.NickName = username;
                     return SignInStatus.SuccesfulLogin;
                 }
@@ -361,7 +366,18 @@ namespace DatabaseScripts
         }
 
 
+        public static string GetAvatarPreferences()
+        {
+            SqlCommand.CommandText = "select preference from users where name ='" + GameManager.GameSettings.NickName + "'";
+            NpgsqlDataReader UserPreference = SqlCommand.ExecuteReader();
+            UserPreference.Read();
+            return UserPreference[0].ToString();
+        }
 
-
+        public static void SaveAvatarPreference(string json)
+        {
+            SqlCommand.CommandText = "update users set preference ='" + json + "' where name ='" + GameManager.GameSettings.NickName + "'";
+            SqlCommand.ExecuteNonQuery();
+        }
     }
 }
