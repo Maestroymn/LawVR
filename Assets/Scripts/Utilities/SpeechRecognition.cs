@@ -18,10 +18,10 @@ namespace Utilities
             DirSeperatorChar = Path.DirectorySeparatorChar;
             UnityEngine.Debug.Log("lets do something");
 
-            PythonScriptPath = @Application.dataPath + DirSeperatorChar + "Python"+ DirSeperatorChar + "listen_user_test.pyc";
+            PythonScriptPath = @Application.dataPath + DirSeperatorChar + "Python"+ DirSeperatorChar + "listen_user_test.py";
             WorkingDirectory = @Application.dataPath + DirSeperatorChar + "Python";
 
-            PythonExePath = @Application.dataPath + DirSeperatorChar + "Python" + DirSeperatorChar + "Scripts" + DirSeperatorChar+  "python.exe";
+            PythonExePath = @Application.dataPath + DirSeperatorChar + "Python" + DirSeperatorChar + "venv"+ DirSeperatorChar + "Scripts" + DirSeperatorChar+  "python.exe";
             PythonThread = new Thread(RunPythonListenerScript);
             PythonThread.Start();
             using (StreamWriter sw = File.CreateText("WriteLines2.txt"))
