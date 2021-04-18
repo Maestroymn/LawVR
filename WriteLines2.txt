@@ -1,2 +1,2 @@
-C:/Unity Projects/Final Project/LawVR/Assets\Python\listen_user_test.py
-C:/Unity Projects/Final Project/LawVR/Assets\Python\venv\Scripts\python.exe
+D:/Unity3D/LawVR/LawVR/Assets\Python\listen_user_test.py
+D:/Unity3D/LawVR/LawVR/Assets\Python\Python27\python.exe
