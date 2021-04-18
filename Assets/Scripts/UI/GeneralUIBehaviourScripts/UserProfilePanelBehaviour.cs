@@ -72,7 +72,6 @@ namespace UI.GeneralUIBehaviourScripts
             }
             DatabaseConnection.SetIsFemale(_gender != Gender.Male);
             GameManager.GameSettings.Gender = _gender;
-            DatabaseConnection.SaveAvatarPreference("");
             _newUsername.text = String.Empty;
             _newMail.text = String.Empty;
             _newPassword.text = String.Empty;
