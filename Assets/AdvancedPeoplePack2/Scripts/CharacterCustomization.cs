@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.Linq;
 using DatabaseScripts;
 using Managers;
+using Photon.Pun;
 using UnityEditor;
 using UnityEngine;
 
@@ -13,7 +14,7 @@ namespace AdvancedCustomizableSystem
     /// <summary>
     /// Class for customization character (v2.0)
     /// </summary>
-    public class CharacterCustomization : MonoBehaviour
+    public class CharacterCustomization : MonoBehaviourPunCallbacks
     {
         [Header("All character parts")]
         [Header("API Version 2.2")]
@@ -189,16 +190,12 @@ namespace AdvancedCustomizableSystem
             // this._transform = transform;
             // _lodGroup = GetComponent<LODGroup>();
             // RecalculateLOD();
-            InitColors();
-            Debug.Log("CHANGING AVATAR VISUAL");
-            LoadFromDB();
+            if(photonView.IsMine)
+            {
+                InitColors();
+                LoadFromDB();
+            }
             //StartupSerializationApply();
-        }
-
-        private void Start()
-        {
-            Debug.Log("CHANGING AVATAR VISUAL");
-            LoadFromDB();
         }
 
         private void Update()
