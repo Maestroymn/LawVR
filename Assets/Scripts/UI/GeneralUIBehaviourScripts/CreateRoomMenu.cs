@@ -3,17 +3,17 @@ using Photon.Pun;
 using UnityEngine;
 using TMPro;
 using Photon.Realtime;
-using UnityEngine.Assertions.Must;
 using UnityEngine.UI;
 
 namespace UI
 {
     public class CreateRoomMenu : MonoBehaviourPunCallbacks
     {
-        [SerializeField] private TextMeshProUGUI _roomName, _password;
+        [SerializeField] private TMP_InputField _roomName, _password;
         [SerializeField] private RoomListingsMenu _roomListingsMenu;
         [SerializeField] private TMP_Dropdown _dropdown;
         [SerializeField] private Toggle _toggle;
+        [SerializeField] private Transform _caseListingButton;
         public RoomListingsMenu RoomListingsMenu { get; private set; }
         private RoomsCanvases _roomsCanvases;
         private bool _roomCreated;
@@ -72,6 +72,7 @@ namespace UI
         
         public void OnClickCreateRoom()
         {
+            if (!IsRequiredFieldsFilled()) return;
             if (!PhotonNetwork.IsConnected || _roomCreated)
             {
                 Debug.Log("NOTCONNECTED"+_roomCreated);
@@ -83,6 +84,35 @@ namespace UI
             }
             _roomOptions.CustomRoomProperties[DataKeyValues.__ROOM_NAME__] = _roomName.text;
             PhotonNetwork.CreateRoom(_roomName.text, _roomOptions, TypedLobby.Default);
+        }
+
+        private bool IsRequiredFieldsFilled()
+        {
+            if (_roomName.text.Length == 0)
+            {
+                if (_roomName.transform.gameObject.LeanIsTweening()) return false;
+                _roomName.transform.LeanMoveX(_roomName.transform.position.x + 4f, .1f).setOnComplete(() =>
+                {
+                    _roomName.transform.LeanMoveX(_roomName.transform.position.x - 8f, .1f).setOnComplete(() =>
+                    {
+                        _roomName.transform.LeanMoveX(_roomName.transform.position.x + 4f, .1f);
+                    });
+                });
+                return false;
+            }
+            if (!_roomsCanvases.HostRoomCanvas.CaseListCanvas.SelectedCase)
+            {
+                if (_caseListingButton.transform.gameObject.LeanIsTweening()) return false;
+                _caseListingButton.transform.LeanMoveX(_caseListingButton.transform.position.x + 4f, .1f).setOnComplete(() =>
+                {
+                    _caseListingButton.transform.LeanMoveX(_caseListingButton.transform.position.x - 8f, .1f).setOnComplete(() =>
+                    {
+                        _caseListingButton.transform.LeanMoveX(_caseListingButton.transform.position.x + 4f, .1f);
+                    });
+                });
+                return false;
+            }
+            return true;
         }
         #endregion
 

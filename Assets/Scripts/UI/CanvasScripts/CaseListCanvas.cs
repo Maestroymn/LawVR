@@ -5,6 +5,7 @@ namespace UI.CanvasScripts
 {
     public class CaseListCanvas : MonoBehaviour
     {
+        [HideInInspector] public CaseListing SelectedCase;
         [SerializeField] private CaseListing _caseListingPrefab;
         [SerializeField] private CaseDetailPanelBehaviour _caseDetailPrefab;
         [SerializeField] private Transform _caseContent;
@@ -23,11 +24,20 @@ namespace UI.CanvasScripts
             CaseListing caseListing;
             _currentCaseNumber++;
             caseListing = Instantiate(_caseListingPrefab);
+            caseListing.OnSelected += SetSelectedCase;
             caseListing.transform.SetParent(_caseContent,false);
             caseListing.SetCaseName("Case_"+_currentCaseNumber);
             CaseDetailPanelBehaviour detail = Instantiate(_caseDetailPrefab, _caseContent.parent, false);
             caseListing.SetCaseDetail(detail);
         }
-        
+
+        private void SetSelectedCase(CaseListing selectedCase)
+        {
+            if (SelectedCase)
+            {
+                SelectedCase.Image.color=Color.white;
+            }
+            SelectedCase = selectedCase;
+        }
     }
 }

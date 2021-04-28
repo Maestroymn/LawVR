@@ -1,12 +1,11 @@
-﻿using System;
-using TMPro;
+﻿using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
 namespace UI.GeneralUIBehaviourScripts
 {
     public class CaseDetailPanelBehaviour : MonoBehaviour
-    {
+    { 
         [SerializeField] private TextMeshProUGUI _text;
         [SerializeField] private RectTransform _rectTransform;
         [SerializeField] private Button _closeButton;

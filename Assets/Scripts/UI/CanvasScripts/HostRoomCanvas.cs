@@ -6,7 +6,7 @@ namespace UI
     public class HostRoomCanvas : MonoBehaviour
     {
         [SerializeField] private CreateRoomMenu _createRoomMenu;
-        [SerializeField] private CaseListCanvas _caseListCanvas;
+        public CaseListCanvas CaseListCanvas;
         public CreateRoomMenu CreateRoomMenu { get; private set; }
 
         private RoomsCanvases _roomsCanvases;   
@@ -30,7 +30,7 @@ namespace UI
         public void ShowCaseListingCanvas(bool showCases)
         {
             _createRoomMenu.gameObject.SetActive(!showCases);
-            _caseListCanvas.gameObject.SetActive(showCases);
+            CaseListCanvas.gameObject.SetActive(showCases);
         }
     }
 }

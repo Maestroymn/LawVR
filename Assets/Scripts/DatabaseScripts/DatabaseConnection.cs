@@ -129,7 +129,7 @@ namespace DatabaseScripts
             if (validMail)
             {
                 SqlCommand.CommandText =
-                    "Insert into users(user_id,name,password,user_email,isfemale,is_online) values( " +
+                    "Insert into users(user_id,name,password,user_email,is_female,is_online) values( " +
                     "'" + PhotonNetwork.LocalPlayer.UserId + "' , '" + username + "' , '" + userpassword + "' , '" +
                     usermail + "' , " + ismale + ", true )";
                 GameManager.GameSettings.NickName = username;
