@@ -76,7 +76,6 @@ namespace DatabaseScripts
             SqlCommand.Connection = PostgreConnection;
         }
 
-
         public static SignInStatus SignIn(string username, string password)
         {
             SqlCommand.CommandText = "SELECT password FROM users where name='" + username + "' ";
@@ -160,7 +159,6 @@ namespace DatabaseScripts
 
             return Friends;
         }
-
 
         public static bool RemoveFriend(string FriendName)
         {
@@ -319,6 +317,20 @@ namespace DatabaseScripts
             SqlCommand.ExecuteNonQuery();
         }
     
+        public static void UploadSpeech(string SessionID , string SpeakerID, string SpeakerRole, string Speech, string StartTime, string SpeechDuration)
+        {
+
+            System.Globalization.NumberFormatInfo numberformat = new System.Globalization.NumberFormatInfo();
+            numberformat.NumberDecimalSeparator = ".";
+            float UpdatedDuration = float.Parse(SpeechDuration, numberformat);
+            SqlCommand.CommandText = "insert into speech_log(session_id,speaker_id,speaker_role,speech,start_time,speech_duration) " +
+               "values('" + SessionID + "', '" + SpeakerID + "', '"+ SpeakerRole + "', '"+Speech+"', '"+ StartTime+"' , "+ SpeechDuration+" )";
+            Debug.Log(SqlCommand.CommandText);
+            SqlCommand.ExecuteNonQuery();
+
+        }
+        
+        
         public static string GetEmail()
         {
             SqlCommand.CommandText = "select user_email from users where name ='"+GameManager.GameSettings.NickName+"'";
@@ -334,6 +346,7 @@ namespace DatabaseScripts
             UserID.Read();
             return UserID[0].ToString();
         }
+        
         public static bool GetIsFemale()
         {
             SqlCommand.CommandText = "select is_female from users where name ='" + GameManager.GameSettings.NickName + "'";
@@ -347,6 +360,7 @@ namespace DatabaseScripts
             SqlCommand.CommandText = "update users set user_email ='" + NewEmail + "' where name ='" + GameManager.GameSettings.NickName + "'";
             SqlCommand.ExecuteNonQuery();
         }
+        
         public static void SetIsFemale(bool IsFemale)
         {
             SqlCommand.CommandText = "update users set is_female =" + IsFemale + " where name ='" + GameManager.GameSettings.NickName + "'";
@@ -364,7 +378,6 @@ namespace DatabaseScripts
             SqlCommand.CommandText = "update users set name ='" + NewName + "' where name ='" + GameManager.GameSettings.NickName + "'";
             SqlCommand.ExecuteNonQuery();
         }
-
 
         public static string GetAvatarPreferences()
         {

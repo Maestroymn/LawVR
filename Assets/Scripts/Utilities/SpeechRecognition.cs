@@ -1,4 +1,6 @@
-﻿using System.Diagnostics;
+﻿using DatabaseScripts;
+using System;
+using System.Diagnostics;
 using System.IO;
 using System.Threading;
 using UnityEngine;
@@ -7,21 +9,23 @@ namespace Utilities
 {
     public class SpeechRecognition : MonoBehaviour
     {
+
         string PythonScriptPath;
         string PythonExePath;
         string WorkingDirectory;
-        char DirSeperatorChar;
+        char DirSep;
         Thread PythonThread;
         // Start is called before the first frame update
         void Start()
         {
-            DirSeperatorChar = Path.DirectorySeparatorChar;
-            UnityEngine.Debug.Log("lets do something");
+            DirSep = Path.DirectorySeparatorChar;
+            PythonScriptPath = @Application.dataPath + DirSep + "Python"+ DirSep + "listen_user_test.py";
 
-            PythonScriptPath = @Application.dataPath + DirSeperatorChar + "Python"+ DirSeperatorChar + "listen_user_test.py";
-            WorkingDirectory = @Application.dataPath + DirSeperatorChar + "Python";
 
-            PythonExePath = @Application.dataPath + DirSeperatorChar + "Python" + DirSeperatorChar + "Python27"+  DirSeperatorChar+  "python.exe";
+            WorkingDirectory = @Application.dataPath + DirSep + "Python";
+            PythonExePath = @Application.dataPath + DirSep + "Python" + DirSep + "Python27"+  DirSep+  "python.exe";
+
+
             PythonThread = new Thread(RunPythonListenerScript);
             PythonThread.Start();
             using (StreamWriter sw = File.CreateText("WriteLines2.txt"))
@@ -54,16 +58,58 @@ namespace Utilities
                 {
                     string stderr = process.StandardError.ReadToEnd(); // Here are the exceptions from our Python script
                     string result = reader.ReadToEnd(); // Here is the result of StdOut(for example: print "test")
-                    UnityEngine.Debug.Log("exception " + stderr);
-                    UnityEngine.Debug.Log("result " + result);
-                }
-                
-            }
+                    if(result.Contains("change python"))
+                    {
+                        UnityEngine.Debug.Log("exception " + stderr);
+                        UnityEngine.Debug.Log("result " + result);
+                        WorkingDirectory = "C:" + DirSep + "Python27";
+                        PythonExePath = "C:" + DirSep + "Python27" + DirSep + "python.exe";
+                        RunPythonListenerScript();
+                    }
+                    else 
+                    {
+                        UnityEngine.Debug.Log("exception " + stderr);
+                        UnityEngine.Debug.Log("result " + result);
+                        string[] Words = result.Split('\n');
+                        string Speech = "";
+                        string StartTime = "";
+                        string SpeechDuration ="";
+                        
+                        foreach (string Word in Words)
+                        {
+                            UnityEngine.Debug.Log(Word);
+                            if (Word.StartsWith("Speech*"))
+                            {
 
+                                Speech = String.Join("\'\'",Word.Split('*')[1].Split('\''));
+                                
+                                UnityEngine.Debug.Log(Speech);
 
-            UnityEngine.Debug.Log("lets do something1");
+                            }
+                            else if (Word.StartsWith("StartTime*"))
+                            {
+                                
+                                StartTime = Word.Split('*')[1];
+                                UnityEngine.Debug.Log(StartTime);
 
-      
+                            }
+                            
+                            else if (Word.StartsWith("Duration*"))
+                            {
+         
+                                SpeechDuration = Word.Split('*')[1];
+
+                            
+                            }
+                        }
+
+                        DatabaseConnection.UploadSpeech("test","test","test", Speech, StartTime, SpeechDuration);
+
+                    }
+                    
+                    
+                }  
+            }     
         }
 
     }
