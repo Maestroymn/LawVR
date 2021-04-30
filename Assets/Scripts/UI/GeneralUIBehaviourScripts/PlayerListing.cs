@@ -1,4 +1,5 @@
-﻿using ExitGames.Client.Photon;
+﻿using Data;
+using ExitGames.Client.Photon;
 using Photon.Pun;
 using Photon.Realtime;
 using TMPro;
@@ -23,9 +24,9 @@ namespace UI
         
         private void UpdatePlayerListingText()
         {
-            if ((string) Player.CustomProperties["Role"] != "none")
+            if ((string) Player.CustomProperties[DataKeyValues.__ROLE__] != "none")
             {
-                PlayerListingText.text = "(" + Player.CustomProperties["Role"] + ") " + Player.NickName;
+                PlayerListingText.text = "(" + Player.CustomProperties[DataKeyValues.__ROLE__] + ") " + Player.NickName;
             }
             else
             {
@@ -39,7 +40,7 @@ namespace UI
         {
             if (targetPlayer != null && targetPlayer == Player)
             {
-                if (changedProps.ContainsKey("Role"))
+                if (changedProps.ContainsKey(DataKeyValues.__ROLE__))
                 {
                     UpdatePlayerListingText();
                 }

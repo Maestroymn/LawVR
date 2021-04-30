@@ -3,6 +3,9 @@ using System;
 using System.Diagnostics;
 using System.IO;
 using System.Threading;
+using Data;
+using Managers;
+using Photon.Pun;
 using UnityEngine;
 
 namespace Utilities
@@ -99,7 +102,7 @@ namespace Utilities
                             }
                         }
 
-                        DatabaseConnection.UploadSpeech("test","test","test", Speech, StartTime, SpeechDuration);
+                        DatabaseConnection.UploadSpeech("SESSION_ID",GameManager.GameSettings.NickName,PhotonNetwork.LocalPlayer.CustomProperties[DataKeyValues.__ROLE__].ToString(), Speech, StartTime, SpeechDuration);
 
                     }
                     

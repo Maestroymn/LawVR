@@ -1,4 +1,5 @@
-﻿using DatabaseScripts;
+﻿using Data;
+using DatabaseScripts;
 using Managers;
 using Photon.Pun;
 using Photon.Realtime;
@@ -21,7 +22,7 @@ namespace General
                 PhotonNetwork.AuthValues = new AuthenticationValues(GameManager.GameSettings.UserID);
                 PhotonNetwork.GameVersion = GameManager.GameSettings.GameVersion;
                 PhotonNetwork.NickName = GameManager.GameSettings.NickName;
-                PlayerProperties["Role"] = "none";
+                PlayerProperties[DataKeyValues.__ROLE__] = "none";
                 PhotonNetwork.SetPlayerCustomProperties(PlayerProperties);
                 PhotonNetwork.ConnectUsingSettings();
                 if (PhotonNetwork.InRoom)

@@ -16,6 +16,7 @@ namespace Data
         public static readonly string __DEFENDANT__ = "defendant";
         public static readonly string __SPECTATOR__ = "spectator";
         public static readonly string __JUDGE__ = "judge";
+        public static readonly string __ROLE__ = "Role";
         #endregion
         
         #region SIMULATION MODES

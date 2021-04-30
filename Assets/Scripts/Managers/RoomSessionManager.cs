@@ -35,7 +35,7 @@ namespace Managers
 
         private void HandleSpawns()
         {
-            switch (PhotonNetwork.LocalPlayer.CustomProperties["Role"].ToString().ToLower())
+            switch (PhotonNetwork.LocalPlayer.CustomProperties[DataKeyValues.__ROLE__].ToString().ToLower())
             {
                 case "plaintiff":
                     GameManager.NetworkInstantiate(plaintiff, _currentBuilding.DefendantTransform.position, Quaternion.identity);

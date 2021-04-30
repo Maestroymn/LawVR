@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using Data;
 using Photon.Pun;
 using TMPro;
 using UnityEngine;
@@ -63,7 +64,7 @@ namespace UI
             PhotonNetwork.LeaveRoom();
             while (PhotonNetwork.InRoom)
                 yield return null;
-            PhotonNetwork.LocalPlayer.CustomProperties["Role"] = "none";
+            PhotonNetwork.LocalPlayer.CustomProperties[DataKeyValues.__ROLE__] = "none";
             gameObject.SetActive(false);
             if (PhotonNetwork.IsMasterClient)
             {

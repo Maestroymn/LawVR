@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using Data;
 using ExitGames.Client.Photon;
 using Photon.Pun;
 using Photon.Realtime;
@@ -65,18 +66,18 @@ namespace UI
             bool validForRole = true;
             _playerListings.ForEach(playerListing =>
             {
-                Debug.Log(playerListing.Player+" "+playerListing.Player.CustomProperties["Role"]);
-                if (!playerListing.Player.IsLocal && (string) playerListing.Player.CustomProperties["Role"] == targetRole)
+                Debug.Log(playerListing.Player+" "+playerListing.Player.CustomProperties[DataKeyValues.__ROLE__]);
+                if (!playerListing.Player.IsLocal && (string) playerListing.Player.CustomProperties[DataKeyValues.__ROLE__] == targetRole)
                 {
                     Debug.Log("Role is already claimed by another player!");
                     validForRole = false;
                 }
             });
-            if (validForRole && PhotonNetwork.LocalPlayer.IsLocal && PhotonNetwork.LocalPlayer.CustomProperties["Role"] != targetRole)
+            if (validForRole && PhotonNetwork.LocalPlayer.IsLocal && PhotonNetwork.LocalPlayer.CustomProperties[DataKeyValues.__ROLE__] != targetRole)
             {
                 Debug.Log("Claiming the role");
                 //PhotonNetwork.LocalPlayer.CustomProperties["Role"]=targetRole;
-                Hashtable hashtable = new Hashtable {["Role"] = targetRole};
+                Hashtable hashtable = new Hashtable {[DataKeyValues.__ROLE__] = targetRole};
                 PhotonNetwork.SetPlayerCustomProperties(hashtable);
                 if (PhotonNetwork.IsMasterClient)
                 {
@@ -133,7 +134,7 @@ namespace UI
         
         public void OnClickReady()
         {
-            if (!PhotonNetwork.IsMasterClient && PhotonNetwork.LocalPlayer.CustomProperties["Role"].ToString().ToLower()!="none")
+            if (!PhotonNetwork.IsMasterClient && PhotonNetwork.LocalPlayer.CustomProperties[DataKeyValues.__ROLE__].ToString().ToLower()!="none")
             {
                 photonView.RPC("SetReadyUp",RpcTarget.AllBuffered,PhotonNetwork.LocalPlayer,!_ready);
                 if (_ready)
