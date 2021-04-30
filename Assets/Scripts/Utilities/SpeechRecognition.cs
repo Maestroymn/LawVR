@@ -34,8 +34,6 @@ namespace Utilities
                 sw.Close();
             }
         }
-
-
         public void RunPythonListenerScript()
         {
             UnityEngine.Debug.Log( string.Format("\"{0}\" ", PythonScriptPath));
@@ -52,21 +50,19 @@ namespace Utilities
 
             using (Process process = Process.Start(start))
             {
-
                 UnityEngine.Debug.Log("python thread started");
                 using (StreamReader reader = process.StandardOutput)
                 {
                     string stderr = process.StandardError.ReadToEnd(); // Here are the exceptions from our Python script
                     string result = reader.ReadToEnd(); // Here is the result of StdOut(for example: print "test")
-                    if(result.Contains("change python"))
+                    if(result.Contains("change python") || (result.Length==0 && stderr.Length==0))
                     {
                         UnityEngine.Debug.Log("exception " + stderr);
                         UnityEngine.Debug.Log("result " + result);
                         WorkingDirectory = "C:" + DirSep + "Python27";
                         PythonExePath = "C:" + DirSep + "Python27" + DirSep + "python.exe";
                         RunPythonListenerScript();
-                    }
-                    else 
+                    }else 
                     {
                         UnityEngine.Debug.Log("exception " + stderr);
                         UnityEngine.Debug.Log("result " + result);

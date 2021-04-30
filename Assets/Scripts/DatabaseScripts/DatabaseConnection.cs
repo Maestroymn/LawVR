@@ -319,12 +319,8 @@ namespace DatabaseScripts
     
         public static void UploadSpeech(string SessionID , string SpeakerID, string SpeakerRole, string Speech, string StartTime, string SpeechDuration)
         {
-
-            System.Globalization.NumberFormatInfo numberformat = new System.Globalization.NumberFormatInfo();
-            numberformat.NumberDecimalSeparator = ".";
-            float UpdatedDuration = float.Parse(SpeechDuration, numberformat);
             SqlCommand.CommandText = "insert into speech_log(session_id,speaker_id,speaker_role,speech,start_time,speech_duration) " +
-               "values('" + SessionID + "', '" + SpeakerID + "', '"+ SpeakerRole + "', '"+Speech+"', '"+ StartTime+"' , "+ SpeechDuration+" )";
+               "values('" + SessionID + "', '" + SpeakerID + "', '"+ SpeakerRole + "', '"+Speech+"', '"+ StartTime+"' , "+ SpeechDuration.Replace(",",".")+" )";
             Debug.Log(SqlCommand.CommandText);
             SqlCommand.ExecuteNonQuery();
 

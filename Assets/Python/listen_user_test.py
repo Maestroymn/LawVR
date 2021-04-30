@@ -3,30 +3,40 @@ import speech_recognition as sr
 import time
 import os
 from datetime import datetime
+import wave
+import contextlib
 
 dir = os.path.dirname(__file__)
 dir += "/Speeches/speech.wav"
 audioFileExists = False
 r = sr.Recognizer()
 
+def GetDuration(dir):
+    with contextlib.closing(wave.open(dir, 'r')) as f:
+        frames = f.getnframes()
+        rate = f.getframerate()
+        duration = frames / float(rate)
+        return duration
+
 try:
     with sr.AudioFile(dir) as source:
         print("listening from file")
         speechStartTime = datetime.now()
-        startTime = time.time()
         audio = r.record(source)
-        endTime = time.time()
         audioFileExists = True
         try:
             text = r.recognize_google(audio, language="tr-TR")
             print("Speech*" + text.encode('utf-8').strip())  # encode edilmezse türkçe karakterleri texte basarken patlıyor
             print("StartTime*" + str(speechStartTime))
-            print("Duration*" + str(endTime - startTime))
+            print("Duration*" + str(GetDuration(dir)))
 
         except sr.RequestError:
             print("Something went wrong!")
         except sr.UnknownValueError:
             print("Couldn't clearly understand?!")
+        except Exception as e:
+            print(str(e))
+            print("change python")
     os.remove(dir)
 
 except IOError:
@@ -42,9 +52,7 @@ if not audioFileExists:
 
         try:
             speechStartTime = datetime.now()
-            startTime = time.time()
-            audio = r.listen(source, timeout=5, )
-            endTime = time.time()
+            audio = r.listen(source, timeout=5)
             with open(dir,"wb") as f:
                 f.write(audio.get_wav_data())
 
@@ -52,7 +60,7 @@ if not audioFileExists:
             text = r.recognize_google(audio, language="tr-TR")
             print("Speech*"+text.encode('utf-8').strip())  # encode edilmezse türkçe karakterleri texte basarken patlıyor
             print("StartTime*" + str(speechStartTime))
-            print("Duration*" + str(endTime - startTime))
+            print("Duration*" + str(GetDuration(dir)))
             os.remove(dir)
         except sr.RequestError:
             print("Something went wrong!")
