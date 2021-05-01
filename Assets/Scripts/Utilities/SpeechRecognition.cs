@@ -102,7 +102,7 @@ namespace Utilities
                             }
                         }
 
-                        DatabaseConnection.UploadSpeech("SESSION_ID",GameManager.GameSettings.NickName,PhotonNetwork.LocalPlayer.CustomProperties[DataKeyValues.__ROLE__].ToString(), Speech, StartTime, SpeechDuration);
+                        DatabaseConnection.UploadSpeech((int)PhotonNetwork.CurrentRoom.CustomProperties[DataKeyValues.__SESSION_ID__], GameManager.GameSettings.NickName,PhotonNetwork.LocalPlayer.CustomProperties[DataKeyValues.__ROLE__].ToString(), Speech, StartTime, SpeechDuration);
 
                     }
                     

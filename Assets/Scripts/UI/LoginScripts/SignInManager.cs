@@ -31,6 +31,7 @@ namespace UI.LoginScripts
                     GameManager.GameSettings.NickName = _newUserName;
                     GameManager.GameSettings.Password = NewUserPassword;
                     OnSignedIn?.Invoke();
+                    DatabaseConnection.GetSessionHistories(_newUserName);
                     break;
                 case SignInStatus.UserDoesntExist:
                     _name.color = Color.red;

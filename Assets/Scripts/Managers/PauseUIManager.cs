@@ -4,6 +4,8 @@ using Photon.Pun;
 using Photon.Realtime;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using DatabaseScripts;
+using System;
 
 namespace Managers
 {
@@ -47,8 +49,10 @@ namespace Managers
         }
         
         public void Disconnect()
-        { 
+        {
+            DatabaseConnection.UpdateSessionLog((int)PhotonNetwork.CurrentRoom.CustomProperties[DataKeyValues.__SESSION_ID__], DateTime.Now.ToString(),"This is a feedback");
             StartCoroutine(DisconnectFromRoom());
+
         }
 
         private IEnumerator DisconnectFromRoom()

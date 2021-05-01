@@ -5,10 +5,50 @@ using System;
 using System.Collections.Generic;
 using UnityEngine;
 using Utilities;
+using LitJson;
+using Data;
+using System.IO;
+using UI;
+
 
 namespace DatabaseScripts
 {
 
+    public static class JsonHelper
+    {
+        public static T[] FromJson<T>(string json)
+        {
+            Wrapper<T> wrapper = JsonUtility.FromJson<Wrapper<T>>(json);
+            return wrapper.Items;
+        }
+
+        public static string ToJson<T>(T[] array)
+        {
+            Wrapper<T> wrapper = new Wrapper<T>();
+            wrapper.Items = array;
+            return JsonUtility.ToJson(wrapper);
+        }
+
+        public static string ToJson<T>(T[] array, bool prettyPrint)
+        {
+            Wrapper<T> wrapper = new Wrapper<T>();
+            wrapper.Items = array;
+            return JsonUtility.ToJson(wrapper, prettyPrint);
+        }
+
+        [Serializable]
+        private class Wrapper<T>
+        {
+            public T[] Items;
+        }
+    }
+
+    [Serializable]
+    public class ParticipantUser
+    {
+        public string name;
+        public string role;
+    }
     public enum SignInStatus
     {
         AlreadyLoggedIn,
@@ -317,15 +357,134 @@ namespace DatabaseScripts
             SqlCommand.ExecuteNonQuery();
         }
     
-        public static void UploadSpeech(string SessionID , string SpeakerID, string SpeakerRole, string Speech, string StartTime, string SpeechDuration)
+        public static void UploadSpeech(int SessionID , string SpeakerID, string SpeakerRole, string Speech, string StartTime, string SpeechDuration)
         {
             SqlCommand.CommandText = "insert into speech_log(session_id,speaker_id,speaker_role,speech,start_time,speech_duration) " +
-               "values('" + SessionID + "', '" + SpeakerID + "', '"+ SpeakerRole + "', '"+Speech+"', '"+ StartTime+"' , "+ SpeechDuration.Replace(",",".")+" )";
+               "values(" + SessionID + ", '" + SpeakerID + "', '"+ SpeakerRole + "', '"+Speech+"', '"+ StartTime+"' , "+ SpeechDuration.Replace(",",".")+" )";
             Debug.Log(SqlCommand.CommandText);
             SqlCommand.ExecuteNonQuery();
 
         }
         
+        public static int CreateSessionLog( string CaseID, string StartTime , string SimulationType)
+        {
+            SqlCommand.CommandText = "insert into court_session(case_id, start_time, simulation_type) " +
+            "values('" + CaseID + "', '" + StartTime + "' , '" + SimulationType + "' ) returning session_id";
+            Debug.Log(SqlCommand.CommandText);
+            NpgsqlDataReader SessionID = SqlCommand.ExecuteReader();
+            SessionID.Read();
+            return (int)SessionID[0];
+        }
+        
+        public static void UpdateSessionLog(int SessionID , string EndTime , string Feedback)
+        {
+            SqlCommand.CommandText = "update court_session set end_time = '" + EndTime + 
+            "' , feedback = '" + Feedback +"' where session_id = " +SessionID;
+            Debug.Log(SqlCommand.CommandText);
+            SqlCommand.ExecuteNonQuery();
+        }
+
+        public static List<SessionHistory> GetSessionHistories(string UserName)
+        {
+            
+            SqlCommand.CommandText = "select session_ids from users where name ='"+UserName+"' ";
+            NpgsqlDataReader SessionIDs = SqlCommand.ExecuteReader();
+            try 
+            {
+                SessionIDs.Read();
+                string[] sessionID = SessionIDs[0].ToString().Split('&');
+                List<SessionHistory> UserHistory = new List<SessionHistory>();
+                foreach (string id in sessionID)
+                {
+                    
+                    SqlCommand.CommandText = "select * from court_session where session_id = " + id;
+                    NpgsqlDataReader SessionLogs = SqlCommand.ExecuteReader();
+                    SessionLogs.Read();
+                    SessionHistory newHistory = new SessionHistory();
+                    newHistory.CaseID = Int32.Parse(SessionLogs[0].ToString());
+                    newHistory.StartTime = SessionLogs[1].ToString();
+                    newHistory.EndTime = SessionLogs[2].ToString();
+                    newHistory.Feedback = SessionLogs[3].ToString();
+                    newHistory.SessionID = Int32.Parse(SessionLogs[4].ToString());
+                    newHistory.SimulationType = SessionLogs[5].ToString();
+                    newHistory.SpeechText = GetSessionSpeechLog(id);
+                    UserHistory.Add(newHistory);
+                }
+
+                foreach( var u in UserHistory)
+                {
+                    Debug.Log(u.CaseID + " " + u.EndTime + " " + u.StartTime + " " + u.SimulationType + " " + u.SessionID + " " + u.Feedback + " " + u.SpeechText);
+
+                }
+
+                return UserHistory;
+            } 
+            catch (Exception e) 
+            { 
+                Debug.Log(e.Message + " NO HISTORY");
+            }
+
+            return null;
+
+        }
+
+        public static string GetSessionSpeechLog(string SessionID)
+        {
+            SqlCommand.CommandText = "Select speaker_id,speaker_role,speech from speech_log where session_id = " + SessionID + " order by start_time asc";
+            NpgsqlDataReader speeches = SqlCommand.ExecuteReader();
+            string speech ="";
+            while (speeches.Read())
+            {
+                speech += speeches[0].ToString() + "[" + speeches[1].ToString() + "]:" + speeches[2].ToString() + "\n";
+            }
+            return speech;
+        }
+
+
+        public static void UpdateUserSessionID(string username , int session_id)
+        {
+            SqlCommand.CommandText = "select session_ids from users where name = '" + username+"'";
+            NpgsqlDataReader sessions = SqlCommand.ExecuteReader();
+            bool isEmpty = true;
+
+            while(sessions.Read())
+            {
+                string existingSessions = sessions[0].ToString();
+                if (existingSessions.Length == 0)
+                    break;
+                
+                isEmpty = false;
+                existingSessions += "&" + session_id;
+                SqlCommand.CommandText = "update users set session_ids = '" + existingSessions + "'where name = '" + username + "'";
+                SqlCommand.ExecuteNonQuery();
+            }
+            if(isEmpty)
+            {
+                SqlCommand.CommandText = "update users set session_ids = '" + session_id + "'where name = '" + username + "'";
+                SqlCommand.ExecuteNonQuery();
+            }
+
+        }
+        
+        public static List<CourtCase> GetCourtCases()
+        {
+            SqlCommand.CommandText ="select * from court_case";
+            NpgsqlDataReader cases = SqlCommand.ExecuteReader();
+            List<CourtCase> ListedCases = new List<CourtCase>();
+            while(cases.Read())
+            {
+                CourtCase temp = new CourtCase();
+                temp.CaseID = Int32.Parse(cases[0].ToString());
+                temp.CaseName = cases[1].ToString();
+                temp.CaseText = cases[2].ToString();
+                temp.CaseDate = cases[3].ToString();
+                ListedCases.Add(temp);
+            }
+
+            return ListedCases;
+
+
+        }
         
         public static string GetEmail()
         {

@@ -1,6 +1,9 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using Data;
+using DatabaseScripts;
 using ExitGames.Client.Photon;
+using Managers;
 using Photon.Pun;
 using Photon.Realtime;
 using TMPro;
@@ -106,9 +109,12 @@ namespace UI
                     }
                 });
                 //Locking room when the session started, if following bools are set to false, then no one can join after session started.
+                PhotonNetwork.CurrentRoom.CustomProperties[DataKeyValues.__SESSION_ID__] = DatabaseConnection.CreateSessionLog("1",DateTime.Now.ToString(),PhotonNetwork.CurrentRoom.CustomProperties[DataKeyValues.__SIMULATION_TYPE__].ToString());
+                DatabaseConnection.UpdateUserSessionID(GameManager.GameSettings.NickName, (int)PhotonNetwork.CurrentRoom.CustomProperties[DataKeyValues.__SESSION_ID__]);
                 PhotonNetwork.CurrentRoom.IsOpen = false;
                 PhotonNetwork.CurrentRoom.IsVisible = false;
                 PhotonNetwork.LoadLevel(2);
+            
             }
         }
 
