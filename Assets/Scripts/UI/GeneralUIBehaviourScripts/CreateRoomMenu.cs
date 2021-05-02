@@ -79,7 +79,7 @@ namespace UI
                 Debug.Log("NOTCONNECTED"+_roomCreated);
                 return;
             }
-            if ((string) PhotonNetwork.CurrentRoom.CustomProperties[DataKeyValues.__PASSWORD_KEY__]!="EMPTY")
+            if (_password.text.Length!=0)
             {
                 _roomOptions.CustomRoomProperties["password"]=_password.text;
             }
