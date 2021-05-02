@@ -40,6 +40,7 @@ namespace UI
             _roomOptions.CustomRoomProperties.Add(DataKeyValues.__AI_JUDGE__,false);
             _roomOptions.CustomRoomProperties.Add(DataKeyValues.__ROOM_NAME__,"");
             _roomOptions.CustomRoomProperties.Add(DataKeyValues.__CASE_ID__,"");
+            _roomOptions.CustomRoomProperties.Add(DataKeyValues.__SESSION_ID__,"");
         }
         #endregion
 
