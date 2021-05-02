@@ -15,6 +15,7 @@ namespace UI
             _roomsCanvases = roomsCanvases;
             CreateRoomMenu = _createRoomMenu;
             _createRoomMenu.FirstInitialize(roomsCanvases);
+            CaseListCanvas.Initialize();
         }
 
         public void Hide()

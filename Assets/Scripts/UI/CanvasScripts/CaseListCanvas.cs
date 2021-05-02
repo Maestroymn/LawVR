@@ -1,4 +1,8 @@
-﻿using UI.GeneralUIBehaviourScripts;
+﻿using System.Collections.Generic;
+using Data;
+using DatabaseScripts;
+using Photon.Pun;
+using UI.GeneralUIBehaviourScripts;
 using UnityEngine;
 
 namespace UI.CanvasScripts
@@ -9,25 +13,31 @@ namespace UI.CanvasScripts
         [SerializeField] private CaseListing _caseListingPrefab;
         [SerializeField] private CaseDetailPanelBehaviour _caseDetailPrefab;
         [SerializeField] private Transform _caseContent;
-        private int _currentCaseNumber;
-
-        private void Start()
+        private List<CaseListing> _caseListings=new List<CaseListing>();
+        private List<CourtCase> _courtCases;
+        
+        public void Initialize()
         {
-            for (int i = 0; i < 10; i++)
+            _courtCases = DatabaseConnection.GetCourtCases();
+            _courtCases?.ForEach(court=>
             {
-                InstantiateCaseListing();
-            }
+                if(!_caseListings.Find(x=>x.CourtCase.CaseID==court.CaseID))
+                {
+                    InstantiateCaseListing(court);
+                }
+            });
         }
 
-        public void InstantiateCaseListing()
+        public void InstantiateCaseListing(CourtCase courtCase)
         {
             CaseListing caseListing;
-            _currentCaseNumber++;
             caseListing = Instantiate(_caseListingPrefab);
+            caseListing.CourtCase = courtCase;
             caseListing.OnSelected += SetSelectedCase;
             caseListing.transform.SetParent(_caseContent,false);
-            caseListing.SetCaseName("Case_"+_currentCaseNumber);
+            caseListing.SetCaseName(courtCase.CaseName);
             CaseDetailPanelBehaviour detail = Instantiate(_caseDetailPrefab, _caseContent.parent, false);
+            detail.SetInfo(courtCase);
             caseListing.SetCaseDetail(detail);
         }
 
@@ -38,6 +48,7 @@ namespace UI.CanvasScripts
                 SelectedCase.Image.color=Color.white;
             }
             SelectedCase = selectedCase;
+            PhotonNetwork.CurrentRoom.CustomProperties[DataKeyValues.__CASE_ID__] = SelectedCase.CourtCase.CaseID;
         }
     }
 }

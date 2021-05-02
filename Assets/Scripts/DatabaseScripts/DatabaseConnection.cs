@@ -408,6 +408,8 @@ namespace DatabaseScripts
                     newHistory.SessionID = Int32.Parse(SessionLogs[4].ToString());
                     newHistory.SimulationType = SessionLogs[5].ToString();
                     newHistory.SpeechText = GetSessionSpeechLog(id);
+                    newHistory.UserRole = GetUserRoleInSession(newHistory.SessionID);
+                    newHistory.CaseName = GetCaseNameById(newHistory.CaseID);
                     UserHistory.Add(newHistory);
                 }
 
@@ -427,8 +429,15 @@ namespace DatabaseScripts
             return null;
 
         }
+        private static string GetUserRoleInSession(int SessionID)
+        {
+            SqlCommand.CommandText = "Select speaker_role from speech_log where session_id = " + SessionID + " and speaker_id = '"+ GameManager.GameSettings.NickName+"'";
+            NpgsqlDataReader SpeakerRole = SqlCommand.ExecuteReader();
+            SpeakerRole.Read();
 
-        public static string GetSessionSpeechLog(string SessionID)
+            return SpeakerRole[0].ToString();
+        }
+        private static string GetSessionSpeechLog(string SessionID)
         {
             SqlCommand.CommandText = "Select speaker_id,speaker_role,speech from speech_log where session_id = " + SessionID + " order by start_time asc";
             NpgsqlDataReader speeches = SqlCommand.ExecuteReader();
@@ -464,6 +473,16 @@ namespace DatabaseScripts
                 SqlCommand.ExecuteNonQuery();
             }
 
+        }
+        
+        public static string GetCaseNameById(int CaseID)
+        {
+            SqlCommand.CommandText = "Select case_name from court_case where case_id =" + CaseID;
+            NpgsqlDataReader casename = SqlCommand.ExecuteReader();
+
+            casename.Read();
+
+            return casename[0].ToString();
         }
         
         public static List<CourtCase> GetCourtCases()

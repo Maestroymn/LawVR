@@ -9,11 +9,16 @@ namespace UI.GeneralUIBehaviourScripts
         [SerializeField] private TextMeshProUGUI _text;
         [SerializeField] private RectTransform _rectTransform;
         [SerializeField] private Button _closeButton;
-        private void OnEnable()
+        /*private void OnEnable()
         {
             OpenUpPanel();
-        }
+        }*/
 
+        public void SetInfo(CourtCase courtCase)
+        {
+            _text.text = courtCase.CaseText;
+        }
+        
         public void OpenUpPanel()
         {
             gameObject.SetActive(true);

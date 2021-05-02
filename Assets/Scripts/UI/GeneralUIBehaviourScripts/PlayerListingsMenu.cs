@@ -109,11 +109,11 @@ namespace UI
                     }
                 });
                 //Locking room when the session started, if following bools are set to false, then no one can join after session started.
-                PhotonNetwork.CurrentRoom.CustomProperties[DataKeyValues.__SESSION_ID__] = DatabaseConnection.CreateSessionLog("1",DateTime.Now.ToString(),PhotonNetwork.CurrentRoom.CustomProperties[DataKeyValues.__SIMULATION_TYPE__].ToString());
+                PhotonNetwork.CurrentRoom.CustomProperties[DataKeyValues.__SESSION_ID__] = DatabaseConnection.CreateSessionLog(PhotonNetwork.CurrentRoom.CustomProperties[DataKeyValues.__CASE_ID__].ToString(),DateTime.Now.ToString(),PhotonNetwork.CurrentRoom.CustomProperties[DataKeyValues.__SIMULATION_TYPE__].ToString());
                 DatabaseConnection.UpdateUserSessionID(GameManager.GameSettings.NickName, (int)PhotonNetwork.CurrentRoom.CustomProperties[DataKeyValues.__SESSION_ID__]);
                 PhotonNetwork.CurrentRoom.IsOpen = false;
                 PhotonNetwork.CurrentRoom.IsVisible = false;
-                PhotonNetwork.LoadLevel(2);
+                PhotonNetwork.LoadLevel(DataKeyValues.__COURT_SCENE__);
             
             }
         }

@@ -11,6 +11,7 @@ namespace UI
         public event Action<CaseListing> OnSelected;
         [SerializeField] private TextMeshProUGUI _textMeshProUGUI;
         public RawImage Image;
+        public CourtCase CourtCase;
         private CaseDetailPanelBehaviour _caseDetail;
 
         public void SetCaseDetail(CaseDetailPanelBehaviour caseDetail)

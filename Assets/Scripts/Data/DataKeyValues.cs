@@ -10,6 +10,7 @@ namespace Data
         public static readonly string __AI_JUDGE__ = "ai_judge";
         public static readonly string __ROOM_NAME__ = "room_name";
         public static readonly string __SESSION_ID__ = "session_id";
+        public static readonly string __CASE_ID__ = "case_id";
         #endregion
         
         #region ROLE KEYS

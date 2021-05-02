@@ -7,13 +7,19 @@ namespace UI.GeneralUIBehaviourScripts
     public class SessionHistoryListing : MonoBehaviour
     {
         [SerializeField] private TextMeshProUGUI _date, _role, _simulationType;
-        public SessionHistory SessionHistory;
+        [HideInInspector] public SessionHistory SessionHistory;
+        [HideInInspector] public SessionHistoryDetailPanelBehaviour DetailPanelBehaviour;
         
-        public void SetHistoryListing(string date,string role, string simType)
+        public void SetHistoryListing()
         {
-            _date.text = date;
-            _role.text = role;
-            _simulationType.text = simType;
+            _date.text = SessionHistory.StartTime;
+            _role.text = SessionHistory.UserRole;
+            _simulationType.text = SessionHistory.SimulationType;
+        }
+
+        public void ShowDetail()
+        {
+            DetailPanelBehaviour.HandleActivation(true);
         }
         
     }

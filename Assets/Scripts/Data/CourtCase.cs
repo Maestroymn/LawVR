@@ -1,6 +1,4 @@
-﻿using System.Collections.Generic;
-using UI;
-using UnityEngine;
+﻿using UnityEngine;
 public class CourtCase : MonoBehaviour
 {
     public int CaseID;
