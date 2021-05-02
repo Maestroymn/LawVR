@@ -26,9 +26,12 @@ namespace Utilities
 
 
             WorkingDirectory = @Application.dataPath + DirSep + "Python";
+#if UNITY_EDITOR_WIN || UNITY_STANDALONE_WIN
             PythonExePath = @Application.dataPath + DirSep + "Python" + DirSep + "Python27"+  DirSep+  "python.exe";
-
-
+#elif UNITY_EDITOR_OSX || UNITY_STANDALONE_OSX
+            WorkingDirectory = "/usr/bin";
+            PythonExePath = WorkingDirectory + DirSep + "python";
+#endif
             PythonThread = new Thread(RunPythonListenerScript);
             PythonThread.Start();
             using (StreamWriter sw = File.CreateText("WriteLines2.txt"))
@@ -62,8 +65,13 @@ namespace Utilities
                     {
                         UnityEngine.Debug.Log("exception " + stderr);
                         UnityEngine.Debug.Log("result " + result);
+#if UNITY_EDITOR_WIN || UNITY_STANDALONE_WIN
                         WorkingDirectory = "C:" + DirSep + "Python27";
                         PythonExePath = "C:" + DirSep + "Python27" + DirSep + "python.exe";
+#elif UNITY_EDITOR_OSX || UNITY_STANDALONE_OSX
+                        WorkingDirectory = "/usr/bin";
+                        PythonExePath = WorkingDirectory + DirSep + "python";
+#endif
                         RunPythonListenerScript();
                     }else 
                     {
@@ -102,7 +110,7 @@ namespace Utilities
                             }
                         }
 
-                        DatabaseConnection.UploadSpeech((int)PhotonNetwork.CurrentRoom.CustomProperties[DataKeyValues.__SESSION_ID__], GameManager.GameSettings.NickName,PhotonNetwork.LocalPlayer.CustomProperties[DataKeyValues.__ROLE__].ToString(), Speech, StartTime, SpeechDuration);
+                        DatabaseConnection.UploadSpeech(int.Parse(PhotonNetwork.CurrentRoom.CustomProperties[DataKeyValues.__SESSION_ID__].ToString()), GameManager.GameSettings.NickName,PhotonNetwork.LocalPlayer.CustomProperties[DataKeyValues.__ROLE__].ToString(), Speech, StartTime, SpeechDuration);
 
                     }
                     

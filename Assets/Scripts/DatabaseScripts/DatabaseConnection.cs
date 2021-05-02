@@ -366,20 +366,23 @@ namespace DatabaseScripts
 
         }
         
-        public static int CreateSessionLog( string CaseID, string StartTime , string SimulationType)
+        public static string CreateSessionLog(string CaseID, string StartTime , string SimulationType)
         {
             SqlCommand.CommandText = "insert into court_session(case_id, start_time, simulation_type) " +
             "values('" + CaseID + "', '" + StartTime + "' , '" + SimulationType + "' ) returning session_id";
             Debug.Log(SqlCommand.CommandText);
             NpgsqlDataReader SessionID = SqlCommand.ExecuteReader();
             SessionID.Read();
-            return (int)SessionID[0];
+            print("SESSION_ID: "+SessionID[0].ToString());
+            return SessionID[0].ToString();
         }
         
-        public static void UpdateSessionLog(int SessionID , string EndTime , string Feedback)
+        public static void UpdateSessionLog(string SessionID , string EndTime , string Feedback)
         {
+            print("GIVEN SESSION ID: "+SessionID);
+            print("TRYING SESSION ID: "+PhotonNetwork.CurrentRoom.CustomProperties[DataKeyValues.__SESSION_ID__]);
             SqlCommand.CommandText = "update court_session set end_time = '" + EndTime + 
-            "' , feedback = '" + Feedback +"' where session_id = " +SessionID;
+            "' , feedback = '" + Feedback +"' where session_id = " +int.Parse(SessionID);
             Debug.Log(SqlCommand.CommandText);
             SqlCommand.ExecuteNonQuery();
         }
@@ -401,11 +404,11 @@ namespace DatabaseScripts
                     NpgsqlDataReader SessionLogs = SqlCommand.ExecuteReader();
                     SessionLogs.Read();
                     SessionHistory newHistory = new SessionHistory();
-                    newHistory.CaseID = Int32.Parse(SessionLogs[0].ToString());
+                    newHistory.CaseID = int.Parse(SessionLogs[0].ToString());
                     newHistory.StartTime = SessionLogs[1].ToString();
                     newHistory.EndTime = SessionLogs[2].ToString();
                     newHistory.Feedback = SessionLogs[3].ToString();
-                    newHistory.SessionID = Int32.Parse(SessionLogs[4].ToString());
+                    newHistory.SessionID = int.Parse(SessionLogs[4].ToString());
                     newHistory.SimulationType = SessionLogs[5].ToString();
                     newHistory.SpeechText = GetSessionSpeechLog(id);
                     newHistory.UserRole = GetUserRoleInSession(newHistory.SessionID);
@@ -450,7 +453,7 @@ namespace DatabaseScripts
         }
 
 
-        public static void UpdateUserSessionID(string username , int session_id)
+        public static void UpdateUserSessionID(string username , string session_id)
         {
             SqlCommand.CommandText = "select session_ids from users where name = '" + username+"'";
             NpgsqlDataReader sessions = SqlCommand.ExecuteReader();

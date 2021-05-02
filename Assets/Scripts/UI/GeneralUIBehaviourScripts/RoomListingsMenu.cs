@@ -1,6 +1,4 @@
-﻿using System.Collections.Generic;
-using Managers;
-using Photon.Pun;
+﻿using Managers;
 using Photon.Realtime;
 using UnityEngine;
 

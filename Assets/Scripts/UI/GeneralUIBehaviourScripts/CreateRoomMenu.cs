@@ -1,4 +1,7 @@
-﻿using Data;
+﻿using System;
+using Data;
+using DatabaseScripts;
+using ExitGames.Client.Photon;
 using Photon.Pun;
 using UnityEngine;
 using TMPro;
@@ -85,6 +88,13 @@ namespace UI
                 _roomOptions.CustomRoomProperties["password"]=_password.text;
             }
             _roomOptions.CustomRoomProperties[DataKeyValues.__ROOM_NAME__] = _roomName.text;
+            var sessionID = DatabaseConnection.CreateSessionLog(
+                _roomsCanvases.HostRoomCanvas.CaseListCanvas.SelectedCase.CaseID.ToString(),
+                DateTime.Now.ToString(),
+                _roomOptions.CustomRoomProperties[DataKeyValues.__SIMULATION_TYPE__].ToString());
+            _roomOptions.CustomRoomProperties[DataKeyValues.__CASE_ID__] =
+                _roomsCanvases.HostRoomCanvas.CaseListCanvas.SelectedCase.CaseID.ToString();
+            _roomOptions.CustomRoomProperties[DataKeyValues.__SESSION_ID__] = sessionID;
             PhotonNetwork.CreateRoom(_roomName.text, _roomOptions, TypedLobby.Default);
         }
 
@@ -133,9 +143,9 @@ namespace UI
         {
             _roomCreated = true;
             Debug.Log("Room is created its name is "+_roomName.text+" and its password: "+_password.text);
-           // PhotonNetwork.GetCustomRoomList(PhotonNetwork.CurrentLobby,null);
-           _roomsCanvases.CurrentRoomCanvas.Show(_roomName.text,true);
-           _roomCreated=false;
+            _roomsCanvases.CurrentRoomCanvas.Show(_roomName.text,true);
+            print("SESSION ID SET: "+PhotonNetwork.CurrentRoom.CustomProperties[DataKeyValues.__SESSION_ID__]);
+            _roomCreated=false;
         }
         
         public override void OnCreateRoomFailed(short returnCode, string message)

@@ -20,7 +20,7 @@ namespace UI
         [SerializeField] public TextMeshProUGUI ReadyText;
         [SerializeField] public Color ReadyColor, NotReadyColor;
         public List<PlayerListing> _playerListings = new List<PlayerListing>();
-        private bool _ready;
+        private bool _ready; 
 
         public override void OnEnable()
         {
@@ -110,13 +110,13 @@ namespace UI
                     }
                 });
                 //Locking room when the session started, if following bools are set to false, then no one can join after session started.
-                PhotonNetwork.CurrentRoom.CustomProperties[DataKeyValues.__CASE_ID__] = _roomsCanvases.HostRoomCanvas.CaseListCanvas.SelectedCase.CaseID.ToString();
+                /*PhotonNetwork.CurrentRoom.CustomProperties[DataKeyValues.__CASE_ID__] = _roomsCanvases.HostRoomCanvas.CaseListCanvas.SelectedCase.CaseID.ToString();
                 PhotonNetwork.CurrentRoom.CustomProperties[DataKeyValues.__SESSION_ID__] =
                     DatabaseConnection.CreateSessionLog(
                         PhotonNetwork.CurrentRoom.CustomProperties[DataKeyValues.__CASE_ID__].ToString(),
                         DateTime.Now.ToString(),
-                        PhotonNetwork.CurrentRoom.CustomProperties[DataKeyValues.__SIMULATION_TYPE__].ToString());
-                DatabaseConnection.UpdateUserSessionID(GameManager.GameSettings.NickName, (int)PhotonNetwork.CurrentRoom.CustomProperties[DataKeyValues.__SESSION_ID__]);
+                        PhotonNetwork.CurrentRoom.CustomProperties[DataKeyValues.__SIMULATION_TYPE__].ToString());*/
+                DatabaseConnection.UpdateUserSessionID(GameManager.GameSettings.NickName, PhotonNetwork.CurrentRoom.CustomProperties[DataKeyValues.__SESSION_ID__].ToString());
                 PhotonNetwork.CurrentRoom.IsOpen = false;
                 PhotonNetwork.CurrentRoom.IsVisible = false;
                 PhotonNetwork.LoadLevel(DataKeyValues.__COURT_SCENE__);
