@@ -1711,8 +1711,6 @@ MonoBehaviour:
     type: 3}
   _courtBuildings:
   - {fileID: 1566465279410555, guid: fc599b847af124d27ae33273b4c1c519, type: 3}
-  - {fileID: 7997303520319554964, guid: 958f19b2689394c50b7f7b61d6cc4602, type: 3}
-  - {fileID: 6575406226188246416, guid: 2883c7b2ac25f4012b33be1fd8a3a07c, type: 3}
   SessionEnvironmentParent: {fileID: 1674053621}
 --- !u!4 &1355001903
 Transform:
