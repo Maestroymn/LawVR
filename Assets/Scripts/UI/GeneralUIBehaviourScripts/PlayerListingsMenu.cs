@@ -7,6 +7,7 @@ using Managers;
 using Photon.Pun;
 using Photon.Realtime;
 using TMPro;
+using UnityEditorInternal;
 using UnityEngine;
 
 namespace UI
@@ -166,15 +167,19 @@ namespace UI
 
         public override void OnPlayerLeftRoom(Player otherPlayer)
         {
-            print(otherPlayer.IsMasterClient);
-            _playerListings.ForEach(player =>
+            PlayerListing leftPlayerListing=null;
+            for (int i = 0; i < _playerListings.Count; i++)
             {
-                if (!(player is null) && otherPlayer.NickName == player.Player.NickName)
+                if (!(_playerListings[i] is null) && otherPlayer.NickName == _playerListings[i].Player.NickName)
                 {
-                    _playerListings.Remove(player);
-                    Destroy(player.gameObject);
-                }
-            });
+                    leftPlayerListing = _playerListings[i];
+                    break;
+                }            
+            }
+            if (!leftPlayerListing) return;
+            _playerListings.Remove(leftPlayerListing);
+            Destroy(leftPlayerListing);
+
         }
 
         public override void OnMasterClientSwitched(Player newMasterClient)

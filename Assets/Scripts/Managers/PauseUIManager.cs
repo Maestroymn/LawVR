@@ -61,7 +61,7 @@ namespace Managers
             while (PhotonNetwork.InRoom)
                 yield return null;
             Cursor.visible = true;
-            PhotonNetwork.LoadLevel(1);
+            SceneManager.LoadScene(DataKeyValues.__MAIN_UI_SCENE__);
         }
 
         public override void OnDisconnected(DisconnectCause cause)
