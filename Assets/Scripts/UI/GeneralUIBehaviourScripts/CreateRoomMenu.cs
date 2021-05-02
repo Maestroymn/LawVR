@@ -88,7 +88,7 @@ namespace UI
                 _roomOptions.CustomRoomProperties["password"]=_password.text;
             }
             _roomOptions.CustomRoomProperties[DataKeyValues.__ROOM_NAME__] = _roomName.text;
-            var sessionID = DatabaseConnection.CreateSessionLog(
+            var sessionID = DatabaseConnection.CreateSessionLog(_roomName.text,
                 _roomsCanvases.HostRoomCanvas.CaseListCanvas.SelectedCase.CaseID.ToString(),
                 DateTime.Now.ToString(),
                 _roomOptions.CustomRoomProperties[DataKeyValues.__SIMULATION_TYPE__].ToString());

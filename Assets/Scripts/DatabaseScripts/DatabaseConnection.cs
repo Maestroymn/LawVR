@@ -365,10 +365,10 @@ namespace DatabaseScripts
             SqlCommand.ExecuteNonQuery();
         }
         
-        public static string CreateSessionLog(string CaseID, string StartTime , string SimulationType)
+        public static string CreateSessionLog(string LobbyName, string CaseID, string StartTime , string SimulationType)
         {
-            SqlCommand.CommandText = "insert into court_session(case_id, start_time, simulation_type) " +
-            "values('" + CaseID + "', '" + StartTime + "' , '" + SimulationType + "' ) returning session_id";
+            SqlCommand.CommandText = "insert into court_session(lobby_name,case_id, start_time, simulation_type) " +
+            "values('" + LobbyName + "', '" + CaseID + "', '" + StartTime + "' , '" + SimulationType + "' ) returning session_id";
             Debug.Log(SqlCommand.CommandText);
             NpgsqlDataReader SessionID = SqlCommand.ExecuteReader();
             SessionID.Read();
@@ -406,6 +406,7 @@ namespace DatabaseScripts
                     newHistory.Feedback = SessionLogs[3].ToString();
                     newHistory.SessionID = int.Parse(SessionLogs[4].ToString());
                     newHistory.SimulationType = SessionLogs[5].ToString();
+                    newHistory.LobbyName = SessionLogs[6].ToString();
                     newHistory.SpeechText = GetSessionSpeechLog(id);
                     newHistory.UserRole = GetUserRoleInSession(newHistory.SessionID);
                     newHistory.CaseName = GetCaseNameById(newHistory.CaseID);
@@ -414,7 +415,7 @@ namespace DatabaseScripts
 
                 foreach( var u in UserHistory)
                 {
-                    Debug.Log(u.CaseID + " " + u.EndTime + " " + u.StartTime + " " + u.SimulationType + " " + u.SessionID + " " + u.Feedback + " " + u.SpeechText);
+                    Debug.Log(u.CaseID + " " + u.EndTime + " " + u.StartTime + " " + u.SimulationType + " " + u.SessionID + " " + u.Feedback + " " + u.SpeechText+" "+u.LobbyName);
 
                 }
 
