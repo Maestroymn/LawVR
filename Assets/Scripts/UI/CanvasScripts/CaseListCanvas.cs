@@ -21,7 +21,7 @@ namespace UI.CanvasScripts
             _courtCases = DatabaseConnection.GetCourtCases();
             _courtCases?.ForEach(court=>
             {
-                if(!_caseListings.Find(x=>x.CourtCase.CaseID==court.CaseID))
+                if(!_caseListings.Find(x=>x.CaseID==court.CaseID))
                 {
                     InstantiateCaseListing(court);
                 }
@@ -32,10 +32,10 @@ namespace UI.CanvasScripts
         {
             CaseListing caseListing;
             caseListing = Instantiate(_caseListingPrefab);
-            caseListing.CourtCase = courtCase;
             caseListing.OnSelected += SetSelectedCase;
             caseListing.transform.SetParent(_caseContent,false);
             caseListing.SetCaseName(courtCase.CaseName);
+            caseListing.CaseID = courtCase.CaseID;
             CaseDetailPanelBehaviour detail = Instantiate(_caseDetailPrefab, _caseContent.parent, false);
             detail.SetInfo(courtCase);
             caseListing.SetCaseDetail(detail);
@@ -48,7 +48,6 @@ namespace UI.CanvasScripts
                 SelectedCase.Image.color=Color.white;
             }
             SelectedCase = selectedCase;
-            PhotonNetwork.CurrentRoom.CustomProperties[DataKeyValues.__CASE_ID__] = SelectedCase.CourtCase.CaseID;
         }
     }
 }

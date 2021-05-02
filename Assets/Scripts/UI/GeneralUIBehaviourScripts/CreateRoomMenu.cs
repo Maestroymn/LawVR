@@ -39,6 +39,7 @@ namespace UI
             _roomOptions.CustomRoomProperties.Add(DataKeyValues.__SIMULATION_TYPE__,DataKeyValues.__COMPETITION_MODE__);
             _roomOptions.CustomRoomProperties.Add(DataKeyValues.__AI_JUDGE__,false);
             _roomOptions.CustomRoomProperties.Add(DataKeyValues.__ROOM_NAME__,"");
+            _roomOptions.CustomRoomProperties.Add(DataKeyValues.__CASE_ID__,"");
         }
         #endregion
 
