@@ -110,13 +110,16 @@ namespace UI
                     }
                 });
                 //Locking room when the session started, if following bools are set to false, then no one can join after session started.
-                PhotonNetwork.CurrentRoom.CustomProperties[DataKeyValues.__CASE_ID__] = _roomsCanvases.HostRoomCanvas.CaseListCanvas.SelectedCase.CaseID.ToString();
-                PhotonNetwork.CurrentRoom.CustomProperties[DataKeyValues.__SESSION_ID__] = DatabaseConnection.CreateSessionLog(PhotonNetwork.CurrentRoom.CustomProperties[DataKeyValues.__CASE_ID__].ToString(),DateTime.Now.ToString(),PhotonNetwork.CurrentRoom.CustomProperties[DataKeyValues.__SIMULATION_TYPE__].ToString());
+                Hashtable hashtable = new Hashtable
+                {
+                    [DataKeyValues.__CASE_ID__] = _roomsCanvases.HostRoomCanvas.CaseListCanvas.SelectedCase.CaseID.ToString(),
+                    [DataKeyValues.__SESSION_ID__] = DatabaseConnection.CreateSessionLog(_roomsCanvases.HostRoomCanvas.CaseListCanvas.SelectedCase.CaseID.ToString(),DateTime.Now.ToString(),PhotonNetwork.CurrentRoom.CustomProperties[DataKeyValues.__SIMULATION_TYPE__].ToString()),
+                };
+                PhotonNetwork.CurrentRoom.SetCustomProperties(PhotonNetwork.CurrentRoom.CustomProperties,hashtable);
                 DatabaseConnection.UpdateUserSessionID(GameManager.GameSettings.NickName, (int)PhotonNetwork.CurrentRoom.CustomProperties[DataKeyValues.__SESSION_ID__]);
                 PhotonNetwork.CurrentRoom.IsOpen = false;
                 PhotonNetwork.CurrentRoom.IsVisible = false;
                 PhotonNetwork.LoadLevel(DataKeyValues.__COURT_SCENE__);
-            
             }
         }
 
