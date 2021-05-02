@@ -35,7 +35,7 @@ namespace UI
             _roomOptions.IsVisible = true;
             _roomOptions.BroadcastPropsChangeToAll = true;
             _roomOptions.CustomRoomProperties = new ExitGames.Client.Photon.Hashtable();
-            _roomOptions.CustomRoomProperties.Add(DataKeyValues.__PASSWORD_KEY__,"");
+            _roomOptions.CustomRoomProperties.Add(DataKeyValues.__PASSWORD_KEY__,"EMPTY");
             _roomOptions.CustomRoomProperties.Add(DataKeyValues.__SIMULATION_TYPE__,DataKeyValues.__COMPETITION_MODE__);
             _roomOptions.CustomRoomProperties.Add(DataKeyValues.__AI_JUDGE__,false);
             _roomOptions.CustomRoomProperties.Add(DataKeyValues.__ROOM_NAME__,"");
@@ -79,7 +79,7 @@ namespace UI
                 Debug.Log("NOTCONNECTED"+_roomCreated);
                 return;
             }
-            if (_password.text.Length != 0)
+            if ((string) PhotonNetwork.CurrentRoom.CustomProperties[DataKeyValues.__PASSWORD_KEY__]!="EMPTY")
             {
                 _roomOptions.CustomRoomProperties["password"]=_password.text;
             }

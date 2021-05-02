@@ -7,7 +7,7 @@ namespace UI
 {
     public class JoinRoomMenu : MonoBehaviourPunCallbacks
     {
-        [SerializeField] private TextMeshProUGUI _roomName, _password;
+        [SerializeField] private TMP_InputField _roomName, _password;
 
         private RoomsCanvases _roomsCanvases;   
         public void FirstInitialize(RoomsCanvases roomsCanvases)
