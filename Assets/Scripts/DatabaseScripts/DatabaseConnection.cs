@@ -363,7 +363,6 @@ namespace DatabaseScripts
                "values(" + SessionID + ", '" + SpeakerID + "', '"+ SpeakerRole + "', '"+Speech+"', '"+ StartTime+"' , "+ SpeechDuration.Replace(",",".")+" )";
             Debug.Log(SqlCommand.CommandText);
             SqlCommand.ExecuteNonQuery();
-
         }
         
         public static string CreateSessionLog(string CaseID, string StartTime , string SimulationType)
@@ -373,14 +372,11 @@ namespace DatabaseScripts
             Debug.Log(SqlCommand.CommandText);
             NpgsqlDataReader SessionID = SqlCommand.ExecuteReader();
             SessionID.Read();
-            print("SESSION_ID: "+SessionID[0].ToString());
             return SessionID[0].ToString();
         }
         
         public static void UpdateSessionLog(string SessionID , string EndTime , string Feedback)
         {
-            print("GIVEN SESSION ID: "+SessionID);
-            print("TRYING SESSION ID: "+PhotonNetwork.CurrentRoom.CustomProperties[DataKeyValues.__SESSION_ID__]);
             SqlCommand.CommandText = "update court_session set end_time = '" + EndTime + 
             "' , feedback = '" + Feedback +"' where session_id = " +int.Parse(SessionID);
             Debug.Log(SqlCommand.CommandText);

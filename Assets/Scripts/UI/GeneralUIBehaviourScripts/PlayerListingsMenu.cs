@@ -110,18 +110,14 @@ namespace UI
                     }
                 });
                 //Locking room when the session started, if following bools are set to false, then no one can join after session started.
-                /*PhotonNetwork.CurrentRoom.CustomProperties[DataKeyValues.__CASE_ID__] = _roomsCanvases.HostRoomCanvas.CaseListCanvas.SelectedCase.CaseID.ToString();
-                PhotonNetwork.CurrentRoom.CustomProperties[DataKeyValues.__SESSION_ID__] =
-                    DatabaseConnection.CreateSessionLog(
-                        PhotonNetwork.CurrentRoom.CustomProperties[DataKeyValues.__CASE_ID__].ToString(),
-                        DateTime.Now.ToString(),
-                        PhotonNetwork.CurrentRoom.CustomProperties[DataKeyValues.__SIMULATION_TYPE__].ToString());*/
-                DatabaseConnection.UpdateUserSessionID(GameManager.GameSettings.NickName, PhotonNetwork.CurrentRoom.CustomProperties[DataKeyValues.__SESSION_ID__].ToString());
+                photonView.RPC("RPC_UpdateUserSessions",RpcTarget.All);
                 PhotonNetwork.CurrentRoom.IsOpen = false;
                 PhotonNetwork.CurrentRoom.IsVisible = false;
                 PhotonNetwork.LoadLevel(DataKeyValues.__COURT_SCENE__);
             }
         }
+        
+        
 
         private void CheckIfAllReady()
         {
@@ -192,6 +188,12 @@ namespace UI
         #endregion
         
         #region PunRPC Functions
+
+        [PunRPC]
+        private void RPC_UpdateUserSessions()
+        {
+            DatabaseConnection.UpdateUserSessionID(GameManager.GameSettings.NickName, PhotonNetwork.CurrentRoom.CustomProperties[DataKeyValues.__SESSION_ID__].ToString());
+        }
         
         [PunRPC]
         private void RPC_ChangeReadyState(Player player, bool ready)
