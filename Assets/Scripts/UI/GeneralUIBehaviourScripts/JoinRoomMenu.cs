@@ -17,7 +17,7 @@ namespace UI
         
         public void OnClickJoinPrivateRoom()
         {
-            RoomListing room  = _roomsCanvases.UIManager.RoomListings.FirstOrDefault(r => r.RoomInfo.Name == _roomName.text);
+            RoomListing room  = _roomsCanvases.UIManager.RoomListings.Find(r => r.RoomInfo.Name == _roomName.text);
             bool exists = (room != null);
             if (exists)
             {
