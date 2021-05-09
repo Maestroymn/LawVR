@@ -136,7 +136,8 @@ namespace Valve.VR
                     if (!compositor.CanRenderScene())
                         continue;
 
-                    compositor.SetTrackingSpace(SteamVR.settings.trackingSpace);
+                    compositor.SetTrackingSpace(ETrackingUniverseOrigin.TrackingUniverseSeated);
+                    
                 }
 
                 var overlay = SteamVR_Overlay.instance;

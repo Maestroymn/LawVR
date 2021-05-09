@@ -29,7 +29,8 @@ public class PlayerMove : MonoBehaviourPunCallbacks
     public General.Status Status;
 
     [Header("VR Components")] [SerializeField]
-    private Player _playerVR;
+    private GameObject _playerVR;
+
     private bool isJumping;
     private static readonly int Walk = Animator.StringToHash("walk");
     private static readonly int Nervous = Animator.StringToHash("nervous");
@@ -77,6 +78,8 @@ public class PlayerMove : MonoBehaviourPunCallbacks
     {
         XRSettings.LoadDeviceByName(deviceName);
         yield return null;
+        XRDevice.SetTrackingSpaceType(TrackingSpaceType.Stationary);
+        InputTracking.Recenter();
         _playerVR.gameObject.SetActive(true);
         XRSettings.enabled = true;
     }

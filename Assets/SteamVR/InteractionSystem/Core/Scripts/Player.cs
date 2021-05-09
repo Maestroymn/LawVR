@@ -7,6 +7,7 @@
 using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
+using UnityEngine.XR;
 
 namespace Valve.VR.InteractionSystem
 {
@@ -47,7 +48,9 @@ namespace Valve.VR.InteractionSystem
 		// Singleton instance of the Player. Only one can exist at a time.
 		//-------------------------------------------------
 		private static Player _instance;
-		public static Player instance
+
+
+        public static Player instance
 		{
 			get
 			{
@@ -252,6 +255,7 @@ namespace Valve.VR.InteractionSystem
 		//-------------------------------------------------
 		private void Awake()
 		{
+			
 			if ( trackingOriginTransform == null )
 			{
 				trackingOriginTransform = this.transform;
@@ -292,10 +296,11 @@ namespace Valve.VR.InteractionSystem
 
         protected virtual void Update()
         {
-            if (SteamVR.initializedState != SteamVR.InitializedStates.InitializeSuccess)
+			
+			if (SteamVR.initializedState != SteamVR.InitializedStates.InitializeSuccess)
                 return;
-
-            if (headsetOnHead != null)
+			
+			if (headsetOnHead != null)
             {
                 if (headsetOnHead.GetStateDown(SteamVR_Input_Sources.Head))
                 {
