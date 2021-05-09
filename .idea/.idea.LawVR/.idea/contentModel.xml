@@ -85,6 +85,15 @@
           <e p="LICENSE.txt" t="Include" />
           <e p="readme.txt" t="Include" />
         </e>
+        <e p="Materials" t="Include">
+          <e p="Shaders" t="Include">
+            <e p="Outline.shader" t="Include" />
+            <e p="OutlineRegular.shader" t="Include" />
+            <e p="OutlineSmooth.shader" t="Include" />
+            <e p="OutlineUltimate.shader" t="Include" />
+            <e p="OutlineUniform.shader" t="Include" />
+          </e>
+        </e>
         <e p="Photon" t="Include">
           <e p="PhotonChat" t="Include">
             <e p="Code" t="Include">
@@ -958,6 +967,7 @@
           </e>
           <e p="General" t="Include">
             <e p="CourtBuilding.cs" t="Include" />
+            <e p="CourtSpectatorsNonHuman.cs" t="Include" />
             <e p="UserConnect.cs" t="Include" />
           </e>
           <e p="Managers" t="Include">
@@ -977,10 +987,12 @@
               <e p="JoinPublicRoomsCanvas.cs" t="Include" />
               <e p="JoinRoomCanvas.cs" t="Include" />
               <e p="RoomsCanvases.cs" t="Include" />
+              <e p="UserCanvas.cs" t="Include" />
             </e>
             <e p="GeneralUIBehaviourScripts" t="Include">
               <e p="CaseDetailPanelBehaviour.cs" t="Include" />
               <e p="CaseListing.cs" t="Include" />
+              <e p="CaseSummaryDetail.cs" t="Include" />
               <e p="ConnectionQuality.cs" t="Include" />
               <e p="CreateRoomMenu.cs" t="Include" />
               <e p="FriendListing.cs" t="Include" />
@@ -1009,6 +1021,7 @@
             <e p="SingletonReferences.cs" t="Include" />
             <e p="SingletonScriptableObject.cs" t="Include" />
             <e p="SpeechRecognition.cs" t="Include" />
+            <e p="Timer.cs" t="Include" />
           </e>
         </e>
         <e p="Soja Exiles" t="Include">

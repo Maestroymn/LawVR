@@ -7,7 +7,6 @@ using Photon.Pun;
 using Photon.Realtime;
 using UnityEngine;
 using Utilities;
-using DatabaseScripts;
 
 namespace Managers
 {
@@ -39,16 +38,24 @@ namespace Managers
             switch (PhotonNetwork.LocalPlayer.CustomProperties[DataKeyValues.__ROLE__].ToString().ToLower())
             {
                 case "plaintiff":
-                    GameManager.NetworkInstantiate(plaintiff, _currentBuilding.DefendantTransform.position, Quaternion.identity);
+                    var obj=GameManager.NetworkInstantiate(plaintiff, _currentBuilding.PlaintiffTransform.position, Quaternion.identity);
+                    obj.transform.rotation = _currentBuilding.PlaintiffTransform.rotation;
+                    obj.transform.SetParent(_currentBuilding.PlaintiffTransform.parent);
                     break;
                 case "defendant":
-                    GameManager.NetworkInstantiate(defendant, _currentBuilding.PlaintiffTransform.position, Quaternion.identity);
+                    obj=GameManager.NetworkInstantiate(defendant, _currentBuilding.DefendantTransform.position, Quaternion.identity);
+                    obj.transform.rotation = _currentBuilding.DefendantTransform.rotation;
+                    obj.transform.SetParent(_currentBuilding.DefendantTransform.parent);
                     break;
                 case "judge":
-                    GameManager.NetworkInstantiate(judge, _currentBuilding.JudgeTransform.position, Quaternion.identity);
+                    obj=GameManager.NetworkInstantiate(judge, _currentBuilding.JudgeTransform.position, Quaternion.identity);
+                    obj.transform.rotation = _currentBuilding.JudgeTransform.rotation;
+                    obj.transform.SetParent(_currentBuilding.JudgeTransform.parent);
                     break;
                 case "spectator":
-                    GameManager.NetworkInstantiate(spectator, _currentBuilding.SpectatorTransform.position, Quaternion.identity);
+                    obj=GameManager.NetworkInstantiate(spectator, _currentBuilding.SpectatorTransform.position, Quaternion.identity);
+                    obj.transform.rotation = _currentBuilding.SpectatorTransform.rotation;
+                    obj.transform.SetParent(_currentBuilding.SpectatorTransform.parent);
                     break;
             }
         }
@@ -68,7 +75,7 @@ namespace Managers
                     PhotonNetwork.CloseConnection(otherPlayer);
                 }
                 PhotonNetwork.LeaveRoom();
-                PhotonNetwork.LoadLevel(0);
+                PhotonNetwork.LoadLevel(DataKeyValues.__LOGIN_SCENE__);
             }
         }
 
@@ -79,10 +86,12 @@ namespace Managers
             {
                 UIManager.Instance.RoomsCanvases.HostRoomCanvas.CreateRoomMenu.RoomListingsMenu.RemoveRoomListing(PhotonNetwork.CurrentRoom);
                 PhotonNetwork.LeaveRoom();
-                PhotonNetwork.LoadLevel(0);
+                PhotonNetwork.LoadLevel(DataKeyValues.__LOGIN_SCENE__);
             }
         }
 
+        
+        
         #endregion
     }
 }

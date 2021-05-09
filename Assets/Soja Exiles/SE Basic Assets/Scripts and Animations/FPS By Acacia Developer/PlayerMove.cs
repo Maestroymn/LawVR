@@ -1,4 +1,5 @@
 ﻿using System.Collections;
+using Data;
 using Managers;
 using Photon.Pun;
 using UnityEngine;
@@ -23,8 +24,11 @@ public class PlayerMove : MonoBehaviourPunCallbacks
     [SerializeField] private float jumpMultiplier;
     [SerializeField] private KeyCode jumpKey;
     [SerializeField] private Animator _animator;
+    public General.Status Status;
     private bool isJumping;
     private static readonly int Walk = Animator.StringToHash("walk");
+    private static readonly int Nervous = Animator.StringToHash("nervous");
+    private static readonly int NormalSit = Animator.StringToHash("normal_sit");
     private PauseUIManager _pauseUIManager;
     
     private void Awake()
@@ -41,15 +45,33 @@ public class PlayerMove : MonoBehaviourPunCallbacks
             Cursor.lockState = CursorLockMode.Locked;
             _animator.SetBool(Walk,false);
         }
+        else
+        {
+            SetStartingStatus();
+        }
     }
 
+    private void SetStartingStatus()
+    {
+        switch (Status)
+        {
+            case General.Status.NervousSitting:
+                _animator.SetBool(Nervous,true);
+                break;
+            case General.Status.NormalSitting:
+                _animator.SetBool(NormalSit,true);
+                break;
+        }
+    }
+    
     private void Update()
     {
         if(!PhotonNetwork.IsConnected || !photonView.IsMine || !PhotonNetwork.InRoom || _pauseUIManager.paused)
             return;
         if (photonView.IsMine)
         {
-            PlayerMovement();
+            if(PhotonNetwork.CurrentRoom.CustomProperties[DataKeyValues.__SIMULATION_TYPE__].ToString().Equals(DataKeyValues.__SANDBOX_MODE__))
+                PlayerMovement();
             _cameraMove.CameraRotation();
         }
     }

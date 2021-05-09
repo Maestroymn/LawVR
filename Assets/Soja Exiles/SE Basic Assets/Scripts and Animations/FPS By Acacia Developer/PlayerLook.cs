@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using Photon.Pun;
+﻿using Photon.Pun;
 using UnityEngine;
 
 public class PlayerLook : MonoBehaviourPunCallbacks
@@ -13,18 +11,8 @@ public class PlayerLook : MonoBehaviourPunCallbacks
 
     private void Awake()
     {
-        //LockCursor();
         xAxisClamp = 0.0f;
     }
-
-
-    // private void LockCursor()
-    // {
-    //     if (photonView.IsMine)
-    //     {
-    //         Cursor.lockState = CursorLockMode.Locked;
-    //     }
-    // }
 
     public void CameraRotation()
     {
@@ -46,8 +34,8 @@ public class PlayerLook : MonoBehaviourPunCallbacks
             ClampXAxisRotationToValue(90.0f);
         }
 
-        transform.Rotate(Vector3.left * mouseY);
         playerBody.Rotate(Vector3.up * mouseX);
+        transform.Rotate(Vector3.left * mouseY);
     }
 
     private void ClampXAxisRotationToValue(float value)

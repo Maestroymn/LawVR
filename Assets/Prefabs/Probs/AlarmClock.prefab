@@ -26,13 +26,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3870627779067956277}
-  m_LocalRotation: {x: 0.83309937, y: -0.000000029802319, z: 0.00000016763805, w: -0.5531234}
-  m_LocalPosition: {x: -0, y: -0.1295, z: 0.0326}
-  m_LocalScale: {x: 0.1634411, y: 0.04765754, z: 0.23197615}
+  m_LocalRotation: {x: 0.8386317, y: 0.0006558373, z: 0.0009933485, w: -0.5446976}
+  m_LocalPosition: {x: -0.00277, y: -0.13428, z: 0.03719}
+  m_LocalScale: {x: 0.13756222, y: 0.05819488, z: 0.23197615}
   m_Children: []
   m_Father: {fileID: 8061243938197068446}
   m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 247.163, y: 0, z: -0.000015258789}
+  m_LocalEulerAnglesHint: {x: 246.008, y: -0.13397217, z: -0.0029907227}
 --- !u!33 &3281996808389391445
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -59,7 +59,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10756, guid: 0000000000000000e000000000000000, type: 0}
+  - {fileID: 2100000, guid: ed66a082275a048acbdf814c959ffa76, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -122,7 +122,7 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5004114235569365904}
   m_LocalRotation: {x: -0.00000017881392, y: -0.8228211, z: -0.5683004, w: 0.0000002533197}
-  m_LocalPosition: {x: 0, y: 0, z: 0.031}
+  m_LocalPosition: {x: 0, y: 0, z: 0.0337}
   m_LocalScale: {x: 0.012373418, y: 0.012373418, z: 0.012373418}
   m_Children: []
   m_Father: {fileID: 8061243938197068446}
@@ -130,8 +130,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: -69.264, y: -180.00002, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -0.04, y: -0.131}
-  m_SizeDelta: {x: 20, y: 5}
+  m_AnchoredPosition: {x: 0.002, y: -0.1377}
+  m_SizeDelta: {x: 13.218346, y: 5}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!23 &6334237355452192991
 MeshRenderer:
@@ -311,6 +311,7 @@ GameObject:
   - component: {fileID: 8061243938197068446}
   - component: {fileID: 6372753123341948219}
   - component: {fileID: 9193085415221764593}
+  - component: {fileID: 853491077470192269}
   m_Layer: 0
   m_Name: AlarmClock
   m_TagString: Untagged
@@ -325,7 +326,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7247587069473685540}
-  m_LocalRotation: {x: -0.6875418, y: -0.16518596, z: -0.16518599, w: 0.6875417}
+  m_LocalRotation: {x: -0.687542, y: -0.16518486, z: -0.16518486, w: 0.687542}
   m_LocalPosition: {x: 3.4270554, y: 2.6083856, z: -17.867859}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -360,7 +361,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: bf8d909a12c6d417e9cff06780587b87, type: 2}
+  - {fileID: 2100000, guid: cc7648bc4056b4825b23bd7b5a6538f9, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -381,3 +382,22 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!95 &853491077470192269
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7247587069473685540}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 8483be1c138404e9392af9649ca852ef, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
