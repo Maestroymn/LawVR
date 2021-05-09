@@ -3,6 +3,8 @@ using Data;
 using Managers;
 using Photon.Pun;
 using UnityEngine;
+using UnityEngine.XR;
+using Valve.VR.InteractionSystem;
 
 public class PlayerMove : MonoBehaviourPunCallbacks
 {
@@ -25,6 +27,9 @@ public class PlayerMove : MonoBehaviourPunCallbacks
     [SerializeField] private KeyCode jumpKey;
     [SerializeField] private Animator _animator;
     public General.Status Status;
+
+    [Header("VR Components")] [SerializeField]
+    private Player _playerVR;
     private bool isJumping;
     private static readonly int Walk = Animator.StringToHash("walk");
     private static readonly int Nervous = Animator.StringToHash("nervous");
@@ -48,6 +53,10 @@ public class PlayerMove : MonoBehaviourPunCallbacks
         else
         {
             SetStartingStatus();
+            if (PlayerPrefs.GetInt(DataKeyValues.__VR_ENABLE__)==1)
+            {
+                StartCoroutine(ActivateVR("OpenVR"));
+            }
         }
     }
 
@@ -62,6 +71,14 @@ public class PlayerMove : MonoBehaviourPunCallbacks
                 _animator.SetBool(NormalSit,true);
                 break;
         }
+    }
+    
+    public IEnumerator ActivateVR(string deviceName)
+    {
+        XRSettings.LoadDeviceByName(deviceName);
+        yield return null;
+        _playerVR.gameObject.SetActive(true);
+        XRSettings.enabled = true;
     }
     
     private void Update()

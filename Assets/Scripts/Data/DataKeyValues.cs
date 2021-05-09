@@ -35,5 +35,7 @@ namespace Data
         public static readonly int __FEMALE_CUSTOMIZATION_SCENE__ = 3;
         public static readonly int __MALE_CUSTOMIZATION_SCENE__ = 4;
         #endregion
+
+        public static readonly string __VR_ENABLE__ = "__VR_ENABLE__";
     }
 }

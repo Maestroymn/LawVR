@@ -47,6 +47,8 @@ namespace UI.LoginScripts
 
         public void OnConnected()
         {
+            //TODO: DELETE ME 
+            PlayerPrefs.SetInt(DataKeyValues.__VR_ENABLE__, 1);
             _signInManager.OnSignedIn -= LoggingIn;
             _signUpManager.OnSignedUp -= LoggingIn;
             _connecting.SetActive(false);
