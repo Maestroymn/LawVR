@@ -185,12 +185,13 @@ namespace AdvancedCustomizableSystem
         [HideInInspector]
         public Transform _transform;
 
+        public bool IsSpec = false;
         private void Awake()
         {
             // this._transform = transform;
             // _lodGroup = GetComponent<LODGroup>();
             // RecalculateLOD();
-            if(photonView.IsMine)
+            if(photonView.IsMine && !IsSpec)
             {
                 InitColors();
                 LoadFromDB();
