@@ -47,23 +47,23 @@ namespace Managers
             {
                 case "plaintiff":
                     tmpObjHolder=GameManager.NetworkInstantiate(plaintiff, _currentBuilding.PlaintiffTransform.position, Quaternion.identity);
-                    tmpObjHolder.transform.rotation = _currentBuilding.PlaintiffTransform.rotation;
-                    tmpObjHolder.transform.SetParent(_currentBuilding.PlaintiffTransform.parent);
+                    /*tmpObjHolder.transform.rotation = _currentBuilding.PlaintiffTransform.rotation;
+                    tmpObjHolder.transform.SetParent(_currentBuilding.PlaintiffTransform.parent);*/
                     break;
                 case "defendant":
                     tmpObjHolder=GameManager.NetworkInstantiate(defendant, _currentBuilding.DefendantTransform.position, Quaternion.identity);
-                    tmpObjHolder.transform.rotation = _currentBuilding.DefendantTransform.rotation;
-                    tmpObjHolder.transform.SetParent(_currentBuilding.DefendantTransform.parent);
+                    /*tmpObjHolder.transform.rotation = _currentBuilding.DefendantTransform.rotation;
+                    tmpObjHolder.transform.SetParent(_currentBuilding.DefendantTransform.parent);*/
                     break;
                 case "judge":
                     tmpObjHolder=GameManager.NetworkInstantiate(judge, _currentBuilding.JudgeTransform.position, Quaternion.identity);
-                    tmpObjHolder.transform.rotation = _currentBuilding.JudgeTransform.rotation;
-                    tmpObjHolder.transform.SetParent(_currentBuilding.JudgeTransform.parent);
+                    /*tmpObjHolder.transform.rotation = _currentBuilding.JudgeTransform.rotation;
+                    tmpObjHolder.transform.SetParent(_currentBuilding.JudgeTransform.parent);*/
                     break;
                 case "spectator":
                     tmpObjHolder=GameManager.NetworkInstantiate(spectator, _currentBuilding.SpectatorTransform.position, Quaternion.identity);
-                    tmpObjHolder.transform.rotation = _currentBuilding.SpectatorTransform.rotation;
-                    tmpObjHolder.transform.SetParent(_currentBuilding.SpectatorTransform.parent);
+                    /*tmpObjHolder.transform.rotation = _currentBuilding.SpectatorTransform.rotation;
+                    tmpObjHolder.transform.SetParent(_currentBuilding.SpectatorTransform.parent);*/
                     break;
             }
 
