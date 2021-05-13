@@ -4661,6 +4661,7 @@ MonoBehaviour:
   jumpKey: 32
   _animator: {fileID: 905616613937339185}
   Status: 1
+  _playerVR: {fileID: 0}
 --- !u!114 &-1555089641308922302
 MonoBehaviour:
   m_ObjectHideFlags: 0

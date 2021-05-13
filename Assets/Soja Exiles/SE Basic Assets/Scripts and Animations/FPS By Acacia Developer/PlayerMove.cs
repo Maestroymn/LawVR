@@ -1,9 +1,11 @@
 ﻿using System.Collections;
+using System.Collections.Generic;
 using Data;
 using Managers;
 using Photon.Pun;
 using UnityEngine;
 using UnityEngine.XR;
+using Valve.VR;
 using Valve.VR.InteractionSystem;
 
 public class PlayerMove : MonoBehaviourPunCallbacks
@@ -54,10 +56,11 @@ public class PlayerMove : MonoBehaviourPunCallbacks
         else
         {
             SetStartingStatus();
-            if (PlayerPrefs.GetInt(DataKeyValues.__VR_ENABLE__)==1)
-            {
+            Debug.Log("checking " + PlayerPrefs.GetInt(DataKeyValues.__VR_ENABLE__));
+            /*if (PlayerPrefs.GetInt(DataKeyValues.__VR_ENABLE__)==1)
+            {*/
                 StartCoroutine(ActivateVR("OpenVR"));
-            }
+            //}
         }
     }
 
@@ -78,8 +81,6 @@ public class PlayerMove : MonoBehaviourPunCallbacks
     {
         XRSettings.LoadDeviceByName(deviceName);
         yield return null;
-        XRDevice.SetTrackingSpaceType(TrackingSpaceType.Stationary);
-        InputTracking.Recenter();
         _playerVR.gameObject.SetActive(true);
         XRSettings.enabled = true;
     }
