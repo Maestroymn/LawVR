@@ -969,6 +969,7 @@
             <e p="CourtBuilding.cs" t="Include" />
             <e p="CourtSpectatorsNonHuman.cs" t="Include" />
             <e p="IKController.cs" t="Include" />
+            <e p="InteractableCourtObject.cs" t="Include" />
             <e p="UserConnect.cs" t="Include" />
           </e>
           <e p="Managers" t="Include">

@@ -435,7 +435,7 @@ GameObject:
   m_Component:
   - component: {fileID: 348753174}
   - component: {fileID: 348753173}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: Camera
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1681,6 +1681,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1355001903}
   - component: {fileID: 1355001902}
+  - component: {fileID: 1355001904}
   m_Layer: 0
   m_Name: RoomSessionManager
   m_TagString: Untagged
@@ -1701,7 +1702,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   judge: {fileID: 6866459610351604485, guid: 540e6e34a86c24b4194c2fe02d550472, type: 3}
-  plaintiff: {fileID: 6866459610351604485, guid: cb009d4d8495a498c8eacfaf402ebcfd,
+  plaintiff: {fileID: 6866459610351604485, guid: abf3154f95ded41b482272c37f8119fa,
     type: 3}
   spectator: {fileID: 6866459610351604485, guid: 42a7fc455c15a40c2b7639f4533897d8,
     type: 3}
@@ -1712,6 +1713,7 @@ MonoBehaviour:
   _courtBuildings:
   - {fileID: 1566465279410555, guid: fc599b847af124d27ae33273b4c1c519, type: 3}
   SessionEnvironmentParent: {fileID: 1674053621}
+  _pauseUIManager: {fileID: 6064873672758139987}
 --- !u!4 &1355001903
 Transform:
   m_ObjectHideFlags: 0
@@ -1726,6 +1728,29 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1355001904
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1355001901}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aa584fbee541324448dd18d8409c7a41, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ObservedComponentsFoldoutOpen: 1
+  Group: 0
+  prefixField: -1
+  Synchronization: 3
+  OwnershipTransfer: 0
+  observableSearch: 0
+  ObservedComponents:
+  - {fileID: 0}
+  sceneViewId: 1
+  InstantiationId: 0
+  isRuntimeInstantiated: 0
 --- !u!4 &1463314235 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4994620815285460, guid: ee987da6efab07d49bc9fc59e287f08b,
@@ -2899,6 +2924,11 @@ PrefabInstance:
       propertyPath: m_Camera
       value: 
       objectReference: {fileID: 348753173}
+    - target: {fileID: 995740165822234853, guid: cc41d3f18dadcc74a8f67c6fa4b3ab52,
+        type: 3}
+      propertyPath: m_SortingOrder
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 995740165999562098, guid: cc41d3f18dadcc74a8f67c6fa4b3ab52,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -2959,6 +2989,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: PauseUI
       objectReference: {fileID: 0}
+    - target: {fileID: 995740165999562101, guid: cc41d3f18dadcc74a8f67c6fa4b3ab52,
+        type: 3}
+      propertyPath: m_Layer
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 8459347514680917594, guid: cc41d3f18dadcc74a8f67c6fa4b3ab52,
         type: 3}
       propertyPath: Camera
@@ -2966,6 +3001,18 @@ PrefabInstance:
       objectReference: {fileID: 348753173}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: cc41d3f18dadcc74a8f67c6fa4b3ab52, type: 3}
+--- !u!114 &6064873672758139987 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8459347514680917594, guid: cc41d3f18dadcc74a8f67c6fa4b3ab52,
+    type: 3}
+  m_PrefabInstance: {fileID: 6064873672758139986}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e5132258bdf19cb459631c457211eb47, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &7757624059385166505 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 995740165999562098, guid: cc41d3f18dadcc74a8f67c6fa4b3ab52,

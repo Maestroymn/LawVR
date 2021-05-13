@@ -243,7 +243,7 @@ MonoBehaviour:
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 0
-  m_textAlignment: 257
+  m_textAlignment: 514
   m_characterSpacing: 0
   m_wordSpacing: 0
   m_lineSpacing: 0
@@ -312,6 +312,7 @@ GameObject:
   - component: {fileID: 6372753123341948219}
   - component: {fileID: 9193085415221764593}
   - component: {fileID: 853491077470192269}
+  - component: {fileID: 8747101409153287738}
   m_Layer: 0
   m_Name: AlarmClock
   m_TagString: Untagged
@@ -401,3 +402,20 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &8747101409153287738
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7247587069473685540}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 589604ccda271493b913737ea3bf5ccc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  timeRemaining: 120
+  timeLimit: 0
+  timerIsRunning: 0
+  timeText: {fileID: 7457818718969655802}
+  Animator: {fileID: 853491077470192269}

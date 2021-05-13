@@ -1,14 +1,25 @@
-﻿using UnityEngine;
-using UnityEngine.UI;
+﻿using TMPro;
+using UnityEngine;
 
 namespace Utilities
 {
     public class Timer : MonoBehaviour
     {
-        public float timeRemaining = 60;
+        public float timeRemaining,timeLimit;
         public bool timerIsRunning = false;
-        public Text timeText;
+        public TMP_Text timeText;
+        public Animator Animator;
+        private static readonly int Ticking = Animator.StringToHash("Ticking");
 
+        public void HandleTimer(bool isActive)
+        {
+            Animator.SetBool(Ticking, isActive);
+            timerIsRunning = isActive;
+            timeRemaining = timeLimit;
+            if(!isActive)
+                timeText.text = "WAIT";
+        }
+        
         void Update()
         {
             if (!timerIsRunning) return;
@@ -22,6 +33,8 @@ namespace Utilities
                 //Debug.Log("Time has run out!");
                 timeRemaining = 0;
                 timerIsRunning = false;
+                Animator.SetBool(Ticking,false);
+                timeText.text = "WAIT";
             }
         }
 

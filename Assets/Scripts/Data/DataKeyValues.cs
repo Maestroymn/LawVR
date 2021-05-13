@@ -11,6 +11,8 @@ namespace Data
         public static readonly string __ROOM_NAME__ = "room_name";
         public static readonly string __SESSION_ID__ = "session_id";
         public static readonly string __CASE_ID__ = "case_id";
+        public static readonly string __TURN_COUNT__ = "turn_count";
+        public static readonly string __TURN_DURATION__ = "turn_duration";
         #endregion
         
         #region ROLE KEYS
@@ -36,6 +38,12 @@ namespace Data
         public static readonly int __MALE_CUSTOMIZATION_SCENE__ = 4;
         #endregion
 
+        #region INTERACTION KEYS
+
+        public static readonly KeyCode __INTERACT_KEY__ = KeyCode.E;
+
+        #endregion
+        
         public static readonly string __VR_ENABLE__ = "__VR_ENABLE__";
     }
 }

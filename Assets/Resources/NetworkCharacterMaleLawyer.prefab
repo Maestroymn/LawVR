@@ -1365,6 +1365,7 @@ MonoBehaviour:
   UsedCombinedCharacter: {fileID: 0}
   CombinedCharacterApply: {fileID: 0}
   _transform: {fileID: 0}
+  IsSpec: 0
 --- !u!1 &336927368123111880
 GameObject:
   m_ObjectHideFlags: 0
@@ -3010,6 +3011,9 @@ MonoBehaviour:
   mouseYInputName: Mouse Y
   mouseSensitivity: 150
   playerBody: {fileID: 8458433984391541892}
+  _caseSummaryDetail: {fileID: 0}
+  ParentController: {fileID: 0}
+  Camera: {fileID: 0}
 --- !u!1 &3353767450020880490
 GameObject:
   m_ObjectHideFlags: 0
@@ -4632,7 +4636,7 @@ MonoBehaviour:
   runKey: 304
   slopeForce: 5
   slopeForceRayLength: 1
-  _cameraMove: {fileID: 2305900458130279543}
+  PlayerLook: {fileID: 0}
   jumpFallOff:
     serializedVersion: 2
     m_Curve:
@@ -5072,7 +5076,7 @@ SkinnedMeshRenderer:
   - {fileID: 7006157363672259079}
   m_BlendShapeWeights:
   - 0
-  - 26
+  - 0
   - 0
   m_RootBone: {fileID: 80337711267631544}
   m_AABB:

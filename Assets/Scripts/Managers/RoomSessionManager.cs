@@ -16,11 +16,18 @@ namespace Managers
         [SerializeField] private AIJudgeGeneralBehaviour _aiJudgeGeneralBehaviour;
         [SerializeField] private List<CourtBuilding> _courtBuildings;
         [SerializeField] private Transform SessionEnvironmentParent;
+        [SerializeField] private PauseUIManager _pauseUIManager;
         private CourtBuilding _currentBuilding;
+        private GameObject tmpObjHolder;
+        private bool _plaintiffTurn;
+        private int _currentTurnCount=0, _totalTurnCountMax;
+        private PlayerMove _localPlayerMove;
+        
         private void Awake()
         {
             Cursor.visible = false;
             HandleBuildingSpawn();
+            _totalTurnCountMax = (int)PhotonNetwork.CurrentRoom.CustomProperties[DataKeyValues.__TURN_COUNT__];
         }
 
         private void HandleBuildingSpawn()
@@ -31,6 +38,7 @@ namespace Managers
                 GameManager.NetworkInstantiate(_aiJudgeGeneralBehaviour.gameObject, _currentBuilding.JudgeTransform.position, Quaternion.identity);
             }
             HandleSpawns();
+            _currentBuilding.InitTimers((int)PhotonNetwork.CurrentRoom.CustomProperties[DataKeyValues.__TURN_DURATION__]);
         }
 
         private void HandleSpawns()
@@ -38,25 +46,35 @@ namespace Managers
             switch (PhotonNetwork.LocalPlayer.CustomProperties[DataKeyValues.__ROLE__].ToString().ToLower())
             {
                 case "plaintiff":
-                    var obj=GameManager.NetworkInstantiate(plaintiff, _currentBuilding.PlaintiffTransform.position, Quaternion.identity);
-                    obj.transform.rotation = _currentBuilding.PlaintiffTransform.rotation;
-                    obj.transform.SetParent(_currentBuilding.PlaintiffTransform.parent);
+                    tmpObjHolder=GameManager.NetworkInstantiate(plaintiff, _currentBuilding.PlaintiffTransform.position, Quaternion.identity);
+                    tmpObjHolder.transform.rotation = _currentBuilding.PlaintiffTransform.rotation;
+                    tmpObjHolder.transform.SetParent(_currentBuilding.PlaintiffTransform.parent);
                     break;
                 case "defendant":
-                    obj=GameManager.NetworkInstantiate(defendant, _currentBuilding.DefendantTransform.position, Quaternion.identity);
-                    obj.transform.rotation = _currentBuilding.DefendantTransform.rotation;
-                    obj.transform.SetParent(_currentBuilding.DefendantTransform.parent);
+                    tmpObjHolder=GameManager.NetworkInstantiate(defendant, _currentBuilding.DefendantTransform.position, Quaternion.identity);
+                    tmpObjHolder.transform.rotation = _currentBuilding.DefendantTransform.rotation;
+                    tmpObjHolder.transform.SetParent(_currentBuilding.DefendantTransform.parent);
                     break;
                 case "judge":
-                    obj=GameManager.NetworkInstantiate(judge, _currentBuilding.JudgeTransform.position, Quaternion.identity);
-                    obj.transform.rotation = _currentBuilding.JudgeTransform.rotation;
-                    obj.transform.SetParent(_currentBuilding.JudgeTransform.parent);
+                    tmpObjHolder=GameManager.NetworkInstantiate(judge, _currentBuilding.JudgeTransform.position, Quaternion.identity);
+                    tmpObjHolder.transform.rotation = _currentBuilding.JudgeTransform.rotation;
+                    tmpObjHolder.transform.SetParent(_currentBuilding.JudgeTransform.parent);
                     break;
                 case "spectator":
-                    obj=GameManager.NetworkInstantiate(spectator, _currentBuilding.SpectatorTransform.position, Quaternion.identity);
-                    obj.transform.rotation = _currentBuilding.SpectatorTransform.rotation;
-                    obj.transform.SetParent(_currentBuilding.SpectatorTransform.parent);
+                    tmpObjHolder=GameManager.NetworkInstantiate(spectator, _currentBuilding.SpectatorTransform.position, Quaternion.identity);
+                    tmpObjHolder.transform.rotation = _currentBuilding.SpectatorTransform.rotation;
+                    tmpObjHolder.transform.SetParent(_currentBuilding.SpectatorTransform.parent);
                     break;
+            }
+            _localPlayerMove = tmpObjHolder.GetComponent<PlayerMove>();
+            _localPlayerMove.PlayerLook.RegisterForInteractables(_currentBuilding.InteractableCourtObjects);
+            _localPlayerMove.OnSwitchTurn += SwitchTurnEvent;
+            _localPlayerMove.OnStartTurn+= StartTurnEvent;
+            _pauseUIManager.OnPaused += _localPlayerMove.PlayerLook.CloseSummary;
+            if (PhotonNetwork.LocalPlayer.IsMasterClient)
+            {
+                _localPlayerMove.OnStartSession += StartSessionEvent;
+                _localPlayerMove.OnAllReady += StartSession;
             }
         }
 
@@ -89,9 +107,65 @@ namespace Managers
                 PhotonNetwork.LoadLevel(DataKeyValues.__LOGIN_SCENE__);
             }
         }
+        
+        #endregion
+        
+        #region RPC Funcs
 
+        private void StartSession()
+        {
+            _localPlayerMove.OnAllReady -= StartSession;
+            _localPlayerMove.photonView.RPC("RPC_StartSession",RpcTarget.All);
+        }
         
+        public void StartSessionEvent()
+        {
+            _localPlayerMove.OnStartSession -= StartSessionEvent;
+            SwitchTurnEvent();
+        }
         
+        public void SwitchTurnEvent()
+        {
+            _currentTurnCount++;
+            if (_currentTurnCount > _totalTurnCountMax)
+            {
+                // SESSION FINISHED HERE
+                print("SESSION ENDED!!!!");
+            }
+            if (_plaintiffTurn)
+            {
+                _plaintiffTurn = false;
+                _currentBuilding.PlaintiffTimer.HandleTimer(false);
+                _currentBuilding.DefendantTimer.timeText.text = "START!";
+                _currentBuilding.DefendantStartButton.HandleButtonSettings(ButtonStatus.Start);
+                _currentBuilding.PlaintiffStartButton.HandleButtonSettings(ButtonStatus.Wait);
+          
+            }
+            else
+            {
+                _plaintiffTurn = true;
+                _currentBuilding.DefendantTimer.HandleTimer(false);
+                _currentBuilding.PlaintiffTimer.timeText.text = "START!";
+                _currentBuilding.PlaintiffStartButton.HandleButtonSettings(ButtonStatus.Start);
+                _currentBuilding.DefendantStartButton.HandleButtonSettings(ButtonStatus.Wait);
+            }
+        }
+
+        public void StartTurnEvent()
+        {
+            if (_plaintiffTurn)
+            {
+                _currentBuilding.DefendantStartButton.HandleButtonSettings(ButtonStatus.Wait);
+                _currentBuilding.PlaintiffStartButton.HandleButtonSettings(ButtonStatus.Pass);
+                _currentBuilding.PlaintiffTimer.HandleTimer(true);
+            }
+            else
+            {
+                _currentBuilding.PlaintiffStartButton.HandleButtonSettings(ButtonStatus.Wait);
+                _currentBuilding.DefendantStartButton.HandleButtonSettings(ButtonStatus.Pass);
+                _currentBuilding.DefendantTimer.HandleTimer(true);
+            }
+        }
         #endregion
     }
 }

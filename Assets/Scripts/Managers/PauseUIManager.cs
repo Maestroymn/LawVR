@@ -11,10 +11,11 @@ namespace Managers
 {
     public class PauseUIManager : MonoBehaviourPunCallbacks
     {
+        public event Action OnPaused;
         public GameObject PauseCanvas;
         public Camera Camera;
         public bool paused = false;
-
+        
         // Start is called before the first frame update
         void Start()
         {
@@ -31,6 +32,7 @@ namespace Managers
                     Cursor.visible = true;
                     Cursor.lockState = CursorLockMode.None;
                     PausePanel(true);
+                    OnPaused?.Invoke();
                 }
                 else
                 {
@@ -46,6 +48,8 @@ namespace Managers
             Camera.gameObject.SetActive(isPaused);
             PauseCanvas.SetActive(isPaused);
             paused = isPaused;
+            Cursor.visible = isPaused;
+            Cursor.lockState = !isPaused ? CursorLockMode.Locked : CursorLockMode.None;
         }
         
         public void Disconnect()

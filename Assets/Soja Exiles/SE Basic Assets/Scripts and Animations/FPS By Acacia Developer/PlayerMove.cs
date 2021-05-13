@@ -1,15 +1,15 @@
-﻿using System.Collections;
-using System.Collections.Generic;
+﻿using System;
+using System.Collections;
 using Data;
+using General;
 using Managers;
 using Photon.Pun;
 using UnityEngine;
 using UnityEngine.XR;
-using Valve.VR;
-using Valve.VR.InteractionSystem;
 
 public class PlayerMove : MonoBehaviourPunCallbacks
 {
+    public event Action OnAllReady,OnStartTurn,OnStartSession,OnSwitchTurn;
     [SerializeField] private string horizontalInputName;
     [SerializeField] private string verticalInputName;
 
@@ -18,21 +18,21 @@ public class PlayerMove : MonoBehaviourPunCallbacks
     [SerializeField] private KeyCode runKey;
 
     private float movementSpeed;
+    private int _readyCount = 0, _totalPlayerCount;
 
     [SerializeField] private float slopeForce;
     [SerializeField] private float slopeForceRayLength;
-    [SerializeField] private PlayerLook _cameraMove;
+    [SerializeField] public PlayerLook PlayerLook;
     private CharacterController charController;
 
     [SerializeField] private AnimationCurve jumpFallOff;
     [SerializeField] private float jumpMultiplier;
     [SerializeField] private KeyCode jumpKey;
     [SerializeField] private Animator _animator;
-    public General.Status Status;
-
+    public Status Status;
     [Header("VR Components")] [SerializeField]
     private GameObject _playerVR;
-
+    
     private bool isJumping;
     private static readonly int Walk = Animator.StringToHash("walk");
     private static readonly int Nervous = Animator.StringToHash("nervous");
@@ -47,22 +47,23 @@ public class PlayerMove : MonoBehaviourPunCallbacks
 
     private void Start()
     {
+        _totalPlayerCount = PhotonNetwork.CurrentRoom.PlayerCount;
         if (!photonView.IsMine)
         {
-            _cameraMove.gameObject.SetActive(false);
+            PlayerLook.gameObject.SetActive(false);
             Cursor.lockState = CursorLockMode.Locked;
             _animator.SetBool(Walk,false);
         }
         else
         {
             SetStartingStatus();
-            Debug.Log("checking " + PlayerPrefs.GetInt(DataKeyValues.__VR_ENABLE__));
-            /*if (PlayerPrefs.GetInt(DataKeyValues.__VR_ENABLE__)==1)
-            {*/
+            if (PlayerPrefs.GetInt(DataKeyValues.__VR_ENABLE__)==1)
+            {
                 StartCoroutine(ActivateVR("OpenVR"));
-            //}
+            }
         }
     }
+    
 
     private void SetStartingStatus()
     {
@@ -93,7 +94,7 @@ public class PlayerMove : MonoBehaviourPunCallbacks
         {
             if(PhotonNetwork.CurrentRoom.CustomProperties[DataKeyValues.__SIMULATION_TYPE__].ToString().Equals(DataKeyValues.__SANDBOX_MODE__))
                 PlayerMovement();
-            _cameraMove.CameraRotation();
+            PlayerLook.CameraRotation();
         }
     }
 
@@ -178,4 +179,31 @@ public class PlayerMove : MonoBehaviourPunCallbacks
         isJumping = false;
     }
 
+    [PunRPC]
+    public void RPC_IncreaseReadyPlayerCounter()
+    {
+        _readyCount++;
+        if (_readyCount >= _totalPlayerCount)
+        {
+            OnAllReady?.Invoke();
+        }
+    }
+    
+    [PunRPC]
+    public void RPC_StartSession()
+    {
+        OnStartSession?.Invoke();
+    }
+        
+    [PunRPC]
+    public void RPC_SwitchTurn()
+    {
+        OnSwitchTurn?.Invoke();
+    }
+
+    [PunRPC]
+    public void RPC_StartTurn()
+    {
+        OnStartTurn?.Invoke();
+    }
 }

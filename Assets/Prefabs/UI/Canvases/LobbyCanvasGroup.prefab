@@ -189,6 +189,11 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 292622419906336031, guid: c047864525ed2784fb8cf1aa7cc81ccd,
+        type: 3}
+      propertyPath: m_SortingOrder
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 292622420024407451, guid: c047864525ed2784fb8cf1aa7cc81ccd,
         type: 3}
       propertyPath: m_AnchorMax.x
@@ -235,6 +240,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: PublicLobbiesCanvas
+      objectReference: {fileID: 0}
+    - target: {fileID: 7906831566199013211, guid: 5cb649a197929584db441d118aca5417,
+        type: 3}
+      propertyPath: m_SortingOrder
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7906831566199013215, guid: 5cb649a197929584db441d118aca5417,
         type: 3}
@@ -531,6 +541,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: JoinLobby
+      objectReference: {fileID: 0}
+    - target: {fileID: 5423193167327659496, guid: 0423d2ddfe955fb48941b21de264ccb9,
+        type: 3}
+      propertyPath: m_SortingOrder
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0423d2ddfe955fb48941b21de264ccb9, type: 3}

@@ -14,7 +14,7 @@ namespace UI
     {
         [SerializeField] private TMP_InputField _roomName, _password;
         [SerializeField] private RoomListingsMenu _roomListingsMenu;
-        [SerializeField] private TMP_Dropdown _dropdown;
+        [SerializeField] private TMP_Dropdown _simulationType,_turnCount,_turnDuration;
         [SerializeField] private Toggle _toggle;
         [SerializeField] private Transform _caseListingButton;
         public RoomListingsMenu RoomListingsMenu { get; private set; }
@@ -37,13 +37,17 @@ namespace UI
             _roomOptions.MaxPlayers = 16;
             _roomOptions.IsVisible = true;
             _roomOptions.BroadcastPropsChangeToAll = true;
-            _roomOptions.CustomRoomProperties = new ExitGames.Client.Photon.Hashtable();
-            _roomOptions.CustomRoomProperties.Add(DataKeyValues.__PASSWORD_KEY__,"EMPTY");
-            _roomOptions.CustomRoomProperties.Add(DataKeyValues.__SIMULATION_TYPE__,DataKeyValues.__COMPETITION_MODE__);
-            _roomOptions.CustomRoomProperties.Add(DataKeyValues.__AI_JUDGE__,false);
-            _roomOptions.CustomRoomProperties.Add(DataKeyValues.__ROOM_NAME__,"");
-            _roomOptions.CustomRoomProperties.Add(DataKeyValues.__CASE_ID__,"");
-            _roomOptions.CustomRoomProperties.Add(DataKeyValues.__SESSION_ID__,"");
+            _roomOptions.CustomRoomProperties = new Hashtable
+            {
+                {DataKeyValues.__PASSWORD_KEY__, "EMPTY"},
+                {DataKeyValues.__SIMULATION_TYPE__, DataKeyValues.__COMPETITION_MODE__},
+                {DataKeyValues.__AI_JUDGE__, false},
+                {DataKeyValues.__ROOM_NAME__, ""},
+                {DataKeyValues.__CASE_ID__, -1},
+                {DataKeyValues.__SESSION_ID__, ""},
+                {DataKeyValues.__TURN_COUNT__, int.Parse(_turnCount.options[_turnCount.value].text)},
+                {DataKeyValues.__TURN_DURATION__, int.Parse(_turnDuration.options[_turnDuration.value].text)}
+            };
         }
         #endregion
 
@@ -52,7 +56,7 @@ namespace UI
         public void OnSimulationTypeChanged()
         {
             if (_roomCreated) return;
-            switch (_dropdown.value)
+            switch (_simulationType.value)
             {
                 case 0: //Competition
                     _roomOptions.CustomRoomProperties[DataKeyValues.__SIMULATION_TYPE__]=DataKeyValues.__COMPETITION_MODE__;
@@ -85,15 +89,17 @@ namespace UI
             }
             if (_password.text.Length!=0)
             {
-                _roomOptions.CustomRoomProperties["password"]=_password.text;
+                _roomOptions.CustomRoomProperties[DataKeyValues.__PASSWORD_KEY__]=_password.text;
             }
+            _roomOptions.CustomRoomProperties[DataKeyValues.__TURN_COUNT__] = int.Parse(_turnCount.options[_turnCount.value].text);
+            _roomOptions.CustomRoomProperties[DataKeyValues.__TURN_DURATION__] = int.Parse(_turnDuration.options[_turnDuration.value].text);
             _roomOptions.CustomRoomProperties[DataKeyValues.__ROOM_NAME__] = _roomName.text;
             var sessionID = DatabaseConnection.CreateSessionLog(_roomName.text,
                 _roomsCanvases.HostRoomCanvas.CaseListCanvas.SelectedCase.CaseID.ToString(),
                 DateTime.Now.ToString(),
                 _roomOptions.CustomRoomProperties[DataKeyValues.__SIMULATION_TYPE__].ToString());
             _roomOptions.CustomRoomProperties[DataKeyValues.__CASE_ID__] =
-                _roomsCanvases.HostRoomCanvas.CaseListCanvas.SelectedCase.CaseID.ToString();
+                _roomsCanvases.HostRoomCanvas.CaseListCanvas.SelectedCase.CaseID;
             _roomOptions.CustomRoomProperties[DataKeyValues.__SESSION_ID__] = sessionID;
             PhotonNetwork.CreateRoom(_roomName.text, _roomOptions, TypedLobby.Default);
         }
