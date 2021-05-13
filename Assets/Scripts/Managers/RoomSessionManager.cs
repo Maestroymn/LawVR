@@ -21,7 +21,6 @@ namespace Managers
         private bool _plaintiffTurn;
         private int _currentTurnCount=0, _totalTurnCountMax;
         private PlayerMove _localPlayerMove;
-        private GameObject tmpObjHolder;
 
         private void Awake()
         {
@@ -43,6 +42,7 @@ namespace Managers
 
         private void HandleSpawns()
         {
+            GameObject tmpObjHolder = null;
             switch (PhotonNetwork.LocalPlayer.CustomProperties[DataKeyValues.__ROLE__].ToString().ToLower())
             {
                 case "plaintiff":
