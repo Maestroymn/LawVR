@@ -88,7 +88,7 @@ public class PlayerLook : MonoBehaviourPunCallbacks
     {
         _caseSummaryDetail.OnReady -= SetReady;
         _isEnabled = true;
-        ParentController.GetComponent<PhotonView>().RPC("RPC_IncreaseReadyPlayerCounter",RpcTarget.MasterClient);
+        ParentController.GetComponent<PhotonView>().RPC("RPC_IncreaseReadyPlayerCounter",RpcTarget.All);
     }
 
     public void CameraRotation()
