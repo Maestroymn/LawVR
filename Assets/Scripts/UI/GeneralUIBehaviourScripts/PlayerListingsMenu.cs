@@ -1,5 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using Data;
 using DatabaseScripts;
 using ExitGames.Client.Photon;
@@ -7,7 +6,6 @@ using Managers;
 using Photon.Pun;
 using Photon.Realtime;
 using TMPro;
-using UnityEditorInternal;
 using UnityEngine;
 
 namespace UI

@@ -20,14 +20,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="1615f86a-ec87-43d2-947c-b7e73a72c2dc" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.LawVR/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.LawVR/.idea/contentModel.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.LawVR/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.LawVR/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Materials/OutlineMaterials/OutlineBlueBlack.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Materials/OutlineMaterials/OutlineBlueBlack.mat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Materials/OutlineMaterials/OutlineBrownBlack_Ultimate.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Materials/OutlineMaterials/OutlineBrownBlack_Ultimate.mat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Materials/OutlineMaterials/OutlineBrownWhite.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Materials/OutlineMaterials/OutlineBrownWhite.mat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Materials/OutlineMaterials/OutlineOrangeBlack.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Materials/OutlineMaterials/OutlineOrangeBlack.mat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Materials/OutlineMaterials/OutlineRedBlack.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Materials/OutlineMaterials/OutlineRedBlack.mat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Materials/OutlineMaterials/OutlineRed_Ultimate.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Materials/OutlineMaterials/OutlineRed_Ultimate.mat" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Photon/PhotonUnityNetworking/Demos/Shared Assets/Animations/HumanoidIdle.fbx.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Photon/PhotonUnityNetworking/Demos/Shared Assets/Animations/HumanoidIdle.fbx.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Photon/PhotonUnityNetworking/Demos/Shared Assets/Animations/HumanoidIdleJumpUp.fbx.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Photon/PhotonUnityNetworking/Demos/Shared Assets/Animations/HumanoidIdleJumpUp.fbx.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Photon/PhotonUnityNetworking/Demos/Shared Assets/Animations/HumanoidJumpAndFall.fbx.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Photon/PhotonUnityNetworking/Demos/Shared Assets/Animations/HumanoidJumpAndFall.fbx.meta" afterDir="false" />
@@ -41,16 +34,6 @@
       <change beforePath="$PROJECT_DIR$/Assets/Photon/PhotonUnityNetworking/Demos/Shared Assets/Animations/HumanoidWalkTurnSharp.fbx.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Photon/PhotonUnityNetworking/Demos/Shared Assets/Animations/HumanoidWalkTurnSharp.fbx.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Photon/PhotonUtilities/Compression.meta" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Photon/PhotonUtilities/TransformCrusher.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Buildings/Structure_01.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Buildings/Structure_01.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Probs/AlarmClock.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Probs/AlarmClock.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Probs/FolderClosed.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Probs/FolderClosed.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Probs/FolderOpen.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Probs/FolderOpen.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Probs/PassButton.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Probs/PassButton.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/UI/Canvases/CreateLobby.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/UI/Canvases/CreateLobby.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/UI/Canvases/LobbyCanvasGroup.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/UI/Canvases/LobbyCanvasGroup.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/UI/Canvases/UIManager.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/UI/Canvases/UIManager.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/UI/Canvases/UserCanvas.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/UI/Canvases/UserCanvas.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/UI/CaseSummary.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/UI/CaseSummary.prefab" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Python/Lib/bsddb.meta" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Python/Lib/ctypes.meta" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Python/Lib/distutils.meta" beforeDir="false" />
@@ -115,24 +98,15 @@
       <change beforePath="$PROJECT_DIR$/Assets/Python/Lib/unittest.meta" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Python/Lib/xml.meta" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Resources/NetworkCharacterFemaleLawyer.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/NetworkCharacterFemaleLawyer.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/NetworkCharacterMaleLawyer.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/NetworkCharacterMaleLawyer.prefab" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/CourtScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/CourtScene.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/MainUIScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/MainUIScene.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Data/DataKeyValues.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Data/DataKeyValues.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/General/CourtBuilding.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/General/CourtBuilding.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Managers/PauseUIManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Managers/PauseUIManager.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Managers/RoomSessionManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Managers/RoomSessionManager.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/GeneralUIBehaviourScripts/CaseSummaryDetail.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UI/GeneralUIBehaviourScripts/CaseSummaryDetail.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/GeneralUIBehaviourScripts/CreateRoomMenu.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UI/GeneralUIBehaviourScripts/CreateRoomMenu.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Utilities/Timer.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Utilities/Timer.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Soja Exiles/SE Basic Assets/Scripts and Animations/FPS By Acacia Developer/PlayerLook.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Soja Exiles/SE Basic Assets/Scripts and Animations/FPS By Acacia Developer/PlayerLook.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Soja Exiles/SE Basic Assets/Scripts and Animations/FPS By Acacia Developer/PlayerMove.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Soja Exiles/SE Basic Assets/Scripts and Animations/FPS By Acacia Developer/PlayerMove.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/GeneralUIBehaviourScripts/PlayerListingsMenu.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UI/GeneralUIBehaviourScripts/PlayerListingsMenu.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/SteamVR_Resources/Resources/SteamVR_Settings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/SteamVR_Resources/Resources/SteamVR_Settings.asset" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/TextMesh Pro/Examples &amp; Extras/Resources/Fonts &amp; Materials/Roboto-Bold SDF.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/TextMesh Pro/Examples &amp; Extras/Resources/Fonts &amp; Materials/Roboto-Bold SDF.asset" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/XR/Loaders.meta" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/XR/Settings.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/EditorBuildSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/EditorBuildSettings.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/GraphicsSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/GraphicsSettings.asset" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ProjectSettings/ProjectSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/ProjectSettings.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/TagManager.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/TagManager.asset" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/WriteLines2.txt" beforeDir="false" afterPath="$PROJECT_DIR$/WriteLines2.txt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -200,7 +174,6 @@
       <option value="$PROJECT_DIR$/Assets/Scripts/Managers/GameSettings.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/UI/GeneralUIBehaviourScripts/RoomListingsMenu.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Utilities/SpeechRecognition.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/UI/GeneralUIBehaviourScripts/PlayerListingsMenu.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/UI/GeneralUIBehaviourScripts/SessionHistoryListing.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Data/SessionHistory.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/DatabaseScripts/DatabaseConnection.cs" />
@@ -225,6 +198,7 @@
       <option value="$PROJECT_DIR$/Assets/Scripts/Managers/RoomSessionManager.cs" />
       <option value="$PROJECT_DIR$/Assets/Soja Exiles/SE Basic Assets/Scripts and Animations/FPS By Acacia Developer/PlayerLook.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/UI/GeneralUIBehaviourScripts/CaseSummaryDetail.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/UI/GeneralUIBehaviourScripts/PlayerListingsMenu.cs" />
     </changedPaths>
   </component>
   <component name="ProjectId" id="1m4WLUJiTV2lnEFPOPqD5h9uqk8" />
@@ -309,7 +283,7 @@
       <workItem from="1620474977217" duration="10220000" />
       <workItem from="1620565559394" duration="4485000" />
       <workItem from="1620844664593" duration="14876000" />
-      <workItem from="1620904510627" duration="18294000" />
+      <workItem from="1620904510627" duration="19409000" />
     </task>
     <servers />
   </component>

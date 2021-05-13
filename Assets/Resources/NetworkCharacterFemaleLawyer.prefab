@@ -5370,11 +5370,14 @@ MonoBehaviour:
     SynchronizeType: 1
     Name: walk
   - Type: 4
-    SynchronizeType: 0
+    SynchronizeType: 1
     Name: nervous
   - Type: 4
-    SynchronizeType: 0
+    SynchronizeType: 1
     Name: normal_sit
+  - Type: 4
+    SynchronizeType: 1
+    Name: writing
   m_SynchronizeLayers:
   - SynchronizeType: 0
     LayerIndex: 0
@@ -7138,7 +7141,7 @@ PrefabInstance:
     - target: {fileID: 4574748433512543998, guid: 85756a49eee284b489f9ddcaf539fc85,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 2844.31
+      value: 2547.3635
       objectReference: {fileID: 0}
     - target: {fileID: 4665225635892864470, guid: 85756a49eee284b489f9ddcaf539fc85,
         type: 3}
