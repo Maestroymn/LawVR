@@ -56,7 +56,6 @@ namespace Managers
         {
             DatabaseConnection.UpdateSessionLog(PhotonNetwork.CurrentRoom.CustomProperties[DataKeyValues.__SESSION_ID__].ToString(), DateTime.Now.ToString(),"This is a feedback");
             StartCoroutine(DisconnectFromRoom());
-
         }
 
         private IEnumerator DisconnectFromRoom()

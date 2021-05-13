@@ -18,11 +18,11 @@ namespace Managers
         [SerializeField] private Transform SessionEnvironmentParent;
         [SerializeField] private PauseUIManager _pauseUIManager;
         private CourtBuilding _currentBuilding;
-        private GameObject tmpObjHolder;
         private bool _plaintiffTurn;
         private int _currentTurnCount=0, _totalTurnCountMax;
         private PlayerMove _localPlayerMove;
-        
+        private GameObject tmpObjHolder;
+
         private void Awake()
         {
             Cursor.visible = false;
@@ -66,15 +66,18 @@ namespace Managers
                     tmpObjHolder.transform.SetParent(_currentBuilding.SpectatorTransform.parent);
                     break;
             }
-            _localPlayerMove = tmpObjHolder.GetComponent<PlayerMove>();
-            _localPlayerMove.PlayerLook.RegisterForInteractables(_currentBuilding.InteractableCourtObjects);
-            _localPlayerMove.OnSwitchTurn += SwitchTurnEvent;
-            _localPlayerMove.OnStartTurn+= StartTurnEvent;
-            _pauseUIManager.OnPaused += _localPlayerMove.PlayerLook.CloseSummary;
-            if (PhotonNetwork.LocalPlayer.IsMasterClient)
+            if(photonView.IsMine)
             {
-                _localPlayerMove.OnStartSession += StartSessionEvent;
-                _localPlayerMove.OnAllReady += StartSession;
+                _localPlayerMove = tmpObjHolder.GetComponent<PlayerMove>();
+                _localPlayerMove.PlayerLook.RegisterForInteractables(_currentBuilding.InteractableCourtObjects);
+                _localPlayerMove.OnSwitchTurn += SwitchTurnEvent;
+                _localPlayerMove.OnStartTurn += StartTurnEvent;
+                _pauseUIManager.OnPaused += _localPlayerMove.PlayerLook.CloseSummary;
+                if (PhotonNetwork.LocalPlayer.IsMasterClient)
+                {
+                    _localPlayerMove.OnStartSession += StartSessionEvent;
+                    _localPlayerMove.OnAllReady += StartSession;
+                }
             }
         }
 
