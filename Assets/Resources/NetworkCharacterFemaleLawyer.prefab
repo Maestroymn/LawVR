@@ -894,6 +894,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4772381045538667275}
+  - component: {fileID: 3538427634926036174}
   m_Layer: 0
   m_Name: HeadView
   m_TagString: Untagged
@@ -916,6 +917,22 @@ Transform:
   m_Father: {fileID: 1408411835049868908}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &3538427634926036174
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2135176534135510563}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 627855c7f81362d41938ffe0b1475957, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_SynchronizePosition: 1
+  m_SynchronizeRotation: 1
+  m_SynchronizeScale: 0
+  m_UseLocal: 1
 --- !u!1 &2174304169576660045
 GameObject:
   m_ObjectHideFlags: 0
@@ -4264,6 +4281,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8985267914472373978}
   - component: {fileID: 5287113850463169054}
+  - component: {fileID: 7576187370815286894}
   m_Layer: 0
   m_Name: Neck
   m_TagString: Untagged
@@ -4306,6 +4324,22 @@ MonoBehaviour:
   _caseSummaryDetail: {fileID: 1506488776390876137}
   ParentController: {fileID: 6835234042293492315}
   Camera: {fileID: 6846717703640842287}
+--- !u!114 &7576187370815286894
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4053605716141594826}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 627855c7f81362d41938ffe0b1475957, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_SynchronizePosition: 1
+  m_SynchronizeRotation: 1
+  m_SynchronizeScale: 0
+  m_UseLocal: 1
 --- !u!1 &4054886989307530436
 GameObject:
   m_ObjectHideFlags: 0
@@ -5817,7 +5851,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6866459610351604485}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: 0, y: -1, z: 0, w: 0}
   m_LocalPosition: {x: 0, y: 1, z: 15}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -5826,7 +5860,7 @@ Transform:
   - {fileID: 1503532416424372266}
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: -180, z: 0}
 --- !u!143 &6823324007308478307
 CharacterController:
   m_ObjectHideFlags: 0
@@ -5916,6 +5950,7 @@ MonoBehaviour:
   ObservedComponents:
   - {fileID: 8571148829661715762}
   - {fileID: 4123346034824512837}
+  - {fileID: 8571148829661715762}
   - {fileID: 8571148829661715762}
   sceneViewId: 0
   InstantiationId: 0
@@ -7142,7 +7177,7 @@ PrefabInstance:
     - target: {fileID: 4574748433512543998, guid: 85756a49eee284b489f9ddcaf539fc85,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 2158.7976
+      value: 2426.6555
       objectReference: {fileID: 0}
     - target: {fileID: 4665225635892864470, guid: 85756a49eee284b489f9ddcaf539fc85,
         type: 3}
