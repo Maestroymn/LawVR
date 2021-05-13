@@ -31,8 +31,7 @@ namespace Managers
 
         private void HandleBuildingSpawn()
         {
-            var obj=GameManager.NetworkInstantiate(_courtBuildings.PickRandom().gameObject,SessionEnvironmentParent.transform.position,Quaternion.identity);
-            _currentBuilding = obj.GetComponent<CourtBuilding>();
+            _currentBuilding=Instantiate(_courtBuildings.PickRandom(),SessionEnvironmentParent);
             if ((bool) PhotonNetwork.CurrentRoom.CustomProperties[DataKeyValues.__AI_JUDGE__])
             {
                 GameManager.NetworkInstantiate(_aiJudgeGeneralBehaviour.gameObject, _currentBuilding.JudgeTransform.position, Quaternion.identity);
