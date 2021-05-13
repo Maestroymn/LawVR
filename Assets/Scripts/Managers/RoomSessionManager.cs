@@ -66,17 +66,25 @@ namespace Managers
                     tmpObjHolder.transform.SetParent(_currentBuilding.SpectatorTransform.parent);
                     break;
             }
-            if(photonView.IsMine)
+
+            switch (tmpObjHolder.GetComponent<PhotonView>().IsMine)
             {
-                _localPlayerMove = tmpObjHolder.GetComponent<PlayerMove>();
-                _localPlayerMove.PlayerLook.RegisterForInteractables(_currentBuilding.InteractableCourtObjects);
-                _localPlayerMove.OnSwitchTurn += SwitchTurnEvent;
-                _localPlayerMove.OnStartTurn += StartTurnEvent;
-                _pauseUIManager.OnPaused += _localPlayerMove.PlayerLook.CloseSummary;
-                if (PhotonNetwork.LocalPlayer.IsMasterClient)
+                case false:
+                    Destroy(tmpObjHolder);
+                    break;
+                case true:
                 {
-                    _localPlayerMove.OnStartSession += StartSessionEvent;
-                    _localPlayerMove.OnAllReady += StartSession;
+                    _localPlayerMove = tmpObjHolder.GetComponent<PlayerMove>();
+                    _localPlayerMove.PlayerLook.RegisterForInteractables(_currentBuilding.InteractableCourtObjects);
+                    _localPlayerMove.OnSwitchTurn += SwitchTurnEvent;
+                    _localPlayerMove.OnStartTurn += StartTurnEvent;
+                    _pauseUIManager.OnPaused += _localPlayerMove.PlayerLook.CloseSummary;
+                    if (PhotonNetwork.LocalPlayer.IsMasterClient)
+                    {
+                        _localPlayerMove.OnStartSession += StartSessionEvent;
+                        _localPlayerMove.OnAllReady += StartSession;
+                    }
+                    break;
                 }
             }
         }

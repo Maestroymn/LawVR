@@ -1710,7 +1710,7 @@ MonoBehaviour:
   _aiJudgeGeneralBehaviour: {fileID: 704494980786506829, guid: ddce488b581e04504a540215c355c4c8,
     type: 3}
   _courtBuildings:
-  - {fileID: 1566465279410555, guid: fc599b847af124d27ae33273b4c1c519, type: 3}
+  - {fileID: 1566465279410555, guid: f66b907370b4d42c181ee85f065a2277, type: 3}
   SessionEnvironmentParent: {fileID: 1674053621}
   _pauseUIManager: {fileID: 6064873672758139987}
 --- !u!4 &1355001903

@@ -34,6 +34,7 @@
       <change beforePath="$PROJECT_DIR$/Assets/Photon/PhotonUnityNetworking/Demos/Shared Assets/Animations/HumanoidWalkTurnSharp.fbx.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Photon/PhotonUnityNetworking/Demos/Shared Assets/Animations/HumanoidWalkTurnSharp.fbx.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Photon/PhotonUtilities/Compression.meta" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Photon/PhotonUtilities/TransformCrusher.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Buildings/Structure_01.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Buildings/Structure_01.prefab" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Python/Lib/bsddb.meta" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Python/Lib/ctypes.meta" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Python/Lib/distutils.meta" beforeDir="false" />
@@ -97,7 +98,7 @@
       <change beforePath="$PROJECT_DIR$/Assets/Python/Lib/test.meta" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Python/Lib/unittest.meta" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Python/Lib/xml.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/NetworkCharacterFemaleLawyer.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/NetworkCharacterFemaleLawyer.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/CourtScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/CourtScene.unity" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Managers/RoomSessionManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Managers/RoomSessionManager.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/SteamVR_Resources/Resources/SteamVR_Settings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/SteamVR_Resources/Resources/SteamVR_Settings.asset" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/TextMesh Pro/Examples &amp; Extras/Resources/Fonts &amp; Materials/Roboto-Bold SDF.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/TextMesh Pro/Examples &amp; Extras/Resources/Fonts &amp; Materials/Roboto-Bold SDF.asset" afterDir="false" />
@@ -280,7 +281,7 @@
       <workItem from="1620474977217" duration="10220000" />
       <workItem from="1620565559394" duration="4485000" />
       <workItem from="1620844664593" duration="14876000" />
-      <workItem from="1620904510627" duration="20122000" />
+      <workItem from="1620904510627" duration="20744000" />
     </task>
     <servers />
   </component>
