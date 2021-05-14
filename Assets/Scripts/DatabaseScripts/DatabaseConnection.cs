@@ -375,12 +375,12 @@ namespace DatabaseScripts
             return SessionID[0].ToString();
         }
         
-        public static void UpdateSessionLog(string SessionID , string EndTime , string Feedback)
+        public static int UpdateSessionLog(string SessionID , string EndTime , string Feedback)
         {
             SqlCommand.CommandText = "update court_session set end_time = '" + EndTime + 
             "' , feedback = '" + Feedback +"' where session_id = " +int.Parse(SessionID);
             Debug.Log(SqlCommand.CommandText);
-            SqlCommand.ExecuteNonQuery();
+            return SqlCommand.ExecuteNonQuery();
         }
 
         public static List<SessionHistory> GetSessionHistories(string UserName)

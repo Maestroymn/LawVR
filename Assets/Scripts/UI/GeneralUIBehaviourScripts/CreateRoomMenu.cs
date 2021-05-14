@@ -149,6 +149,7 @@ namespace UI
         {
             _roomCreated = true;
             Debug.Log("Room is created its name is "+_roomName.text+" and its password: "+_password.text);
+            PhotonNetwork.LocalPlayer.CustomProperties[DataKeyValues.__ROLE__] = "none";
             _roomsCanvases.CurrentRoomCanvas.Show(_roomName.text,true);
             print("SESSION ID SET: "+PhotonNetwork.CurrentRoom.CustomProperties[DataKeyValues.__SESSION_ID__]);
             _roomCreated=false;

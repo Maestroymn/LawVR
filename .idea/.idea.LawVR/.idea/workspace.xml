@@ -21,6 +21,7 @@
   <component name="ChangeListManager">
     <list default="true" id="1615f86a-ec87-43d2-947c-b7e73a72c2dc" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.LawVR/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.LawVR/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/AdvancedPeoplePack2/Models/CivilMale/MaleAnimator.controller" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/AdvancedPeoplePack2/Models/CivilMale/MaleAnimator.controller" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Photon/PhotonUnityNetworking/Demos/Shared Assets/Animations/HumanoidIdle.fbx.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Photon/PhotonUnityNetworking/Demos/Shared Assets/Animations/HumanoidIdle.fbx.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Photon/PhotonUnityNetworking/Demos/Shared Assets/Animations/HumanoidIdleJumpUp.fbx.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Photon/PhotonUnityNetworking/Demos/Shared Assets/Animations/HumanoidIdleJumpUp.fbx.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Photon/PhotonUnityNetworking/Demos/Shared Assets/Animations/HumanoidJumpAndFall.fbx.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Photon/PhotonUnityNetworking/Demos/Shared Assets/Animations/HumanoidJumpAndFall.fbx.meta" afterDir="false" />
@@ -34,6 +35,9 @@
       <change beforePath="$PROJECT_DIR$/Assets/Photon/PhotonUnityNetworking/Demos/Shared Assets/Animations/HumanoidWalkTurnSharp.fbx.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Photon/PhotonUnityNetworking/Demos/Shared Assets/Animations/HumanoidWalkTurnSharp.fbx.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Photon/PhotonUtilities/Compression.meta" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Photon/PhotonUtilities/TransformCrusher.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Buildings/Structure_01.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Buildings/Structure_01.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Buildings/Structure_01_UPDATED.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Buildings/Structure_01_UPDATED.prefab" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Python/Lib/bsddb.meta" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Python/Lib/ctypes.meta" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Python/Lib/distutils.meta" beforeDir="false" />
@@ -97,8 +101,14 @@
       <change beforePath="$PROJECT_DIR$/Assets/Python/Lib/test.meta" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Python/Lib/unittest.meta" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Python/Lib/xml.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/CourtScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/CourtScene.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/NetworkCharacterJudge.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/NetworkCharacterJudge.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/DatabaseScripts/DatabaseConnection.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/DatabaseScripts/DatabaseConnection.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/General/InteractableCourtObject.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/General/InteractableCourtObject.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Managers/PauseUIManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Managers/PauseUIManager.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Managers/RoomSessionManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Managers/RoomSessionManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/GeneralUIBehaviourScripts/CaseSummaryDetail.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UI/GeneralUIBehaviourScripts/CaseSummaryDetail.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/GeneralUIBehaviourScripts/CreateRoomMenu.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UI/GeneralUIBehaviourScripts/CreateRoomMenu.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/GeneralUIBehaviourScripts/JoinRoomMenu.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UI/GeneralUIBehaviourScripts/JoinRoomMenu.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/SteamVR_Resources/Resources/SteamVR_Settings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/SteamVR_Resources/Resources/SteamVR_Settings.asset" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/TextMesh Pro/Examples &amp; Extras/Resources/Fonts &amp; Materials/Roboto-Bold SDF.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/TextMesh Pro/Examples &amp; Extras/Resources/Fonts &amp; Materials/Roboto-Bold SDF.asset" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/XR/Loaders.meta" beforeDir="false" />
@@ -149,6 +159,7 @@
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/72D32198-279B-4F3F-9846-A45D39F77FF6/3c/28841409/CharacterController.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/UI/GeneralUIBehaviourScripts/SessionHistoryDetailPanelBehaviour.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/UI/GeneralUIBehaviourScripts/ConnectionQuality.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/2F318A3B-CAB6-4A52-B345-8684E232B435/97/b21b54f8/NpgsqlCommand.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Utilities/AutoSceneLoader.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/LeanTween/Editor/LeanTweenDocumentationEditor.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Utilities/SingletonReferences.cs" root0="FORCE_HIGHLIGHTING" />
@@ -167,13 +178,11 @@
       <option value="$PROJECT_DIR$/Assets/Scripts/UI/GeneralUIBehaviourScripts/CaseDetailPanelBehaviour.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/UI/GeneralUIBehaviourScripts/CaseListing.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/UI/CanvasScripts/CaseListCanvas.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/UI/GeneralUIBehaviourScripts/JoinRoomMenu.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Managers/GameSettings.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/UI/GeneralUIBehaviourScripts/RoomListingsMenu.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Utilities/SpeechRecognition.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/UI/GeneralUIBehaviourScripts/SessionHistoryListing.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Data/SessionHistory.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/DatabaseScripts/DatabaseConnection.cs" />
       <option value="$PROJECT_DIR$/Assets/OutlineEffect/OutlineEffect/OutlineEffect.cs" />
       <option value="$PROJECT_DIR$/Assets/Materials/Shaders/OutlineSmooth.shader" />
       <option value="$PROJECT_DIR$/Assets/Materials/Shaders/OutlineRegular.shader" />
@@ -186,15 +195,17 @@
       <option value="$PROJECT_DIR$/Assets/Scripts/General/CourtSpectatorsNonHuman.cs" />
       <option value="$PROJECT_DIR$/Assets/Materials/Shaders/OutlineUltimate.shader" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Data/DataKeyValues.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/General/CourtBuilding.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Utilities/Timer.cs" />
       <option value="$PROJECT_DIR$/Assets/Soja Exiles/SE Basic Assets/Scripts and Animations/FPS By Acacia Developer/PlayerMove.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/General/InteractableCourtObject.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/UI/GeneralUIBehaviourScripts/CreateRoomMenu.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/UI/GeneralUIBehaviourScripts/CaseSummaryDetail.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/UI/GeneralUIBehaviourScripts/PlayerListingsMenu.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/Managers/PauseUIManager.cs" />
       <option value="$PROJECT_DIR$/Assets/Soja Exiles/SE Basic Assets/Scripts and Animations/FPS By Acacia Developer/PlayerLook.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/UI/GeneralUIBehaviourScripts/CreateRoomMenu.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/UI/GeneralUIBehaviourScripts/JoinRoomMenu.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/General/CourtBuilding.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/DatabaseScripts/DatabaseConnection.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Managers/PauseUIManager.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/UI/GeneralUIBehaviourScripts/CaseSummaryDetail.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/General/InteractableCourtObject.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Managers/RoomSessionManager.cs" />
     </changedPaths>
   </component>
@@ -280,7 +291,8 @@
       <workItem from="1620474977217" duration="10220000" />
       <workItem from="1620565559394" duration="4485000" />
       <workItem from="1620844664593" duration="14876000" />
-      <workItem from="1620904510627" duration="22704000" />
+      <workItem from="1620904510627" duration="23041000" />
+      <workItem from="1621014965211" duration="6657000" />
     </task>
     <servers />
   </component>

@@ -100,6 +100,9 @@ namespace UI.GeneralUIBehaviourScripts
             {
                 gameObject.LeanCancel();
             }
+            SummaryType = SummaryType.DuringSession;
+            _closeButton.SetActive(true);
+            _readyButton.SetActive(false);
             _InputBlocker.SetActive(false);
             _isOpen = false;
             transform.localScale=Vector3.zero;

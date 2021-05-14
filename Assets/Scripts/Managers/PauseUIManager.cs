@@ -54,12 +54,17 @@ namespace Managers
         
         public void Disconnect()
         {
-            DatabaseConnection.UpdateSessionLog(PhotonNetwork.CurrentRoom.CustomProperties[DataKeyValues.__SESSION_ID__].ToString(), DateTime.Now.ToString(),"This is a feedback");
             StartCoroutine(DisconnectFromRoom());
         }
 
         private IEnumerator DisconnectFromRoom()
         {
+            int returnChecker = -1;
+            while (returnChecker!=1)
+            {
+                returnChecker=DatabaseConnection.UpdateSessionLog(PhotonNetwork.CurrentRoom.CustomProperties[DataKeyValues.__SESSION_ID__].ToString(), DateTime.Now.ToString(),"This is a feedback");
+                yield return null;
+            }
             PhotonNetwork.LeaveRoom();
             while (PhotonNetwork.InRoom)
                 yield return null;

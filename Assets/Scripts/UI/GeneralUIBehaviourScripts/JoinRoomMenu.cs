@@ -1,4 +1,4 @@
-﻿using System.Linq;
+﻿using Data;
 using Photon.Pun;
 using TMPro;
 using UnityEngine;
@@ -30,6 +30,7 @@ namespace UI
         public override void OnJoinedRoom()
         {
             Debug.Log("Joined to "+_roomName.text);
+            PhotonNetwork.LocalPlayer.CustomProperties[DataKeyValues.__ROLE__] = "none";
             _roomsCanvases.JoinRoomCanvas.Hide();
             _roomsCanvases.CurrentRoomCanvas.Show(_roomName.text,false);
         }

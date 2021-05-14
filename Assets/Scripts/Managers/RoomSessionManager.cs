@@ -79,11 +79,8 @@ namespace Managers
                     _localPlayerMove.OnSwitchTurn += SwitchTurnEvent;
                     _localPlayerMove.OnStartTurn += StartTurnEvent;
                     _pauseUIManager.OnPaused += _localPlayerMove.PlayerLook.CloseSummary;
-                    if (PhotonNetwork.LocalPlayer.IsMasterClient)
-                    {
-                        _localPlayerMove.OnStartSession += StartSessionEvent;
-                        _localPlayerMove.OnAllReady += StartSession;
-                    }
+                    _localPlayerMove.OnStartSession += StartSessionEvent;
+                    _localPlayerMove.OnAllReady += StartSession;
                     break;
                 }
             }
@@ -132,7 +129,7 @@ namespace Managers
         public void StartSessionEvent()
         {
             _localPlayerMove.OnStartSession -= StartSessionEvent;
-            SwitchTurnEvent();
+            _localPlayerMove.photonView.RPC("SwitchTurnEvent",RpcTarget.All);
         }
         
         public void SwitchTurnEvent()

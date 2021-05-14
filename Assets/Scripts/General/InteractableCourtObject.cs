@@ -97,6 +97,7 @@ namespace General
             switch (InteractableType)
             {
                 case InteractableType.Clapper:
+                    Animator?.SetTrigger(Hit);
                     OnClapperUsed?.Invoke();
                     break;
                 case InteractableType.CaseFile:
