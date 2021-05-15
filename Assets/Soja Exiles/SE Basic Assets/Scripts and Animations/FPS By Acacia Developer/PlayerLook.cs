@@ -76,10 +76,10 @@ public class PlayerLook : MonoBehaviourPunCallbacks
         switch (buttonStatus)
         {
             case ButtonStatus.Start:
-                ParentController.GetComponent<PhotonView>().RPC("RPC_StartTurn",RpcTarget.All);
+                ParentController.InvokeStartTurnEvent();
                 break;
             case ButtonStatus.Pass:
-                ParentController.GetComponent<PhotonView>().RPC("RPC_SwitchTurn",RpcTarget.All);
+                ParentController.InvokeSwitchTurnEvent();
                 break;
         }
     }
@@ -88,7 +88,7 @@ public class PlayerLook : MonoBehaviourPunCallbacks
     {
         _caseSummaryDetail.OnReady -= SetReady;
         _isEnabled = true;
-        ParentController.GetComponent<PhotonView>().RPC("RPC_IncreaseReadyPlayerCounter",RpcTarget.All);
+        ParentController.IncreaseReadyCounter();
     }
 
     public void CameraRotation()

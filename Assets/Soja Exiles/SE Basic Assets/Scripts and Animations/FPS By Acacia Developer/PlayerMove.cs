@@ -63,7 +63,6 @@ public class PlayerMove : MonoBehaviourPunCallbacks
             }
         }
     }
-    
 
     private void SetStartingStatus()
     {
@@ -185,25 +184,23 @@ public class PlayerMove : MonoBehaviourPunCallbacks
         _readyCount++;
         if (_readyCount >= _totalPlayerCount)
         {
-            OnAllReady?.Invoke();
+            InvokeSwitchTurnEvent();
         }
     }
     
-    [PunRPC]
-    public void RPC_StartSession()
+    public void IncreaseReadyCounter()
     {
-        OnStartSession?.Invoke();
+        photonView.RPC("RPC_IncreaseReadyPlayerCounter",RpcTarget.All);
     }
-        
-    [PunRPC]
-    public void RPC_SwitchTurn()
+
+    public void InvokeSwitchTurnEvent()
     {
         OnSwitchTurn?.Invoke();
     }
-
-    [PunRPC]
-    public void RPC_StartTurn()
+    
+    public void InvokeStartTurnEvent()
     {
         OnStartTurn?.Invoke();
     }
+    
 }

@@ -18,26 +18,29 @@ namespace Managers
         [SerializeField] private Transform SessionEnvironmentParent;
         [SerializeField] private PauseUIManager _pauseUIManager;
         private CourtBuilding _currentBuilding;
-        private bool _plaintiffTurn;
-        private int _currentTurnCount=0, _totalTurnCountMax;
         private PlayerMove _localPlayerMove;
 
         private void Awake()
         {
             Cursor.visible = false;
             HandleBuildingSpawn();
-            _totalTurnCountMax = (int)PhotonNetwork.CurrentRoom.CustomProperties[DataKeyValues.__TURN_COUNT__];
         }
 
         private void HandleBuildingSpawn()
         {
-            _currentBuilding=Instantiate(_courtBuildings.PickRandom(),SessionEnvironmentParent);
+            if (PhotonNetwork.LocalPlayer.IsMasterClient)
+            {
+                var obj=GameManager.NetworkInstantiate(_courtBuildings.PickRandom().gameObject, Vector3.zero, Quaternion.identity);
+                _currentBuilding = obj.GetComponent<CourtBuilding>();
+                //=Instantiate(_courtBuildings.PickRandom(),SessionEnvironmentParent);
+            }
             if ((bool) PhotonNetwork.CurrentRoom.CustomProperties[DataKeyValues.__AI_JUDGE__])
             {
                 GameManager.NetworkInstantiate(_aiJudgeGeneralBehaviour.gameObject, _currentBuilding.JudgeTransform.position, Quaternion.identity);
             }
             HandleSpawns();
             _currentBuilding.InitTimers((int)PhotonNetwork.CurrentRoom.CustomProperties[DataKeyValues.__TURN_DURATION__]);
+            _currentBuilding.TotalTurnCountMax = (int)PhotonNetwork.CurrentRoom.CustomProperties[DataKeyValues.__TURN_COUNT__];
         }
 
         private void HandleSpawns()
@@ -47,23 +50,15 @@ namespace Managers
             {
                 case "plaintiff":
                     tmpObjHolder=GameManager.NetworkInstantiate(plaintiff, _currentBuilding.PlaintiffTransform.position, Quaternion.identity);
-                    /*tmpObjHolder.transform.rotation = _currentBuilding.PlaintiffTransform.rotation;
-                    tmpObjHolder.transform.SetParent(_currentBuilding.PlaintiffTransform.parent);*/
                     break;
                 case "defendant":
                     tmpObjHolder=GameManager.NetworkInstantiate(defendant, _currentBuilding.DefendantTransform.position, Quaternion.identity);
-                    /*tmpObjHolder.transform.rotation = _currentBuilding.DefendantTransform.rotation;
-                    tmpObjHolder.transform.SetParent(_currentBuilding.DefendantTransform.parent);*/
                     break;
                 case "judge":
                     tmpObjHolder=GameManager.NetworkInstantiate(judge, _currentBuilding.JudgeTransform.position, Quaternion.identity);
-                    /*tmpObjHolder.transform.rotation = _currentBuilding.JudgeTransform.rotation;
-                    tmpObjHolder.transform.SetParent(_currentBuilding.JudgeTransform.parent);*/
                     break;
                 case "spectator":
                     tmpObjHolder=GameManager.NetworkInstantiate(spectator, _currentBuilding.SpectatorTransform.position, Quaternion.identity);
-                    /*tmpObjHolder.transform.rotation = _currentBuilding.SpectatorTransform.rotation;
-                    tmpObjHolder.transform.SetParent(_currentBuilding.SpectatorTransform.parent);*/
                     break;
             }
 
@@ -75,12 +70,9 @@ namespace Managers
                 case true:
                 {
                     _localPlayerMove = tmpObjHolder.GetComponent<PlayerMove>();
+                    _localPlayerMove.OnStartTurn += _currentBuilding.StartTurnForCurrentUser;
+                    _localPlayerMove.OnSwitchTurn += _currentBuilding.SwitchTurn;
                     _localPlayerMove.PlayerLook.RegisterForInteractables(_currentBuilding.InteractableCourtObjects);
-                    _localPlayerMove.OnSwitchTurn += SwitchTurnEvent;
-                    _localPlayerMove.OnStartTurn += StartTurnEvent;
-                    _pauseUIManager.OnPaused += _localPlayerMove.PlayerLook.CloseSummary;
-                    _localPlayerMove.OnStartSession += StartSessionEvent;
-                    _localPlayerMove.OnAllReady += StartSession;
                     break;
                 }
             }
@@ -116,64 +108,6 @@ namespace Managers
             }
         }
         
-        #endregion
-        
-        #region RPC Funcs
-
-        private void StartSession()
-        {
-            _localPlayerMove.OnAllReady -= StartSession;
-            _localPlayerMove.photonView.RPC("RPC_StartSession",RpcTarget.All);
-        }
-        
-        public void StartSessionEvent()
-        {
-            _localPlayerMove.OnStartSession -= StartSessionEvent;
-            _localPlayerMove.photonView.RPC("SwitchTurnEvent",RpcTarget.All);
-        }
-        
-        public void SwitchTurnEvent()
-        {
-            _currentTurnCount++;
-            if (_currentTurnCount > _totalTurnCountMax)
-            {
-                // SESSION FINISHED HERE
-                print("SESSION ENDED!!!!");
-            }
-            if (_plaintiffTurn)
-            {
-                _plaintiffTurn = false;
-                _currentBuilding.PlaintiffTimer.HandleTimer(false);
-                _currentBuilding.DefendantTimer.timeText.text = "START!";
-                _currentBuilding.DefendantStartButton.HandleButtonSettings(ButtonStatus.Start);
-                _currentBuilding.PlaintiffStartButton.HandleButtonSettings(ButtonStatus.Wait);
-          
-            }
-            else
-            {
-                _plaintiffTurn = true;
-                _currentBuilding.DefendantTimer.HandleTimer(false);
-                _currentBuilding.PlaintiffTimer.timeText.text = "START!";
-                _currentBuilding.PlaintiffStartButton.HandleButtonSettings(ButtonStatus.Start);
-                _currentBuilding.DefendantStartButton.HandleButtonSettings(ButtonStatus.Wait);
-            }
-        }
-
-        public void StartTurnEvent()
-        {
-            if (_plaintiffTurn)
-            {
-                _currentBuilding.DefendantStartButton.HandleButtonSettings(ButtonStatus.Wait);
-                _currentBuilding.PlaintiffStartButton.HandleButtonSettings(ButtonStatus.Pass);
-                _currentBuilding.PlaintiffTimer.HandleTimer(true);
-            }
-            else
-            {
-                _currentBuilding.PlaintiffStartButton.HandleButtonSettings(ButtonStatus.Wait);
-                _currentBuilding.DefendantStartButton.HandleButtonSettings(ButtonStatus.Pass);
-                _currentBuilding.DefendantTimer.HandleTimer(true);
-            }
-        }
         #endregion
     }
 }
