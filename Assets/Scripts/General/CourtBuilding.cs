@@ -24,6 +24,8 @@ namespace General
 
         public void InitTimers(float timeLimit)
         {
+            DefendantTimer.OnTimesUp += SwitchTurn;
+            PlaintiffTimer.OnTimesUp += SwitchTurn;
             DefendantTimer.timeLimit = timeLimit;
             DefendantTimer.timeText.text = "WAIT";
             PlaintiffTimer.timeText.text = "WAIT";

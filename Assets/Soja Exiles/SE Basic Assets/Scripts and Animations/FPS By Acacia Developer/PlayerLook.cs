@@ -14,12 +14,13 @@ public class PlayerLook : MonoBehaviourPunCallbacks
     [SerializeField] private PlayerMove ParentController;
     public Camera Camera;
     private InteractableCourtObject _lastInteractedObj;
-    private float xAxisClamp;
+    private float xAxisClamp,yAxisClamp;
     private bool _isEnabled=false;
     
     public void Initialize()
     {
         xAxisClamp = 0.0f;
+        yAxisClamp = 0f;
         if (!Camera)
         {
             Camera = GetComponentInChildren<Camera>();
@@ -96,20 +97,21 @@ public class PlayerLook : MonoBehaviourPunCallbacks
         float mouseX = Input.GetAxis(mouseXInputName) * mouseSensitivity * Time.deltaTime;
         float mouseY = Input.GetAxis(mouseYInputName) * mouseSensitivity * Time.deltaTime;
 
-        xAxisClamp += mouseY;
-
+        //TODO Clamp rotations for logical visuals
+        /*xAxisClamp += mouseX;
+        yAxisClamp += mouseY;
         if (xAxisClamp > 90.0f)
         {
             xAxisClamp = 90.0f;
-            mouseY = 0.0f;
+            mouseX = 0.0f;
             ClampXAxisRotationToValue(270.0f);
         }
         else if (xAxisClamp < -90.0f)
         {
             xAxisClamp = -90.0f;
-            mouseY = 0.0f;
+            mouseX = 0.0f;
             ClampXAxisRotationToValue(90.0f);
-        }
+        }*/
 
         playerBody.Rotate(Vector3.up * mouseX);
         transform.Rotate(Vector3.left * mouseY);
@@ -141,6 +143,9 @@ public class PlayerLook : MonoBehaviourPunCallbacks
 
     private void ClampXAxisRotationToValue(float value)
     {
+        Vector3 eulerRot = playerBody.eulerAngles;
+        eulerRot.x = value;
+        playerBody.eulerAngles = eulerRot;
         Vector3 eulerRotation = transform.eulerAngles;
         eulerRotation.x = value;
         transform.eulerAngles = eulerRotation;

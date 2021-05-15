@@ -50,6 +50,8 @@ public class PlayerMove : MonoBehaviourPunCallbacks
         }
         else
         {
+            Cursor.lockState = CursorLockMode.None;
+            Cursor.visible = true;
             _pauseUIManager = FindObjectOfType<PauseUIManager>();
             charController = GetComponent<CharacterController>();
             SetStartingStatus();
@@ -64,10 +66,10 @@ public class PlayerMove : MonoBehaviourPunCallbacks
     {
         switch (Status)
         {
-            case General.Status.NervousSitting:
+            case Status.NervousSitting:
                 _animator.SetBool(Nervous,true);
                 break;
-            case General.Status.NormalSitting:
+            case Status.NormalSitting:
                 _animator.SetBool(NormalSit,true);
                 break;
         }

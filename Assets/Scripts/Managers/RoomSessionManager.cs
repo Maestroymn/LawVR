@@ -45,11 +45,14 @@ namespace Managers
                     (int) PhotonNetwork.CurrentRoom.CustomProperties[DataKeyValues.__TURN_DURATION__]);
                 _currentBuilding.TotalTurnCountMax =
                     (int) PhotonNetwork.CurrentRoom.CustomProperties[DataKeyValues.__TURN_COUNT__];
-                _loadingCanvas.gameObject.SetActive(false);
-                _mainCamera.gameObject.SetActive(false);
-                Cursor.lockState = CursorLockMode.None;
-                Cursor.visible = true;
-                HandleSpawns();
+                LeanTween.delayedCall(.3f, () =>
+                {
+                    _loadingCanvas.gameObject.SetActive(false);
+                    _mainCamera.gameObject.SetActive(false);
+                    Cursor.lockState = CursorLockMode.None;
+                    Cursor.visible = true;
+                    HandleSpawns();
+                });
             }
             else
             {

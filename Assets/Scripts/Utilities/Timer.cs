@@ -1,10 +1,12 @@
-﻿using TMPro;
+﻿using System;
+using TMPro;
 using UnityEngine;
 
 namespace Utilities
 {
     public class Timer : MonoBehaviour
     {
+        public event Action OnTimesUp;
         public float timeRemaining,timeLimit;
         public bool timerIsRunning = false;
         public TMP_Text timeText;
@@ -30,11 +32,11 @@ namespace Utilities
             }
             else
             {
-                //Debug.Log("Time has run out!");
                 timeRemaining = 0;
                 timerIsRunning = false;
                 Animator.SetBool(Ticking,false);
                 timeText.text = "WAIT";
+                OnTimesUp?.Invoke();
             }
         }
 
