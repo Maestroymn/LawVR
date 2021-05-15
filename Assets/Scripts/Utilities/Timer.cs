@@ -16,8 +16,8 @@ namespace Utilities
         public void HandleTimer(bool isActive)
         {
             Animator.SetBool(Ticking, isActive);
-            timerIsRunning = isActive;
             timeRemaining = timeLimit;
+            timerIsRunning = isActive;
             if(!isActive)
                 timeText.text = "WAIT";
         }

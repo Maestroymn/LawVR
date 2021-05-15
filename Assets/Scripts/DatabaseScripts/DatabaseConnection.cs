@@ -357,9 +357,8 @@ namespace DatabaseScripts
         
         public static int UpdateSessionLog(string SessionID , string EndTime , string Feedback)
         {
-
             SqlCommand.CommandText = "update court_session set end_time = TO_TIMESTAMP('" + EndTime + "', '" + dateFormat + "') " + 
-            " , feedback = '" + Feedback +"' where session_id = " +int.Parse(SessionID);
+                                     " , feedback = '" + Feedback +"' where session_id = " +int.Parse(SessionID);
             Debug.Log(SqlCommand.CommandText);
             return SqlCommand.ExecuteNonQuery();
         }
