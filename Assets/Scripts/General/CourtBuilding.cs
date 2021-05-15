@@ -88,17 +88,7 @@ namespace General
                 DefendantTimer.HandleTimer(true);
             }
         }
-
-        public void SetCourtBuildingForAll()
-        {
-            photonView.RPC("RPC_SetCourtBuilding",RpcTarget.All);    
-        }
         
-        [PunRPC]
-        public void RPC_SetCourtBuilding()
-        {
-            FindObjectOfType<RoomSessionManager>()._currentBuilding = this;
-        }
         #endregion
     }
 }

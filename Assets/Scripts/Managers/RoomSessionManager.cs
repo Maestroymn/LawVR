@@ -29,36 +29,17 @@ namespace Managers
 
         private void HandleBuildingSpawn()
         {
-            if (PhotonNetwork.LocalPlayer.IsMasterClient)
+            var obj=GameManager.NetworkInstantiateRoomObj(_courtBuildings.PickRandom().gameObject, Vector3.zero, Quaternion.identity);
+            _currentBuilding = obj.GetComponent<CourtBuilding>();
+            if ((bool) PhotonNetwork.CurrentRoom.CustomProperties[DataKeyValues.__AI_JUDGE__])
             {
-                var obj=GameManager.NetworkInstantiate(_courtBuildings.PickRandom().gameObject, Vector3.zero, Quaternion.identity);
-                _currentBuilding = obj.GetComponent<CourtBuilding>();
-                _currentBuilding.SetCourtBuildingForAll();
-                if ((bool) PhotonNetwork.CurrentRoom.CustomProperties[DataKeyValues.__AI_JUDGE__])
-                {
-                    GameManager.NetworkInstantiate(_aiJudgeGeneralBehaviour.gameObject, _currentBuilding.JudgeTransform.position, Quaternion.identity);
-                }
-                _currentBuilding.InitTimers((int)PhotonNetwork.CurrentRoom.CustomProperties[DataKeyValues.__TURN_DURATION__]);
-                _currentBuilding.TotalTurnCountMax = (int)PhotonNetwork.CurrentRoom.CustomProperties[DataKeyValues.__TURN_COUNT__];
-                HandleSpawns();
-            }
-            else
-            {
-                StartCoroutine(WaitUntilBuilding());
-            }
-        }
-
-        private IEnumerator WaitUntilBuilding()
-        {
-            while (_currentBuilding!=null)
-            {
-                yield return null;
+                GameManager.NetworkInstantiate(_aiJudgeGeneralBehaviour.gameObject, _currentBuilding.JudgeTransform.position, Quaternion.identity);
             }
             _currentBuilding.InitTimers((int)PhotonNetwork.CurrentRoom.CustomProperties[DataKeyValues.__TURN_DURATION__]);
             _currentBuilding.TotalTurnCountMax = (int)PhotonNetwork.CurrentRoom.CustomProperties[DataKeyValues.__TURN_COUNT__];
             HandleSpawns();
         }
-
+        
         private void HandleSpawns()
         {
             GameObject tmpObjHolder = null;

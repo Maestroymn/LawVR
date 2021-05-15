@@ -32,6 +32,23 @@ namespace Managers
             return result;
         }
         
+        public static GameObject NetworkInstantiateRoomObj(GameObject obj, Vector3 position, Quaternion rotation)
+        {
+            GameObject result = null;
+            Instance._networkedPrefabs.ForEach(networkPrefab =>
+            {
+                if (networkPrefab.Prefab == obj && networkPrefab.Path!=string.Empty)
+                {
+                    result = PhotonNetwork.InstantiateRoomObject(networkPrefab.Path, position, rotation);
+                }
+                else
+                {
+                    Debug.LogWarning("Path is empty for gameobject: "+networkPrefab.Prefab);
+                }
+            });
+            return result;
+        }
+        
         [RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.BeforeSceneLoad)]
         public static void PopulateNetworkedPrefabs()
         {
