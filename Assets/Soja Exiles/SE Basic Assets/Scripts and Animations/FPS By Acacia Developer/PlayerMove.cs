@@ -39,13 +39,6 @@ public class PlayerMove : MonoBehaviourPunCallbacks
     private static readonly int NormalSit = Animator.StringToHash("normal_sit");
     private PauseUIManager _pauseUIManager;
     
-    private void Awake()
-    {
-        if (!photonView.IsMine) return;
-        _pauseUIManager = FindObjectOfType<PauseUIManager>();
-        charController = GetComponent<CharacterController>();
-    }
-
     private void Start()
     {
         _totalPlayerCount = PhotonNetwork.CurrentRoom.PlayerCount;
@@ -57,6 +50,8 @@ public class PlayerMove : MonoBehaviourPunCallbacks
         }
         else
         {
+            _pauseUIManager = FindObjectOfType<PauseUIManager>();
+            charController = GetComponent<CharacterController>();
             SetStartingStatus();
             if (PlayerPrefs.GetInt(DataKeyValues.__VR_ENABLE__)==1)
             {

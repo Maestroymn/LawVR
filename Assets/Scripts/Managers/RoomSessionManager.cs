@@ -98,6 +98,7 @@ namespace Managers
                 case true:
                 {
                     _localPlayerMove = tmpObjHolder.GetComponent<PlayerMove>();
+                    _localPlayerMove.PlayerLook.Initialize();
                     _localPlayerMove.OnStartTurn += _currentBuilding.StartTurnForCurrentUser;
                     _localPlayerMove.OnSwitchTurn += _currentBuilding.SwitchTurn;
                     _localPlayerMove.PlayerLook.RegisterForInteractables(_currentBuilding.InteractableCourtObjects);

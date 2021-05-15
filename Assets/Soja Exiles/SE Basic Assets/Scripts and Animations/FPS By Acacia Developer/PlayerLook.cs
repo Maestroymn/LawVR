@@ -17,9 +17,8 @@ public class PlayerLook : MonoBehaviourPunCallbacks
     private float xAxisClamp;
     private bool _isEnabled=false;
     
-    private void Awake()
+    public void Initialize()
     {
-        if (!ParentController.photonView.IsMine) return;
         xAxisClamp = 0.0f;
         Cursor.lockState= CursorLockMode.Locked;
         if (!Camera)
