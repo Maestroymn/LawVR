@@ -47,6 +47,8 @@ namespace Managers
                     (int) PhotonNetwork.CurrentRoom.CustomProperties[DataKeyValues.__TURN_COUNT__];
                 _loadingCanvas.gameObject.SetActive(false);
                 _mainCamera.gameObject.SetActive(false);
+                Cursor.lockState = CursorLockMode.None;
+                Cursor.visible = true;
                 HandleSpawns();
             }
             else
@@ -99,6 +101,7 @@ namespace Managers
                 {
                     _localPlayerMove = tmpObjHolder.GetComponent<PlayerMove>();
                     _localPlayerMove.PlayerLook.Initialize();
+                    _pauseUIManager.OnPaused += _localPlayerMove.PlayerLook.CloseSummary;
                     _localPlayerMove.OnStartTurn += _currentBuilding.StartTurnForCurrentUser;
                     _localPlayerMove.OnSwitchTurn += _currentBuilding.SwitchTurn;
                     _localPlayerMove.PlayerLook.RegisterForInteractables(_currentBuilding.InteractableCourtObjects);

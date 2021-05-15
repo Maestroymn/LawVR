@@ -20,7 +20,6 @@ public class PlayerLook : MonoBehaviourPunCallbacks
     public void Initialize()
     {
         xAxisClamp = 0.0f;
-        Cursor.lockState= CursorLockMode.Locked;
         if (!Camera)
         {
             Camera = GetComponentInChildren<Camera>();
@@ -117,7 +116,8 @@ public class PlayerLook : MonoBehaviourPunCallbacks
         RaycastHit hit;
         Ray ray = Camera.ScreenPointToRay(Input.mousePosition);
         
-        if (Physics.Raycast(ray, out hit)) {
+        if (Physics.Raycast(ray, out hit)) 
+        {
             Transform objectHit = hit.transform;
             if (objectHit.CompareTag("Interactable"))
             {
