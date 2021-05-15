@@ -13,13 +13,13 @@ namespace Utilities
     public class SpeechRecognition : MonoBehaviour
     {
 
-        string PythonScriptPath;
-        string PythonExePath;
-        string WorkingDirectory;
-        char DirSep;
-        Thread PythonThread;
+        static string PythonScriptPath;
+        static string PythonExePath;
+        static string WorkingDirectory;
+        static char DirSep;
+        static Thread PythonThread;
         // Start is called before the first frame update
-        void Start()
+        void Awake()
         {
             DirSep = Path.DirectorySeparatorChar;
             PythonScriptPath = @Application.dataPath + DirSep + "Python"+ DirSep + "listen_user_test.py";
@@ -32,16 +32,20 @@ namespace Utilities
             WorkingDirectory = "/usr/bin";
             PythonExePath = WorkingDirectory + DirSep + "python";
 #endif
+           
+
+        }
+
+        public static void SpeechRecognitionCaller()
+        {
             PythonThread = new Thread(RunPythonListenerScript);
             PythonThread.Start();
-            using (StreamWriter sw = File.CreateText("WriteLines2.txt"))
-            {
-                sw.WriteLine(PythonScriptPath + "\n" + PythonExePath);
-                sw.Close();
-            }
         }
-        public void RunPythonListenerScript()
+
+        
+        public static void RunPythonListenerScript()
         {
+
             UnityEngine.Debug.Log( string.Format("\"{0}\" ", PythonScriptPath));
             ProcessStartInfo start = new ProcessStartInfo();
             start.FileName = PythonExePath;

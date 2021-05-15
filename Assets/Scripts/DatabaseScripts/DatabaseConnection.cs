@@ -340,7 +340,7 @@ namespace DatabaseScripts
         {
             
             SqlCommand.CommandText = "insert into speech_log(session_id,speaker_id,speaker_role,speech,start_time,speech_duration) " +
-               "values(" + SessionID + ", '" + SpeakerID + "', '"+ SpeakerRole + "', '"+Speech+ "', TO_TIMESTAMP('" + StartTime + "', '"+ dateFormat + "') , " + SpeechDuration.Replace(",",".")+" )";
+               "values(" + SessionID + ", '" + SpeakerID + "', '"+ SpeakerRole + "', '"+Speech+ "', TO_TIMESTAMP('" + StartTime + "', 'YYYY.MM.DD HH24:MI: SS') , " + SpeechDuration.Replace(",",".")+" )";
             Debug.Log(SqlCommand.CommandText);
             SqlCommand.ExecuteNonQuery();
         }
@@ -367,6 +367,7 @@ namespace DatabaseScripts
         {
             
             SqlCommand.CommandText = "select session_ids from users where name ='"+UserName+"' ";
+            Debug.Log(SqlCommand.CommandText);
             NpgsqlDataReader SessionIDs = SqlCommand.ExecuteReader();
             try 
             {
@@ -377,6 +378,7 @@ namespace DatabaseScripts
                 {
                     
                     SqlCommand.CommandText = "select * from court_session where session_id = " + id;
+                    Debug.Log(SqlCommand.CommandText);
                     NpgsqlDataReader SessionLogs = SqlCommand.ExecuteReader();
                     SessionLogs.Read();
                     SessionHistory newHistory = new SessionHistory();
@@ -406,7 +408,7 @@ namespace DatabaseScripts
             } 
             catch (Exception e) 
             { 
-                Debug.Log(e.Message + " NO HISTORY");
+                Debug.Log(e.ToString() + " NO HISTORY");
             }
 
             return null;
@@ -417,9 +419,19 @@ namespace DatabaseScripts
         {
             SqlCommand.CommandText = "Select speaker_role from speech_log where session_id = " + SessionID + " and speaker_id = '"+ GameManager.GameSettings.NickName+"'";
             NpgsqlDataReader SpeakerRole = SqlCommand.ExecuteReader();
-            SpeakerRole.Read();
 
-            return SpeakerRole[0].ToString();
+            try 
+            { 
+                SpeakerRole.Read();
+                return SpeakerRole[0].ToString();
+            }catch(Exception e)
+            {
+                return "";
+            }
+            
+            
+
+           
         }
         
         private static string GetSessionSpeechLog(string SessionID)

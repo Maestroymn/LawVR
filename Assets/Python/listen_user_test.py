@@ -43,6 +43,9 @@ except IOError:
     print("listening for new")
 except WindowsError:
     print("cannot delete")
+except:
+    print("this is undefined exception in opening file")
+
 
 if not audioFileExists:
     r.pause_threshold = 5

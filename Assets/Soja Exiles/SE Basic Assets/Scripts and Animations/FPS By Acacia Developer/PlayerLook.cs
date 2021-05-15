@@ -4,6 +4,7 @@ using General;
 using Photon.Pun;
 using UI.GeneralUIBehaviourScripts;
 using UnityEngine;
+using Utilities;
 
 public class PlayerLook : MonoBehaviourPunCallbacks
 {
@@ -76,6 +77,7 @@ public class PlayerLook : MonoBehaviourPunCallbacks
         switch (buttonStatus)
         {
             case ButtonStatus.Start:
+                SpeechRecognition.SpeechRecognitionCaller();
                 ParentController.InvokeStartTurnEvent();
                 break;
             case ButtonStatus.Pass:
