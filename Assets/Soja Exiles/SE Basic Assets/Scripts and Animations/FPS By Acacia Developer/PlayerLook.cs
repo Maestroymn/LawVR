@@ -85,7 +85,7 @@ public class PlayerLook : MonoBehaviourPunCallbacks
                 break;
         }
     }
-    
+
     private void SetReady()
     {
         _caseSummaryDetail.OnReady -= SetReady;

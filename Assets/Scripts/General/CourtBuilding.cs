@@ -15,7 +15,7 @@ namespace General
         public List<InteractableCourtObject> InteractableCourtObjects;
         public int TotalTurnCountMax;
         private int _currentTurnCount=0;
-        private bool _plaintiffTurn;
+        private bool _plaintiffTurn=false;
         
         private void Awake()
         {
@@ -62,7 +62,6 @@ namespace General
                 DefendantTimer.timeText.text = "START!";
                 DefendantStartButton.HandleButtonSettings(ButtonStatus.Start);
                 PlaintiffStartButton.HandleButtonSettings(ButtonStatus.Wait);
-          
             }
             else
             {

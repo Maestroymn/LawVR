@@ -41,12 +41,12 @@ namespace Managers
                     GameManager.NetworkInstantiate(_aiJudgeGeneralBehaviour.gameObject,
                         _currentBuilding.JudgeTransform.position, Quaternion.identity);
                 }
-                _currentBuilding.InitTimers(
-                    (int) PhotonNetwork.CurrentRoom.CustomProperties[DataKeyValues.__TURN_DURATION__]);
-                _currentBuilding.TotalTurnCountMax =
-                    (int) PhotonNetwork.CurrentRoom.CustomProperties[DataKeyValues.__TURN_COUNT__];
                 LeanTween.delayedCall(.3f, () =>
                 {
+                    _currentBuilding.InitTimers(
+                        (int) PhotonNetwork.CurrentRoom.CustomProperties[DataKeyValues.__TURN_DURATION__]);
+                    _currentBuilding.TotalTurnCountMax =
+                        (int) PhotonNetwork.CurrentRoom.CustomProperties[DataKeyValues.__TURN_COUNT__];
                     _loadingCanvas.gameObject.SetActive(false);
                     _mainCamera.gameObject.SetActive(false);
                     Cursor.lockState = CursorLockMode.None;

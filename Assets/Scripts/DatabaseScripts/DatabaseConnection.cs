@@ -89,7 +89,7 @@ namespace DatabaseScripts
             
             PostgreConnection =
                 new NpgsqlConnection(
-                    $"Server={Server}; Port={Port}; Database={DatabaseName}; User Id={UserID}; Password={Password}; Timeout=45;");
+                    $"Server={Server}; Port={Port}; Database={DatabaseName}; User Id={UserID}; Password={Password}");
             PostgreConnection.Open();
             SqlCommand = new NpgsqlCommand();
             SqlCommand.Connection = PostgreConnection;
@@ -336,11 +336,15 @@ namespace DatabaseScripts
             SqlCommand.ExecuteNonQuery();
         }
     
-        public static void UploadSpeech(int SessionID , string SpeakerID, string SpeakerRole, string Speech, string StartTime, string SpeechDuration)
+        public static void UploadSpeech(bool isFromPy,int SessionID , string SpeakerID, string SpeakerRole, string Speech, string StartTime, string SpeechDuration)
         {
-            
+            string dateFixed="YYYY.MM.DD HH24:MI: SS";
+            if (!isFromPy)
+            {
+                dateFixed = dateFormat;
+            }
             SqlCommand.CommandText = "insert into speech_log(session_id,speaker_id,speaker_role,speech,start_time,speech_duration) " +
-               "values(" + SessionID + ", '" + SpeakerID + "', '"+ SpeakerRole + "', '"+Speech+ "', TO_TIMESTAMP('" + StartTime + "', 'YYYY.MM.DD HH24:MI: SS') , " + SpeechDuration.Replace(",",".")+" )";
+               "values(" + SessionID + ", '" + SpeakerID + "', '"+ SpeakerRole + "', '"+Speech+ "',TO_TIMESTAMP('" + StartTime + "', '" + dateFixed + "'), " + SpeechDuration.Replace(",",".")+" )";
             Debug.Log(SqlCommand.CommandText);
             SqlCommand.ExecuteNonQuery();
         }
