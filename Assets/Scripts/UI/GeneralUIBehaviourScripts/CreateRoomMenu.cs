@@ -97,7 +97,9 @@ namespace UI
             var sessionID = DatabaseConnection.CreateSessionLog(_roomName.text,
                 _roomsCanvases.HostRoomCanvas.CaseListCanvas.SelectedCase.CaseID.ToString(),
                 DateTime.Now.ToString(),
-                _roomOptions.CustomRoomProperties[DataKeyValues.__SIMULATION_TYPE__].ToString());
+                _roomOptions.CustomRoomProperties[DataKeyValues.__SIMULATION_TYPE__].ToString(),
+                _roomOptions.CustomRoomProperties[DataKeyValues.__TURN_COUNT__].ToString(),
+                _roomOptions.CustomRoomProperties[DataKeyValues.__TURN_DURATION__].ToString());
             _roomOptions.CustomRoomProperties[DataKeyValues.__CASE_ID__] =
                 _roomsCanvases.HostRoomCanvas.CaseListCanvas.SelectedCase.CaseID;
             _roomOptions.CustomRoomProperties[DataKeyValues.__SESSION_ID__] = sessionID;

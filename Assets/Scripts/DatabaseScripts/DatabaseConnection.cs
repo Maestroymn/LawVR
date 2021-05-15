@@ -9,39 +9,10 @@ using LitJson;
 using Data;
 using System.IO;
 using UI;
-
+using System.Globalization;
 
 namespace DatabaseScripts
 {
-
-    public static class JsonHelper
-    {
-        public static T[] FromJson<T>(string json)
-        {
-            Wrapper<T> wrapper = JsonUtility.FromJson<Wrapper<T>>(json);
-            return wrapper.Items;
-        }
-
-        public static string ToJson<T>(T[] array)
-        {
-            Wrapper<T> wrapper = new Wrapper<T>();
-            wrapper.Items = array;
-            return JsonUtility.ToJson(wrapper);
-        }
-
-        public static string ToJson<T>(T[] array, bool prettyPrint)
-        {
-            Wrapper<T> wrapper = new Wrapper<T>();
-            wrapper.Items = array;
-            return JsonUtility.ToJson(wrapper, prettyPrint);
-        }
-
-        [Serializable]
-        private class Wrapper<T>
-        {
-            public T[] Items;
-        }
-    }
 
     [Serializable]
     public class ParticipantUser
@@ -106,8 +77,16 @@ namespace DatabaseScripts
         public static NpgsqlConnection PostgreConnection;
         public static NpgsqlCommand SqlCommand;
 
+        public static string dateFormat = "DD.MM.YYYY HH24:MI: SS";
+
         public static void ConnectDatabase()
         {
+            string sysFormat = CultureInfo.CurrentCulture.DateTimeFormat.ShortDatePattern;
+            if (sysFormat[0].ToString().ToLower().Equals("m"))
+            {
+                dateFormat = "MM.DD.YYYY HH24:MI: SS";
+            }
+            
             PostgreConnection =
                 new NpgsqlConnection(
                     $"Server={Server}; Port={Port}; Database={DatabaseName}; User Id={UserID}; Password={Password}; Timeout=45;");
@@ -359,16 +338,17 @@ namespace DatabaseScripts
     
         public static void UploadSpeech(int SessionID , string SpeakerID, string SpeakerRole, string Speech, string StartTime, string SpeechDuration)
         {
+            
             SqlCommand.CommandText = "insert into speech_log(session_id,speaker_id,speaker_role,speech,start_time,speech_duration) " +
-               "values(" + SessionID + ", '" + SpeakerID + "', '"+ SpeakerRole + "', '"+Speech+"', '"+ StartTime+"' , "+ SpeechDuration.Replace(",",".")+" )";
+               "values(" + SessionID + ", '" + SpeakerID + "', '"+ SpeakerRole + "', '"+Speech+ "', TO_TIMESTAMP('" + StartTime + "', '"+ dateFormat + "') , " + SpeechDuration.Replace(",",".")+" )";
             Debug.Log(SqlCommand.CommandText);
             SqlCommand.ExecuteNonQuery();
         }
         
-        public static string CreateSessionLog(string LobbyName, string CaseID, string StartTime , string SimulationType)
+        public static string CreateSessionLog(string LobbyName, string CaseID, string StartTime , string SimulationType, string TurnCount, string TurnDuration)
         {
-            SqlCommand.CommandText = "insert into court_session(lobby_name,case_id, start_time, simulation_type) " +
-            "values('" + LobbyName + "', '" + CaseID + "', '" + StartTime + "' , '" + SimulationType + "' ) returning session_id";
+            SqlCommand.CommandText = "insert into court_session(lobby_name,case_id, start_time, simulation_type,turn_count,turn_duration) " +
+            "values('" + LobbyName + "', '" + CaseID + "', TO_TIMESTAMP('" + StartTime + "', '" + dateFormat + "') , '" + SimulationType + "' , "+TurnCount+" , "+TurnDuration+" ) returning session_id";
             Debug.Log(SqlCommand.CommandText);
             NpgsqlDataReader SessionID = SqlCommand.ExecuteReader();
             SessionID.Read();
@@ -377,8 +357,9 @@ namespace DatabaseScripts
         
         public static int UpdateSessionLog(string SessionID , string EndTime , string Feedback)
         {
-            SqlCommand.CommandText = "update court_session set end_time = '" + EndTime + 
-            "' , feedback = '" + Feedback +"' where session_id = " +int.Parse(SessionID);
+
+            SqlCommand.CommandText = "update court_session set end_time = TO_TIMESTAMP('" + EndTime + "', '" + dateFormat + "') " + 
+            " , feedback = '" + Feedback +"' where session_id = " +int.Parse(SessionID);
             Debug.Log(SqlCommand.CommandText);
             return SqlCommand.ExecuteNonQuery();
         }
@@ -407,6 +388,9 @@ namespace DatabaseScripts
                     newHistory.SessionID = int.Parse(SessionLogs[4].ToString());
                     newHistory.SimulationType = SessionLogs[5].ToString();
                     newHistory.LobbyName = SessionLogs[6].ToString();
+                    newHistory.TurnCount = int.Parse(SessionLogs[7].ToString());
+                    newHistory.TurnDuration = int.Parse(SessionLogs[8].ToString());
+
                     newHistory.SpeechText = GetSessionSpeechLog(id);
                     newHistory.UserRole = GetUserRoleInSession(newHistory.SessionID);
                     newHistory.CaseName = GetCaseNameById(newHistory.CaseID);
@@ -429,6 +413,7 @@ namespace DatabaseScripts
             return null;
 
         }
+        
         private static string GetUserRoleInSession(int SessionID)
         {
             SqlCommand.CommandText = "Select speaker_role from speech_log where session_id = " + SessionID + " and speaker_id = '"+ GameManager.GameSettings.NickName+"'";
@@ -437,6 +422,7 @@ namespace DatabaseScripts
 
             return SpeakerRole[0].ToString();
         }
+        
         private static string GetSessionSpeechLog(string SessionID)
         {
             SqlCommand.CommandText = "Select speaker_id,speaker_role,speech from speech_log where session_id = " + SessionID + " order by start_time asc";
@@ -448,7 +434,6 @@ namespace DatabaseScripts
             }
             return speech;
         }
-
 
         public static void UpdateUserSessionID(string username , string session_id)
         {
