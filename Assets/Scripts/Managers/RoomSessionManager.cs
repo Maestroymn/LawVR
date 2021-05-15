@@ -18,6 +18,8 @@ namespace Managers
         [SerializeField] private List<CourtBuilding> _courtBuildings;
         [SerializeField] private Transform SessionEnvironmentParent;
         [SerializeField] private PauseUIManager _pauseUIManager;
+        [SerializeField] private Canvas _loadingCanvas;
+        [SerializeField] private Camera _mainCamera;
         [HideInInspector] public CourtBuilding _currentBuilding;
         private PlayerMove _localPlayerMove;
 
@@ -43,6 +45,8 @@ namespace Managers
                     (int) PhotonNetwork.CurrentRoom.CustomProperties[DataKeyValues.__TURN_DURATION__]);
                 _currentBuilding.TotalTurnCountMax =
                     (int) PhotonNetwork.CurrentRoom.CustomProperties[DataKeyValues.__TURN_COUNT__];
+                _loadingCanvas.gameObject.SetActive(false);
+                _mainCamera.gameObject.SetActive(false);
                 HandleSpawns();
             }
             else
@@ -58,6 +62,8 @@ namespace Managers
                 _currentBuilding = FindObjectOfType<CourtBuilding>();
                 yield return null;
             }
+            _loadingCanvas.gameObject.SetActive(false);
+            _mainCamera.gameObject.SetActive(false);
             _currentBuilding.InitTimers(
                 (int) PhotonNetwork.CurrentRoom.CustomProperties[DataKeyValues.__TURN_DURATION__]);
             _currentBuilding.TotalTurnCountMax =
