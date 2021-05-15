@@ -29,14 +29,39 @@ namespace Managers
 
         private void HandleBuildingSpawn()
         {
-            var obj=GameManager.NetworkInstantiateRoomObj(_courtBuildings.PickRandom().gameObject, Vector3.zero, Quaternion.identity);
-            _currentBuilding = obj.GetComponent<CourtBuilding>();
-            if ((bool) PhotonNetwork.CurrentRoom.CustomProperties[DataKeyValues.__AI_JUDGE__])
+            if(PhotonNetwork.LocalPlayer.IsMasterClient)
             {
-                GameManager.NetworkInstantiate(_aiJudgeGeneralBehaviour.gameObject, _currentBuilding.JudgeTransform.position, Quaternion.identity);
+                var obj = GameManager.NetworkInstantiateRoomObj(_courtBuildings.PickRandom().gameObject, Vector3.zero,
+                    Quaternion.identity);
+                _currentBuilding = obj.GetComponent<CourtBuilding>();
+                if ((bool) PhotonNetwork.CurrentRoom.CustomProperties[DataKeyValues.__AI_JUDGE__])
+                {
+                    GameManager.NetworkInstantiate(_aiJudgeGeneralBehaviour.gameObject,
+                        _currentBuilding.JudgeTransform.position, Quaternion.identity);
+                }
+                _currentBuilding.InitTimers(
+                    (int) PhotonNetwork.CurrentRoom.CustomProperties[DataKeyValues.__TURN_DURATION__]);
+                _currentBuilding.TotalTurnCountMax =
+                    (int) PhotonNetwork.CurrentRoom.CustomProperties[DataKeyValues.__TURN_COUNT__];
+                HandleSpawns();
             }
-            _currentBuilding.InitTimers((int)PhotonNetwork.CurrentRoom.CustomProperties[DataKeyValues.__TURN_DURATION__]);
-            _currentBuilding.TotalTurnCountMax = (int)PhotonNetwork.CurrentRoom.CustomProperties[DataKeyValues.__TURN_COUNT__];
+            else
+            {
+                StartCoroutine(WaitUntilFind());
+            }
+        }
+
+        private IEnumerator WaitUntilFind()
+        {
+            while (!_currentBuilding)
+            {
+                _currentBuilding = FindObjectOfType<CourtBuilding>();
+                yield return null;
+            }
+            _currentBuilding.InitTimers(
+                (int) PhotonNetwork.CurrentRoom.CustomProperties[DataKeyValues.__TURN_DURATION__]);
+            _currentBuilding.TotalTurnCountMax =
+                (int) PhotonNetwork.CurrentRoom.CustomProperties[DataKeyValues.__TURN_COUNT__];
             HandleSpawns();
         }
         
