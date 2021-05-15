@@ -32,15 +32,18 @@ namespace Managers
             {
                 var obj=GameManager.NetworkInstantiate(_courtBuildings.PickRandom().gameObject, Vector3.zero, Quaternion.identity);
                 _currentBuilding = obj.GetComponent<CourtBuilding>();
-                //=Instantiate(_courtBuildings.PickRandom(),SessionEnvironmentParent);
+                if ((bool) PhotonNetwork.CurrentRoom.CustomProperties[DataKeyValues.__AI_JUDGE__])
+                {
+                    GameManager.NetworkInstantiate(_aiJudgeGeneralBehaviour.gameObject, _currentBuilding.JudgeTransform.position, Quaternion.identity);
+                }
+                _currentBuilding.InitTimers((int)PhotonNetwork.CurrentRoom.CustomProperties[DataKeyValues.__TURN_DURATION__]);
+                _currentBuilding.TotalTurnCountMax = (int)PhotonNetwork.CurrentRoom.CustomProperties[DataKeyValues.__TURN_COUNT__];
             }
-            if ((bool) PhotonNetwork.CurrentRoom.CustomProperties[DataKeyValues.__AI_JUDGE__])
+            else
             {
-                GameManager.NetworkInstantiate(_aiJudgeGeneralBehaviour.gameObject, _currentBuilding.JudgeTransform.position, Quaternion.identity);
+                _currentBuilding = FindObjectOfType<CourtBuilding>();
             }
             HandleSpawns();
-            _currentBuilding.InitTimers((int)PhotonNetwork.CurrentRoom.CustomProperties[DataKeyValues.__TURN_DURATION__]);
-            _currentBuilding.TotalTurnCountMax = (int)PhotonNetwork.CurrentRoom.CustomProperties[DataKeyValues.__TURN_COUNT__];
         }
 
         private void HandleSpawns()
