@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
+using Managers;
 using Photon.Pun;
 using UnityEngine;
 using Utilities;
@@ -86,6 +87,17 @@ namespace General
                 DefendantStartButton.HandleButtonSettings(ButtonStatus.Pass);
                 DefendantTimer.HandleTimer(true);
             }
+        }
+
+        public void SetCourtBuildingForAll()
+        {
+            photonView.RPC("RPC_SetCourtBuilding",RpcTarget.All);    
+        }
+        
+        [PunRPC]
+        public void RPC_SetCourtBuilding()
+        {
+            FindObjectOfType<RoomSessionManager>()._currentBuilding = this;
         }
         #endregion
     }

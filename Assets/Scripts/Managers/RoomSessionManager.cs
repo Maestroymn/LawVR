@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System.Collections;
+using System.Collections.Generic;
 using AI;
 using Data;
 using DatabaseScripts;
@@ -17,7 +18,7 @@ namespace Managers
         [SerializeField] private List<CourtBuilding> _courtBuildings;
         [SerializeField] private Transform SessionEnvironmentParent;
         [SerializeField] private PauseUIManager _pauseUIManager;
-        private CourtBuilding _currentBuilding;
+        [HideInInspector] public CourtBuilding _currentBuilding;
         private PlayerMove _localPlayerMove;
 
         private void Awake()
@@ -32,14 +33,26 @@ namespace Managers
             {
                 var obj=GameManager.NetworkInstantiate(_courtBuildings.PickRandom().gameObject, Vector3.zero, Quaternion.identity);
                 _currentBuilding = obj.GetComponent<CourtBuilding>();
+                _currentBuilding.SetCourtBuildingForAll();
                 if ((bool) PhotonNetwork.CurrentRoom.CustomProperties[DataKeyValues.__AI_JUDGE__])
                 {
                     GameManager.NetworkInstantiate(_aiJudgeGeneralBehaviour.gameObject, _currentBuilding.JudgeTransform.position, Quaternion.identity);
                 }
+                _currentBuilding.InitTimers((int)PhotonNetwork.CurrentRoom.CustomProperties[DataKeyValues.__TURN_DURATION__]);
+                _currentBuilding.TotalTurnCountMax = (int)PhotonNetwork.CurrentRoom.CustomProperties[DataKeyValues.__TURN_COUNT__];
+                HandleSpawns();
             }
             else
             {
-                _currentBuilding = FindObjectOfType<CourtBuilding>();
+                StartCoroutine(WaitUntilBuilding());
+            }
+        }
+
+        private IEnumerator WaitUntilBuilding()
+        {
+            while (_currentBuilding!=null)
+            {
+                yield return null;
             }
             _currentBuilding.InitTimers((int)PhotonNetwork.CurrentRoom.CustomProperties[DataKeyValues.__TURN_DURATION__]);
             _currentBuilding.TotalTurnCountMax = (int)PhotonNetwork.CurrentRoom.CustomProperties[DataKeyValues.__TURN_COUNT__];
