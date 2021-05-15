@@ -41,6 +41,7 @@ public class PlayerMove : MonoBehaviourPunCallbacks
     
     private void Awake()
     {
+        if (!photonView.IsMine) return;
         _pauseUIManager = FindObjectOfType<PauseUIManager>();
         charController = GetComponent<CharacterController>();
     }

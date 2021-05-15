@@ -19,13 +19,14 @@ public class PlayerLook : MonoBehaviourPunCallbacks
     
     private void Awake()
     {
+        if (!ParentController.photonView.IsMine) return;
         xAxisClamp = 0.0f;
         Cursor.lockState= CursorLockMode.Locked;
         if (!Camera)
         {
             Camera = GetComponentInChildren<Camera>();
         }
-        _caseSummaryDetail.enabled = true;
+        _caseSummaryDetail.Initialize();
         _caseSummaryDetail.OnReady += SetReady;
         _caseSummaryDetail.OnClose += EnableRotation;
     }

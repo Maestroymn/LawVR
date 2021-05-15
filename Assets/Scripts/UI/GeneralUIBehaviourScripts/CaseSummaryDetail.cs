@@ -19,15 +19,6 @@ namespace UI.GeneralUIBehaviourScripts
         public SummaryType SummaryType;
         public event Action OnReady,OnClose;
         private bool _isOpen;
-        public override void OnEnable()
-        {
-            Initialize();
-        }
-
-        private void Start()
-        {
-            OpenSummaryFolder();
-        }
 
         public void Initialize()
         {
@@ -42,6 +33,11 @@ namespace UI.GeneralUIBehaviourScripts
             _role.text = PhotonNetwork.LocalPlayer.CustomProperties[DataKeyValues.__ROLE__].ToString();
             _simType.text = currentRoomProps[DataKeyValues.__SIMULATION_TYPE__].ToString();
             _caseName.text=DatabaseConnection.GetCaseNameById((int)currentRoomProps[DataKeyValues.__CASE_ID__]);
+            if (!gameObject.activeInHierarchy)
+            {
+                gameObject.SetActive(true);
+            }
+            OpenSummaryFolder();
         }
 
         public void OpenSummaryFolder()
@@ -67,6 +63,7 @@ namespace UI.GeneralUIBehaviourScripts
         
         public void OnReadyClicked()
         {
+            if (!_isOpen) return;
             _InputBlocker.SetActive(false);
             gameObject.LeanScale(Vector3.zero, .3f).setOnComplete(() =>
             {
