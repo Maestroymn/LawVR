@@ -5,6 +5,9 @@ import os
 from datetime import datetime
 import wave
 import contextlib
+import sys
+
+lan = sys.argv[1]
 
 dir = os.path.dirname(__file__)
 dir += "/Speeches/speech.wav"
@@ -25,7 +28,7 @@ try:
         audio = r.record(source)
         audioFileExists = True
         try:
-            text = r.recognize_google(audio, language="tr-TR")
+            text = r.recognize_google(audio, language=lan)
             print("Speech*" + text.encode('utf-8').strip())  # encode edilmezse türkçe karakterleri texte basarken patlıyor
             print("StartTime*" + str(speechStartTime))
             print("Duration*" + str(GetDuration(dir)))
@@ -60,7 +63,7 @@ if not audioFileExists:
                 f.write(audio.get_wav_data())
 
 
-            text = r.recognize_google(audio, language="tr-TR")
+            text = r.recognize_google(audio, language=lan)
             print("Speech*"+text.encode('utf-8').strip())  # encode edilmezse türkçe karakterleri texte basarken patlıyor
             print("StartTime*" + str(speechStartTime))
             print("Duration*" + str(GetDuration(dir)))

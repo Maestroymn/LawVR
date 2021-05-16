@@ -17,6 +17,7 @@ namespace Utilities
         static string WorkingDirectory;
         static char DirSep;
         static Thread PythonThread;
+        static string Language;
         // Start is called before the first frame update
         void Awake()
         {
@@ -33,8 +34,9 @@ namespace Utilities
 #endif
         }
 
-        public static void SpeechRecognitionCaller()
+        public static void SpeechRecognitionCaller(string language)
         {
+            Language = language;
             PythonThread = new Thread(RunPythonListenerScript);
             PythonThread.Start();
         }
@@ -44,7 +46,7 @@ namespace Utilities
             UnityEngine.Debug.Log( string.Format("\"{0}\" ", PythonScriptPath));
             ProcessStartInfo start = new ProcessStartInfo();
             start.FileName = PythonExePath;
-            start.Arguments = $"\"{PythonScriptPath}\"";
+            start.Arguments = $"\"{PythonScriptPath}\" " + Language;
             start.WorkingDirectory = WorkingDirectory;
         
             start.UseShellExecute = false;// Do not use OS shell
