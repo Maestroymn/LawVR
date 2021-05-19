@@ -13,6 +13,12 @@ namespace Data
         public static readonly string __CASE_ID__ = "case_id";
         public static readonly string __TURN_COUNT__ = "turn_count";
         public static readonly string __TURN_DURATION__ = "turn_duration";
+        public static readonly string __LANGUAGE__ = "language";
+        #endregion
+
+        #region LANGUAGE
+        public static readonly string __TURKISH__ = "tr-TR";
+        public static readonly string __ENGLISH__ = "en-EN";
         #endregion
         
         #region ROLE KEYS

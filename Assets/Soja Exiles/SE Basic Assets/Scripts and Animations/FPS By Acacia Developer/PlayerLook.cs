@@ -77,7 +77,7 @@ public class PlayerLook : MonoBehaviourPunCallbacks
         switch (buttonStatus)
         {
             case ButtonStatus.Start:
-                SpeechRecognition.SpeechRecognitionCaller("tr-TR");
+                SpeechRecognition.SpeechRecognitionCaller(PhotonNetwork.CurrentRoom.CustomProperties[DataKeyValues.__LANGUAGE__].ToString());
                 ParentController.InvokeStartTurnEvent();
                 break;
             case ButtonStatus.Pass:

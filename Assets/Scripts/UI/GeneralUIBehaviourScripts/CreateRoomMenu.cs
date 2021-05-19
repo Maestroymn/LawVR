@@ -14,7 +14,7 @@ namespace UI
     {
         [SerializeField] private TMP_InputField _roomName, _password;
         [SerializeField] private RoomListingsMenu _roomListingsMenu;
-        [SerializeField] private TMP_Dropdown _simulationType,_turnCount,_turnDuration;
+        [SerializeField] private TMP_Dropdown _simulationType,_turnCount,_turnDuration,_language;
         [SerializeField] private Toggle _toggle;
         [SerializeField] private Transform _caseListingButton;
         public RoomListingsMenu RoomListingsMenu { get; private set; }
@@ -29,7 +29,6 @@ namespace UI
             _roomOptions = new RoomOptions();
             HandleInitialRoomOptions();
             _roomsCanvases = roomsCanvases;
-            RoomListingsMenu = _roomListingsMenu;
         }
 
         private void HandleInitialRoomOptions()
@@ -46,7 +45,8 @@ namespace UI
                 {DataKeyValues.__CASE_ID__, -1},
                 {DataKeyValues.__SESSION_ID__, ""},
                 {DataKeyValues.__TURN_COUNT__, int.Parse(_turnCount.options[_turnCount.value].text)},
-                {DataKeyValues.__TURN_DURATION__, int.Parse(_turnDuration.options[_turnDuration.value].text)}
+                {DataKeyValues.__TURN_DURATION__, int.Parse(_turnDuration.options[_turnDuration.value].text)},
+                {DataKeyValues.__LANGUAGE__,DataKeyValues.__TURKISH__}
             };
         }
         #endregion
@@ -94,6 +94,7 @@ namespace UI
             _roomOptions.CustomRoomProperties[DataKeyValues.__TURN_COUNT__] = int.Parse(_turnCount.options[_turnCount.value].text);
             _roomOptions.CustomRoomProperties[DataKeyValues.__TURN_DURATION__] = int.Parse(_turnDuration.options[_turnDuration.value].text);
             _roomOptions.CustomRoomProperties[DataKeyValues.__ROOM_NAME__] = _roomName.text;
+            SetLanguage(_language.options[_language.value].text);
             var sessionID = DatabaseConnection.CreateSessionLog(_roomName.text,
                 _roomsCanvases.HostRoomCanvas.CaseListCanvas.SelectedCase.CaseID.ToString(),
                 DateTime.Now.ToString(),
@@ -106,6 +107,19 @@ namespace UI
             PhotonNetwork.CreateRoom(_roomName.text, _roomOptions, TypedLobby.Default);
         }
 
+        private void SetLanguage(string lang)
+        {
+            switch (lang)
+            {
+                case "TR":
+                    _roomOptions.CustomRoomProperties[DataKeyValues.__LANGUAGE__]=DataKeyValues.__TURKISH__;
+                    break;
+                case "EN":
+                    _roomOptions.CustomRoomProperties[DataKeyValues.__LANGUAGE__]=DataKeyValues.__ENGLISH__;
+                    break;
+            }
+        }
+        
         private bool IsRequiredFieldsFilled()
         {
             if (_roomName.text.Length == 0)
