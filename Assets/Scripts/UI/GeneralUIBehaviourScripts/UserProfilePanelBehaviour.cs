@@ -13,17 +13,24 @@ namespace UI.GeneralUIBehaviourScripts
         [SerializeField] private GameObject _privatePassword;
         [SerializeField] private TMP_InputField _newUsername, _newMail, _newPassword;
         [SerializeField] private TextMeshProUGUI _mainMenuUserName,_maleText,_femaleText;
+        [SerializeField] private GameObject _waitingUI;
         public SessionHistoryScrollView SessionHistoryScrollView;
         private Gender _gender;
         private bool _showPass;
+        
         public void OpenPanel()
         {
+            _waitingUI.SetActive(true);
             _username.text = GameManager.GameSettings.NickName;
             _mail.text = GameManager.GameSettings.Mail;
             _gender=GameManager.GameSettings.Gender;
             _password.text = GameManager.GameSettings.Password;
-            gameObject.SetActive(true);
-            SessionHistoryScrollView.Initialize();
+            gameObject.LeanDelayedCall(.3f, () =>
+            {
+                SessionHistoryScrollView.Initialize();
+                gameObject.SetActive(true);
+                _waitingUI.SetActive(false);
+            });
         }
         
         public void DiscardChangesAndExit()
