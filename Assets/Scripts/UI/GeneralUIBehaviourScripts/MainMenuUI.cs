@@ -26,7 +26,7 @@ namespace UI
                 UserMenu();
             if(_showingFriends)
                 FriendList();
-            _ltDescr=LeanTween.delayedCall(1f,()=>gameObject.SetActive(false));
+            _ltDescr=LeanTween.delayedCall(.3f,()=>gameObject.SetActive(false));
         }
         
         public void Show()

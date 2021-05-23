@@ -20,21 +20,25 @@ namespace UI.GeneralUIBehaviourScripts
             NoHistoryAvailableText.SetActive(_sessionHistoryList == null);
             _sessionHistoryList?.ForEach(listing =>
             {
-                SessionHistoryListing listingInstantiate = Instantiate(SessionHistoryListingPrefab, ContentParent);
-                var obj = _sessionHistoryListings.Find(x => x.SessionHistory.SessionID == listing.SessionID);
-                if(!obj)
+                if(listing.SpeechText.ToString().Length!=0)
                 {
-                    listingInstantiate.gameObject.SetActive(true);
-                    listingInstantiate.SessionHistory = listing;
-                    listingInstantiate.SetHistoryListing();
-                    _sessionHistoryListings.Add(listingInstantiate);
-                    SessionHistoryDetailPanelBehaviour detailPanelBehaviour = Instantiate(SessionHistoryDetailPanelBehaviourPrefab,transform.parent);
-                    detailPanelBehaviour.SetContent(listing);
-                    listingInstantiate.DetailPanelBehaviour = detailPanelBehaviour;
-                }
-                else
-                {
-                    Destroy(listingInstantiate);
+                    SessionHistoryListing listingInstantiate = Instantiate(SessionHistoryListingPrefab, ContentParent);
+                    var obj = _sessionHistoryListings.Find(x => x.SessionHistory.SessionID == listing.SessionID);
+                    if (!obj)
+                    {
+                        listingInstantiate.gameObject.SetActive(true);
+                        listingInstantiate.SessionHistory = listing;
+                        listingInstantiate.SetHistoryListing();
+                        _sessionHistoryListings.Add(listingInstantiate);
+                        SessionHistoryDetailPanelBehaviour detailPanelBehaviour =
+                            Instantiate(SessionHistoryDetailPanelBehaviourPrefab, transform.parent);
+                        detailPanelBehaviour.SetContent(listing);
+                        listingInstantiate.DetailPanelBehaviour = detailPanelBehaviour;
+                    }
+                    else
+                    {
+                        Destroy(listingInstantiate);
+                    }
                 }
             });
         }

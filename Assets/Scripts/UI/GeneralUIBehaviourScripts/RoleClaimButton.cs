@@ -1,12 +1,13 @@
 ﻿using Data;
 using Photon.Pun;
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 using Utilities;
 
 namespace UI
 {
-    public class RoleClaimButton : MonoBehaviour
+    public class RoleClaimButton : MonoBehaviourPunCallbacks
     {
         [SerializeField] private PlayerListingsMenu _playerListingsMenu;
         [SerializeField] private Image _background, _icon;
@@ -33,13 +34,7 @@ namespace UI
                 case RoleType.Judge:
                     if ((bool) PhotonNetwork.CurrentRoom.CustomProperties[DataKeyValues.__AI_JUDGE__])
                     {
-                        IsValid = false;
-                        var tmpColor = _background.color;
-                        tmpColor.a = .5f;
-                        _background.color = tmpColor;
-                        tmpColor = _icon.color;
-                        tmpColor.a = .5f;
-                        _icon.color = tmpColor;
+                        MakeRoleInvalid();
                         if (_extraIconParent != null)
                         {
                             _extraIconParent.SetActive(true);
@@ -57,6 +52,17 @@ namespace UI
                     IsValid = true;
                     break;
             }
+        }
+
+        public void MakeRoleInvalid()
+        {
+            IsValid = false;
+            var tmpColor = _background.color;
+            tmpColor.a = .5f;
+            _background.color = tmpColor;
+            tmpColor = _icon.color;
+            tmpColor.a = .5f;
+            _icon.color = tmpColor;
         }
 
         public RoleType Role;
@@ -80,6 +86,6 @@ namespace UI
                     break;
             }
         }
-        
+
     }
 }

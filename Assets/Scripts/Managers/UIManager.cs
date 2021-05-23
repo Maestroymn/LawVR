@@ -1,9 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using DatabaseScripts;
 using Photon.Pun;
 using Photon.Realtime;
 using UI;
+using UI.CanvasScripts;
 using UnityEngine;
 
 namespace Managers
@@ -11,6 +11,7 @@ namespace Managers
     public class UIManager : MonoBehaviourPunCallbacks
     {
         [SerializeField] private MainMenuUI _mainMenuUI;
+        [SerializeField] private MainSettingsCanvas _mainSettings;
         [SerializeField] private RoomsCanvases _roomsCanvases;
         public RoomsCanvases RoomsCanvases => _roomsCanvases;
         public GameObject CurrentCanvas;
@@ -35,6 +36,7 @@ namespace Managers
         {
             Cursor.visible = true;
             _mainMenuUI.Show();
+            _mainSettings.Initialize();
             _roomsCanvases.HostRoomCanvas.gameObject.SetActive(false);
             _roomsCanvases.JoinRoomCanvas.gameObject.SetActive(false);
             _roomsCanvases.CurrentRoomCanvas.gameObject.SetActive(false);
@@ -50,6 +52,9 @@ namespace Managers
         public void OnSettingsClicked()
         {
             //Load Settings UI
+            _mainMenuUI.HideMainMenu();
+            CurrentCanvas = _mainSettings.gameObject;
+            _mainSettings.gameObject.SetActive(true);
         }
 
         public void OnHostClicked()
@@ -77,18 +82,7 @@ namespace Managers
             CurrentCanvas.SetActive(false);
             _mainMenuUI.Show();
         }
-
-        public void SelectCase()
-        {
-            //Case Listing Button 2
-        }
-
-        public void OpenDetails()
-        {
-            //Case Listing Button 1
-            //Instantiate 
-        }
-
+        
         #endregion
 
         #region PhotonCallbacks
