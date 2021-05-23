@@ -1,4 +1,5 @@
-# coding=utf-8
+# -*- coding: utf-8 -*-
+
 import speech_recognition as sr
 import time
 import os
@@ -6,6 +7,7 @@ from datetime import datetime
 import wave
 import contextlib
 import sys
+import traceback
 
 lan = sys.argv[1]
 
@@ -29,7 +31,7 @@ try:
         audioFileExists = True
         try:
             text = r.recognize_google(audio, language=lan)
-            print("Speech*" + text.encode('utf-8').strip())  # encode edilmezse türkçe karakterleri texte basarken patlıyor
+            print("Speech*" + text.strip())  # encode edilmezse türkçe karakterleri texte basarken patlıyor
             print("StartTime*" + str(speechStartTime))
             print("Duration*" + str(GetDuration(dir)))
 
@@ -64,7 +66,7 @@ if not audioFileExists:
 
 
             text = r.recognize_google(audio, language=lan)
-            print("Speech*"+text.encode('utf-8').strip())  # encode edilmezse türkçe karakterleri texte basarken patlıyor
+            print("Speech*"+str(text.strip().encode('utf-8').decode('utf-8')))  # encode edilmezse türkçe karakterleri texte basarken patlıyor
             print("StartTime*" + str(speechStartTime))
             print("Duration*" + str(GetDuration(dir)))
             os.remove(dir)
@@ -75,7 +77,7 @@ if not audioFileExists:
         except sr.WaitTimeoutError:
             print("Can't hear you")
         except Exception as e:
-            print(str(e))
+            print(traceback.format_exc())
             print("change python")
 
 

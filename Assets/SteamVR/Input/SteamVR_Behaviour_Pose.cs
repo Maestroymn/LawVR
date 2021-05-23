@@ -126,8 +126,8 @@ namespace Valve.VR
 
             if (origin != null)
             {
-                transform.position = origin.transform.TransformPoint(poseAction[inputSource].localPosition);
-                transform.rotation = origin.rotation * poseAction[inputSource].localRotation;
+                //transform.position = origin.transform.TransformPoint(poseAction[inputSource].localPosition);
+                //transform.rotation = origin.rotation * poseAction[inputSource].localRotation;
             }
             else
             {

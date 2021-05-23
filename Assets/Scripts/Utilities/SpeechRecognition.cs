@@ -27,7 +27,7 @@ namespace Utilities
 
             WorkingDirectory = @Application.dataPath + DirSep + "Python";
 #if UNITY_EDITOR_WIN || UNITY_STANDALONE_WIN
-            PythonExePath = @Application.dataPath + DirSep + "Python" + DirSep + "Python27"+  DirSep+  "python.exe";
+            PythonExePath = @Application.dataPath + DirSep + "Python" + DirSep + "Python38"+  DirSep+  "python.exe";
 #elif UNITY_EDITOR_OSX || UNITY_STANDALONE_OSX
             WorkingDirectory = "/usr/bin";
             PythonExePath = WorkingDirectory + DirSep + "python";

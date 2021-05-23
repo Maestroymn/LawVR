@@ -6,6 +6,7 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using DatabaseScripts;
 using System;
+using AI;
 
 namespace Managers
 {
@@ -15,7 +16,7 @@ namespace Managers
         public GameObject PauseCanvas;
         public Camera Camera;
         public bool paused = false;
-        
+
         // Start is called before the first frame update
         void Start()
         {
@@ -54,17 +55,17 @@ namespace Managers
         
         public void Disconnect()
         {
-            StartCoroutine(DisconnectFromRoom());
+
+            AIJudgeGeneralBehaviour.AIJudgeDecisionCaller(PhotonNetwork.CurrentRoom.CustomProperties[DataKeyValues.__SESSION_ID__].ToString() , PhotonNetwork.LocalPlayer.CustomProperties[DataKeyValues.__ROLE__].ToString());
+            LeanTween.delayedCall(3f,()=> {
+                StartCoroutine(DisconnectFromRoom());
+            });
+            
         }
 
         private IEnumerator DisconnectFromRoom()
         {
-            int returnChecker = -1;
-            while (returnChecker!=1)
-            {
-                returnChecker=DatabaseConnection.UpdateSessionLog(PhotonNetwork.CurrentRoom.CustomProperties[DataKeyValues.__SESSION_ID__].ToString(), DateTime.Now.ToString(),"This is a feedback");
-                yield return null;
-            }
+            
             PhotonNetwork.LeaveRoom();
             while (PhotonNetwork.InRoom)
                 yield return null;

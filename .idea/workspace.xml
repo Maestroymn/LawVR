@@ -1,7 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="6cdf5eee-ff3e-4279-bea1-e4a3e99d9d0d" name="Default Changelist" comment="" />
+    <list default="true" id="6cdf5eee-ff3e-4279-bea1-e4a3e99d9d0d" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/.name" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.name" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Python/listen_user_test.py" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Python/listen_user_test.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/NetworkCharacterFemaleLawyer.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/NetworkCharacterFemaleLawyer.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Structure_01_UPDATED.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Structure_01_UPDATED.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/AI/AIJudgeGeneralBehaviour.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/AI/AIJudgeGeneralBehaviour.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/DatabaseScripts/DatabaseConnection.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/DatabaseScripts/DatabaseConnection.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Managers/PauseUIManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Managers/PauseUIManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/GeneralUIBehaviourScripts/CaseSummaryDetail.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UI/GeneralUIBehaviourScripts/CaseSummaryDetail.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Utilities/SpeechRecognition.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Utilities/SpeechRecognition.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/SteamVR/Input/SteamVR_Behaviour_Pose.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/SteamVR/Input/SteamVR_Behaviour_Pose.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/TextMesh Pro/Examples &amp; Extras/Resources/Fonts &amp; Materials/Bangers SDF.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/TextMesh Pro/Examples &amp; Extras/Resources/Fonts &amp; Materials/Bangers SDF.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/TextMesh Pro/Examples &amp; Extras/Resources/Fonts &amp; Materials/Roboto-Bold SDF.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/TextMesh Pro/Examples &amp; Extras/Resources/Fonts &amp; Materials/Roboto-Bold SDF.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/TextMesh Pro/Resources/Fonts &amp; Materials/LiberationSans SDF - Fallback.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/TextMesh Pro/Resources/Fonts &amp; Materials/LiberationSans SDF - Fallback.asset" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
