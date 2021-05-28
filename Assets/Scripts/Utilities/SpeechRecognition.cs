@@ -7,6 +7,7 @@ using Data;
 using Managers;
 using Photon.Pun;
 using UnityEngine;
+using System.Text;
 
 namespace Utilities
 {
@@ -27,7 +28,7 @@ namespace Utilities
 
             WorkingDirectory = @Application.dataPath + DirSep + "Python";
 #if UNITY_EDITOR_WIN || UNITY_STANDALONE_WIN
-            PythonExePath = @Application.dataPath + DirSep + "Python" + DirSep + "Python38"+  DirSep+  "python.exe";
+            PythonExePath = @Application.dataPath + DirSep + "Python" + DirSep + "Python27"+  DirSep+  "python.exe";
 #elif UNITY_EDITOR_OSX || UNITY_STANDALONE_OSX
             WorkingDirectory = "/usr/bin";
             PythonExePath = WorkingDirectory + DirSep + "python";
@@ -91,7 +92,7 @@ namespace Utilities
                             if (Word.StartsWith("Speech*"))
                             {
                                 Speech = String.Join("\'\'",Word.Split('*')[1].Split('\''));
-                                UnityEngine.Debug.Log(Speech);
+                                
                             }
                             else if (Word.StartsWith("StartTime*"))
                             {

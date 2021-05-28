@@ -1,4 +1,4 @@
-# -*- coding: utf-8 -*-
+#coding=utf-8
 
 import speech_recognition as sr
 import time
@@ -9,8 +9,8 @@ import contextlib
 import sys
 import traceback
 
-lan = sys.argv[1]
-
+#lan = sys.argv[1]
+lan="tr-TR"
 dir = os.path.dirname(__file__)
 dir += "/Speeches/speech.wav"
 audioFileExists = False
@@ -31,7 +31,7 @@ try:
         audioFileExists = True
         try:
             text = r.recognize_google(audio, language=lan)
-            print("Speech*" + text.strip())  # encode edilmezse türkçe karakterleri texte basarken patlıyor
+            print("Speech*"+text.encode('utf-8').strip())  # encode edilmezse türkçe karakterleri texte basarken patlıyor
             print("StartTime*" + str(speechStartTime))
             print("Duration*" + str(GetDuration(dir)))
 
@@ -53,7 +53,7 @@ except:
 
 
 if not audioFileExists:
-    r.pause_threshold = 5
+    r.pause_threshold = 3
     with sr.Microphone() as source:
         time.sleep(1)
         r.adjust_for_ambient_noise(source, duration=0.5)
@@ -66,7 +66,7 @@ if not audioFileExists:
 
 
             text = r.recognize_google(audio, language=lan)
-            print("Speech*"+str(text.strip().encode('utf-8').decode('utf-8')))  # encode edilmezse türkçe karakterleri texte basarken patlıyor
+            print("Speech*"+text.encode('utf-8').strip())  # encode edilmezse türkçe karakterleri texte basarken patlıyor
             print("StartTime*" + str(speechStartTime))
             print("Duration*" + str(GetDuration(dir)))
             os.remove(dir)
