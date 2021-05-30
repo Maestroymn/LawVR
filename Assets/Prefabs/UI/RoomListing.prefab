@@ -112,6 +112,7 @@ MonoBehaviour:
   _lockedSprite: {fileID: 21300000, guid: 5fa02e6295ffd824bb9512a2b23ecb03, type: 3}
   _unlockedSprite: {fileID: 21300000, guid: 63d6e4900810da24eadb09f7845c9286, type: 3}
   _publicHolderImage: {fileID: 965285625190673187}
+  Button: {fileID: 3771356953543732298}
 --- !u!114 &3771356953543732298
 MonoBehaviour:
   m_ObjectHideFlags: 0

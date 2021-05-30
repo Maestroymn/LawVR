@@ -19,5 +19,6 @@ namespace Managers
         public Gender Gender;
         public string UserID;
         public CharacterCustomizationSetup CharacterCustomizationSetup;
+        public string PublicSelectedRoomName;
     }
 }

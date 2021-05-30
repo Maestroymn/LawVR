@@ -1,9 +1,10 @@
-﻿using Photon.Pun;
+﻿using Managers;
+using Photon.Pun;
 using UnityEngine;
 
 namespace UI
 {
-    public class JoinPublicRoomsCanvas : MonoBehaviour
+    public class JoinPublicRoomsCanvas : MonoBehaviourPunCallbacks
     {
         [SerializeField] private RoomListingsMenu _roomListingsMenu;
 
@@ -25,6 +26,12 @@ namespace UI
         public void Show()
         {
             gameObject.SetActive(true);
+        }
+
+        public void JoinPublicRoom()
+        {
+            if (GameManager.GameSettings.PublicSelectedRoomName.Length == 0 || !PhotonNetwork.IsConnected || PhotonNetwork.InRoom) return;
+            PhotonNetwork.JoinRoom(GameManager.GameSettings.PublicSelectedRoomName);
         }
     }
 }

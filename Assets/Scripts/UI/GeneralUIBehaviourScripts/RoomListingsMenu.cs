@@ -1,6 +1,8 @@
-﻿using Managers;
+﻿using System;
+using Managers;
 using Photon.Realtime;
 using UnityEngine;
+using UnityEngine.UI;
 
 namespace UI
 {
@@ -9,9 +11,20 @@ namespace UI
         [SerializeField] public Transform _contentParent;
         [SerializeField] public RoomListing _roomListingPrefab;
         [SerializeField] private UIManager UIManager;
+        [SerializeField] private GameObject NoRoomAvailableTextParent;
+        [SerializeField] private Button JoinRoomButton;
+
+        private void OnEnable()
+        {
+            JoinRoomButton.interactable = false;
+        }
 
         public void AddRoomListing(RoomInfo room)
         {
+            if (NoRoomAvailableTextParent.activeInHierarchy)
+            {
+                NoRoomAvailableTextParent.SetActive(false);
+            }
             RoomListing roomListing = Instantiate(_roomListingPrefab, _contentParent);
             if (roomListing != null)
             {
@@ -19,6 +32,7 @@ namespace UI
                 if (!UIManager.RoomListings.Contains(roomListing))
                 {
                     UIManager.RoomListings.Add(roomListing);
+                    roomListing.OnSelected += OnPublicRoomSelected;
                 }
                 else
                 {
@@ -34,7 +48,16 @@ namespace UI
             {
                 UIManager.RoomListings.Remove(roomListing);
                 Destroy(roomListing.gameObject);
+                if (UIManager.RoomListings.Count == 0 && NoRoomAvailableTextParent.activeInHierarchy)
+                {
+                    NoRoomAvailableTextParent.SetActive(true);
+                }
             }
+        }
+
+        private void OnPublicRoomSelected()
+        {
+            JoinRoomButton.interactable = true;
         }
     }
 }
