@@ -505,7 +505,8 @@ namespace DatabaseScripts
 
 
         }
-        
+
+
         public static string GetEmail()
         {
             SqlCommand.CommandText = "select user_email from users where name ='"+GameManager.GameSettings.NickName+"'";
@@ -530,6 +531,14 @@ namespace DatabaseScripts
             return UserIsFemale[0].ToString().ToLower() =="true"?true:false;
         }
 
+        public static bool GetVRStatus()
+        {
+            SqlCommand.CommandText = "select vr_enable from users where name ='" + GameManager.GameSettings.NickName + "'";
+            NpgsqlDataReader UserVREnabled = SqlCommand.ExecuteReader();
+            UserVREnabled.Read();
+            return UserVREnabled[0].ToString().ToLower() == "true" ? true : false;
+        }
+
         public static void SetEmail(string NewEmail)
         {
             SqlCommand.CommandText = "update users set user_email ='" + NewEmail + "' where name ='" + GameManager.GameSettings.NickName + "'";
@@ -551,6 +560,12 @@ namespace DatabaseScripts
         public static void SetName(string NewName)
         {
             SqlCommand.CommandText = "update users set name ='" + NewName + "' where name ='" + GameManager.GameSettings.NickName + "'";
+            SqlCommand.ExecuteNonQuery();
+        }
+
+        public static void SetVRStatus(bool VREnable)
+        {
+            SqlCommand.CommandText = "update users set vr_enable=" + VREnable + " where name = '" + GameManager.GameSettings.NickName + "'";
             SqlCommand.ExecuteNonQuery();
         }
 

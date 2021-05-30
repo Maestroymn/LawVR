@@ -1,4 +1,5 @@
 ﻿using Data;
+using DatabaseScripts;
 using Photon.Pun;
 using TMPro;
 using UnityEngine;
@@ -13,7 +14,8 @@ namespace UI.CanvasScripts
         private bool _contains;
         public void Initialize()
         {
-            _vrToggle.isOn = false;
+            _vrToggle.isOn = DatabaseConnection.GetVRStatus();
+
             foreach (var device in Microphone.devices)
             {
                 _contains = false;
@@ -41,6 +43,7 @@ namespace UI.CanvasScripts
         public void SetVrEnable(bool val)
         {
             PhotonNetwork.LocalPlayer.CustomProperties[DataKeyValues.__VR_ENABLE__] = _vrToggle.isOn;
+            DatabaseConnection.SetVRStatus(_vrToggle.isOn);
             print(PhotonNetwork.LocalPlayer.CustomProperties[DataKeyValues.__VR_ENABLE__]);
         }
     }
