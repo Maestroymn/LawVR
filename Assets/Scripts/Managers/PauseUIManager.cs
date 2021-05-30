@@ -4,9 +4,10 @@ using Photon.Pun;
 using Photon.Realtime;
 using UnityEngine;
 using UnityEngine.SceneManagement;
-using DatabaseScripts;
 using System;
 using AI;
+using UnityEngine.UI;
+using Cursor = UnityEngine.Cursor;
 
 namespace Managers
 {
@@ -16,7 +17,7 @@ namespace Managers
         public GameObject PauseCanvas;
         public Camera Camera;
         public bool paused = false;
-
+        public Button ResumeButton;
         // Start is called before the first frame update
         void Start()
         {

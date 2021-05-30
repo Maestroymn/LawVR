@@ -1999,7 +1999,9 @@ MonoBehaviour:
   judge: {fileID: 6866459610351604485, guid: 540e6e34a86c24b4194c2fe02d550472, type: 3}
   plaintiff: {fileID: 6866459610351604485, guid: abf3154f95ded41b482272c37f8119fa,
     type: 3}
-  spectator: {fileID: 6866459610351604485, guid: 42a7fc455c15a40c2b7639f4533897d8,
+  femaleSpectator: {fileID: 6866459610351604485, guid: 42a7fc455c15a40c2b7639f4533897d8,
+    type: 3}
+  maleSpectator: {fileID: 6866459610351604485, guid: d057ab5e1634645a5a9091f9d38dffd8,
     type: 3}
   defendant: {fileID: 6866459610351604485, guid: abf3154f95ded41b482272c37f8119fa,
     type: 3}
@@ -2315,7 +2317,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.5}
   m_AnchorMax: {x: 1, y: 0.5}
-  m_AnchoredPosition: {x: -0.000061035156, y: -446}
+  m_AnchoredPosition: {x: 0, y: -446}
   m_SizeDelta: {x: -36.455322, y: 52.56549}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1523992397
@@ -3673,11 +3675,6 @@ PrefabInstance:
       propertyPath: m_Camera
       value: 
       objectReference: {fileID: 348753173}
-    - target: {fileID: 995740165822234853, guid: cc41d3f18dadcc74a8f67c6fa4b3ab52,
-        type: 3}
-      propertyPath: m_SortingOrder
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 995740165999562098, guid: cc41d3f18dadcc74a8f67c6fa4b3ab52,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -3737,11 +3734,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: PauseUI
-      objectReference: {fileID: 0}
-    - target: {fileID: 995740165999562101, guid: cc41d3f18dadcc74a8f67c6fa4b3ab52,
-        type: 3}
-      propertyPath: m_Layer
-      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 8459347514680917594, guid: cc41d3f18dadcc74a8f67c6fa4b3ab52,
         type: 3}

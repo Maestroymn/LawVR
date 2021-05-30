@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using UI.GeneralUIBehaviourScripts;
 using UnityEngine;
 using DatabaseScripts;
@@ -19,12 +20,28 @@ namespace Managers
         private List<FriendListing> _invitations;
         private List<FriendListing> _friendsToBeRemoved;
         private List<FriendListing> _invitesToBeRemoved;
-        public void Initialize()
+        public void Awake()
         {
             _friendsToBeRemoved = new List<FriendListing>();
             _invitesToBeRemoved = new List<FriendListing>();
             _friends = new List<FriendListing>();
             _invitations = new List<FriendListing>();
+        }
+
+        public void CleanFirst()
+        {
+            var objsToClean = _friendListContentParent.GetComponentsInChildren<Image>().ToList();
+            objsToClean.ForEach(x=>
+            {
+                if(x.name.Contains("FriendListing"))
+                    Destroy(x.gameObject);
+            });
+            objsToClean = _waitingInvitationsContentParent.GetComponentsInChildren<Image>().ToList();
+            objsToClean.ForEach(x=>
+            {
+                if(x.name.Contains("WaitingInvitationsListing"))
+                    Destroy(x.gameObject);
+            });
         }
         
         public void RefreshFriendList()
@@ -50,6 +67,18 @@ namespace Managers
                     _friendsToBeRemoved.Clear();
                 }
             }
+        }
+
+        public void ClearLists()
+        {
+            _friends.ForEach(Destroy);
+            _friends.Clear();
+            _friendsToBeRemoved.ForEach(Destroy);
+            _friendsToBeRemoved.Clear();
+            _invitations.ForEach(Destroy);
+            _invitations.Clear();
+            _invitesToBeRemoved.ForEach(Destroy);
+            _invitesToBeRemoved.Clear();
         }
 
         public void RefreshInvitationList()

@@ -9,14 +9,15 @@ namespace General
 {
     public class CourtBuilding : MonoBehaviourPunCallbacks
     {
-        public Transform DefendantTransform,PlaintiffTransform,JudgeTransform,SpectatorTransform;
+        public Transform DefendantTransform,PlaintiffTransform,JudgeTransform;
+        public List<Transform> SpectatorTransforms;
         public Timer DefendantTimer, PlaintiffTimer;
         public InteractableCourtObject PlaintiffStartButton, DefendantStartButton;
         public List<InteractableCourtObject> InteractableCourtObjects;
         public int TotalTurnCountMax;
         private int _currentTurnCount=0;
         private bool _plaintiffTurn=false;
-        
+        private int _currentSeatIndexForSpec=0;
         private void Awake()
         {
             InteractableCourtObjects = GetComponentsInChildren<InteractableCourtObject>().ToList();
@@ -30,6 +31,12 @@ namespace General
             DefendantTimer.timeText.text = "WAIT";
             PlaintiffTimer.timeText.text = "WAIT";
             PlaintiffTimer.timeLimit = timeLimit;
+        }
+
+        public void InstantiateNextSpectator(GameObject CharacterModel)
+        {
+            var obj= GameManager.NetworkInstantiate(CharacterModel, SpectatorTransforms[_currentSeatIndexForSpec++].transform.position, Quaternion.identity);
+            obj.GetComponent<CourtSpectatorBehaviour>().Initialize();
         }
         
         #region RPC Funcs

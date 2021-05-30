@@ -26,6 +26,7 @@ namespace UI
                 UserMenu();
             if(_showingFriends)
                 FriendList();
+            friendListManager.ClearLists();
             _ltDescr=LeanTween.delayedCall(.3f,()=>gameObject.SetActive(false));
         }
         
@@ -35,8 +36,9 @@ namespace UI
             {
                 LeanTween.cancel(_ltDescr.id);
             }
-            friendListManager.Initialize();
+            //friendListManager.Initialize();
             SetUserName();
+            friendListManager.CleanFirst();
             gameObject.SetActive(true);    
         }
 
@@ -53,8 +55,8 @@ namespace UI
         
         public void FriendList()
         {
-            _friendListMenuAnimator.SetTrigger(_showingFriends ? Close : Open);
             _showingFriends = !_showingFriends;
+            _friendListMenuAnimator.SetBool(Open,_showingFriends);
             if(_showingFriends)
             {
                 friendListManager.RefreshFriendList();

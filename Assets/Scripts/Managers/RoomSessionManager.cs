@@ -13,7 +13,7 @@ namespace Managers
 {
     public class RoomSessionManager : MonoBehaviourPunCallbacks
     {
-        [SerializeField] private GameObject judge,plaintiff,spectator,defendant;
+        [SerializeField] private GameObject judge,plaintiff,femaleSpectator,maleSpectator,defendant;
         [SerializeField] private AIJudgeGeneralBehaviour _aiJudgeGeneralBehaviour;
         [SerializeField] private List<CourtBuilding> _courtBuildings;
         [SerializeField] private Transform SessionEnvironmentParent;
@@ -91,11 +91,14 @@ namespace Managers
                     tmpObjHolder=GameManager.NetworkInstantiate(judge, _currentBuilding.JudgeTransform.position, Quaternion.identity);
                     break;
                 case "spectator":
-                    tmpObjHolder=GameManager.NetworkInstantiate(spectator, _currentBuilding.SpectatorTransform.position, Quaternion.identity);
+                    if(GameManager.GameSettings.Gender==Gender.Female)
+                        _currentBuilding.InstantiateNextSpectator(femaleSpectator);
+                    else 
+                        _currentBuilding.InstantiateNextSpectator(maleSpectator);
                     break;
             }
 
-            switch (tmpObjHolder.GetComponent<PhotonView>().IsMine)
+            switch (tmpObjHolder?.GetComponent<PhotonView>().IsMine)
             {
                 case false:
                     Destroy(tmpObjHolder);

@@ -554,7 +554,7 @@ Canvas:
   m_SortingBucketNormalizedSize: 0
   m_AdditionalShaderChannelsFlag: 25
   m_SortingLayerID: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_TargetDisplay: 0
 --- !u!114 &995740165822234852
 MonoBehaviour:
@@ -617,7 +617,7 @@ GameObject:
   m_Component:
   - component: {fileID: 995740165999562098}
   - component: {fileID: 8459347514680917594}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: PauseUI
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -654,6 +654,7 @@ MonoBehaviour:
   PauseCanvas: {fileID: 995740165822234857}
   Camera: {fileID: 0}
   paused: 0
+  ResumeButton: {fileID: 995740166061903573}
 --- !u!1 &995740166061903575
 GameObject:
   m_ObjectHideFlags: 0

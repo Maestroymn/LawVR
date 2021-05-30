@@ -25,6 +25,7 @@ namespace General
     {
         private ButtonStatus _buttonStatus;
         public InteractableType InteractableType;
+        public TextMeshPro InteractText;
         [SerializeField] public List<MeshRenderer> MeshRenderers;
         [CanBeNull] public Animator Animator;
         public bool IsButton;
@@ -57,7 +58,7 @@ namespace General
 
         public void HandleOutline(bool isActive)
         {
-            if (_isOutlined==isActive) return;
+            if (_isOutlined==isActive || (IsButton && ButtonStatus.Wait==_buttonStatus)) return;
             _isOutlined = isActive;
             _targetOutline = isActive ? OutlineWidthMax : 0f;
             for (int i = 0; i < MeshRenderers.Count; i++)
@@ -69,6 +70,20 @@ namespace General
                     MeshRenderers[i1].material.SetFloat(Outline,value);
                 }).setEase(LeanTweenType.easeInCirc);
             }
+            if(isActive)
+                InteractText?.gameObject.LeanValue(0f,1f, .1f).setOnUpdate((float value) =>
+                {
+                    var interactTextColor = InteractText.color;
+                    interactTextColor.a = value;
+                    InteractText.color = interactTextColor;
+                }).setEase(LeanTweenType.easeInCirc);
+            else
+                InteractText?.gameObject.LeanValue(1f,0f, .1f).setOnUpdate((float value) =>
+                {
+                    var interactTextColor = InteractText.color;
+                    interactTextColor.a = value;
+                    InteractText.color = interactTextColor;
+                }).setEase(LeanTweenType.easeInCirc);
         }
 
         public void HandleButtonSettings(ButtonStatus buttonStatus)

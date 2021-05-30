@@ -46,6 +46,8 @@ namespace UI.CanvasScripts
             if (SelectedCase)
             {
                 SelectedCase.Image.color=Color.white;
+                SelectedCase = null;
+                return;
             }
             SelectedCase = selectedCase;
         }
