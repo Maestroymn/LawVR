@@ -47,7 +47,6 @@ namespace UI.LoginScripts
 
         public void OnConnected()
         {
-            PlayerPrefs.SetInt(DataKeyValues.__VR_ENABLE__, 0);
             _signInManager.OnSignedIn -= LoggingIn;
             _signUpManager.OnSignedUp -= LoggingIn;
             _connecting.SetActive(false);

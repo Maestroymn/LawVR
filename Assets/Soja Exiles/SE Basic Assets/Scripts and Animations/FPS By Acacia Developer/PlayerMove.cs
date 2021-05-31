@@ -5,6 +5,7 @@ using General;
 using Managers;
 using Photon.Pun;
 using UnityEngine;
+using UnityEngine.SpatialTracking;
 using UnityEngine.XR;
 
 public class PlayerMove : MonoBehaviourPunCallbacks
@@ -31,8 +32,10 @@ public class PlayerMove : MonoBehaviourPunCallbacks
     [SerializeField] private Animator _animator;
     public Status Status;
     [Header("VR Components")] [SerializeField]
-    private GameObject _playerVR;
-    
+    private TrackedPoseDriver _playerVR;
+    [SerializeField] private Transform _cameraView;
+
+
     private bool isJumping;
     private static readonly int Walk = Animator.StringToHash("walk");
     private static readonly int Nervous = Animator.StringToHash("nervous");
@@ -55,7 +58,8 @@ public class PlayerMove : MonoBehaviourPunCallbacks
             _pauseUIManager = FindObjectOfType<PauseUIManager>();
             charController = GetComponent<CharacterController>();
             SetStartingStatus();
-            if (PlayerPrefs.GetInt(DataKeyValues.__VR_ENABLE__)==1)
+           
+            if (PhotonNetwork.LocalPlayer.CustomProperties[DataKeyValues.__VR_ENABLE__].ToString().ToLower()=="true")
             {
                 StartCoroutine(ActivateVR("OpenVR"));
             }
@@ -79,7 +83,12 @@ public class PlayerMove : MonoBehaviourPunCallbacks
     {
         XRSettings.LoadDeviceByName(deviceName);
         yield return null;
-        _playerVR.gameObject.SetActive(true);
+        if(_playerVR.GetComponent<TrackedPoseDriver>())
+        {
+            _cameraView.localPosition= new Vector3(_cameraView.localPosition.x, -1, 0.5f);
+            _playerVR.GetComponent<TrackedPoseDriver>().enabled = true;
+        }
+            
         XRSettings.enabled = true;
     }
     
