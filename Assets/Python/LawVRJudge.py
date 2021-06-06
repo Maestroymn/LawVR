@@ -9,18 +9,20 @@ train = {'target': [], 'data': []}
 case_role = ""
 
 # Tr2Eng = str.maketrans("çğıöşü", "cgiosu")
-# name = 'Bilge Onaycı'
+# name = 'Full Name Here'
 # name_eng = name.translate(Tr2Eng)
 
 
 def main():
     global case_role
+	sessionID = sys.argv[1]
     case_role = sys.argv[2]
+    username = sys.argv[3]
     dbc.connect()
-    text = dbc.getSessionScript(sys.argv[1])
-    individual_text = dbc.getSessionSpeakerScript(sys.argv[1], case_role)
+    text = dbc.getSessionScript(sessionID)
+    individual_text = dbc.getSessionSpeakerScript(sessionID, case_role)
     dbc.disconnect()
-    giveFeedback(text, individual_text)
+    giveFeedback(username, sessionID, case_role, text, individual_text)
 
 
 def preProcessing(text):
@@ -154,7 +156,7 @@ def updateDatabase(prediction, keyword_list):
     dbc.disconnect()
 
 
-def giveFeedback(text, individual_text):  # Text of the session
+def giveFeedback(username, sessionID, user_role, text, individual_text):  # Text of the session
     # dictionary = constructDictionary()
     dictionary = tm.insertIntoDict()
     # for word in dictionary:
@@ -162,12 +164,13 @@ def giveFeedback(text, individual_text):  # Text of the session
 
     prediction = findProbabilities(dictionary, preProcessing(text))
     keyword_list = tm.extractKeywords(individual_text)
-
-    if (prediction == 0 and case_role == "plaintiff") or (prediction == 1 and case_role == "defendant"):
-        print("result:The result of the case: Success!")
+	
+	result = ""
+	if (prediction == 0 and case_role == "plaintiff") or (prediction == 1 and case_role == "defendant"):
+        result = "Success"
     elif (prediction == 1 and case_role == "plaintiff") or (prediction == 0 and case_role == "defendant"):
-        print("result:The result of the case: Fail!")
-
+        result = "Fail"
+		
     most_influential_keywords = [duo[0] for duo in keyword_list]
     # print("The keywords that were the most influential in the case script:")
     # print(most_influential_keywords)
@@ -175,21 +178,19 @@ def giveFeedback(text, individual_text):  # Text of the session
     res_list = dbc.findEffectiveKeywordsFromDB(most_influential_keywords)
     #  res_list[0] : negative, res_list[1] : positive
 
-    print("desc_p:The keywords that positively effected your result:")
-    res0 = ""
-    res1 = ""
+    neg_keywords = ""
+    pos_keywords = ""
     for key in res_list[1]:
-        res1 += key + "*"
-    res1 = res1[:-1]
+        pos_keywords += key + ", "
+    pos_keywords = pos_keywords[:-1]
+    pos_keywords = pos_keywords[:-1]
 
-    print("key_p:" + res1)
-
-    print("desc_n:The keywords that negatively effected your result:")
     for key in res_list[0]:
-        res0 += key + "*"
-    res0 = res0[:-1]
+        neg_keywords += key + ", "
+    neg_keywords = neg_keywords[:-1]
+    neg_keywords = neg_keywords[:-1]
 
-    print("key_n:" + res0)
+	dbc.addFeedbackToDB(username, sessionID, result, pos_keywords, neg_keywords, user_role)
 
     dbc.disconnect()
 
