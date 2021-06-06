@@ -15,7 +15,8 @@ case_role = ""
 
 def main():
     global case_role
-	sessionID = sys.argv[1]
+
+    sessionID = sys.argv[1]
     case_role = sys.argv[2]
     username = sys.argv[3]
     dbc.connect()
@@ -165,8 +166,10 @@ def giveFeedback(username, sessionID, user_role, text, individual_text):  # Text
     prediction = findProbabilities(dictionary, preProcessing(text))
     keyword_list = tm.extractKeywords(individual_text)
 	
-	result = ""
-	if (prediction == 0 and case_role == "plaintiff") or (prediction == 1 and case_role == "defendant"):
+
+    result = ""
+
+    if (prediction == 0 and case_role == "plaintiff") or (prediction == 1 and case_role == "defendant"):
         result = "Success"
     elif (prediction == 1 and case_role == "plaintiff") or (prediction == 0 and case_role == "defendant"):
         result = "Fail"
@@ -190,7 +193,8 @@ def giveFeedback(username, sessionID, user_role, text, individual_text):  # Text
     neg_keywords = neg_keywords[:-1]
     neg_keywords = neg_keywords[:-1]
 
-	dbc.addFeedbackToDB(username, sessionID, result, pos_keywords, neg_keywords, user_role)
+
+    dbc.addFeedbackToDB(username, sessionID, result, pos_keywords, neg_keywords, user_role)
 
     dbc.disconnect()
 

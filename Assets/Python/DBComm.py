@@ -179,10 +179,11 @@ def getSessionSpeakerScript(session_id, speaker_role):
 	
 def addFeedbackToDB(username, sessionID, result, pos_keywords, neg_keywords, user_role):
     cur = conn.cursor()
-	postgres_insert_query = """ INSERT INTO SESSION_FEEDBACKS (SESSION_ID, USER_NAME, RESULT, POSITIVE_KEYWORDS, NEGATIVE_KEYWORDS, USER_ROLE) VALUES (%s,%s,%s,%s,%s,%s)"""
+
+    postgres_insert_query = """ INSERT INTO SESSION_FEEDBACKS (SESSION_ID, USER_NAME, RESULT, POSITIVE_KEYWORDS, NEGATIVE_KEYWORDS, USER_ROLE) VALUES (%s,%s,%s,%s,%s,%s)"""
     record_to_insert = (sessionID, username, result, pos_keywords, neg_keywords, user_role)
     cur.execute(postgres_insert_query, record_to_insert)
-	cur.close()
+    cur.close()
     conn.commit()
 	
 	

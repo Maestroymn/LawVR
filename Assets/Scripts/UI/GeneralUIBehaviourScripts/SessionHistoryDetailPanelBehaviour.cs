@@ -22,7 +22,7 @@ namespace UI.GeneralUIBehaviourScripts
         {
             _sessionHistory = sessionHistory;
             _caseName.text = _sessionHistory.CaseName;
-            _feedbackArea.text = _sessionHistory.Feedback;
+            _feedbackArea.text = _sessionHistory.Feedback.PositiveKeywords + " " + _sessionHistory.Feedback.NegativeKeywords;
             _logArea.text = _sessionHistory.SpeechText;
             _simType.text = _sessionHistory.SimulationType;
             _startTime.text = _sessionHistory.StartTime;

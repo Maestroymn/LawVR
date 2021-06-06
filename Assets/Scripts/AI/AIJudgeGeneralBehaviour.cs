@@ -15,7 +15,7 @@ namespace AI
         static string WorkingDirectory;
         static char DirSep;
 
-        public static void AIJudgeDecisionCaller(string session_id, string speaker_role)
+        public static void AIJudgeDecisionCaller(string session_id, string speaker_role, string speaker_name)
         {
             DirSep = Path.DirectorySeparatorChar;
             PythonScriptPath = @Application.dataPath + DirSep + "Python" + DirSep + "LawVRJudge.py";
@@ -29,10 +29,9 @@ namespace AI
             PythonExePath = WorkingDirectory + DirSep + "python";
 #endif
 
-            string FeedbackText = "";
             ProcessStartInfo start = new ProcessStartInfo();
             start.FileName = PythonExePath;
-            start.Arguments = $"\"{PythonScriptPath}\"  " + session_id + "  " + speaker_role;
+            start.Arguments = $"\"{PythonScriptPath}\"  " + session_id + "  " + speaker_role + " " +speaker_name;
             UnityEngine.Debug.Log(session_id + "  " + speaker_role);
             start.WorkingDirectory = WorkingDirectory;
 
@@ -52,43 +51,19 @@ namespace AI
                     UnityEngine.Debug.Log("exception " + stderr);
                     UnityEngine.Debug.Log("result " + result);
 
-                    
 
-                    string[] Words = result.Split('\n');
-                    foreach (string Word in Words)
-                    {
-                        UnityEngine.Debug.Log(Word);
-                        if (Word.StartsWith("result:"))
-                        {
-                            UnityEngine.Debug.Log("Result is : \n");
-                            UnityEngine.Debug.Log(Word.Split(':')[2]);
-                        }
-                        else if (Word.StartsWith("key_p:"))
-                        {
-                            UnityEngine.Debug.Log("Positive keys: \n");
-                            FeedbackText += Word.Split(':')[1] + "&";
-                            string[] keys = Word.Split(':')[1].Split('*');
-
-                            foreach(var k in keys)
-                                UnityEngine.Debug.Log(k);
-
-                        }
-                        else if (Word.StartsWith("key_n:"))
-                        {
-                            UnityEngine.Debug.Log("Negative keys: \n");
-                            FeedbackText += Word.Split(':')[1];
-                            string[] keys = Word.Split(':')[1].Split('*');
-
-                            foreach (var k in keys)
-                                UnityEngine.Debug.Log(k);
-                        }
-                    }
+                    UserFeedback Feedback = DatabaseConnection.RetrieveFeedback(session_id);
+                    UnityEngine.Debug.Log(Feedback.NegativeKeywords+ " " + Feedback.PositiveKeywords+ " " + Feedback.Result + " " + Feedback.SessionID + " " + Feedback.UserName + " " + Feedback.UserRole +" " + Feedback.FeedbackID );
+                    Feedback.ToString();
 
                 }
+
+
+
             }
 
 
-            DatabaseConnection.UpdateSessionLog(PhotonNetwork.CurrentRoom.CustomProperties[DataKeyValues.__SESSION_ID__].ToString(), DateTime.Now.ToString(), FeedbackText);
+            DatabaseConnection.UpdateSessionLog(PhotonNetwork.CurrentRoom.CustomProperties[DataKeyValues.__SESSION_ID__].ToString(), DateTime.Now.ToString());
         }
 
     }

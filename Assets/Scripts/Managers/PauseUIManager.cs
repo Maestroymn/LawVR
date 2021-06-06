@@ -56,8 +56,10 @@ namespace Managers
         
         public void Disconnect()
         {
-
-            AIJudgeGeneralBehaviour.AIJudgeDecisionCaller(PhotonNetwork.CurrentRoom.CustomProperties[DataKeyValues.__SESSION_ID__].ToString() , PhotonNetwork.LocalPlayer.CustomProperties[DataKeyValues.__ROLE__].ToString());
+            string SessionID = PhotonNetwork.CurrentRoom.CustomProperties[DataKeyValues.__SESSION_ID__].ToString();
+            string UserRole = PhotonNetwork.LocalPlayer.CustomProperties[DataKeyValues.__ROLE__].ToString();
+            string UserName = GameManager.GameSettings.NickName;
+            AIJudgeGeneralBehaviour.AIJudgeDecisionCaller(SessionID, UserRole, UserName);
             LeanTween.delayedCall(3f,()=> {
                 StartCoroutine(DisconnectFromRoom());
             });

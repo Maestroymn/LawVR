@@ -95,6 +95,8 @@ namespace DatabaseScripts
             SqlCommand.Connection = PostgreConnection;
         }
 
+
+
         public static SignInStatus SignIn(string username, string password)
         {
             SqlCommand.CommandText = "SELECT password FROM users where name='" + username + "' ";
@@ -359,11 +361,11 @@ namespace DatabaseScripts
             return SessionID[0].ToString();
         }
         
-        public static int UpdateSessionLog(string SessionID , string EndTime , string Feedback)
+        public static int UpdateSessionLog(string SessionID , string EndTime )
         {
 
             SqlCommand.CommandText = "update court_session set end_time = TO_TIMESTAMP('" + EndTime + "', '" + dateFormat + "') " + 
-                                     " , feedback = '" + Feedback +"' where session_id = " +int.Parse(SessionID);
+                                     " where session_id = " +int.Parse(SessionID);
             Debug.Log(SqlCommand.CommandText);
             return SqlCommand.ExecuteNonQuery();
         }
@@ -390,14 +392,23 @@ namespace DatabaseScripts
                     newHistory.CaseID = int.Parse(SessionLogs[0].ToString());
                     newHistory.StartTime = SessionLogs[1].ToString();
                     newHistory.EndTime = SessionLogs[2].ToString();
-                    newHistory.Feedback = SessionLogs[3].ToString();
-                    newHistory.SessionID = int.Parse(SessionLogs[4].ToString());
-                    newHistory.SimulationType = SessionLogs[5].ToString();
-                    newHistory.LobbyName = SessionLogs[6].ToString();
-                    newHistory.TurnCount = int.Parse(SessionLogs[7].ToString());
-                    newHistory.TurnDuration = int.Parse(SessionLogs[8].ToString());
+                    newHistory.SessionID = int.Parse(SessionLogs[3].ToString());
+                    newHistory.SimulationType = SessionLogs[4].ToString();
+                    newHistory.LobbyName = SessionLogs[5].ToString();
+                    newHistory.TurnCount = int.Parse(SessionLogs[6].ToString());
+                    newHistory.TurnDuration = int.Parse(SessionLogs[7].ToString());
 
+                   
                     newHistory.SpeechText = GetSessionSpeechLog(id);
+
+                    newHistory.Feedback = RetrieveFeedback(id);
+                    if (newHistory.Feedback.Result == null || newHistory.Feedback.Result =="")
+                    {
+                        Debug.Log("nulll");
+                        newHistory.SpeechText = "";
+                    }
+                    
+                        
                     newHistory.UserRole = GetUserRoleInSession(newHistory.SessionID);
                     newHistory.CaseName = GetCaseNameById(newHistory.CaseID);
                     UserHistory.Add(newHistory);
@@ -419,7 +430,38 @@ namespace DatabaseScripts
             return null;
 
         }
-        
+
+
+        public static UserFeedback RetrieveFeedback(string session_id)
+        {
+            SqlCommand.CommandText = "select * from session_feedbacks where session_id = " + session_id + " and user_name = '" + GameManager.GameSettings.NickName + "'";
+
+            UserFeedback Feedback = new UserFeedback();
+
+            NpgsqlDataReader SessionFeedbacks = SqlCommand.ExecuteReader();
+            try
+            {
+                SessionFeedbacks.Read();
+                
+                Feedback.SessionID = int.Parse(SessionFeedbacks[0].ToString());
+                Feedback.UserName = SessionFeedbacks[1].ToString();
+                Feedback.Result = SessionFeedbacks[2].ToString();
+                Feedback.PositiveKeywords = SessionFeedbacks[3].ToString();
+                Feedback.NegativeKeywords = SessionFeedbacks[4].ToString();
+                Feedback.FeedbackID = int.Parse(SessionFeedbacks[5].ToString());
+                Feedback.UserRole = SessionFeedbacks[6].ToString();
+                Debug.Log(Feedback.SessionID + " " + Feedback.UserName + " " + Feedback.Result + " " + Feedback.PositiveKeywords + " " + Feedback.NegativeKeywords + " " + Feedback.FeedbackID + " " + Feedback.UserRole);
+                return Feedback;
+            }
+            catch (Exception e )
+            {
+                Debug.Log(e.ToString());
+                return null;
+            }
+
+
+        }
+
         private static string GetUserRoleInSession(int SessionID)
         {
             SqlCommand.CommandText = "Select speaker_role from speech_log where session_id = " + SessionID + " and speaker_id = '"+ GameManager.GameSettings.NickName+"'";
@@ -505,7 +547,6 @@ namespace DatabaseScripts
 
 
         }
-
 
         public static string GetEmail()
         {

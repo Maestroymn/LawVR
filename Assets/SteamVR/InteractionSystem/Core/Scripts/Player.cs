@@ -37,11 +37,13 @@ namespace Valve.VR.InteractionSystem
 
 		[Tooltip( "The audio listener for this player" )]
 		public Transform audioListener;
+		public Transform cameraViewParentTransform;
 
         [Tooltip("This action lets you know when the player has placed the headset on their head")]
         public SteamVR_Action_Boolean headsetOnHead = SteamVR_Input.GetBooleanAction("HeadsetOnHead");
 
 		public bool allowToggleTo2D = true;
+
 
 
 		//-------------------------------------------------
@@ -200,11 +202,11 @@ namespace Valve.VR.InteractionSystem
 			get
 			{
 				Transform hmd = hmdTransform;
-				if ( hmd )
+				/*if ( hmd )
 				{
 					Vector3 eyeOffset = Vector3.Project( hmd.position - trackingOriginTransform.position, trackingOriginTransform.up );
 					return eyeOffset.magnitude / trackingOriginTransform.lossyScale.x;
-				}
+				}*/
 				return 0.0f;
 			}
 		}
@@ -218,10 +220,10 @@ namespace Valve.VR.InteractionSystem
 			get
 			{
 				Transform hmd = hmdTransform;
-				if ( hmd )
+				/*if ( hmd )
 				{
 					return trackingOriginTransform.position + Vector3.ProjectOnPlane( hmd.position - trackingOriginTransform.position, trackingOriginTransform.up );
-				}
+				}*/
 				return trackingOriginTransform.position;
 			}
 		}
@@ -235,7 +237,7 @@ namespace Valve.VR.InteractionSystem
 			get
 			{
 				Transform hmd = hmdTransform;
-				if ( hmd )
+				/*if ( hmd )
 				{
 					Vector3 direction = Vector3.ProjectOnPlane( hmd.forward, trackingOriginTransform.up );
 					if ( Vector3.Dot( hmd.up, trackingOriginTransform.up ) < 0.0f )
@@ -246,7 +248,7 @@ namespace Valve.VR.InteractionSystem
 						direction = -direction;
 					}
 					return direction;
-				}
+				}*/
 				return trackingOriginTransform.forward;
 			}
 		}
@@ -416,7 +418,9 @@ namespace Valve.VR.InteractionSystem
 
 			if ( audioListener )
 			{
-				audioListener.transform.parent = hmdTransform;
+				audioListener.transform.parent = hmdTransforms[1];
+				/*audioListener.transform.localPosition = cameraViewParentTransform.localPosition;
+				audioListener.transform.localRotation = cameraViewParentTransform.localRotation;*/
 				audioListener.transform.localPosition = Vector3.zero;
 				audioListener.transform.localRotation = Quaternion.identity;
 			}
