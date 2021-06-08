@@ -18,19 +18,19 @@ namespace UI
         {
             JoinRoomButton.interactable = false;
         }
-
+        
         public void AddRoomListing(RoomInfo room)
         {
-            if (NoRoomAvailableTextParent.activeInHierarchy)
-            {
-                NoRoomAvailableTextParent.SetActive(false);
-            }
             RoomListing roomListing = Instantiate(_roomListingPrefab, _contentParent);
             if (roomListing != null)
             {
-                roomListing.SetRoomInfo(room);
+                if (NoRoomAvailableTextParent.activeInHierarchy)
+                {
+                    NoRoomAvailableTextParent.SetActive(false);
+                }
                 if (!UIManager.RoomListings.Contains(roomListing))
                 {
+                    roomListing.SetRoomInfo(room);
                     UIManager.RoomListings.Add(roomListing);
                     roomListing.OnSelected += OnPublicRoomSelected;
                 }

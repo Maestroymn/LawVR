@@ -59,7 +59,7 @@ public class PlayerMove : MonoBehaviourPunCallbacks
             charController = GetComponent<CharacterController>();
             SetStartingStatus();
            
-            if (PhotonNetwork.LocalPlayer.CustomProperties[DataKeyValues.__VR_ENABLE__].ToString().ToLower()=="true")
+            if (PlayerPrefs.GetInt(DataKeyValues.__VR_ENABLE__)==1)
             {
                 StartCoroutine(ActivateVR("OpenVR"));
             }

@@ -10,10 +10,17 @@ namespace AI
 {
     public class AIJudgeGeneralBehaviour : MonoBehaviour
     {
+        public Animator Animator;
         static string PythonScriptPath;
         static string PythonExePath;
         static string WorkingDirectory;
         static char DirSep;
+        private static readonly int NormalSit = Animator.StringToHash("normal_sit");
+
+        private void Awake()
+        {
+            Animator.SetBool(NormalSit,true);
+        }
 
         public static void AIJudgeDecisionCaller(string session_id, string speaker_role, string speaker_name)
         {

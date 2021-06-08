@@ -39,10 +39,6 @@ namespace General
             }
             _pauseUIManager = FindObjectOfType<PauseUIManager>();
             _pauseUIManager.ResumeButton.onClick.AddListener(HandleEnable);
-            if (PlayerPrefs.GetInt(DataKeyValues.__VR_ENABLE__)==1)
-            {
-                StartCoroutine(ActivateVR("OpenVR"));
-            }
             _isEnabled = true;
         }
 

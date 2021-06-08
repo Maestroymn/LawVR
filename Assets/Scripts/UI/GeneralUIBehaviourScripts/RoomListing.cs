@@ -28,7 +28,7 @@ namespace UI
             else
             {
                 _publicHolderImage.sprite = _unlockedSprite;
-                Button.onClick.AddListener(OnClicked);
+                Button?.onClick.AddListener(OnClicked);
             }
             _text.text = RoomInfo.Name;
         }

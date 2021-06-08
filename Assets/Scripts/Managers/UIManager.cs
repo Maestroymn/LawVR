@@ -15,10 +15,11 @@ namespace Managers
         [SerializeField] private RoomsCanvases _roomsCanvases;
         public RoomsCanvases RoomsCanvases => _roomsCanvases;
         public GameObject CurrentCanvas;
-        public List<RoomListing> RoomListings = new List<RoomListing>();
+        public List<RoomListing> RoomListings;
         public static UIManager Instance;
         private void Awake()
         {
+            RoomListings = new List<RoomListing>();
             if (!Instance)
             {
                 Instance = this;
@@ -89,7 +90,7 @@ namespace Managers
 
         public override void OnRoomListUpdate(List<RoomInfo> roomList)
         {
-            roomList.ForEach(room =>
+            roomList?.ForEach(room =>
             {
                 // Removed from rooms list.
                 if (room.RemovedFromList)
