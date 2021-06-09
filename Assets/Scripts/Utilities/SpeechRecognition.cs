@@ -28,7 +28,7 @@ namespace Utilities
 
             WorkingDirectory = @Application.dataPath + DirSep + "Python";
 #if UNITY_EDITOR_WIN || UNITY_STANDALONE_WIN
-            PythonExePath = @Application.dataPath + DirSep + "Python" + DirSep + "Python27"+  DirSep+  "python.exe";
+            PythonExePath = @Application.dataPath + DirSep + "Python" + DirSep + "Python38"+  DirSep+  "python.exe";
 #elif UNITY_EDITOR_OSX || UNITY_STANDALONE_OSX
             WorkingDirectory = "/usr/bin";
             PythonExePath = WorkingDirectory + DirSep + "python";
@@ -46,8 +46,12 @@ namespace Utilities
         {
             UnityEngine.Debug.Log( string.Format("\"{0}\" ", PythonScriptPath));
             ProcessStartInfo start = new ProcessStartInfo();
+            string sessionid = PhotonNetwork.CurrentRoom.CustomProperties[DataKeyValues.__SESSION_ID__].ToString();
+            string username = GameManager.GameSettings.NickName;
+            string userrole = PhotonNetwork.LocalPlayer.CustomProperties[DataKeyValues.__ROLE__].ToString();
             start.FileName = PythonExePath;
-            start.Arguments = $"\"{PythonScriptPath}\" " + Language;
+            start.Arguments = $"\"{PythonScriptPath}\" " + Language + " " + sessionid  + " " + username + " " + userrole;
+            UnityEngine.Debug.Log(start.Arguments);
             start.WorkingDirectory = WorkingDirectory;
         
             start.UseShellExecute = false;// Do not use OS shell
@@ -62,50 +66,10 @@ namespace Utilities
                 {
                     string stderr = process.StandardError.ReadToEnd(); // Here are the exceptions from our Python script
                     string result = reader.ReadToEnd(); // Here is the result of StdOut(for example: print "test")
-                    if(result.Contains("change python") || (result.Length==0 && stderr.Length==0))
-                    {
-                        UnityEngine.Debug.Log("exception " + stderr);
-                        UnityEngine.Debug.Log("result " + result);
-#if UNITY_EDITOR_WIN || UNITY_STANDALONE_WIN
-                        WorkingDirectory = "C:" + DirSep + "Python27";
-                        PythonExePath = "C:" + DirSep + "Python27" + DirSep + "python.exe";
-#elif UNITY_EDITOR_OSX || UNITY_STANDALONE_OSX
-                        WorkingDirectory = "/usr/bin";
-                        PythonExePath = WorkingDirectory + DirSep + "python";
-#endif
-                        RunPythonListenerScript();
-                    }else if (result.ToLower().Contains("can't hear you") || result.ToLower().Contains("couldn't clearly understand"))
-                    {
-                        DatabaseConnection.UploadSpeech(false,int.Parse(PhotonNetwork.CurrentRoom.CustomProperties[DataKeyValues.__SESSION_ID__].ToString()), GameManager.GameSettings.NickName,PhotonNetwork.LocalPlayer.CustomProperties[DataKeyValues.__ROLE__].ToString(), "THIS SPEECH COULDN'T BE RECORDED PROPERLY! MISSING LOG!",DateTime.Now.ToString() , "0.0");
-                    }else 
-                    {
-                        UnityEngine.Debug.Log("exception " + stderr);
-                        UnityEngine.Debug.Log("result " + result);
-                        string[] Words = result.Split('\n');
-                        string Speech = "";
-                        string StartTime = "";
-                        string SpeechDuration ="";
-                        
-                        foreach (string Word in Words)
-                        {
-                            UnityEngine.Debug.Log(Word);
-                            if (Word.StartsWith("Speech*"))
-                            {
-                                Speech = String.Join("\'\'",Word.Split('*')[1].Split('\''));
-                                
-                            }
-                            else if (Word.StartsWith("StartTime*"))
-                            {
-                                StartTime = Word.Split('*')[1];
-                                UnityEngine.Debug.Log(StartTime);
-                            }
-                            else if (Word.StartsWith("Duration*"))
-                            {
-                                SpeechDuration = Word.Split('*')[1];
-                            }
-                        }
-                        DatabaseConnection.UploadSpeech(true,int.Parse(PhotonNetwork.CurrentRoom.CustomProperties[DataKeyValues.__SESSION_ID__].ToString()), GameManager.GameSettings.NickName,PhotonNetwork.LocalPlayer.CustomProperties[DataKeyValues.__ROLE__].ToString(), Speech, StartTime, SpeechDuration);
-                    }
+                    UnityEngine.Debug.Log("exception " + stderr);
+                    UnityEngine.Debug.Log("result " + result);
+
+                    
                 }  
             }     
         }

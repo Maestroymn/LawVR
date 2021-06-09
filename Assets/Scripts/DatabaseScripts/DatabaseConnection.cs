@@ -338,19 +338,6 @@ namespace DatabaseScripts
             SqlCommand.ExecuteNonQuery();
         }
     
-        public static void UploadSpeech(bool isFromPy,int SessionID , string SpeakerID, string SpeakerRole, string Speech, string StartTime, string SpeechDuration)
-        {
-            string dateFixed="YYYY.MM.DD HH24:MI: SS";
-            if (!isFromPy)
-            {
-                dateFixed = dateFormat;
-            }
-            SqlCommand.CommandText = "insert into speech_log(session_id,speaker_id,speaker_role,speech,start_time,speech_duration) " +
-               "values(" + SessionID + ", '" + SpeakerID + "', '"+ SpeakerRole + "', '"+Speech+ "',TO_TIMESTAMP('" + StartTime + "', '" + dateFixed + "'), " + SpeechDuration.Replace(",",".")+" )";
-            Debug.Log(SqlCommand.CommandText);
-            SqlCommand.ExecuteNonQuery();
-        }
-        
         public static string CreateSessionLog(string LobbyName, string CaseID, string StartTime , string SimulationType, string TurnCount, string TurnDuration)
         {
             SqlCommand.CommandText = "insert into court_session(lobby_name,case_id, start_time, simulation_type,turn_count,turn_duration) " +
@@ -402,13 +389,20 @@ namespace DatabaseScripts
                     newHistory.SpeechText = GetSessionSpeechLog(id);
 
                     newHistory.Feedback = RetrieveFeedback(id);
-                    if (newHistory.Feedback.Result == null || newHistory.Feedback.Result =="")
+                    try
                     {
-                        Debug.Log("nulll");
-                        newHistory.SpeechText = "";
+                        if (newHistory.Feedback.Result == null || newHistory.Feedback.Result == "")
+                        {
+                            Debug.Log("nulll");
+                            newHistory.SpeechText = "";
+                        }
                     }
-                    
-                        
+                    catch (Exception e)
+                    {
+                        continue;
+                    }
+
+
                     newHistory.UserRole = GetUserRoleInSession(newHistory.SessionID);
                     newHistory.CaseName = GetCaseNameById(newHistory.CaseID);
                     UserHistory.Add(newHistory);

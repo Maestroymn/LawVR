@@ -186,5 +186,11 @@ def addFeedbackToDB(username, sessionID, result, pos_keywords, neg_keywords, use
     cur.close()
     conn.commit()
 	
-	
-	
+def uploadSpeechLog(sessionID,userName,userRole,speech,startTime,speechDuration):
+    cur = conn.cursor()
+
+    postgres_insert_query = """ INSERT INTO SPEECH_LOG (session_id,speaker_id,speaker_role,speech,start_time,speech_duration) VALUES (%s,%s,%s,%s,%s,%s)"""
+    record_to_insert = (sessionID, userName, userRole, speech, startTime, speechDuration)
+    cur.execute(postgres_insert_query, record_to_insert)
+    cur.close()
+    conn.commit()
