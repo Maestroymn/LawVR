@@ -56,16 +56,7 @@ namespace Managers
         
         public void Disconnect()
         {
-            string SessionID = PhotonNetwork.CurrentRoom.CustomProperties[DataKeyValues.__SESSION_ID__].ToString();
-            string UserRole = PhotonNetwork.LocalPlayer.CustomProperties[DataKeyValues.__ROLE__].ToString();
-            string UserName = GameManager.GameSettings.NickName;
-            Debug.Log(PhotonNetwork.CurrentRoom.CustomProperties[DataKeyValues.__LANGUAGE__].ToString());
-            if ((bool)PhotonNetwork.CurrentRoom.CustomProperties[DataKeyValues.__AI_JUDGE__] && PhotonNetwork.CurrentRoom.CustomProperties[DataKeyValues.__LANGUAGE__].ToString() == "tr-TR")
-                AIJudgeGeneralBehaviour.AIJudgeDecisionCaller(SessionID, UserRole, UserName);
-            
-                StartCoroutine(DisconnectFromRoom());
- 
-            
+            StartCoroutine(DisconnectFromRoom());
         }
 
         private IEnumerator DisconnectFromRoom()

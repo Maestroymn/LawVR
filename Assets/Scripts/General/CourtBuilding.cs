@@ -1,5 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
+using AI;
+using Data;
 using Managers;
 using Photon.Pun;
 using UnityEngine;
@@ -60,7 +62,11 @@ namespace General
             if (_currentTurnCount > TotalTurnCountMax)
             {
                 // SESSION FINISHED HERE
-                print("SESSION ENDED!!!!");
+                string SessionID = PhotonNetwork.CurrentRoom.CustomProperties[DataKeyValues.__SESSION_ID__].ToString();
+                string UserRole = PhotonNetwork.LocalPlayer.CustomProperties[DataKeyValues.__ROLE__].ToString();
+                string UserName = GameManager.GameSettings.NickName;
+                if ((bool)PhotonNetwork.CurrentRoom.CustomProperties[DataKeyValues.__AI_JUDGE__] && PhotonNetwork.CurrentRoom.CustomProperties[DataKeyValues.__LANGUAGE__].ToString() == "tr-TR")
+                    AIJudgeGeneralBehaviour.AIJudgeDecisionCaller(SessionID, UserRole, UserName);
             }
             if (_plaintiffTurn)
             {
