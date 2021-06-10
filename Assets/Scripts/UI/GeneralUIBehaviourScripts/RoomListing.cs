@@ -13,7 +13,7 @@ namespace UI
         [SerializeField] private TextMeshProUGUI _text;
         [SerializeField] private Sprite _lockedSprite, _unlockedSprite;
         [SerializeField] private Image _publicHolderImage;
-        //[SerializeField] private Button Button;
+        [SerializeField] private Button Button;
         private bool _isSelected;
         public RoomInfo RoomInfo { get; private set; }
 
@@ -23,17 +23,16 @@ namespace UI
             if (room.CustomProperties.ContainsKey("password"))
             {
                 _publicHolderImage.sprite = _lockedSprite;
-                //Button.interactable = false;
+                Button.interactable = false;
             }
             else
             {
                 _publicHolderImage.sprite = _unlockedSprite;
-                //Button?.onClick.AddListener(OnClicked);
             }
             _text.text = RoomInfo.Name;
         }
 
-        private void OnClicked()
+        public void OnClicked()
         {
             _isSelected = !_isSelected;
             if (_isSelected)
