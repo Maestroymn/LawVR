@@ -65,6 +65,7 @@ namespace Managers
             while (!_currentBuilding)
             {
                 _currentBuilding = FindObjectOfType<CourtBuilding>();
+                _currentBuilding.Loading = _loadingCanvas.gameObject;
                 yield return null;
             }
             _loadingCanvas.gameObject.SetActive(false);

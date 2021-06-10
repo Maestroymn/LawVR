@@ -1,10 +1,12 @@
-﻿using System.Collections.Generic;
+﻿using System.Collections;
+using System.Collections.Generic;
 using System.Linq;
 using AI;
 using Data;
 using Managers;
 using Photon.Pun;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using Utilities;
 
 namespace General
@@ -17,6 +19,7 @@ namespace General
         public InteractableCourtObject PlaintiffStartButton, DefendantStartButton;
         public List<InteractableCourtObject> InteractableCourtObjects;
         public int TotalTurnCountMax;
+        [HideInInspector] public GameObject Loading;
         private int _currentTurnCount=0;
         private bool _plaintiffTurn=false;
         private int _currentSeatIndexForSpec=0;
@@ -41,17 +44,32 @@ namespace General
             obj.GetComponent<CourtSpectatorBehaviour>().Initialize();
         }
         
+        public void Disconnect()
+        {
+            StartCoroutine(DisconnectFromRoom());
+        }
+
+        private IEnumerator DisconnectFromRoom()
+        {
+            PhotonNetwork.LeaveRoom();
+            while (PhotonNetwork.InRoom)
+                yield return null;
+            Cursor.visible = true;
+            Loading.SetActive(false);
+            SceneManager.LoadScene(DataKeyValues.__MAIN_UI_SCENE__);
+        }
+        
         #region RPC Funcs
 
         public void SwitchTurn()
         {
-            print("SWITCHING TURN");
+            Debug.Log("SWITCHING TURN");
             photonView.RPC("RPC_SwitchTurn",RpcTarget.All);
         }
         
         public void StartTurnForCurrentUser()
         {
-            print("STARTING TURN");
+            Debug.Log("STARTING TURN");
             photonView.RPC("RPC_StartTurn",RpcTarget.All);
         }
         
@@ -62,11 +80,13 @@ namespace General
             if (_currentTurnCount > TotalTurnCountMax)
             {
                 // SESSION FINISHED HERE
+                Loading.SetActive(true);
                 string SessionID = PhotonNetwork.CurrentRoom.CustomProperties[DataKeyValues.__SESSION_ID__].ToString();
                 string UserRole = PhotonNetwork.LocalPlayer.CustomProperties[DataKeyValues.__ROLE__].ToString();
                 string UserName = GameManager.GameSettings.NickName;
                 if ((bool)PhotonNetwork.CurrentRoom.CustomProperties[DataKeyValues.__AI_JUDGE__] && PhotonNetwork.CurrentRoom.CustomProperties[DataKeyValues.__LANGUAGE__].ToString() == "tr-TR")
                     AIJudgeGeneralBehaviour.AIJudgeDecisionCaller(SessionID, UserRole, UserName);
+                Disconnect();
             }
             if (_plaintiffTurn)
             {

@@ -61,7 +61,6 @@ namespace Managers
 
         private IEnumerator DisconnectFromRoom()
         {
-            
             PhotonNetwork.LeaveRoom();
             while (PhotonNetwork.InRoom)
                 yield return null;
