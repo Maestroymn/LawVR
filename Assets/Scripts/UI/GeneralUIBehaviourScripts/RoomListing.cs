@@ -13,7 +13,7 @@ namespace UI
         [SerializeField] private TextMeshProUGUI _text;
         [SerializeField] private Sprite _lockedSprite, _unlockedSprite;
         [SerializeField] private Image _publicHolderImage;
-        [SerializeField] private Button Button;
+        //[SerializeField] private Button Button;
         private bool _isSelected;
         public RoomInfo RoomInfo { get; private set; }
 
@@ -23,12 +23,12 @@ namespace UI
             if (room.CustomProperties.ContainsKey("password"))
             {
                 _publicHolderImage.sprite = _lockedSprite;
-                Button.interactable = false;
+                //Button.interactable = false;
             }
             else
             {
                 _publicHolderImage.sprite = _unlockedSprite;
-                Button?.onClick.AddListener(OnClicked);
+                //Button?.onClick.AddListener(OnClicked);
             }
             _text.text = RoomInfo.Name;
         }
@@ -39,13 +39,13 @@ namespace UI
             if (_isSelected)
             {
                 GameManager.GameSettings.PublicSelectedRoomName = RoomInfo.Name;
-                Button.image.color=Color.gray;
+                //Button.image.color=Color.gray;
                 OnSelected?.Invoke();
             }
             else
             {
                 GameManager.GameSettings.PublicSelectedRoomName = "";
-                Button.image.color=Color.white;
+                //Button.image.color=Color.white;
             }
         }
     }
