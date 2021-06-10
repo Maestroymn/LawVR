@@ -13,11 +13,10 @@ namespace UI
     public class CreateRoomMenu : MonoBehaviourPunCallbacks
     {
         [SerializeField] private TMP_InputField _roomName, _password;
-        [SerializeField] private RoomListingsMenu _roomListingsMenu;
         [SerializeField] private TMP_Dropdown _simulationType,_turnCount,_turnDuration,_language;
         [SerializeField] private Toggle _toggle;
         [SerializeField] private Transform _caseListingButton;
-        public RoomListingsMenu RoomListingsMenu { get; private set; }
+        public RoomListingsMenu RoomListingsMenu;
         private RoomsCanvases _roomsCanvases;
         private bool _roomCreated;
         private RoomOptions _roomOptions;
@@ -181,7 +180,7 @@ namespace UI
             base.OnLeftRoom();
             if (PhotonNetwork.IsMasterClient)
             {
-                _roomListingsMenu.RemoveRoomListing(PhotonNetwork.CurrentRoom);
+                RoomListingsMenu.RemoveRoomListing(PhotonNetwork.CurrentRoom);
             }
         }
                 #endregion

@@ -90,7 +90,7 @@ namespace Managers
 
         public override void OnRoomListUpdate(List<RoomInfo> roomList)
         {
-            roomList?.ForEach(room =>
+            roomList.ForEach(room =>
             {
                 // Removed from rooms list.
                 if (room.RemovedFromList)
