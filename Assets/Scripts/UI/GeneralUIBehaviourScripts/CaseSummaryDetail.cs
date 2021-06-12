@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using Data;
 using DatabaseScripts;
 using Photon.Pun;
@@ -19,15 +20,19 @@ namespace UI.GeneralUIBehaviourScripts
         public SummaryType SummaryType;
         public event Action OnReady,OnClose;
         private bool _isOpen;
-
+        private Dictionary<string, string> _listOfPlayerswRoles;
         public void Initialize()
         {
+            _listOfPlayerswRoles = new Dictionary<string, string>();
             if(SummaryType==SummaryType.BeforeSession)
             {
                 _closeButton.SetActive(false);
                 _readyButton.SetActive(true);
             }
             var currentRoomProps = PhotonNetwork.CurrentRoom.CustomProperties;
+            _startTime.text = DateTime.Now.ToString();
+            SetCaseDetail();
+            SetRolesTextField();
             _turnCount.text = currentRoomProps[DataKeyValues.__TURN_COUNT__].ToString();
             _turnDuration.text = currentRoomProps[DataKeyValues.__TURN_DURATION__].ToString();
             _role.text = PhotonNetwork.LocalPlayer.CustomProperties[DataKeyValues.__ROLE__].ToString();
@@ -40,6 +45,47 @@ namespace UI.GeneralUIBehaviourScripts
             OpenSummaryFolder();
         }
 
+        private void SetCaseDetail()
+        {
+            var cases = DatabaseConnection.GetCourtCases();
+            for (int i = 0; i < cases.Count; i++)
+            {
+                if (cases[i].CaseID == (int) PhotonNetwork.CurrentRoom.CustomProperties[DataKeyValues.__CASE_ID__])
+                {
+                    _caseDetail.text = cases[i].CaseText;
+                    break;
+                }
+            }
+        }
+
+        private void SetRolesTextField()
+        {
+            foreach (var currentRoomPlayer in PhotonNetwork.CurrentRoom.Players)
+            {
+                _listOfPlayerswRoles.Add(currentRoomPlayer.Value.CustomProperties[DataKeyValues.__ROLE__].ToString(),currentRoomPlayer.Value.NickName);
+            }
+            var str = "JUDGE: " + GetUserNameByRole(DataKeyValues.__JUDGE__) + "\n" +
+                      "PLAINTIFF: " + GetUserNameByRole(DataKeyValues.__PLAINTIFF__) + "\n" +
+                      "DEFENDANT: " + GetUserNameByRole(DataKeyValues.__DEFENDANT__) + "\n";
+            _rolesTextField.text = str;
+        }
+
+        private string GetUserNameByRole(string role)
+        {
+            if (_listOfPlayerswRoles.ContainsKey(role))
+            {
+                return _listOfPlayerswRoles[role];
+            }
+            if(role == DataKeyValues.__JUDGE__)
+            {
+                if ((bool) PhotonNetwork.CurrentRoom.CustomProperties[DataKeyValues.__AI_JUDGE__])
+                {
+                    return "NonHuman User";
+                }
+            }
+            return "EMPTY";
+        }
+        
         public void OpenSummaryFolder()
         {
             if (_isOpen) return;
@@ -104,12 +150,6 @@ namespace UI.GeneralUIBehaviourScripts
             _isOpen = false;
             transform.localScale=Vector3.zero;
             OnClose?.Invoke();
-        }
-        
-        private void FillRolesTextField()
-        {
-            //TODO: FILL FOR ALL ROLES
-            var txt = "YOU: " + PhotonNetwork.LocalPlayer.CustomProperties[DataKeyValues.__ROLE__]+"\n";
         }
 
     }

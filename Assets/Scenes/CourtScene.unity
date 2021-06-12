@@ -1996,20 +1996,26 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8797cae13cff94d7fb0979b7b138ea52, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  judge: {fileID: 6866459610351604485, guid: 540e6e34a86c24b4194c2fe02d550472, type: 3}
-  plaintiff: {fileID: 6866459610351604485, guid: abf3154f95ded41b482272c37f8119fa,
+  maleJudge: {fileID: 6866459610351604485, guid: 540e6e34a86c24b4194c2fe02d550472,
+    type: 3}
+  femaleJudge: {fileID: 6866459610351604485, guid: 25cbb582fb25e4c75b77cdce629a3c5d,
+    type: 3}
+  malePlaintiff: {fileID: 6866459610351604485, guid: b6f86fea0770049e4bab064ce077b2ff,
+    type: 3}
+  femalePlaintiff: {fileID: 6866459610351604485, guid: 1c70c7ee8f9fb4dd6bea427a899c5a92,
     type: 3}
   femaleSpectator: {fileID: 6866459610351604485, guid: 42a7fc455c15a40c2b7639f4533897d8,
     type: 3}
   maleSpectator: {fileID: 6866459610351604485, guid: d057ab5e1634645a5a9091f9d38dffd8,
     type: 3}
-  defendant: {fileID: 6866459610351604485, guid: abf3154f95ded41b482272c37f8119fa,
+  maleDefendant: {fileID: 6866459610351604485, guid: 3b4375490aa2a46f3a2a38c0c6bfcb07,
+    type: 3}
+  femaleDefendant: {fileID: 6866459610351604485, guid: abf3154f95ded41b482272c37f8119fa,
     type: 3}
   _aiJudgeGeneralBehaviour: {fileID: 704494980786506829, guid: ddce488b581e04504a540215c355c4c8,
     type: 3}
   _courtBuildings:
   - {fileID: 1566465279410555, guid: f66b907370b4d42c181ee85f065a2277, type: 3}
-  SessionEnvironmentParent: {fileID: 1674053621}
   _pauseUIManager: {fileID: 6064873672758139987}
   _loadingCanvas: {fileID: 1596270094}
   _mainCamera: {fileID: 348753173}

@@ -5,6 +5,7 @@ using Managers;
 using Photon.Pun;
 using UnityEditor;
 using UnityEngine;
+using UnityEngine.SpatialTracking;
 using UnityEngine.XR;
 
 namespace General
@@ -21,7 +22,10 @@ namespace General
         [SerializeField] private float mouseSensitivity;
         [SerializeField] private Transform head;
         [SerializeField] private SkinnedMeshRenderer _cloth;
-        [Header("VR Components")] [SerializeField] private GameObject _playerVR;
+        [Header("VR Components")] [SerializeField]
+        private TrackedPoseDriver _playerVR;
+        [SerializeField] private Transform _cameraView;
+
         private PauseUIManager _pauseUIManager;
         
         public void Initialize()
@@ -51,7 +55,12 @@ namespace General
         {
             XRSettings.LoadDeviceByName(deviceName);
             yield return null;
-            _playerVR.gameObject.SetActive(true);
+            if(_playerVR.GetComponent<TrackedPoseDriver>())
+            {
+                _cameraView.localPosition= new Vector3(_cameraView.localPosition.x, -1, 0.5f);
+                _playerVR.GetComponent<TrackedPoseDriver>().enabled = true;
+            }
+            
             XRSettings.enabled = true;
         }
         

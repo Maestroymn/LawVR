@@ -13,10 +13,9 @@ namespace Managers
 {
     public class RoomSessionManager : MonoBehaviourPunCallbacks
     {
-        [SerializeField] private GameObject judge,plaintiff,femaleSpectator,maleSpectator,defendant;
+        [SerializeField] private GameObject maleJudge,femaleJudge,malePlaintiff,femalePlaintiff,femaleSpectator,maleSpectator,maleDefendant,femaleDefendant;
         [SerializeField] private AIJudgeGeneralBehaviour _aiJudgeGeneralBehaviour;
         [SerializeField] private List<CourtBuilding> _courtBuildings;
-        [SerializeField] private Transform SessionEnvironmentParent;
         [SerializeField] private PauseUIManager _pauseUIManager;
         [SerializeField] private Canvas _loadingCanvas;
         [SerializeField] private Camera _mainCamera;
@@ -83,13 +82,22 @@ namespace Managers
             switch (PhotonNetwork.LocalPlayer.CustomProperties[DataKeyValues.__ROLE__].ToString().ToLower())
             {
                 case "plaintiff":
-                    tmpObjHolder=GameManager.NetworkInstantiate(plaintiff, _currentBuilding.PlaintiffTransform.position, Quaternion.identity);
+                    if(GameManager.GameSettings.Gender==Gender.Female)
+                        tmpObjHolder=GameManager.NetworkInstantiate(femalePlaintiff, _currentBuilding.PlaintiffTransform.position, Quaternion.identity);
+                    else
+                        tmpObjHolder=GameManager.NetworkInstantiate(malePlaintiff, _currentBuilding.PlaintiffTransform.position, Quaternion.identity);
                     break;
                 case "defendant":
-                    tmpObjHolder=GameManager.NetworkInstantiate(defendant, _currentBuilding.DefendantTransform.position, Quaternion.identity);
+                    if(GameManager.GameSettings.Gender==Gender.Female)
+                        tmpObjHolder=GameManager.NetworkInstantiate(femaleDefendant, _currentBuilding.DefendantTransform.position, Quaternion.identity);
+                    else
+                        tmpObjHolder=GameManager.NetworkInstantiate(maleDefendant, _currentBuilding.DefendantTransform.position, Quaternion.identity);
                     break;
                 case "judge":
-                    tmpObjHolder=GameManager.NetworkInstantiate(judge, _currentBuilding.JudgeTransform.position, Quaternion.identity);
+                    if(GameManager.GameSettings.Gender==Gender.Female)
+                        tmpObjHolder=GameManager.NetworkInstantiate(femaleJudge, _currentBuilding.JudgeTransform.position, Quaternion.identity);
+                    else
+                        tmpObjHolder=GameManager.NetworkInstantiate(maleJudge, _currentBuilding.JudgeTransform.position, Quaternion.identity); 
                     break;
                 case "spectator":
                     if(GameManager.GameSettings.Gender==Gender.Female)

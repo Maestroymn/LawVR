@@ -403,7 +403,7 @@ namespace DatabaseScripts
                     }
 
 
-                    newHistory.UserRole = GetUserRoleInSession(newHistory.SessionID);
+                    newHistory.UserRole = GetUserRoleInSession(newHistory.SessionID,GameManager.GameSettings.NickName);
                     newHistory.CaseName = GetCaseNameById(newHistory.CaseID);
                     UserHistory.Add(newHistory);
                 }
@@ -456,11 +456,10 @@ namespace DatabaseScripts
 
         }
 
-        private static string GetUserRoleInSession(int SessionID)
+        private static string GetUserRoleInSession(int SessionID,string username)
         {
-            SqlCommand.CommandText = "Select speaker_role from speech_log where session_id = " + SessionID + " and speaker_id = '"+ GameManager.GameSettings.NickName+"'";
+            SqlCommand.CommandText = "Select speaker_role from speech_log where session_id = " + SessionID + " and speaker_id = '"+ username+"'";
             NpgsqlDataReader SpeakerRole = SqlCommand.ExecuteReader();
-
             try 
             { 
                 SpeakerRole.Read();
@@ -469,10 +468,6 @@ namespace DatabaseScripts
             {
                 return "";
             }
-            
-            
-
-           
         }
         
         private static string GetSessionSpeechLog(string SessionID)
