@@ -32,7 +32,6 @@ namespace General
         {
             if (!photonView.IsMine)
             {
-                Camera.enabled = false;
                 return;
             }
             Cursor.visible = false;
@@ -48,7 +47,10 @@ namespace General
             _pauseUIManager = FindObjectOfType<PauseUIManager>();
             _pauseUIManager.ResumeButton.onClick.AddListener(HandleEnable);
             _isEnabled = true;
-        }
+            if (PlayerPrefs.GetInt(DataKeyValues.__VR_ENABLE__)==1)
+            {
+                StartCoroutine(ActivateVR("OpenVR"));
+            }        }
 
         private void HandleEnable()
         {
@@ -70,7 +72,11 @@ namespace General
         
         private void Update()
         {
-            if (!photonView.IsMine) return;
+            if (!photonView.IsMine)
+            {
+                Camera.enabled = false;
+                return;
+            }
             CameraRotation();
             if (Input.GetKeyDown(KeyCode.Escape))
             {
