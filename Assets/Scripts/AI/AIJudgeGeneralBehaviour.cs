@@ -33,8 +33,7 @@ namespace AI
 #if UNITY_EDITOR_WIN || UNITY_STANDALONE_WIN
             PythonExePath = @Application.dataPath + DirSep + "Python" + DirSep + "Python38" + DirSep + "python.exe";
 #elif UNITY_EDITOR_OSX || UNITY_STANDALONE_OSX
-            WorkingDirectory = "/usr/bin";
-            PythonExePath = WorkingDirectory + DirSep + "python";
+            PythonExePath = "/usr/local/bin" + DirSep + "python3";
 #endif
 
             ProcessStartInfo start = new ProcessStartInfo();

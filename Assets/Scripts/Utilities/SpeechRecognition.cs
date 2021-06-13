@@ -1,13 +1,10 @@
-﻿using DatabaseScripts;
-using System;
-using System.Diagnostics;
+﻿using System.Diagnostics;
 using System.IO;
 using System.Threading;
 using Data;
 using Managers;
 using Photon.Pun;
 using UnityEngine;
-using System.Text;
 
 namespace Utilities
 {
@@ -30,8 +27,7 @@ namespace Utilities
 #if UNITY_EDITOR_WIN || UNITY_STANDALONE_WIN
             PythonExePath = @Application.dataPath + DirSep + "Python" + DirSep + "Python38"+  DirSep+  "python.exe";
 #elif UNITY_EDITOR_OSX || UNITY_STANDALONE_OSX
-            WorkingDirectory = "/usr/bin";
-            PythonExePath = WorkingDirectory + DirSep + "python";
+            PythonExePath = "/usr/local/bin" + DirSep + "python3";
 #endif
         }
 
@@ -68,8 +64,6 @@ namespace Utilities
                     string result = reader.ReadToEnd(); // Here is the result of StdOut(for example: print "test")
                     UnityEngine.Debug.Log("exception " + stderr);
                     UnityEngine.Debug.Log("result " + result);
-
-                    
                 }  
             }     
         }

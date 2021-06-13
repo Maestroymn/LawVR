@@ -30,7 +30,11 @@ namespace General
         
         public void Initialize()
         {
-            if (!photonView.IsMine) return;
+            if (!photonView.IsMine)
+            {
+                Camera.enabled = false;
+                return;
+            }
             Cursor.visible = false;
             Cursor.lockState = CursorLockMode.Locked;
             Animator.SetBool(NormalSit,true);
