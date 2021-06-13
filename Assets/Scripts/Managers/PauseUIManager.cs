@@ -27,7 +27,7 @@ namespace Managers
         // Update is called once per frame
         void Update()
         {
-            if(!PhotonNetwork.IsConnected || !photonView.IsMine || !PhotonNetwork.InRoom)
+            if(!PhotonNetwork.IsConnected || !PhotonNetwork.InRoom)
                 return;
             if (Input.GetKeyDown(KeyCode.Escape))
             {
