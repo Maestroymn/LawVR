@@ -123,25 +123,14 @@ namespace General
                     AIJudgeGeneralBehaviour.AIJudgeDecisionCaller(SessionID, UserRole, UserName);
                 Disconnect();
             }
-            /*if (_plaintiffTurn)
-            {
-                _plaintiffTurn = false;
-                PlaintiffTimer.HandleTimer(false);
-                PlaintiffTimer.timeText.text = "WAIT!";
-                DefendantTimer.timeText.text = "START!";
-                DefendantStartButton.HandleButtonSettings(ButtonStatus.Start);
-                PlaintiffStartButton.HandleButtonSettings(ButtonStatus.Wait);
-            }
-            else
-            {
-                _plaintiffTurn = true;
-                DefendantTimer.HandleTimer(false);
-                DefendantTimer.timeText.text = "WAIT!";
-                PlaintiffTimer.timeText.text = "START!";
-                PlaintiffStartButton.HandleButtonSettings(ButtonStatus.Start);
-                DefendantStartButton.HandleButtonSettings(ButtonStatus.Wait);
-            }*/
         }
+
+        public void OnJudgeEndsSession()
+        {
+            SessionEnded?.Invoke();
+            gameObject.LeanDelayedCall(2f, Disconnect);
+        }
+        
         
         [PunRPC]
         private void RPC_StartTurn()

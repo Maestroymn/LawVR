@@ -17,14 +17,13 @@ namespace UI.GeneralUIBehaviourScripts
         public void Initialize()
         {
             _sessionHistoryList = DatabaseConnection.GetSessionHistories(GameManager.GameSettings.NickName);
-            NoHistoryAvailableText.SetActive(_sessionHistoryList == null);
             _sessionHistoryList?.ForEach(listing =>
             {
                 if(listing.SpeechText.ToString().Length!=0)
                 {
                     SessionHistoryListing listingInstantiate = Instantiate(SessionHistoryListingPrefab, ContentParent);
                     var obj = _sessionHistoryListings.Find(x => x.SessionHistory.SessionID == listing.SessionID);
-                    if (!obj)
+                    if (!obj || !string.IsNullOrEmpty(listing.UserRole))
                     {
                         listingInstantiate.gameObject.SetActive(true);
                         listingInstantiate.SessionHistory = listing;
@@ -41,6 +40,7 @@ namespace UI.GeneralUIBehaviourScripts
                     }
                 }
             });
+            NoHistoryAvailableText.SetActive(_sessionHistoryListings.Count==0);
         }
     }
 }

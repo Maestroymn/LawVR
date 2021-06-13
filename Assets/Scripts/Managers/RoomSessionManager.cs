@@ -132,6 +132,11 @@ namespace Managers
                     _localPlayerMove.OnStartTurn += _currentBuilding.StartTurnForCurrentUser;
                     _localPlayerMove.OnSwitchTurn += _currentBuilding.SwitchTurn;
                     _localPlayerMove.PlayerLook.RegisterForInteractables(_currentBuilding.InteractableCourtObjects);
+                    if (PhotonNetwork.LocalPlayer.CustomProperties[DataKeyValues.__ROLE__].ToString() ==
+                        DataKeyValues.__JUDGE__)
+                    {
+                        _localPlayerMove.PlayerLook.OnJudgeFinished += _currentBuilding.OnJudgeEndsSession;
+                    }
                     break;
                 }
             }

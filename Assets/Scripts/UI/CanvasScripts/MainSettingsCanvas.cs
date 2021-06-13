@@ -1,6 +1,5 @@
 ﻿using Data;
 using DatabaseScripts;
-using Photon.Pun;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;

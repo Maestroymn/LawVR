@@ -370,7 +370,6 @@ namespace DatabaseScripts
                 List<SessionHistory> UserHistory = new List<SessionHistory>();
                 foreach (string id in sessionID)
                 {
-                    
                     SqlCommand.CommandText = "select * from court_session where session_id = " + id;
                     Debug.Log(SqlCommand.CommandText);
                     NpgsqlDataReader SessionLogs = SqlCommand.ExecuteReader();
@@ -391,28 +390,27 @@ namespace DatabaseScripts
                     newHistory.Feedback = RetrieveFeedback(id);
                     try
                     {
-                        if (newHistory.Feedback.Result == null || newHistory.Feedback.Result == "")
+                        if (string.IsNullOrEmpty(newHistory.Feedback.Result) && CheckIfJudgeWasAIOnSession(newHistory.SessionID))
                         {
-                            Debug.Log("nulll");
+                            Debug.Log("EMPTY FEEDBACK");
                             newHistory.SpeechText = "";
                         }
+                        newHistory.UserRole =
+                            GetUserRoleInSession(newHistory.SessionID, GameManager.GameSettings.NickName);
+                        newHistory.CaseName = GetCaseNameById(newHistory.CaseID);
+                        UserHistory.Add(newHistory);
                     }
                     catch (Exception e)
                     {
                         continue;
                     }
-
-
-                    newHistory.UserRole = GetUserRoleInSession(newHistory.SessionID,GameManager.GameSettings.NickName);
-                    newHistory.CaseName = GetCaseNameById(newHistory.CaseID);
-                    UserHistory.Add(newHistory);
                 }
 
-                foreach( var u in UserHistory)
+                /*foreach( var u in UserHistory)
                 {
                     Debug.Log(u.CaseID + " " + u.EndTime + " " + u.StartTime + " " + u.SimulationType + " " + u.SessionID + " " + u.Feedback + " " + u.SpeechText+" "+u.LobbyName);
 
-                }
+                }*/
 
                 return UserHistory;
             } 
@@ -449,8 +447,15 @@ namespace DatabaseScripts
             }
             catch (Exception e )
             {
+                Feedback.SessionID = int.Parse(session_id);
+                Feedback.UserName = "N/A";
+                Feedback.Result = "N/A";
+                Feedback.PositiveKeywords = "N/A";
+                Feedback.NegativeKeywords ="N/A";
+                Feedback.FeedbackID = -1;
+                Feedback.UserRole = "N/A";
                 Debug.Log(e.ToString());
-                return null;
+                return Feedback;
             }
 
 
@@ -467,6 +472,20 @@ namespace DatabaseScripts
             }catch(Exception e)
             {
                 return "";
+            }
+        }
+        
+        private static bool CheckIfJudgeWasAIOnSession(int SessionID)
+        {
+            SqlCommand.CommandText = "Select speaker_id from speech_log where session_id = " + SessionID + " and speaker_role = judge";
+            NpgsqlDataReader SpeakerRole = SqlCommand.ExecuteReader();
+            try 
+            { 
+                SpeakerRole.Read();
+                return false;
+            }catch(Exception e)
+            {
+                return true;
             }
         }
         

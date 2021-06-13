@@ -1,7 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
 using Data;
+using DatabaseScripts;
 using JetBrains.Annotations;
+using Photon.Pun;
 using TMPro;
 using UnityEngine;
 using Utilities;
@@ -36,23 +38,33 @@ namespace General
         public float OutlineWidthMax;
         private static readonly int Outline = Shader.PropertyToID("_Outline");
         private float _targetOutline;
-        private bool _isOutlined = false;
+        private bool _isOutlined = false, _clapperWaiting = false, _sessionEnded = false;
         public bool IsRaycasted=false;
         private static readonly int Hit = Animator.StringToHash("Hit");
         private static readonly int Hint = Animator.StringToHash("Hint");
         private static readonly int Color = Shader.PropertyToID("_Color");
-
+        private static readonly int Speed = Animator.StringToHash("Speed");
         public event Action OnFileClicked, OnClapperUsed;
         public event Action<ButtonStatus> OnButtonClicked; 
         private void Update()
         {
+            if (_sessionEnded) return;
             if (_isOutlined && !IsRaycasted)
             {
                 HandleOutline(false);
             }
             if (IsRaycasted && Input.GetKeyDown(DataKeyValues.__INTERACT_KEY__))
             {
+                if (InteractableType == InteractableType.Clapper && _clapperWaiting)
+                {
+                    Animator.SetFloat(Speed,1f);
+                }
                 OnInteraction();
+            }
+            if (IsRaycasted && Input.GetKeyDown(DataKeyValues.__CANCEL_KEY__) && InteractableType == InteractableType.Clapper && _clapperWaiting)
+            {
+                _clapperWaiting = false;
+                Animator.SetFloat(Speed,-1f);
             }
         }
 
@@ -112,8 +124,8 @@ namespace General
             switch (InteractableType)
             {
                 case InteractableType.Clapper:
+                    if (_clapperWaiting) return;
                     Animator?.SetTrigger(Hit);
-                    OnClapperUsed?.Invoke();
                     break;
                 case InteractableType.CaseFile:
                     OnFileClicked?.Invoke();
@@ -129,6 +141,21 @@ namespace General
                     break;
             }
         }
+
+        public void JudgeEndsSession()
+        {
+            DatabaseConnection.UpdateSessionLog(PhotonNetwork.CurrentRoom.CustomProperties[DataKeyValues.__SESSION_ID__].ToString(), DateTime.Now.ToString());
+            _sessionEnded = true;
+            OnClapperUsed?.Invoke();
+        }
         
+        public void StopAnimation()
+        {
+            _sessionEnded = true;
+            Animator?.SetFloat(Speed,0f);
+            _clapperWaiting = true;
+            SpeechRecognition.SpeechRecognitionCaller(PhotonNetwork.CurrentRoom.CustomProperties[DataKeyValues.__LANGUAGE__].ToString());
+            _sessionEnded = false;
+        }
     }
 }

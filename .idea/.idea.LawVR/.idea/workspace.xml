@@ -21,19 +21,11 @@
   <component name="ChangeListManager">
     <list default="true" id="1615f86a-ec87-43d2-947c-b7e73a72c2dc" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.LawVR/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.LawVR/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Photon/PhotonUnityNetworking/Demos/Shared Assets/Animations/HumanoidIdle.fbx.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Photon/PhotonUnityNetworking/Demos/Shared Assets/Animations/HumanoidIdle.fbx.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Photon/PhotonUnityNetworking/Demos/Shared Assets/Animations/HumanoidIdleJumpUp.fbx.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Photon/PhotonUnityNetworking/Demos/Shared Assets/Animations/HumanoidIdleJumpUp.fbx.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Photon/PhotonUnityNetworking/Demos/Shared Assets/Animations/HumanoidJumpAndFall.fbx.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Photon/PhotonUnityNetworking/Demos/Shared Assets/Animations/HumanoidJumpAndFall.fbx.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Photon/PhotonUnityNetworking/Demos/Shared Assets/Animations/HumanoidMidAir.fbx.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Photon/PhotonUnityNetworking/Demos/Shared Assets/Animations/HumanoidMidAir.fbx.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Photon/PhotonUnityNetworking/Demos/Shared Assets/Animations/HumanoidRun.fbx.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Photon/PhotonUnityNetworking/Demos/Shared Assets/Animations/HumanoidRun.fbx.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Photon/PhotonUnityNetworking/Demos/Shared Assets/Animations/HumanoidRunTurn.fbx.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Photon/PhotonUnityNetworking/Demos/Shared Assets/Animations/HumanoidRunTurn.fbx.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Photon/PhotonUnityNetworking/Demos/Shared Assets/Animations/HumanoidRunTurnSharp.fbx.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Photon/PhotonUnityNetworking/Demos/Shared Assets/Animations/HumanoidRunTurnSharp.fbx.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Photon/PhotonUnityNetworking/Demos/Shared Assets/Animations/HumanoidStandTurn.fbx.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Photon/PhotonUnityNetworking/Demos/Shared Assets/Animations/HumanoidStandTurn.fbx.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Photon/PhotonUnityNetworking/Demos/Shared Assets/Animations/HumanoidWalk.fbx.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Photon/PhotonUnityNetworking/Demos/Shared Assets/Animations/HumanoidWalk.fbx.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Photon/PhotonUnityNetworking/Demos/Shared Assets/Animations/HumanoidWalkTurn.fbx.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Photon/PhotonUnityNetworking/Demos/Shared Assets/Animations/HumanoidWalkTurn.fbx.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Photon/PhotonUnityNetworking/Demos/Shared Assets/Animations/HumanoidWalkTurnSharp.fbx.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Photon/PhotonUnityNetworking/Demos/Shared Assets/Animations/HumanoidWalkTurnSharp.fbx.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Animations/ProbAnims/ClapperAnimator.controller" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Animations/ProbAnims/ClapperAnimator.controller" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Animations/ProbAnims/ClapperHit.anim" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Animations/ProbAnims/ClapperHit.anim" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Photon/PhotonUtilities/Compression.meta" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Photon/PhotonUtilities/TransformCrusher.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Probs/Hammer.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Probs/Hammer.prefab" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Python/Lib/bsddb.meta" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Python/Lib/ctypes.meta" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Python/Lib/distutils.meta" beforeDir="false" />
@@ -97,13 +89,107 @@
       <change beforePath="$PROJECT_DIR$/Assets/Python/Lib/test.meta" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Python/Lib/unittest.meta" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Python/Lib/xml.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Python/Python38/Lib/ctypes/macholib/__pycache__.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Python/Python38/Lib/ctypes/test/__pycache__.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Python/Python38/Lib/curses/__pycache__.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Python/Python38/Lib/dbm/__pycache__.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Python/Python38/Lib/distutils/tests/__pycache__.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Python/Python38/Lib/email/mime/__pycache__.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Python/Python38/Lib/idlelib/__pycache__.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Python/Python38/Lib/idlelib/idle_test/__pycache__.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Python/Python38/Lib/lib2to3/fixes/__pycache__.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Python/Python38/Lib/lib2to3/tests/__pycache__.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Python/Python38/Lib/lib2to3/tests/data/__pycache__.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Python/Python38/Lib/lib2to3/tests/data/fixers/__pycache__.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Python/Python38/Lib/lib2to3/tests/data/fixers/myfixes/__pycache__.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Python/Python38/Lib/msilib/__pycache__.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Python/Python38/Lib/multiprocessing/__pycache__.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Python/Python38/Lib/multiprocessing/dummy/__pycache__.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Python/Python38/Lib/pydoc_data/__pycache__.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Python/Python38/Lib/site-packages/pip-19.2.3.dist-info.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Python/Python38/Lib/site-packages/pip/_vendor/lockfile/__pycache__.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Python/Python38/Lib/site-packages/pip/_vendor/pytoml/__pycache__.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Python/Python38/Lib/site-packages/pip/_vendor/urllib3/packages/rfc3986/__pycache__.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Python/Python38/Lib/sqlite3/test/__pycache__.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Python/Python38/Lib/test/__pycache__.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Python/Python38/Lib/test/crashers/__pycache__.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Python/Python38/Lib/test/dtracedata/__pycache__.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Python/Python38/Lib/test/eintrdata/__pycache__.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Python/Python38/Lib/test/encoded_modules/__pycache__.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Python/Python38/Lib/test/leakers/__pycache__.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Python/Python38/Lib/test/libregrtest/__pycache__.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Python/Python38/Lib/test/subprocessdata/__pycache__.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Python/Python38/Lib/test/support/__pycache__.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Python/Python38/Lib/test/test_asyncio/__pycache__.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Python/Python38/Lib/test/test_email/__pycache__.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Python/Python38/Lib/test/test_import/__pycache__.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Python/Python38/Lib/test/test_import/data/circular_imports/__pycache__.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Python/Python38/Lib/test/test_import/data/circular_imports/subpkg/__pycache__.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Python/Python38/Lib/test/test_import/data/package/__pycache__.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Python/Python38/Lib/test/test_import/data/package2/__pycache__.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Python/Python38/Lib/test/test_importlib/__pycache__.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Python/Python38/Lib/test/test_importlib/builtin/__pycache__.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Python/Python38/Lib/test/test_importlib/data/__pycache__.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Python/Python38/Lib/test/test_importlib/data01/__pycache__.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Python/Python38/Lib/test/test_importlib/data01/subdirectory/__pycache__.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Python/Python38/Lib/test/test_importlib/data02/__pycache__.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Python/Python38/Lib/test/test_importlib/data02/one/__pycache__.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Python/Python38/Lib/test/test_importlib/data02/two/__pycache__.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Python/Python38/Lib/test/test_importlib/data03/__pycache__.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Python/Python38/Lib/test/test_importlib/data03/namespace/portion1/__pycache__.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Python/Python38/Lib/test/test_importlib/data03/namespace/portion2/__pycache__.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Python/Python38/Lib/test/test_importlib/extension/__pycache__.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Python/Python38/Lib/test/test_importlib/frozen/__pycache__.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Python/Python38/Lib/test/test_importlib/import_/__pycache__.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Python/Python38/Lib/test/test_importlib/namespace_pkgs/both_portions/foo/__pycache__.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Python/Python38/Lib/test/test_importlib/namespace_pkgs/module_and_namespace_package/__pycache__.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Python/Python38/Lib/test/test_importlib/namespace_pkgs/not_a_namespace_pkg/foo/__pycache__.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Python/Python38/Lib/test/test_importlib/namespace_pkgs/portion1/foo/__pycache__.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Python/Python38/Lib/test/test_importlib/namespace_pkgs/portion2/foo/__pycache__.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Python/Python38/Lib/test/test_importlib/namespace_pkgs/project1/parent/child/__pycache__.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Python/Python38/Lib/test/test_importlib/namespace_pkgs/project2/parent/child/__pycache__.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Python/Python38/Lib/test/test_importlib/namespace_pkgs/project3/parent/child/__pycache__.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Python/Python38/Lib/test/test_importlib/source/__pycache__.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Python/Python38/Lib/test/test_importlib/zipdata01/__pycache__.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Python/Python38/Lib/test/test_importlib/zipdata02/__pycache__.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Python/Python38/Lib/test/test_json/__pycache__.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Python/Python38/Lib/test/test_tools/__pycache__.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Python/Python38/Lib/test/test_warnings/__pycache__.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Python/Python38/Lib/test/test_warnings/data/__pycache__.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Python/Python38/Lib/test/tracedmodules/__pycache__.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Python/Python38/Lib/test/ziptestdata/__pycache__.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Python/Python38/Lib/tkinter/test/__pycache__.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Python/Python38/Lib/tkinter/test/test_tkinter/__pycache__.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Python/Python38/Lib/tkinter/test/test_ttk/__pycache__.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Python/Python38/Lib/turtledemo/__pycache__.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Python/Python38/Lib/unittest/test/__pycache__.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Python/Python38/Lib/unittest/test/testmock/__pycache__.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Python/Python38/Lib/venv/__pycache__.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Python/Python38/Lib/wsgiref/__pycache__.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Python/Python38/Lib/xml/dom/__pycache__.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Python/Python38/Tools/demo/__pycache__.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Python/Python38/Tools/i18n/__pycache__.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Python/Python38/Tools/parser/__pycache__.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Python/Python38/Tools/pynche/__pycache__.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Python/Python38/Tools/scripts/__pycache__.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Python/Python38/include/cpython.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/NetworkCharacterJudgeMale.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/NetworkCharacterJudgeMale.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Structure_01_UPDATED.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Structure_01_UPDATED.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Data/DataKeyValues.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Data/DataKeyValues.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/DatabaseScripts/DatabaseConnection.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/DatabaseScripts/DatabaseConnection.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/General/CourtBuilding.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/General/CourtBuilding.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/General/InteractableCourtObject.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/General/InteractableCourtObject.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Managers/RoomSessionManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Managers/RoomSessionManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/CanvasScripts/MainSettingsCanvas.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UI/CanvasScripts/MainSettingsCanvas.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/GeneralUIBehaviourScripts/SessionHistoryScrollView.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UI/GeneralUIBehaviourScripts/SessionHistoryScrollView.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Soja Exiles/SE Basic Assets/Scripts and Animations/FPS By Acacia Developer/PlayerLook.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Soja Exiles/SE Basic Assets/Scripts and Animations/FPS By Acacia Developer/PlayerLook.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/SteamVR_Resources/Resources/SteamVR_Settings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/SteamVR_Resources/Resources/SteamVR_Settings.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/TextMesh Pro/Examples &amp; Extras/Resources/Fonts &amp; Materials/Bangers SDF.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/TextMesh Pro/Examples &amp; Extras/Resources/Fonts &amp; Materials/Bangers SDF.asset" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/TextMesh Pro/Examples &amp; Extras/Resources/Fonts &amp; Materials/Roboto-Bold SDF.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/TextMesh Pro/Examples &amp; Extras/Resources/Fonts &amp; Materials/Roboto-Bold SDF.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/TextMesh Pro/Resources/Fonts &amp; Materials/LiberationSans SDF - Fallback.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/TextMesh Pro/Resources/Fonts &amp; Materials/LiberationSans SDF - Fallback.asset" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/XR/Loaders.meta" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/XR/Settings.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/ProjectSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/ProjectSettings.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WriteLines2.txt" beforeDir="false" afterPath="$PROJECT_DIR$/WriteLines2.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/GraphicsSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/GraphicsSettings.asset" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -114,45 +200,57 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="HighlightingSettingsPerFile">
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/UI/GeneralUIBehaviourScripts/CaseDetailPanelBehaviour.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Editor/ResourcesPrefabPathBuilder.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/9F32AE74-5972-4685-BF3F-384CF1315F39/48/9664c57b/PythonEngine.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/UI/GeneralUIBehaviourScripts/SessionHistoryListing.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/UI/GeneralUIBehaviourScripts/CaseSummaryDetail.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Managers/NetworkedPrefab.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/36514B14-425C-4337-B446-653C547AA9C3/02/786181a1/IDisposable.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/14C1495D-EDA7-4532-849F-8EC10B438611/e9/cc38303f/Enumerable.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/UI/GeneralUIBehaviourScripts/SessionHistoryScrollView.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Data/DataKeyValues.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Editor/BuildPostprocessor.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Utilities/Timer.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/UI/CanvasScripts/MainSettingsCanvas.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/41255891-47EE-4C70-963F-E403C2B5C5B1/ba/5964b15b/Object.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/UI/LoginScripts/SignInManager.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/E9364571-221E-4376-B65A-EF3D74D6FED1/cf/78c67083/Microphone.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/41255891-47EE-4C70-963F-E403C2B5C5B1/89/030fdd93/SceneManager.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/General/CourtSpectatorBehaviour.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Data/SessionHistory.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/72D32198-279B-4F3F-9846-A45D39F77FF6/3c/28841409/CharacterController.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/UI/GeneralUIBehaviourScripts/SessionHistoryDetailPanelBehaviour.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/2F318A3B-CAB6-4A52-B345-8684E232B435/97/b21b54f8/NpgsqlCommand.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Utilities/AutoSceneLoader.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/UI/GeneralUIBehaviourScripts/CaseDetailPanelBehaviour.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/9F32AE74-5972-4685-BF3F-384CF1315F39/48/9664c57b/PythonEngine.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/UI/GeneralUIBehaviourScripts/CaseSummaryDetail.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/36514B14-425C-4337-B446-653C547AA9C3/02/786181a1/IDisposable.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/14C1495D-EDA7-4532-849F-8EC10B438611/e9/cc38303f/Enumerable.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/9577AC7A-62EF-4317-9789-031239BA8798/43/e9b8f25e/Exception.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/36514B14-425C-4337-B446-653C547AA9C3/62/DateTime.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/UI/GeneralUIBehaviourScripts/SessionHistoryScrollView.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Data/DataKeyValues.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Photon/PhotonVoice/Code/Editor/PhotonVoiceEditorUtils.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/9577AC7A-62EF-4317-9789-031239BA8798/21/112af550/SystemException.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Managers/FriendListManager.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/General/CourtBuilding.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/84FE8231-54FA-4674-B5D8-4E26ADDFF0A0/8a/28b06bf3/EditorSceneManager.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Managers/RoomSessionManager.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/General/InteractableCourtObject.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/9577AC7A-62EF-4317-9789-031239BA8798/85/78a67988/NullReferenceException.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/9577AC7A-62EF-4317-9789-031239BA8798/e4/ae739d08/Environment.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/General/UserConnect.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/84FE8231-54FA-4674-B5D8-4E26ADDFF0A0/72/c4a5d5b9/PlayModeStateChange.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.timeline@1.2.15/Editor/Manipulators/Sequence/TrimClip.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/UI/LoginScripts/SignInManager.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/UI/CanvasScripts/CaseListCanvas.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/41255891-47EE-4C70-963F-E403C2B5C5B1/89/030fdd93/SceneManager.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/41255891-47EE-4C70-963F-E403C2B5C5B1/3b/d3784e5c/Debug.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/UI/GeneralUIBehaviourScripts/FriendListing.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Managers/GameSettings.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/9577AC7A-62EF-4317-9789-031239BA8798/dd/cc3b36ba/List`1.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Utilities/Extensions.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Managers/UIManager.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/AI/AIJudgeGeneralBehaviour.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Utilities/ConditionalFieldAttribute.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Data/SessionHistory.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/72D32198-279B-4F3F-9846-A45D39F77FF6/3c/28841409/CharacterController.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/UI/GeneralUIBehaviourScripts/SessionHistoryDetailPanelBehaviour.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/UI/GeneralUIBehaviourScripts/ConnectionQuality.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/2F318A3B-CAB6-4A52-B345-8684E232B435/97/b21b54f8/NpgsqlCommand.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Utilities/AutoSceneLoader.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/LeanTween/Editor/LeanTweenDocumentationEditor.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Utilities/SingletonReferences.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/41255891-47EE-4C70-963F-E403C2B5C5B1/0c/b9ccb2ca/Application.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/36514B14-425C-4337-B446-653C547AA9C3/510/List.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/UI/GeneralUIBehaviourScripts/UserProfilePanelBehaviour.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Utilities/SpeechRecognition.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
@@ -161,7 +259,6 @@
       <option value="$PROJECT_DIR$/Assets/Scripts/UI/GeneralUIBehaviourScripts/UserProfilePanelBehaviour.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/UI/LoginScripts/SignInManager.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/UI/GeneralUIBehaviourScripts/SessionHistoryDetailPanelBehaviour.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/UI/GeneralUIBehaviourScripts/SessionHistoryScrollView.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Data/CourtCase.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/UI/CanvasScripts/HostRoomCanvas.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/UI/GeneralUIBehaviourScripts/CaseDetailPanelBehaviour.cs" />
@@ -183,19 +280,21 @@
       <option value="$PROJECT_DIR$/Assets/AdvancedPeoplePack2/Scripts/CharacterCustomization.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/General/CourtSpectatorsNonHuman.cs" />
       <option value="$PROJECT_DIR$/Assets/Materials/Shaders/OutlineUltimate.shader" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/Data/DataKeyValues.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Utilities/Timer.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/UI/GeneralUIBehaviourScripts/PlayerListingsMenu.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/UI/GeneralUIBehaviourScripts/CreateRoomMenu.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/UI/GeneralUIBehaviourScripts/JoinRoomMenu.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/DatabaseScripts/DatabaseConnection.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Managers/PauseUIManager.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/UI/GeneralUIBehaviourScripts/CaseSummaryDetail.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/General/InteractableCourtObject.cs" />
       <option value="$PROJECT_DIR$/Assets/Soja Exiles/SE Basic Assets/Scripts and Animations/FPS By Acacia Developer/PlayerMove.cs" />
       <option value="$PROJECT_DIR$/Assets/Soja Exiles/SE Basic Assets/Scripts and Animations/FPS By Acacia Developer/PlayerLook.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/General/CourtBuilding.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Managers/RoomSessionManager.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Data/DataKeyValues.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/UI/CanvasScripts/MainSettingsCanvas.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/UI/GeneralUIBehaviourScripts/SessionHistoryScrollView.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/DatabaseScripts/DatabaseConnection.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/General/InteractableCourtObject.cs" />
     </changedPaths>
   </component>
   <component name="ProjectId" id="1m4WLUJiTV2lnEFPOPqD5h9uqk8" />

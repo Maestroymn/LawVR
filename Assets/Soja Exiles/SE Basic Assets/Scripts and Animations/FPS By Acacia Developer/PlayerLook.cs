@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using Data;
 using General;
 using Photon.Pun;
@@ -8,6 +9,7 @@ using Utilities;
 
 public class PlayerLook : MonoBehaviourPunCallbacks
 {
+    public event Action OnJudgeFinished;
     [SerializeField] private string mouseXInputName, mouseYInputName;
     [SerializeField] private float mouseSensitivity;
     [SerializeField] private Transform playerBody;
@@ -17,6 +19,7 @@ public class PlayerLook : MonoBehaviourPunCallbacks
     private InteractableCourtObject _lastInteractedObj;
     private float xAxisClamp,yAxisClamp;
     private bool _isEnabled=false;
+    private InteractableCourtObject _clapperReference;
     
     public void Initialize()
     {
@@ -43,7 +46,8 @@ public class PlayerLook : MonoBehaviourPunCallbacks
                 case InteractableType.Clapper:
                     if (PhotonNetwork.LocalPlayer.CustomProperties[DataKeyValues.__ROLE__].ToString() == DataKeyValues.__JUDGE__)
                     {
-                        
+                        _clapperReference = obj;
+                        _clapperReference.OnClapperUsed += OnClapperHit;
                     }
                     break;
                 case InteractableType.Button:
@@ -54,6 +58,12 @@ public class PlayerLook : MonoBehaviourPunCallbacks
                     break;
             }
         });
+    }
+
+    private void OnClapperHit()
+    {
+        _clapperReference.OnClapperUsed -= OnClapperHit;
+        OnJudgeFinished?.Invoke();
     }
 
     private void ShowSummary()

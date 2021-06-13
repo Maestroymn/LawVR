@@ -47,6 +47,7 @@ namespace Data
         #region INTERACTION KEYS
 
         public static readonly KeyCode __INTERACT_KEY__ = KeyCode.E;
+        public static readonly KeyCode __CANCEL_KEY__ = KeyCode.C;
 
         #endregion
         
