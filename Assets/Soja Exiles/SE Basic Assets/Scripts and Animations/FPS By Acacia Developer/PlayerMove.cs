@@ -161,11 +161,11 @@ public class PlayerMove : MonoBehaviourPunCallbacks
 
     private void JumpInput()
     {
-        if (Input.GetKeyDown(jumpKey) && !isJumping)
+        /*if (Input.GetKeyDown(jumpKey) && !isJumping)
         {
             isJumping = true;
             StartCoroutine(JumpEvent());
-        }
+        }*/
     }
 
 
@@ -189,7 +189,7 @@ public class PlayerMove : MonoBehaviourPunCallbacks
     public void RPC_IncreaseReadyPlayerCounter()
     {
         _readyCount++;
-        if (_readyCount >= _totalPlayerCount)
+        if (_readyCount >= _totalPlayerCount && PhotonNetwork.LocalPlayer.IsMasterClient)
         {
             InvokeSwitchTurnEvent();
         }
@@ -197,7 +197,7 @@ public class PlayerMove : MonoBehaviourPunCallbacks
     
     public void IncreaseReadyCounter()
     {
-        photonView.RPC("RPC_IncreaseReadyPlayerCounter",RpcTarget.All);
+        photonView.RPC("RPC_IncreaseReadyPlayerCounter",RpcTarget.MasterClient);
     }
 
     public void InvokeSwitchTurnEvent()
