@@ -5,6 +5,7 @@ using System;
 using System.Diagnostics;
 using System.IO;
 using UnityEngine;
+using Debug = UnityEngine.Debug;
 
 namespace AI
 {
@@ -39,7 +40,7 @@ namespace AI
             ProcessStartInfo start = new ProcessStartInfo();
             start.FileName = PythonExePath;
             start.Arguments = $"\"{PythonScriptPath}\"  " + session_id + "  " + speaker_role + " " +speaker_name;
-            UnityEngine.Debug.Log(session_id + "  " + speaker_role);
+            Debug.Log(session_id + "  " + speaker_role);
             start.WorkingDirectory = WorkingDirectory;
 
             start.UseShellExecute = false;// Do not use OS shell
@@ -49,27 +50,24 @@ namespace AI
 
             using (Process process = Process.Start(start))
             {
-                UnityEngine.Debug.Log("AI thread started");
+                Debug.Log("AI thread started");
                 using (StreamReader reader = process.StandardOutput)
                 {
                     string stderr = process.StandardError.ReadToEnd(); // Here are the exceptions from our Python script
                     string result = reader.ReadToEnd(); // Here is the result of StdOut(for example: print "test")
 
-                    UnityEngine.Debug.Log("exception " + stderr);
-                    UnityEngine.Debug.Log("result " + result);
+                    Debug.Log("exception " + stderr);
+                    Debug.Log("result " + result);
 
 
                     UserFeedback Feedback = DatabaseConnection.RetrieveFeedback(session_id);
-                    UnityEngine.Debug.Log(Feedback.NegativeKeywords+ " " + Feedback.PositiveKeywords+ " " + Feedback.Result + " " + Feedback.SessionID + " " + Feedback.UserName + " " + Feedback.UserRole +" " + Feedback.FeedbackID );
-                    Feedback.ToString();
-
+                    //UnityEngine.Debug.Log(Feedback.NegativeKeywords+ " " + Feedback.PositiveKeywords+ " " + Feedback.Result + " " + Feedback.SessionID + " " + Feedback.UserName + " " + Feedback.UserRole +" " + Feedback.FeedbackID );
+                    if(Feedback)
+                        Debug.Log(Feedback.ToString());
+                    else
+                        Debug.Log("FEEDBACK EMPTY");
                 }
-
-
-
             }
-
-
             DatabaseConnection.UpdateSessionLog(PhotonNetwork.CurrentRoom.CustomProperties[DataKeyValues.__SESSION_ID__].ToString(), DateTime.Now.ToString());
         }
 

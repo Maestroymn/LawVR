@@ -6,7 +6,7 @@ namespace UI.GeneralUIBehaviourScripts
 {
     public class SessionHistoryDetailPanelBehaviour : MonoBehaviour
     {
-        [SerializeField] private TextMeshProUGUI _feedbackArea, _logArea,_role,_simType,_startTime,_caseName;
+        [SerializeField] private TextMeshProUGUI _positiveKeywords,_negativeKeywords,_result, _logArea,_role,_simType,_startTime,_caseName;
         private SessionHistory _sessionHistory;
         
         public void HandleActivation(bool isOpen)
@@ -22,7 +22,9 @@ namespace UI.GeneralUIBehaviourScripts
         {
             _sessionHistory = sessionHistory;
             _caseName.text = _sessionHistory.CaseName;
-            _feedbackArea.text = _sessionHistory.Feedback.PositiveKeywords + " " + _sessionHistory.Feedback.NegativeKeywords;
+            _positiveKeywords.text = _sessionHistory?.Feedback.GetPositiveKeywords();
+            _negativeKeywords.text = _sessionHistory?.Feedback.GetNegaiveKeywords();
+            _result.text = _sessionHistory?.Feedback.GetResult();
             _logArea.text = _sessionHistory.SpeechText;
             _simType.text = _sessionHistory.SimulationType;
             _startTime.text = _sessionHistory.StartTime;

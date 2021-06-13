@@ -18,6 +18,7 @@ namespace Managers
         [SerializeField] private List<CourtBuilding> _courtBuildings;
         [SerializeField] private PauseUIManager _pauseUIManager;
         [SerializeField] private Canvas _loadingCanvas;
+        [SerializeField] private Canvas _sessionEndCanvas;
         [SerializeField] private Camera _mainCamera;
         [HideInInspector] public CourtBuilding _currentBuilding;
         private PlayerMove _localPlayerMove;
@@ -28,6 +29,16 @@ namespace Managers
             HandleBuildingSpawn();
         }
 
+        private void OnSessionEnded()
+        {
+            _currentBuilding.SessionEnded -= OnSessionEnded;
+            _mainCamera.gameObject.SetActive(false);
+            _mainCamera.gameObject.SetActive(true);
+            Cursor.visible = true;
+            Cursor.lockState = CursorLockMode.None;
+            _sessionEndCanvas.gameObject.SetActive(true);
+        }
+        
         private void HandleBuildingSpawn()
         {
             if(PhotonNetwork.LocalPlayer.IsMasterClient)
@@ -35,6 +46,7 @@ namespace Managers
                 var obj = GameManager.NetworkInstantiateRoomObj(_courtBuildings.PickRandom().gameObject, Vector3.zero,
                     Quaternion.identity);
                 _currentBuilding = obj.GetComponent<CourtBuilding>();
+                _currentBuilding.SessionEnded += OnSessionEnded;
                 if ((bool) PhotonNetwork.CurrentRoom.CustomProperties[DataKeyValues.__AI_JUDGE__])
                 {
                     GameManager.NetworkInstantiate(_aiJudgeGeneralBehaviour.gameObject,
@@ -66,7 +78,7 @@ namespace Managers
                 _currentBuilding = FindObjectOfType<CourtBuilding>();
                 yield return null;
             }
-            _currentBuilding.Loading = _loadingCanvas.gameObject;
+            _currentBuilding.SessionEnded += OnSessionEnded;
             _loadingCanvas.gameObject.SetActive(false);
             _mainCamera.gameObject.SetActive(false);
             _currentBuilding.InitTimers(
