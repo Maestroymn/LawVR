@@ -2858,7 +2858,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 583826580527185690}
-  - component: {fileID: 6888603763401397736}
   - component: {fileID: 832810143449414149}
   - component: {fileID: 7570164741840566971}
   m_Layer: 0
@@ -2884,25 +2883,6 @@ Transform:
   m_Father: {fileID: 6991872665556137366}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &6888603763401397736
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5542086493256489226}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8417cfd546cae7345a9893589a1651f7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  mouseXInputName: Mouse X
-  mouseYInputName: Mouse Y
-  mouseSensitivity: 150
-  playerBody: {fileID: 6991872665556137366}
-  _caseSummaryDetail: {fileID: 0}
-  ParentController: {fileID: 0}
-  Camera: {fileID: 0}
 --- !u!114 &832810143449414149
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3348,6 +3328,7 @@ MonoBehaviour:
   ObservedComponents:
   - {fileID: 8571148829661715762}
   - {fileID: 7104411525684252400}
+  - {fileID: 8134593675581768312}
   - {fileID: 832810143449414149}
   sceneViewId: 0
   InstantiationId: 0
@@ -3404,7 +3385,8 @@ MonoBehaviour:
   mouseXInputName: Mouse X
   mouseYInputName: Mouse Y
   mouseSensitivity: 150
-  head: {fileID: 6991872665556137366}
+  head1: {fileID: 6991872665556137366}
+  head2: {fileID: 583826580527185690}
   _cloth: {fileID: 3115890785024843600}
   _playerVR: {fileID: 7570164741840566971}
   _cameraView: {fileID: 6871505340253370891}

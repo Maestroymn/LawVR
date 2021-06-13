@@ -20,7 +20,7 @@ namespace General
         private bool _isEnabled=false;
         [SerializeField] private string mouseXInputName, mouseYInputName;
         [SerializeField] private float mouseSensitivity;
-        [SerializeField] private Transform head;
+        [SerializeField] private Transform head1,head2;
         [SerializeField] private SkinnedMeshRenderer _cloth;
         [Header("VR Components")] [SerializeField]
         private TrackedPoseDriver _playerVR;
@@ -50,7 +50,8 @@ namespace General
             if (PlayerPrefs.GetInt(DataKeyValues.__VR_ENABLE__)==1)
             {
                 StartCoroutine(ActivateVR("OpenVR"));
-            }        }
+            }        
+        }
 
         private void HandleEnable()
         {
@@ -106,8 +107,8 @@ namespace General
                 ClampXAxisRotationToValue(90.0f);
             }*/
 
-            head.Rotate(Vector3.up * mouseX);
-            head.Rotate(Vector3.left * mouseY);
+            head1.Rotate(Vector3.up * mouseX);
+            head2.Rotate(Vector3.left * mouseY);
         }
         
     }
