@@ -7,7 +7,7 @@ namespace Utilities
     public class Timer : MonoBehaviour
     {
         public event Action OnTimesUp;
-        public float timeRemaining,timeLimit;
+        public float timeRemaining,timeLimit=30f;
         public bool timerIsRunning = false;
         public TMP_Text timeText;
         public Animator Animator;

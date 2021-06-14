@@ -189,7 +189,7 @@ public class PlayerMove : MonoBehaviourPunCallbacks
     public void RPC_IncreaseReadyPlayerCounter()
     {
         _readyCount++;
-        if (_readyCount >= _totalPlayerCount && PhotonNetwork.LocalPlayer.IsMasterClient)
+        if (_readyCount >= _totalPlayerCount)
         {
             InvokeSwitchTurnEvent();
         }
@@ -197,7 +197,7 @@ public class PlayerMove : MonoBehaviourPunCallbacks
     
     public void IncreaseReadyCounter()
     {
-        photonView.RPC("RPC_IncreaseReadyPlayerCounter",RpcTarget.MasterClient);
+        photonView.RPC("RPC_IncreaseReadyPlayerCounter",RpcTarget.AllBuffered);
     }
 
     public void InvokeSwitchTurnEvent()

@@ -693,10 +693,251 @@
           </e>
         </e>
         <e p="Python" t="Include">
-          <e p="Python27" t="Include">
+          <e p="Python38" t="Include">
             <e p="Lib" t="Include">
-              <e p="email" t="Include">
-                <e p="test" t="Include">
+              <e p="idlelib" t="Include">
+                <e p="CREDITS.txt" t="Include" />
+                <e p="extend.txt" t="Include" />
+                <e p="HISTORY.txt" t="Include" />
+                <e p="idle_test" t="Include">
+                  <e p="readme.txt" t="Include" />
+                </e>
+                <e p="NEWS.txt" t="Include" />
+                <e p="NEWS2x.txt" t="Include" />
+                <e p="readme.txt" t="Include" />
+                <e p="TODO.txt" t="Include" />
+              </e>
+              <e p="lib2to3" t="Include">
+                <e p="Grammar.txt" t="Include" />
+                <e p="PatternGrammar.txt" t="Include" />
+              </e>
+              <e p="site-packages" t="Include">
+                <e p="cffi-1.14.5.dist-info" t="Include">
+                  <e p="entry_points.txt" t="Include" />
+                  <e p="top_level.txt" t="Include" />
+                </e>
+                <e p="chardet-4.0.0.dist-info" t="Include">
+                  <e p="entry_points.txt" t="Include" />
+                  <e p="top_level.txt" t="Include" />
+                </e>
+                <e p="click-8.0.1.dist-info" t="Include">
+                  <e p="top_level.txt" t="Include" />
+                </e>
+                <e p="colorama-0.4.4.dist-info" t="Include">
+                  <e p="LICENSE.txt" t="Include" />
+                  <e p="top_level.txt" t="Include" />
+                </e>
+                <e p="cryptography-3.4.7.dist-info" t="Include">
+                  <e p="top_level.txt" t="Include" />
+                </e>
+                <e p="decorator-4.4.2.dist-info" t="Include">
+                  <e p="LICENSE.txt" t="Include" />
+                  <e p="top_level.txt" t="Include" />
+                </e>
+                <e p="fpdf-1.7.2.dist-info" t="Include">
+                  <e p="top_level.txt" t="Include" />
+                </e>
+                <e p="jellyfish-0.8.2.dist-info" t="Include">
+                  <e p="top_level.txt" t="Include" />
+                </e>
+                <e p="joblib-1.0.1.dist-info" t="Include">
+                  <e p="LICENSE.txt" t="Include" />
+                  <e p="top_level.txt" t="Include" />
+                </e>
+                <e p="networkx-2.5.1.dist-info" t="Include">
+                  <e p="LICENSE.txt" t="Include" />
+                  <e p="top_level.txt" t="Include" />
+                </e>
+                <e p="nltk-3.4.5.dist-info" t="Include">
+                  <e p="LICENSE.txt" t="Include" />
+                  <e p="top_level.txt" t="Include" />
+                </e>
+                <e p="numpy" t="Include">
+                  <e p="Core" t="Include">
+                    <e p="include" t="Include">
+                      <e p="numpy" t="Include">
+                        <e p="multiarray_api.txt" t="Include" />
+                        <e p="ufunc_api.txt" t="Include" />
+                      </e>
+                    </e>
+                  </e>
+                  <e p="LICENSE.txt" t="Include" />
+                </e>
+                <e p="numpy-1.20.3.dist-info" t="Include">
+                  <e p="entry_points.txt" t="Include" />
+                  <e p="LICENSE.txt" t="Include" />
+                  <e p="LICENSES_bundled.txt" t="Include" />
+                  <e p="top_level.txt" t="Include" />
+                </e>
+                <e p="pdfminer.six-20201018.dist-info" t="Include">
+                  <e p="top_level.txt" t="Include" />
+                </e>
+                <e p="pip" t="Include">
+                  <e p="_vendor" t="Include">
+                    <e p="vendor.txt" t="Include" />
+                  </e>
+                </e>
+                <e p="pip-21.1.1.dist-info" t="Include">
+                  <e p="entry_points.txt" t="Include" />
+                  <e p="LICENSE.txt" t="Include" />
+                  <e p="top_level.txt" t="Include" />
+                </e>
+                <e p="psycopg2-2.8.6.dist-info" t="Include">
+                  <e p="top_level.txt" t="Include" />
+                </e>
+                <e p="PyAudio-0.2.11.dist-info" t="Include">
+                  <e p="top_level.txt" t="Include" />
+                </e>
+                <e p="pycparser-2.20.dist-info" t="Include">
+                  <e p="top_level.txt" t="Include" />
+                </e>
+                <e p="readme.txt" t="Include" />
+                <e p="regex-2021.4.4.dist-info" t="Include">
+                  <e p="LICENSE.txt" t="Include" />
+                  <e p="top_level.txt" t="Include" />
+                </e>
+                <e p="segtok-1.5.10.dist-info" t="Include">
+                  <e p="entry_points.txt" t="Include" />
+                  <e p="LICENSE.txt" t="Include" />
+                  <e p="top_level.txt" t="Include" />
+                </e>
+                <e p="setuptools" t="Include">
+                  <e p="command" t="Include">
+                    <e p="launcher manifest.xml" t="Include" />
+                  </e>
+                </e>
+                <e p="setuptools-41.2.0.dist-info" t="Include">
+                  <e p="dependency_links.txt" t="Include" />
+                  <e p="entry_points.txt" t="Include" />
+                  <e p="top_level.txt" t="Include" />
+                </e>
+                <e p="six-1.16.0.dist-info" t="Include">
+                  <e p="top_level.txt" t="Include" />
+                </e>
+                <e p="sockets-1.0.0.dist-info" t="Include">
+                  <e p="top_level.txt" t="Include" />
+                </e>
+                <e p="sortedcontainers-2.4.0.dist-info" t="Include">
+                  <e p="top_level.txt" t="Include" />
+                </e>
+                <e p="speech_recognition" t="Include">
+                  <e p="pocketsphinx-data" t="Include">
+                    <e p="en-US" t="Include">
+                      <e p="LICENSE.txt" t="Include" />
+                    </e>
+                  </e>
+                </e>
+                <e p="SpeechRecognition-3.8.1.dist-info" t="Include">
+                  <e p="top_level.txt" t="Include" />
+                </e>
+                <e p="tabulate-0.8.9.dist-info" t="Include">
+                  <e p="entry_points.txt" t="Include" />
+                  <e p="top_level.txt" t="Include" />
+                </e>
+                <e p="tqdm-4.60.0.dist-info" t="Include">
+                  <e p="entry_points.txt" t="Include" />
+                  <e p="top_level.txt" t="Include" />
+                </e>
+                <e p="unicode_tr-0.6.1.dist-info" t="Include">
+                  <e p="top_level.txt" t="Include" />
+                </e>
+                <e p="wheel-0.36.2.dist-info" t="Include">
+                  <e p="entry_points.txt" t="Include" />
+                  <e p="LICENSE.txt" t="Include" />
+                  <e p="top_level.txt" t="Include" />
+                </e>
+                <e p="yake" t="Include">
+                  <e p="StopwordsList" t="Include">
+                    <e p="stopwords_ar.txt" t="Include" />
+                    <e p="stopwords_bg.txt" t="Include" />
+                    <e p="stopwords_br.txt" t="Include" />
+                    <e p="stopwords_cz.txt" t="Include" />
+                    <e p="stopwords_da.txt" t="Include" />
+                    <e p="stopwords_de.txt" t="Include" />
+                    <e p="stopwords_el.txt" t="Include" />
+                    <e p="stopwords_en.txt" t="Include" />
+                    <e p="stopwords_es.txt" t="Include" />
+                    <e p="stopwords_et.txt" t="Include" />
+                    <e p="stopwords_fa.txt" t="Include" />
+                    <e p="stopwords_fi.txt" t="Include" />
+                    <e p="stopwords_fr.txt" t="Include" />
+                    <e p="stopwords_hi.txt" t="Include" />
+                    <e p="stopwords_hr.txt" t="Include" />
+                    <e p="stopwords_hu.txt" t="Include" />
+                    <e p="stopwords_hy.txt" t="Include" />
+                    <e p="stopwords_id.txt" t="Include" />
+                    <e p="stopwords_it.txt" t="Include" />
+                    <e p="stopwords_ja.txt" t="Include" />
+                    <e p="stopwords_lt.txt" t="Include" />
+                    <e p="stopwords_lv.txt" t="Include" />
+                    <e p="stopwords_nl.txt" t="Include" />
+                    <e p="stopwords_no.txt" t="Include" />
+                    <e p="stopwords_noLang.txt" t="Include" />
+                    <e p="stopwords_pl.txt" t="Include" />
+                    <e p="stopwords_pt.txt" t="Include" />
+                    <e p="stopwords_ro.txt" t="Include" />
+                    <e p="stopwords_ru.txt" t="Include" />
+                    <e p="stopwords_sk.txt" t="Include" />
+                    <e p="stopwords_sl.txt" t="Include" />
+                    <e p="stopwords_sv.txt" t="Include" />
+                    <e p="stopwords_tr.txt" t="Include" />
+                    <e p="stopwords_uk.txt" t="Include" />
+                    <e p="stopwords_zh.txt" t="Include" />
+                  </e>
+                </e>
+                <e p="yake-0.4.8.dist-info" t="Include">
+                  <e p="entry_points.txt" t="Include" />
+                  <e p="top_level.txt" t="Include" />
+                </e>
+              </e>
+              <e p="test" t="Include">
+                <e p="cjkencodings" t="Include">
+                  <e p="big5-utf8.txt" t="Include" />
+                  <e p="big5.txt" t="Include" />
+                  <e p="big5hkscs-utf8.txt" t="Include" />
+                  <e p="big5hkscs.txt" t="Include" />
+                  <e p="cp949-utf8.txt" t="Include" />
+                  <e p="cp949.txt" t="Include" />
+                  <e p="euc_jisx0213-utf8.txt" t="Include" />
+                  <e p="euc_jisx0213.txt" t="Include" />
+                  <e p="euc_jp-utf8.txt" t="Include" />
+                  <e p="euc_jp.txt" t="Include" />
+                  <e p="euc_kr-utf8.txt" t="Include" />
+                  <e p="euc_kr.txt" t="Include" />
+                  <e p="gb18030-utf8.txt" t="Include" />
+                  <e p="gb18030.txt" t="Include" />
+                  <e p="gb2312-utf8.txt" t="Include" />
+                  <e p="gb2312.txt" t="Include" />
+                  <e p="gbk-utf8.txt" t="Include" />
+                  <e p="gbk.txt" t="Include" />
+                  <e p="hz-utf8.txt" t="Include" />
+                  <e p="hz.txt" t="Include" />
+                  <e p="iso2022_jp-utf8.txt" t="Include" />
+                  <e p="iso2022_jp.txt" t="Include" />
+                  <e p="iso2022_kr-utf8.txt" t="Include" />
+                  <e p="iso2022_kr.txt" t="Include" />
+                  <e p="johab-utf8.txt" t="Include" />
+                  <e p="johab.txt" t="Include" />
+                  <e p="shift_jis-utf8.txt" t="Include" />
+                  <e p="shift_jis.txt" t="Include" />
+                  <e p="shift_jisx0213-utf8.txt" t="Include" />
+                  <e p="shift_jisx0213.txt" t="Include" />
+                </e>
+                <e p="cmath_testcases.txt" t="Include" />
+                <e p="exception_hierarchy.txt" t="Include" />
+                <e p="floating_points.txt" t="Include" />
+                <e p="formatfloat_testcases.txt" t="Include" />
+                <e p="ieee754.txt" t="Include" />
+                <e p="leakers" t="Include">
+                  <e p="readme.txt" t="Include" />
+                </e>
+                <e p="mailcap.txt" t="Include" />
+                <e p="math_testcases.txt" t="Include" />
+                <e p="test_doctest.txt" t="Include" />
+                <e p="test_doctest2.txt" t="Include" />
+                <e p="test_doctest3.txt" t="Include" />
+                <e p="test_doctest4.txt" t="Include" />
+                <e p="test_email" t="Include">
                   <e p="Data" t="Include">
                     <e p="msg_01.txt" t="Include" />
                     <e p="msg_02.txt" t="Include" />
@@ -747,125 +988,82 @@
                     <e p="msg_46.txt" t="Include" />
                   </e>
                 </e>
-              </e>
-              <e p="idlelib" t="Include">
-                <e p="CREDITS.txt" t="Include" />
-                <e p="extend.txt" t="Include" />
-                <e p="help.txt" t="Include" />
-                <e p="HISTORY.txt" t="Include" />
-                <e p="idle_test" t="Include">
-                  <e p="readme.txt" t="Include" />
-                </e>
-                <e p="NEWS.txt" t="Include" />
-                <e p="readme.txt" t="Include" />
-                <e p="TODO.txt" t="Include" />
-              </e>
-              <e p="lib2to3" t="Include">
-                <e p="Grammar.txt" t="Include" />
-                <e p="PatternGrammar.txt" t="Include" />
-              </e>
-              <e p="site-packages" t="Include">
-                <e p="pip" t="Include">
-                  <e p="_vendor" t="Include">
-                    <e p="vendor.txt" t="Include" />
+                <e p="test_importlib" t="Include">
+                  <e p="data02" t="Include">
+                    <e p="one" t="Include">
+                      <e p="resource1.txt" t="Include" />
+                    </e>
+                    <e p="two" t="Include">
+                      <e p="resource2.txt" t="Include" />
+                    </e>
                   </e>
-                </e>
-                <e p="pip-18.1.dist-info" t="Include">
-                  <e p="entry_points.txt" t="Include" />
-                  <e p="LICENSE.txt" t="Include" />
-                  <e p="top_level.txt" t="Include" />
-                </e>
-                <e p="pip-20.3.4.dist-info" t="Include">
-                  <e p="entry_points.txt" t="Include" />
-                  <e p="LICENSE.txt" t="Include" />
-                  <e p="top_level.txt" t="Include" />
-                </e>
-                <e p="PyAudio-0.2.11.dist-info" t="Include">
-                  <e p="top_level.txt" t="Include" />
-                </e>
-                <e p="readme.txt" t="Include" />
-                <e p="setuptools" t="Include">
-                  <e p="command" t="Include">
-                    <e p="launcher manifest.xml" t="Include" />
-                  </e>
-                </e>
-                <e p="setuptools-40.6.2.dist-info" t="Include">
-                  <e p="dependency_links.txt" t="Include" />
-                  <e p="entry_points.txt" t="Include" />
-                  <e p="top_level.txt" t="Include" />
-                </e>
-                <e p="setuptools-44.1.1.dist-info" t="Include">
-                  <e p="dependency_links.txt" t="Include" />
-                  <e p="entry_points.txt" t="Include" />
-                  <e p="top_level.txt" t="Include" />
-                </e>
-                <e p="sockets-1.0.0.dist-info" t="Include">
-                  <e p="top_level.txt" t="Include" />
-                </e>
-                <e p="speech_recognition" t="Include">
-                  <e p="pocketsphinx-data" t="Include">
-                    <e p="en-US" t="Include">
-                      <e p="LICENSE.txt" t="Include" />
+                  <e p="data03" t="Include">
+                    <e p="namespace" t="Include">
+                      <e p="resource1.txt" t="Include" />
                     </e>
                   </e>
                 </e>
-                <e p="SpeechRecognition-3.8.1.dist-info" t="Include">
-                  <e p="top_level.txt" t="Include" />
-                </e>
-                <e p="wheel-0.36.2.dist-info" t="Include">
-                  <e p="entry_points.txt" t="Include" />
-                  <e p="LICENSE.txt" t="Include" />
-                  <e p="top_level.txt" t="Include" />
-                </e>
-              </e>
-              <e p="test" t="Include">
-                <e p="cjkencodings" t="Include">
-                  <e p="big5-utf8.txt" t="Include" />
-                  <e p="big5.txt" t="Include" />
-                  <e p="big5hkscs-utf8.txt" t="Include" />
-                  <e p="big5hkscs.txt" t="Include" />
-                  <e p="cp949-utf8.txt" t="Include" />
-                  <e p="cp949.txt" t="Include" />
-                  <e p="euc_jisx0213-utf8.txt" t="Include" />
-                  <e p="euc_jisx0213.txt" t="Include" />
-                  <e p="euc_jp-utf8.txt" t="Include" />
-                  <e p="euc_jp.txt" t="Include" />
-                  <e p="euc_kr-utf8.txt" t="Include" />
-                  <e p="euc_kr.txt" t="Include" />
-                  <e p="gb18030-utf8.txt" t="Include" />
-                  <e p="gb18030.txt" t="Include" />
-                  <e p="gb2312-utf8.txt" t="Include" />
-                  <e p="gb2312.txt" t="Include" />
-                  <e p="gbk-utf8.txt" t="Include" />
-                  <e p="gbk.txt" t="Include" />
-                  <e p="hz-utf8.txt" t="Include" />
-                  <e p="hz.txt" t="Include" />
-                  <e p="iso2022_jp-utf8.txt" t="Include" />
-                  <e p="iso2022_jp.txt" t="Include" />
-                  <e p="iso2022_kr-utf8.txt" t="Include" />
-                  <e p="iso2022_kr.txt" t="Include" />
-                  <e p="johab-utf8.txt" t="Include" />
-                  <e p="johab.txt" t="Include" />
-                  <e p="shift_jis-utf8.txt" t="Include" />
-                  <e p="shift_jis.txt" t="Include" />
-                  <e p="shift_jisx0213-utf8.txt" t="Include" />
-                  <e p="shift_jisx0213.txt" t="Include" />
-                </e>
-                <e p="cmath_testcases.txt" t="Include" />
-                <e p="exception_hierarchy.txt" t="Include" />
-                <e p="floating_points.txt" t="Include" />
-                <e p="formatfloat_testcases.txt" t="Include" />
-                <e p="ieee754.txt" t="Include" />
-                <e p="leakers" t="Include">
-                  <e p="readme.txt" t="Include" />
-                </e>
-                <e p="math_testcases.txt" t="Include" />
-                <e p="test_doctest.txt" t="Include" />
-                <e p="test_doctest2.txt" t="Include" />
-                <e p="test_doctest3.txt" t="Include" />
-                <e p="test_doctest4.txt" t="Include" />
+                <e p="tokenize_tests-latin1-coding-cookie-and-utf8-bom-sig.txt" t="Include" />
+                <e p="tokenize_tests-no-coding-cookie-and-utf8-bom-sig-only.txt" t="Include" />
+                <e p="tokenize_tests-utf8-coding-cookie-and-no-utf8-bom-sig.txt" t="Include" />
+                <e p="tokenize_tests-utf8-coding-cookie-and-utf8-bom-sig.txt" t="Include" />
                 <e p="tokenize_tests.txt" t="Include" />
                 <e p="xmltestdata" t="Include">
+                  <e p="c14n-20" t="Include">
+                    <e p="c14nComment.xml" t="Include" />
+                    <e p="c14nDefault.xml" t="Include" />
+                    <e p="c14nPrefix.xml" t="Include" />
+                    <e p="c14nPrefixQname.xml" t="Include" />
+                    <e p="c14nPrefixQnameXpathElem.xml" t="Include" />
+                    <e p="c14nQname.xml" t="Include" />
+                    <e p="c14nQnameElem.xml" t="Include" />
+                    <e p="c14nQnameXpathElem.xml" t="Include" />
+                    <e p="c14nTrim.xml" t="Include" />
+                    <e p="inC14N1.xml" t="Include" />
+                    <e p="inC14N2.xml" t="Include" />
+                    <e p="inC14N3.xml" t="Include" />
+                    <e p="inC14N4.xml" t="Include" />
+                    <e p="inC14N5.xml" t="Include" />
+                    <e p="inC14N6.xml" t="Include" />
+                    <e p="inNsContent.xml" t="Include" />
+                    <e p="inNsDefault.xml" t="Include" />
+                    <e p="inNsPushdown.xml" t="Include" />
+                    <e p="inNsRedecl.xml" t="Include" />
+                    <e p="inNsSort.xml" t="Include" />
+                    <e p="inNsSuperfluous.xml" t="Include" />
+                    <e p="inNsXml.xml" t="Include" />
+                    <e p="out_inC14N1_c14nComment.xml" t="Include" />
+                    <e p="out_inC14N1_c14nDefault.xml" t="Include" />
+                    <e p="out_inC14N2_c14nDefault.xml" t="Include" />
+                    <e p="out_inC14N2_c14nTrim.xml" t="Include" />
+                    <e p="out_inC14N3_c14nDefault.xml" t="Include" />
+                    <e p="out_inC14N3_c14nPrefix.xml" t="Include" />
+                    <e p="out_inC14N3_c14nTrim.xml" t="Include" />
+                    <e p="out_inC14N4_c14nDefault.xml" t="Include" />
+                    <e p="out_inC14N4_c14nTrim.xml" t="Include" />
+                    <e p="out_inC14N5_c14nDefault.xml" t="Include" />
+                    <e p="out_inC14N5_c14nTrim.xml" t="Include" />
+                    <e p="out_inC14N6_c14nDefault.xml" t="Include" />
+                    <e p="out_inNsContent_c14nDefault.xml" t="Include" />
+                    <e p="out_inNsContent_c14nPrefixQnameXpathElem.xml" t="Include" />
+                    <e p="out_inNsContent_c14nQnameElem.xml" t="Include" />
+                    <e p="out_inNsContent_c14nQnameXpathElem.xml" t="Include" />
+                    <e p="out_inNsDefault_c14nDefault.xml" t="Include" />
+                    <e p="out_inNsDefault_c14nPrefix.xml" t="Include" />
+                    <e p="out_inNsPushdown_c14nDefault.xml" t="Include" />
+                    <e p="out_inNsPushdown_c14nPrefix.xml" t="Include" />
+                    <e p="out_inNsRedecl_c14nDefault.xml" t="Include" />
+                    <e p="out_inNsRedecl_c14nPrefix.xml" t="Include" />
+                    <e p="out_inNsSort_c14nDefault.xml" t="Include" />
+                    <e p="out_inNsSort_c14nPrefix.xml" t="Include" />
+                    <e p="out_inNsSuperfluous_c14nDefault.xml" t="Include" />
+                    <e p="out_inNsSuperfluous_c14nPrefix.xml" t="Include" />
+                    <e p="out_inNsXml_c14nDefault.xml" t="Include" />
+                    <e p="out_inNsXml_c14nPrefix.xml" t="Include" />
+                    <e p="out_inNsXml_c14nPrefixQname.xml" t="Include" />
+                    <e p="out_inNsXml_c14nQname.xml" t="Include" />
+                    <e p="world.txt" t="Include" />
+                  </e>
                   <e p="expat224_utf8_bug.xml" t="Include" />
                   <e p="simple-ns.xml" t="Include" />
                   <e p="simple.xml" t="Include" />
@@ -875,12 +1073,54 @@
             </e>
             <e p="LICENSE.txt" t="Include" />
             <e p="NEWS.txt" t="Include" />
-            <e p="readme.txt" t="Include" />
+            <e p="share" t="Include">
+              <e p="doc" t="Include">
+                <e p="networkx-2.5.1" t="Include">
+                  <e p="Examples" t="Include">
+                    <e p="3d_drawing" t="Include">
+                      <e p="readme.txt" t="Include" />
+                    </e>
+                    <e p="advanced" t="Include">
+                      <e p="readme.txt" t="Include" />
+                    </e>
+                    <e p="algorithms" t="Include">
+                      <e p="readme.txt" t="Include" />
+                    </e>
+                    <e p="basic" t="Include">
+                      <e p="readme.txt" t="Include" />
+                    </e>
+                    <e p="drawing" t="Include">
+                      <e p="readme.txt" t="Include" />
+                    </e>
+                    <e p="graph" t="Include">
+                      <e p="readme.txt" t="Include" />
+                    </e>
+                    <e p="javascript" t="Include">
+                      <e p="force" t="Include">
+                        <e p="readme.txt" t="Include" />
+                      </e>
+                      <e p="readme.txt" t="Include" />
+                    </e>
+                    <e p="jit" t="Include">
+                      <e p="readme.txt" t="Include" />
+                    </e>
+                    <e p="pygraphviz" t="Include">
+                      <e p="readme.txt" t="Include" />
+                    </e>
+                    <e p="readme.txt" t="Include" />
+                    <e p="subclass" t="Include">
+                      <e p="readme.txt" t="Include" />
+                    </e>
+                  </e>
+                  <e p="LICENSE.txt" t="Include" />
+                  <e p="requirements.txt" t="Include" />
+                </e>
+              </e>
+            </e>
             <e p="tools" t="Include">
               <e p="pynche" t="Include">
                 <e p="html40colors.txt" t="Include" />
                 <e p="namedcolors.txt" t="Include" />
-                <e p="readme.txt" t="Include" />
                 <e p="webcolors.txt" t="Include" />
                 <e p="websafe.txt" t="Include" />
                 <e p="X" t="Include">
@@ -888,69 +1128,14 @@
                   <e p="xlicense.txt" t="Include" />
                 </e>
               </e>
-              <e p="Scripts" t="Include">
-                <e p="readme.txt" t="Include" />
-              </e>
-              <e p="versioncheck" t="Include">
-                <e p="readme.txt" t="Include" />
-              </e>
-              <e p="webchecker" t="Include">
-                <e p="readme.txt" t="Include" />
-              </e>
             </e>
+          </e>
+          <e p="Resources" t="Include">
+            <e p="names.txt" t="Include" />
+            <e p="surnames.txt" t="Include" />
           </e>
           <e p="Speeches" t="Include">
             <e p="don't delete.txt" t="Include" />
-          </e>
-          <e p="venv" t="Include">
-            <e p="Lib" t="Include">
-              <e p="no-global-site-packages.txt" t="Include" />
-              <e p="orig-prefix.txt" t="Include" />
-              <e p="site-packages" t="Include">
-                <e p="pip" t="Include">
-                  <e p="_vendor" t="Include">
-                    <e p="vendor.txt" t="Include" />
-                  </e>
-                </e>
-                <e p="pip-20.3.4.dist-info" t="Include">
-                  <e p="entry_points.txt" t="Include" />
-                  <e p="LICENSE.txt" t="Include" />
-                  <e p="top_level.txt" t="Include" />
-                </e>
-                <e p="PyAudio-0.2.11.dist-info" t="Include">
-                  <e p="top_level.txt" t="Include" />
-                </e>
-                <e p="setuptools" t="Include">
-                  <e p="command" t="Include">
-                    <e p="launcher manifest.xml" t="Include" />
-                  </e>
-                </e>
-                <e p="setuptools-44.1.1.dist-info" t="Include">
-                  <e p="dependency_links.txt" t="Include" />
-                  <e p="entry_points.txt" t="Include" />
-                  <e p="top_level.txt" t="Include" />
-                </e>
-                <e p="sockets-1.0.0.dist-info" t="Include">
-                  <e p="top_level.txt" t="Include" />
-                </e>
-                <e p="speech_recognition" t="Include">
-                  <e p="pocketsphinx-data" t="Include">
-                    <e p="en-US" t="Include">
-                      <e p="LICENSE.txt" t="Include" />
-                    </e>
-                  </e>
-                </e>
-                <e p="SpeechRecognition-3.8.1.dist-info" t="Include">
-                  <e p="top_level.txt" t="Include" />
-                </e>
-                <e p="wheel-0.36.2.dist-info" t="Include">
-                  <e p="entry_points.txt" t="Include" />
-                  <e p="LICENSE.txt" t="Include" />
-                  <e p="top_level.txt" t="Include" />
-                </e>
-              </e>
-            </e>
-            <e p="LICENSE.txt" t="Include" />
           </e>
         </e>
         <e p="Scripts" t="Include">
@@ -961,12 +1146,14 @@
             <e p="CourtCase.cs" t="Include" />
             <e p="DataKeyValues.cs" t="Include" />
             <e p="SessionHistory.cs" t="Include" />
+            <e p="UserFeedback.cs" t="Include" />
           </e>
           <e p="DatabaseScripts" t="Include">
             <e p="DatabaseConnection.cs" t="Include" />
           </e>
           <e p="General" t="Include">
             <e p="CourtBuilding.cs" t="Include" />
+            <e p="CourtSpectatorBehaviour.cs" t="Include" />
             <e p="CourtSpectatorsNonHuman.cs" t="Include" />
             <e p="IKController.cs" t="Include" />
             <e p="InteractableCourtObject.cs" t="Include" />
@@ -988,8 +1175,8 @@
               <e p="HostRoomCanvas.cs" t="Include" />
               <e p="JoinPublicRoomsCanvas.cs" t="Include" />
               <e p="JoinRoomCanvas.cs" t="Include" />
+              <e p="MainSettingsCanvas.cs" t="Include" />
               <e p="RoomsCanvases.cs" t="Include" />
-              <e p="UserCanvas.cs" t="Include" />
             </e>
             <e p="GeneralUIBehaviourScripts" t="Include">
               <e p="CaseDetailPanelBehaviour.cs" t="Include" />
@@ -1024,7 +1211,6 @@
             <e p="SingletonScriptableObject.cs" t="Include" />
             <e p="SpeechRecognition.cs" t="Include" />
             <e p="Timer.cs" t="Include" />
-            <e p="ViveInput.cs" t="Include" />
           </e>
         </e>
         <e p="Soja Exiles" t="Include">

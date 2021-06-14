@@ -24,10 +24,7 @@ namespace UI
             RoomListing roomListing = Instantiate(_roomListingPrefab, _contentParent);
             if (roomListing != null)
             {
-                if (NoRoomAvailableTextParent.activeInHierarchy)
-                {
-                    NoRoomAvailableTextParent.SetActive(false);
-                }
+                NoRoomAvailableTextParent.SetActive(false);
                 if (!UIManager.RoomListings.Contains(roomListing))
                 {
                     roomListing.SetRoomInfo(room);
@@ -48,7 +45,7 @@ namespace UI
             {
                 UIManager.RoomListings.Remove(roomListing);
                 Destroy(roomListing.gameObject);
-                if (UIManager.RoomListings.Count == 0 && NoRoomAvailableTextParent.activeInHierarchy)
+                if (UIManager.RoomListings.Count == 0)
                 {
                     NoRoomAvailableTextParent.SetActive(true);
                 }

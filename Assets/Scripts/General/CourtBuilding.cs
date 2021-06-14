@@ -27,16 +27,22 @@ namespace General
         private void Awake()
         {
             InteractableCourtObjects = GetComponentsInChildren<InteractableCourtObject>().ToList();
+            _currentTurnCount++;
+            _plaintiffTurn = true;
+            PlaintiffTimer.timeText.text = "START!";
+            PlaintiffStartButton.HandleButtonSettings(ButtonStatus.Start);
+            DefendantTimer.HandleTimer(false);
+            DefendantStartButton.HandleButtonSettings(ButtonStatus.Wait);
         }
 
         public void InitTimers(float timeLimit)
         {
+            DefendantTimer.timeLimit = timeLimit;
+            PlaintiffTimer.timeLimit = timeLimit;
+            DefendantTimer.HandleTimer(false);
+            PlaintiffTimer.timeText.text = "START!";
             DefendantTimer.OnTimesUp += SwitchTurn;
             PlaintiffTimer.OnTimesUp += SwitchTurn;
-            DefendantTimer.timeLimit = timeLimit;
-            DefendantTimer.timeText.text = "WAIT";
-            PlaintiffTimer.timeText.text = "WAIT";
-            PlaintiffTimer.timeLimit = timeLimit;
         }
 
         public void InstantiateNextSpectator(GameObject CharacterModel)
@@ -81,35 +87,21 @@ namespace General
         {
             if (_currentTurnCount % 2 == 0)
             {
-                if ((string) PhotonNetwork.LocalPlayer.CustomProperties[DataKeyValues.__ROLE__] ==
-                    DataKeyValues.__PLAINTIFF__)
-                {
-                    PlaintiffTimer.timeText.text = "START!";
-                    PlaintiffStartButton.HandleButtonSettings(ButtonStatus.Start);
-                }
-                else if((string) PhotonNetwork.LocalPlayer.CustomProperties[DataKeyValues.__ROLE__] ==
-                        DataKeyValues.__DEFENDANT__)
-                {
-                    DefendantTimer.HandleTimer(false);
-                    DefendantTimer.timeText.text = "WAIT!";
-                    DefendantStartButton.HandleButtonSettings(ButtonStatus.Wait);
-                }
+                print("PLAINTIFF TURN!!!!");
+                _plaintiffTurn = true;
+                PlaintiffTimer.timeText.text = "START!";
+                PlaintiffStartButton.HandleButtonSettings(ButtonStatus.Start);
+                DefendantTimer.HandleTimer(false);
+                DefendantStartButton.HandleButtonSettings(ButtonStatus.Wait);
             }
             else
             {
-                if ((string) PhotonNetwork.LocalPlayer.CustomProperties[DataKeyValues.__ROLE__] ==
-                    DataKeyValues.__PLAINTIFF__)
-                {
-                    PlaintiffTimer.HandleTimer(false);
-                    PlaintiffTimer.timeText.text = "WAIT!";
-                    PlaintiffStartButton.HandleButtonSettings(ButtonStatus.Wait);
-                }
-                else if((string) PhotonNetwork.LocalPlayer.CustomProperties[DataKeyValues.__ROLE__] ==
-                        DataKeyValues.__DEFENDANT__)
-                {
-                    DefendantTimer.timeText.text = "START!";
-                    DefendantStartButton.HandleButtonSettings(ButtonStatus.Start);
-                }
+                print("DEFENDANT TURN!!!!");
+                _plaintiffTurn = false;
+                PlaintiffTimer.HandleTimer(false);
+                PlaintiffStartButton.HandleButtonSettings(ButtonStatus.Wait);
+                DefendantTimer.timeText.text = "START!";
+                DefendantStartButton.HandleButtonSettings(ButtonStatus.Start);
             }
             _currentTurnCount++;
             if (_currentTurnCount > TotalTurnCountMax)
@@ -135,38 +127,21 @@ namespace General
         [PunRPC]
         private void RPC_StartTurn()
         {
-            if (_currentTurnCount % 2 == 0)
+            if (!_plaintiffTurn)
             {
-                if ((string) PhotonNetwork.LocalPlayer.CustomProperties[DataKeyValues.__ROLE__] ==
-                    DataKeyValues.__PLAINTIFF__)
-                {
-                    PlaintiffTimer.HandleTimer(false);
-                    PlaintiffTimer.timeText.text = "WAIT!";
-                    PlaintiffStartButton.HandleButtonSettings(ButtonStatus.Wait);
-                }
-                else if((string) PhotonNetwork.LocalPlayer.CustomProperties[DataKeyValues.__ROLE__] ==
-                        DataKeyValues.__DEFENDANT__)
-                {
-                    DefendantTimer.HandleTimer(true);
-                    DefendantStartButton.HandleButtonSettings(ButtonStatus.Pass);
-                }
+                PlaintiffTimer.HandleTimer(false);
+                PlaintiffTimer.timeText.text = "WAIT!";
+                PlaintiffStartButton.HandleButtonSettings(ButtonStatus.Wait);
+                DefendantTimer.HandleTimer(true);
+                DefendantStartButton.HandleButtonSettings(ButtonStatus.Pass);
             }
             else
             {
-               
-                if ((string) PhotonNetwork.LocalPlayer.CustomProperties[DataKeyValues.__ROLE__] ==
-                    DataKeyValues.__PLAINTIFF__)
-                {
-                    PlaintiffTimer.HandleTimer(true);
-                    PlaintiffStartButton.HandleButtonSettings(ButtonStatus.Pass);
-                }
-                else if((string) PhotonNetwork.LocalPlayer.CustomProperties[DataKeyValues.__ROLE__] ==
-                        DataKeyValues.__DEFENDANT__)
-                {
-                    DefendantTimer.HandleTimer(false);
-                    DefendantTimer.timeText.text = "WAIT!";
-                    DefendantStartButton.HandleButtonSettings(ButtonStatus.Wait);
-                }
+                PlaintiffTimer.HandleTimer(true);
+                PlaintiffStartButton.HandleButtonSettings(ButtonStatus.Pass);
+                DefendantTimer.HandleTimer(false);
+                DefendantTimer.timeText.text = "WAIT!";
+                DefendantStartButton.HandleButtonSettings(ButtonStatus.Wait);
             }
         }
         
