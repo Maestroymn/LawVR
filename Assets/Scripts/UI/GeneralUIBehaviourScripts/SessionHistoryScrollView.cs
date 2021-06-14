@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using System.Linq;
 using Data;
 using DatabaseScripts;
 using Managers;
@@ -13,9 +14,13 @@ namespace UI.GeneralUIBehaviourScripts
         public SessionHistoryDetailPanelBehaviour SessionHistoryDetailPanelBehaviourPrefab;
         public GameObject NoHistoryAvailableText;
         private List<SessionHistory> _sessionHistoryList;
-        private List<SessionHistoryListing> _sessionHistoryListings=new List<SessionHistoryListing>();
+        private List<SessionHistoryListing> _sessionHistoryListings;
+        
         public void Initialize()
         {
+            _sessionHistoryListings = ContentParent.GetComponentsInChildren<SessionHistoryListing>().ToList();
+            _sessionHistoryListings.ForEach(x=>Destroy(x.gameObject));
+            _sessionHistoryListings.Clear();
             _sessionHistoryList = DatabaseConnection.GetSessionHistories(GameManager.GameSettings.NickName);
             _sessionHistoryList?.ForEach(listing =>
             {
