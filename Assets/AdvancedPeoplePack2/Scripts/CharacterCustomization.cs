@@ -191,11 +191,11 @@ namespace AdvancedCustomizableSystem
             // this._transform = transform;
             // _lodGroup = GetComponent<LODGroup>();
             // RecalculateLOD();
-            if(photonView.IsMine && !IsSpec)
+            /*if(photonView.IsMine && !IsSpec)
             {
                 InitColors();
                 LoadFromDB();
-            }
+            }*/
             //StartupSerializationApply();
         }
 

@@ -125,6 +125,7 @@ namespace General
             {
                 case InteractableType.Clapper:
                     if (_clapperWaiting) return;
+                    _clapperWaiting = true;
                     Animator?.SetTrigger(Hit);
                     break;
                 case InteractableType.CaseFile:
@@ -151,9 +152,9 @@ namespace General
         
         public void StopAnimation()
         {
+            if (!_clapperWaiting) return;
             _sessionEnded = true;
             Animator?.SetFloat(Speed,0f);
-            _clapperWaiting = true;
             SpeechRecognition.SpeechRecognitionCaller(PhotonNetwork.CurrentRoom.CustomProperties[DataKeyValues.__LANGUAGE__].ToString());
             _sessionEnded = false;
         }

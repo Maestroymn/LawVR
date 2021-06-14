@@ -77,7 +77,7 @@ MonoBehaviour:
     SynchronizeType: 1
     Name: Hit
   - Type: 1
-    SynchronizeType: 0
+    SynchronizeType: 1
     Name: Speed
   m_SynchronizeLayers:
   - SynchronizeType: 0
