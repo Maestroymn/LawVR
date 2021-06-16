@@ -62,6 +62,10 @@ namespace UI.GeneralUIBehaviourScripts
         {
             foreach (var currentRoomPlayer in PhotonNetwork.CurrentRoom.Players)
             {
+                if(_listOfPlayerswRoles.ContainsKey(currentRoomPlayer.Value.CustomProperties[DataKeyValues.__ROLE__].ToString()))
+                {
+                    _listOfPlayerswRoles.Add(currentRoomPlayer.Value.CustomProperties[DataKeyValues.__ROLE__]+"_"+currentRoomPlayer.Value.UserId,currentRoomPlayer.Value.NickName);
+                }
                 _listOfPlayerswRoles.Add(currentRoomPlayer.Value.CustomProperties[DataKeyValues.__ROLE__].ToString(),currentRoomPlayer.Value.NickName);
             }
             var str = "JUDGE: " + GetUserNameByRole(DataKeyValues.__JUDGE__) + "\n" +
