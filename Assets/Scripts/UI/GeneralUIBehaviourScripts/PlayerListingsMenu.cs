@@ -69,7 +69,7 @@ namespace UI
             _playerListings.ForEach(playerListing =>
             {
                 Debug.Log(playerListing.Player+" "+playerListing.Player.CustomProperties[DataKeyValues.__ROLE__]);
-                if (!playerListing.Player.IsLocal && (string) playerListing.Player.CustomProperties[DataKeyValues.__ROLE__] == targetRole)
+                if (!playerListing.Player.IsLocal && targetRole!=DataKeyValues.__SPECTATOR__&& (string) playerListing.Player.CustomProperties[DataKeyValues.__ROLE__] == targetRole)
                 {
                     Debug.Log("Role is already claimed by another player!");
                     validForRole = false;
