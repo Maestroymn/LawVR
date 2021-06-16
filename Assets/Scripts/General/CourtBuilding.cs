@@ -52,6 +52,13 @@ namespace General
         {
             var obj= GameManager.NetworkInstantiate(CharacterModel, SpectatorTransforms[_currentSeatIndexForSpec++].transform.position, Quaternion.identity);
             obj.GetComponent<CourtSpectatorBehaviour>().Initialize();
+            photonView.RPC("IncreaseSeatNumber",RpcTarget.AllBuffered);
+        }
+
+        [PunRPC]
+        public void IncreaseSeatNumber()
+        {
+            _currentSeatIndexForSpec++;
         }
         
         public void Disconnect()
