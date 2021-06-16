@@ -66,7 +66,10 @@ namespace UI.GeneralUIBehaviourScripts
                 {
                     _listOfPlayerswRoles.Add(currentRoomPlayer.Value.CustomProperties[DataKeyValues.__ROLE__]+"_"+currentRoomPlayer.Value.UserId,currentRoomPlayer.Value.NickName);
                 }
-                _listOfPlayerswRoles.Add(currentRoomPlayer.Value.CustomProperties[DataKeyValues.__ROLE__].ToString(),currentRoomPlayer.Value.NickName);
+                else
+                {
+                    _listOfPlayerswRoles.Add(currentRoomPlayer.Value.CustomProperties[DataKeyValues.__ROLE__].ToString(),currentRoomPlayer.Value.NickName);
+                }
             }
             var str = "JUDGE: " + GetUserNameByRole(DataKeyValues.__JUDGE__) + "\n" +
                       "PLAINTIFF: " + GetUserNameByRole(DataKeyValues.__PLAINTIFF__) + "\n" +
