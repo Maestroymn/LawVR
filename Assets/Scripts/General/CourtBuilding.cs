@@ -27,12 +27,15 @@ namespace General
         private void Awake()
         {
             InteractableCourtObjects = GetComponentsInChildren<InteractableCourtObject>().ToList();
-            _currentTurnCount++;
-            _plaintiffTurn = true;
-            PlaintiffTimer.timeText.text = "START!";
-            PlaintiffStartButton.HandleButtonSettings(ButtonStatus.Start);
-            DefendantTimer.HandleTimer(false);
-            DefendantStartButton.HandleButtonSettings(ButtonStatus.Wait);
+            if (PhotonNetwork.CurrentRoom.PlayerCount > 1)
+            {
+                _currentTurnCount++;
+                _plaintiffTurn = true;
+                PlaintiffTimer.timeText.text = "START!";
+                PlaintiffStartButton.HandleButtonSettings(ButtonStatus.Start);
+                DefendantTimer.HandleTimer(false);
+                DefendantStartButton.HandleButtonSettings(ButtonStatus.Wait);   
+            }
         }
 
         public void InitTimers(float timeLimit)

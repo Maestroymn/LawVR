@@ -41,7 +41,7 @@ namespace UI.CanvasScripts
 
         public void SetVrEnable(bool val)
         {
-            PlayerPrefs.SetInt(DataKeyValues.__VR_ENABLE__, val ? 1 : 0);
+            PlayerPrefs.SetInt(DataKeyValues.__VR_ENABLE__, _vrToggle.isOn ? 1 : 0);
             DatabaseConnection.SetVRStatus(_vrToggle.isOn);
         }
     }
