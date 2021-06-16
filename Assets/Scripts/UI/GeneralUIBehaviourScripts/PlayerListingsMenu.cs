@@ -7,6 +7,7 @@ using Photon.Pun;
 using Photon.Realtime;
 using TMPro;
 using UnityEngine;
+using UnityEngine.XR;
 
 namespace UI
 {
@@ -191,6 +192,17 @@ namespace UI
         private void RPC_UpdateUserSessions()
         {
             DatabaseConnection.UpdateUserSessionID(GameManager.GameSettings.NickName, PhotonNetwork.CurrentRoom.CustomProperties[DataKeyValues.__SESSION_ID__].ToString());
+            if (PlayerPrefs.GetInt(DataKeyValues.__VR_ENABLE__) == 1)
+            {
+                StartCoroutine(ActivateVR());
+            }
+        }
+        
+        public System.Collections.IEnumerator ActivateVR()
+        {
+            XRSettings.LoadDeviceByName("OpenVR");
+            XRSettings.enabled = true;
+            yield return null;
         }
         
         [PunRPC]
