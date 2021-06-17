@@ -30,6 +30,7 @@ namespace General
         
         public void Initialize()
         {
+            
             if (!photonView.IsMine)
             {
                 return;
@@ -49,7 +50,7 @@ namespace General
             _isEnabled = true;
             if (PlayerPrefs.GetInt(DataKeyValues.__VR_ENABLE__)==1)
             {
-                StartCoroutine(ActivateVR("OpenVR"));
+                StartCoroutine(ActivateVR());
             }        
         }
 
@@ -58,17 +59,15 @@ namespace General
             _isEnabled = true;
         }
         
-        public IEnumerator ActivateVR(string deviceName)
+        public IEnumerator ActivateVR()
         {
-            XRSettings.LoadDeviceByName(deviceName);
-            yield return null;
+            
             if(_playerVR.GetComponent<TrackedPoseDriver>())
             {
-                _cameraView.localPosition= new Vector3(_cameraView.localPosition.x, -1, 0.5f);
+                _cameraView.localPosition= new Vector3(_cameraView.localPosition.x, -4, 0.5f);
                 _playerVR.GetComponent<TrackedPoseDriver>().enabled = true;
             }
-            
-            XRSettings.enabled = true;
+            yield return null;
         }
         
         private void Update()

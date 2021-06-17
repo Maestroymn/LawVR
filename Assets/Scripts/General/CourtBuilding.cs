@@ -9,6 +9,7 @@ using Photon.Pun;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using Utilities;
+using Valve.VR;
 
 namespace General
 {
@@ -21,12 +22,22 @@ namespace General
         public InteractableCourtObject PlaintiffStartButton, DefendantStartButton;
         public List<InteractableCourtObject> InteractableCourtObjects;
         public int TotalTurnCountMax;
+        public GameObject VRInitialize;
+        public SteamVR_Action_Boolean clickAction;
+        public SteamVR_Action_Boolean grabAction;
+        public SteamVR_Input_Sources trackedObject;
+
         private int _currentTurnCount=0;
         private bool _plaintiffTurn=false;
         private int _currentSeatIndexForSpec=0;
         private void Awake()
         {
             InteractableCourtObjects = GetComponentsInChildren<InteractableCourtObject>().ToList();
+            if (PlayerPrefs.GetInt(DataKeyValues.__VR_ENABLE__) == 1 && PhotonNetwork.LocalPlayer.CustomProperties[DataKeyValues.__ROLE__].ToString()!=DataKeyValues.__SPECTATOR__)
+            {
+                VRInitialize.SetActive(true);
+                InteractableCourtObjects.ForEach(x => clickAction.onStateUp += x.OnInteractionClicked);
+            }
             if (PhotonNetwork.CurrentRoom.PlayerCount > 1)
             {
                 _currentTurnCount++;
@@ -50,7 +61,7 @@ namespace General
 
         public void InstantiateNextSpectator(GameObject CharacterModel)
         {
-            var obj= GameManager.NetworkInstantiate(CharacterModel, SpectatorTransforms[_currentSeatIndexForSpec++].transform.position, Quaternion.identity);
+            var obj= GameManager.NetworkInstantiate(CharacterModel, SpectatorTransforms[_currentSeatIndexForSpec].transform.position, Quaternion.identity);
             obj.GetComponent<CourtSpectatorBehaviour>().Initialize();
             photonView.RPC("IncreaseSeatNumber",RpcTarget.AllBuffered);
         }

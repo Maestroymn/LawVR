@@ -7,6 +7,7 @@ using Photon.Pun;
 using TMPro;
 using UnityEngine;
 using Utilities;
+using Valve.VR;
 
 namespace General
 {
@@ -45,9 +46,12 @@ namespace General
         private static readonly int Color = Shader.PropertyToID("_Color");
         private static readonly int Speed = Animator.StringToHash("Speed");
         public event Action OnFileClicked, OnClapperUsed;
-        public event Action<ButtonStatus> OnButtonClicked; 
+        public event Action<ButtonStatus> OnButtonClicked;
+
         private void Update()
         {
+
+
             if (_sessionEnded) return;
             if (_isOutlined && !IsRaycasted)
             {
@@ -61,12 +65,27 @@ namespace General
                 }
                 OnInteraction();
             }
-            if (IsRaycasted && Input.GetKeyDown(DataKeyValues.__CANCEL_KEY__) && InteractableType == InteractableType.Clapper && _clapperWaiting)
+
+
+            if (IsRaycasted && Input.GetKeyDown(DataKeyValues.__CANCEL_KEY__)  && InteractableType == InteractableType.Clapper && _clapperWaiting)
             {
                 _clapperWaiting = false;
                 Animator.SetFloat(Speed,-1f);
             }
         }
+
+        public void OnInteractionClicked(SteamVR_Action_Boolean x, SteamVR_Input_Sources y)
+        {
+            if (IsRaycasted && !_sessionEnded && _isOutlined)
+            {
+                if (InteractableType == InteractableType.Clapper && _clapperWaiting)
+                {
+                    Animator.SetFloat(Speed, 1f);
+                }
+                OnInteraction();
+            }
+        }
+
 
         public void HandleOutline(bool isActive)
         {

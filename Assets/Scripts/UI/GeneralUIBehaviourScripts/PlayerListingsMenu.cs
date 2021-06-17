@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System.Collections;
+using System.Collections.Generic;
 using Data;
 using DatabaseScripts;
 using ExitGames.Client.Photon;
@@ -80,7 +81,7 @@ namespace UI
             {
                 Debug.Log("Claiming the role");
                 //PhotonNetwork.LocalPlayer.CustomProperties["Role"]=targetRole;
-                Hashtable hashtable = new Hashtable {[DataKeyValues.__ROLE__] = targetRole};
+                ExitGames.Client.Photon.Hashtable hashtable = new ExitGames.Client.Photon.Hashtable { [DataKeyValues.__ROLE__] = targetRole};
                 PhotonNetwork.SetPlayerCustomProperties(hashtable);
                 if (PhotonNetwork.IsMasterClient)
                 {
@@ -113,6 +114,7 @@ namespace UI
                 PhotonNetwork.CurrentRoom.IsOpen = false;
                 PhotonNetwork.CurrentRoom.IsVisible = false;
                 PhotonNetwork.LoadLevel(DataKeyValues.__COURT_SCENE__);
+
             }
         }
         
@@ -191,18 +193,21 @@ namespace UI
         [PunRPC]
         private void RPC_UpdateUserSessions()
         {
+            Debug.Log("here I am");
             DatabaseConnection.UpdateUserSessionID(GameManager.GameSettings.NickName, PhotonNetwork.CurrentRoom.CustomProperties[DataKeyValues.__SESSION_ID__].ToString());
             if (PlayerPrefs.GetInt(DataKeyValues.__VR_ENABLE__) == 1)
             {
+                Debug.Log("Entertain us");
                 StartCoroutine(ActivateVR());
             }
         }
         
-        public System.Collections.IEnumerator ActivateVR()
+        public IEnumerator ActivateVR()
         {
             XRSettings.LoadDeviceByName("OpenVR");
-            XRSettings.enabled = true;
             yield return null;
+            XRSettings.enabled = true;
+            
         }
         
         [PunRPC]

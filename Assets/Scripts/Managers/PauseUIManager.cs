@@ -8,6 +8,7 @@ using System;
 using AI;
 using UnityEngine.UI;
 using Cursor = UnityEngine.Cursor;
+using UnityEngine.XR;
 
 namespace Managers
 {
@@ -49,6 +50,13 @@ namespace Managers
 
         public void PausePanel(bool isPaused)
         {
+            if (PlayerPrefs.GetInt(DataKeyValues.__VR_ENABLE__) == 1)
+            {
+                if (isPaused) StartCoroutine(ActivateVR("None"));
+                else StartCoroutine(ActivateVR("OpenVR"));
+            }
+
+            
             Camera.gameObject.SetActive(isPaused);
             PauseCanvas.SetActive(isPaused);
             paused = isPaused;
@@ -58,6 +66,8 @@ namespace Managers
         
         public void Disconnect()
         {
+            if (PlayerPrefs.GetInt(DataKeyValues.__VR_ENABLE__) == 1)
+                StartCoroutine(ActivateVR("None"));
             StartCoroutine(DisconnectFromRoom());
         }
 
@@ -75,6 +85,13 @@ namespace Managers
             Cursor.visible = true;
             PhotonNetwork.Reconnect();
             SceneManager.LoadScene(DataKeyValues.__LOGIN_SCENE__);
+        }
+        public IEnumerator ActivateVR(string devName)
+        {
+            XRSettings.LoadDeviceByName(devName);
+            yield return null;
+            XRSettings.enabled = devName=="None"?false:true;
+
         }
     }
 }
